@@ -1,0 +1,50 @@
+{% extends 'formation/add_formation.html' %}
+{% load static %}
+
+{% block title %} Modifier la formation {{ formation.titre }} {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/offre/offre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/offre/edit-offre.css' %}">
+
+    <style>
+        #title_and_competences, #adresse_and_formateur{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #competences_field, #co_intervenants_field{
+            margin-top: 4px;
+            margin-bottom: 30px;
+        }
+
+        #co_intervenants_field{
+            margin-bottom: 50px;
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block page_name %}
+    <span class="page_name" style="display: flex; align-items: center;">
+        Formation
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-3.5 w-3.5 shrink-0" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+
+
+        Modifier la formation
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-3.5 w-3.5 shrink-0" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+
+        {{ formation.id }}
+    </span>
+{% endblock %}
+
+{% block top_bar_texte %} 
+    <h1>Modifier la formation {{ formation.id }}</h1> 
+    
+    <p class="subtitle">
+        Modifier les informations de votre formation afin de les rendre plus compréhensibles 
+    </p>    
+{% endblock %}

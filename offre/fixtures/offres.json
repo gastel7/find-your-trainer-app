@@ -1,0 +1,879 @@
+[
+  {
+    "model": "offre.offre",
+    "pk": 1,
+    "fields": {
+      "institution_id": 42,
+      "titre": "Formateur en Transit et Douane",
+      "description": "Cabinet Excellence RH Congo recherche un expert métier pour animer un module de formation accéléré sur les nouvelles réglementations de transit et de dédouanement au Port de Pointe-Noire.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        92,
+        91
+      ],
+      "localisation": "Pointe-Noire, Centre-ville",
+      "nb_max_de_candidatures": 20,
+      "budget": "450000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-12-30",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 2,
+    "fields": {
+      "institution_id": 100,
+      "titre": "Intervenant en Entrepreneuriat et Planification Budgétaire",
+      "description": "Congo Academy for Business and Technology recherche un enseignant qualifié pour encadrer des porteurs de projets sur la création de business plan et la gestion de budget.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        58,
+        44,
+        43
+      ],
+      "localisation": "Brazzaville, Poto-Poto",
+      "nb_max_de_candidatures": 15,
+      "budget": "350000.00",
+      "date_debut": "2026-10-15",
+      "date_cloture": "2026-11-15",
+      "date_publication": "2026-09-24T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 3,
+    "fields": {
+      "institution_id": 98,
+      "titre": "Instructeur Certifié Réseaux Cisco et Linux",
+      "description": "L'Institut des Technologies et Réseaux cherche un formateur pour préparer nos étudiants de licence aux architectures réseaux Cisco et aux commandes d'administration Linux.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        19,
+        20,
+        21
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 30,
+      "budget": "600000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2027-04-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 4,
+    "fields": {
+      "institution_id": 97,
+      "titre": "Formateur en Intelligence Artificielle et Deep Learning",
+      "description": "Le Laboratoire Congo Innovation a besoin d'un chercheur ou ingénieur expérimenté pour guider notre équipe de R&D sur des cas pratiques de Computer Vision et de traitement du langage naturel.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        30,
+        73,
+        75,
+        74,
+        1
+      ],
+      "localisation": "Brazzaville, Kintelé",
+      "nb_max_de_candidatures": 10,
+      "budget": "800000.00",
+      "date_debut": "2026-11-01",
+      "date_cloture": "2026-11-15",
+      "date_publication": "2026-10-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 5,
+    "fields": {
+      "institution_id": 96,
+      "titre": "Enseignant en Nutrition et Diététique",
+      "description": "L'Académie des Professions de la Santé recherche un professionnel de santé pour animer des cours magistraux sur la bio-nutrition et l'équilibre alimentaire thérapeutique.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        84,
+        51
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 25,
+      "budget": "250000.00",
+      "date_debut": "2026-09-15",
+      "date_cloture": "2026-10-15",
+      "date_publication": "2026-08-25T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 6,
+    "fields": {
+      "institution_id": 94,
+      "titre": "Formateur UI/UX Design avec Figma",
+      "description": "L'Institut de Formation aux Métiers du Digital recherche son expert UI/UX pour encadrer un bootcamp de 2 mois axé sur le prototypage Figma et l'expérience utilisateur.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        15,
+        16,
+        17
+      ],
+      "localisation": "Brazzaville, Moungali",
+      "nb_max_de_candidatures": 40,
+      "budget": "500000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-12-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 7,
+    "fields": {
+      "institution_id": 92,
+      "titre": "Formateur en Comptabilité Générale et Analytique",
+      "description": "Congo Business School recherche un enseignant vacataire pour animer des séminaires intensifs sur la gestion de paie et l'utilisation avancée d'Excel en entreprise.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        42,
+        64,
+        45
+      ],
+      "localisation": "Brazzaville, Centre-ville",
+      "nb_max_de_candidatures": 15,
+      "budget": "300000.00",
+      "date_debut": "2026-09-20",
+      "date_cloture": "2026-10-20",
+      "date_publication": "2026-08-30T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 8,
+    "fields": {
+      "institution_id": 91,
+      "titre": "Formateur Technique Électricité et Énergie Solaire",
+      "description": "Le Centre de Formation Excellence Congo cherche un technicien supérieur pour animer des ateliers pratiques d'installation électrique de bâtiment connectée à des systèmes d'énergie solaire.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        56,
+        95,
+        96
+      ],
+      "localisation": "Oyo",
+      "nb_max_de_candidatures": 20,
+      "budget": "400000.00",
+      "date_debut": "2026-10-10",
+      "date_cloture": "2026-10-25",
+      "date_publication": "2026-09-19T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 9,
+    "fields": {
+      "institution_id": 47,
+      "titre": "Formateur Fullstack Django & React",
+      "description": "Congo Digital Academy recherche un développeur Senior pour piloter notre cursus de développement web. Technologies clés à transmettre : Python, Django, React et bases de données PostgreSQL.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        1,
+        7,
+        8,
+        27,
+        2
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 35,
+      "budget": "700000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2027-01-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 10,
+    "fields": {
+      "institution_id": 45,
+      "titre": "Formateur en Artisanat : Haute Couture et Stylisme",
+      "description": "Le Groupe Savoir & Métiers recherche un professionnel de la mode pour dispenser un module avancé de stylisme, modélisme et techniques de couture professionnelle.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        88,
+        87
+      ],
+      "localisation": "Pointe-Noire, Tié-Tié",
+      "nb_max_de_candidatures": 12,
+      "budget": "280000.00",
+      "date_debut": "2026-11-01",
+      "date_cloture": "2026-12-01",
+      "date_publication": "2026-10-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 11,
+    "fields": {
+      "institution_id": 99,
+      "titre": "Formateur en Management d'Équipe & Leadership",
+      "description": "Le Centre de Perfectionnement Professionnel cherche un coach d'entreprise pour un séminaire intra-entreprise intensif sur le leadership et la gestion d'équipe.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        40,
+        41,
+        38
+      ],
+      "localisation": "Brazzaville, Centre-ville",
+      "nb_max_de_candidatures": 25,
+      "budget": "400000.00",
+      "date_debut": "2026-10-05",
+      "date_cloture": "2026-10-15",
+      "date_publication": "2026-09-14T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 12,
+    "fields": {
+      "institution_id": 95,
+      "titre": "Intervenant en Gouvernance et Management Stratégique",
+      "description": "Le Centre Congolais de Leadership recherche un formateur de haut niveau pour accompagner des cadres sur le développement personnel et la prise de parole.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        40,
+        100,
+        38
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 15,
+      "budget": "550000.00",
+      "date_debut": "2026-11-01",
+      "date_cloture": "2026-11-10",
+      "date_publication": "2026-10-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 13,
+    "fields": {
+      "institution_id": 93,
+      "titre": "Expert en Rédaction Web et Référencement SEO",
+      "description": "La Plateforme Africaine des Compétences lance un parcours certifiant en communication digitale et recherche son formateur expert SEO.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        36,
+        32,
+        37
+      ],
+      "localisation": "En ligne / Télétravail",
+      "nb_max_de_candidatures": 50,
+      "budget": "300000.00",
+      "date_debut": "2026-10-15",
+      "date_cloture": "2026-11-30",
+      "date_publication": "2026-09-24T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 14,
+    "fields": {
+      "institution_id": 89,
+      "titre": "Formateur en Création Graphique et Motion Design",
+      "description": "La Fondation Congo Jeunesse et Innovation recrute un créatif polyvalent pour former des jeunes boursiers sur After Effects et Illustrator.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        78,
+        18,
+        79
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 30,
+      "budget": "450000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-12-30",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 15,
+    "fields": {
+      "institution_id": 88,
+      "titre": "Enseignant en Gestion des Ressources Humaines & Recrutement",
+      "description": "L'Académie Supérieure de Management recherche un professionnel RH pour animer les cours du soir sur le recrutement et la gestion de paie.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        62,
+        63,
+        64
+      ],
+      "localisation": "Brazzaville, Makélékélé",
+      "nb_max_de_candidatures": 20,
+      "budget": "350000.00",
+      "date_debut": "2026-10-10",
+      "date_cloture": "2026-11-10",
+      "date_publication": "2026-09-19T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 16,
+    "fields": {
+      "institution_id": 87,
+      "titre": "Formateur Secrétariat Bureautique et Excel Avancé",
+      "description": "Le Centre Congolais de Développement des Compétences organise un recyclage pour des assistants administratifs.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        66,
+        45,
+        46
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 40,
+      "budget": "200000.00",
+      "date_debut": "2026-09-15",
+      "date_cloture": "2026-10-15",
+      "date_publication": "2026-08-25T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 17,
+    "fields": {
+      "institution_id": 86,
+      "titre": "Instructeur en Cloud Computing AWS & DevOps",
+      "description": "L'Institut des Métiers Numériques du Congo cherche un formateur pour enseigner l'architecture AWS et le déploiement Kubernetes.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        24,
+        23,
+        22
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 15,
+      "budget": "750000.00",
+      "date_debut": "2026-11-01",
+      "date_cloture": "2027-02-01",
+      "date_publication": "2026-10-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 18,
+    "fields": {
+      "institution_id": 50,
+      "titre": "Coach en Négociation Commerciale et Vente",
+      "description": "Le Centre d’Innovation et de Leadership recherche un formateur dynamique pour muscler les compétences en prospection et closing d'une équipe commerciale.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        61,
+        59,
+        60
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 25,
+      "budget": "320000.00",
+      "date_debut": "2026-10-12",
+      "date_cloture": "2026-10-26",
+      "date_publication": "2026-09-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 19,
+    "fields": {
+      "institution_id": 48,
+      "titre": "Formateur Backend PHP & Laravel / Symfony",
+      "description": "L'Entreprise Congo Solutions souhaite former ses développeurs juniors aux architectures MVC robustes en PHP basées sur des frameworks modernes.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        4,
+        26,
+        14
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 10,
+      "budget": "500000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-11-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 20,
+    "fields": {
+      "institution_id": 46,
+      "titre": "Intervenant en Droit du Travail Congolais",
+      "description": "L'Institut Supérieur de Gestion de Brazzaville recherche un juriste ou inspecteur du travail pour dispenser des cours de législation sociale.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        65,
+        62
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 12,
+      "budget": "400000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2027-01-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 21,
+    "fields": {
+      "institution_id": 44,
+      "titre": "Consultant en Télémédecine et Santé Numérique",
+      "description": "L'Association Santé Numérique Congo recherche un ingénieur ou professionnel de santé technique pour introduire les fondamentaux de la e-santé.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        21,
+        72,
+        51
+      ],
+      "localisation": "Oyo",
+      "nb_max_de_candidatures": 8,
+      "budget": "600000.00",
+      "date_debut": "2026-11-15",
+      "date_cloture": "2026-12-15",
+      "date_publication": "2026-10-25T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 22,
+    "fields": {
+      "institution_id": 43,
+      "titre": "Formateur en Techniques de Maintenance Informatique",
+      "description": "Le Centre de Formation Proxima ouvre un atelier pratique de réparation de PC, diagnostic système et administration réseau de premier niveau.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        57,
+        20,
+        60
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 20,
+      "budget": "250000.00",
+      "date_debut": "2026-09-25",
+      "date_cloture": "2026-10-25",
+      "date_publication": "2026-09-04T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 23,
+    "fields": {
+      "institution_id": 42,
+      "titre": "Formateur Ingénierie Pédagogique pour Formateurs",
+      "description": "Le Cabinet Excellence RH Congo recherche un andragogue pour professionnaliser des experts métiers qui veulent se lancer dans la formation.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        52,
+        51,
+        38
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 15,
+      "budget": "450000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-10-05",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 24,
+    "fields": {
+      "institution_id": 41,
+      "titre": "Formateur Applications Web Innovantes Node.js & Vue.js",
+      "description": "TechBridge Congo recrute un développeur JavaScript Senior pour animer un hackathon suivi d'un mois de formation intensive sur Node.js et Vue.js.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        10,
+        9,
+        2,
+        28
+      ],
+      "localisation": "Brazzaville, Talangaï",
+      "nb_max_de_candidatures": 30,
+      "budget": "650000.00",
+      "date_debut": "2026-10-20",
+      "date_cloture": "2026-11-20",
+      "date_publication": "2026-09-29T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 25,
+    "fields": {
+      "institution_id": 40,
+      "titre": "Formateur Community Management & Publicité Meta",
+      "description": "La Fondation Horizon Compétences recherche un intervenant expert pour apprendre aux étudiants à piloter des campagnes publicitaires Facebook et Google Ads.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        33,
+        34,
+        35,
+        31
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 40,
+      "budget": "350000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-11-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 26,
+    "fields": {
+      "institution_id": 39,
+      "titre": "Enseignant en Data Science et Power BI",
+      "description": "L'Université Nouvelle du Congo recherche un chargé de cours pratique pour son master en informatique décisionnelle (Business Intelligence et Tableau/Power BI).",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        72,
+        70,
+        71,
+        69
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 15,
+      "budget": "500000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2027-02-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 27,
+    "fields": {
+      "institution_id": 38,
+      "titre": "Spécialiste en Techniques Agricoles Modernes et Élevage",
+      "description": "Le Centre Africain de Formation et d’Innovation lance un programme rural visant à former les jeunes maraîchers aux méthodes d'agriculture moderne.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        90,
+        89
+      ],
+      "localisation": "Dolisie",
+      "nb_max_de_candidatures": 25,
+      "budget": "400000.00",
+      "date_debut": "2026-09-20",
+      "date_cloture": "2026-11-20",
+      "date_publication": "2026-08-30T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 28,
+    "fields": {
+      "institution_id": 37,
+      "titre": "Formateur en Gestion Hôtelière et Tourisme Local",
+      "description": "L'Académie Professionnelle de Pointe-Noire recherche un professionnel du secteur touristique pour une mise à niveau d'agents d'accueil.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        98,
+        99,
+        60
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 20,
+      "budget": "300000.00",
+      "date_debut": "2026-10-05",
+      "date_cloture": "2026-11-05",
+      "date_publication": "2026-09-14T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 29,
+    "fields": {
+      "institution_id": 36,
+      "titre": "Formateur Programmation Mobile et Web (Java / JS)",
+      "description": "L'Institut Congolais du Numérique recherche son formateur référent en algorithmique et développement orienté objet avec Java et JavaScript.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        3,
+        2,
+        11,
+        12
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 30,
+      "budget": "580000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2027-01-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 30,
+    "fields": {
+      "institution_id": 42,
+      "titre": "Formateur en Logistique de Stock et Approvisionnement",
+      "description": "Cabinet Excellence RH Congo recrute un consultant pour enseigner les techniques d'inventaire et les ERP logistiques à nos magasiniers.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        93,
+        91
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 15,
+      "budget": "280000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-10-20",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 31,
+    "fields": {
+      "institution_id": 90,
+      "titre": "Formateur Plomberie Moderne et Sanitaire",
+      "description": "L'Institut Technique de Pointe-Noire recherche un artisan qualifié pour dispenser un module de 2 mois 100% pratique sur le réseau sanitaire d'immeuble.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        97,
+        96
+      ],
+      "localisation": "Pointe-Noire, Tié-Tié",
+      "nb_max_de_candidatures": 20,
+      "budget": "320000.00",
+      "date_debut": "2026-10-15",
+      "date_cloture": "2026-12-15",
+      "date_publication": "2026-09-24T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 32,
+    "fields": {
+      "institution_id": 45,
+      "titre": "Formateur en Cuisine Professionnelle et Pâtisserie",
+      "description": "Le Groupe Savoir & Métiers recherche un chef cuisinier pour structurer le nouveau certificat de compétences en cuisine de restaurant et arts sucrés.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        82,
+        83
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 25,
+      "budget": "400000.00",
+      "date_debut": "2026-11-01",
+      "date_cloture": "2027-01-01",
+      "date_publication": "2026-10-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 33,
+    "fields": {
+      "institution_id": 89,
+      "titre": "Initiation à l'Animation 3D et Modélisation Blender",
+      "description": "La Fondation Congo Jeunesse et Innovation veut introduire l'univers de la 3D aux passionnés de jeux vidéo et d'effets visuels.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        81,
+        80,
+        79
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 30,
+      "budget": "500000.00",
+      "date_debut": "2026-11-01",
+      "date_cloture": "2027-01-15",
+      "date_publication": "2026-10-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 34,
+    "fields": {
+      "institution_id": 49,
+      "titre": "Formateur en Gestion Administrative et Archivage",
+      "description": "La Maison de l’Entrepreneuriat propose un atelier d'organisation administrative et d'archivage numérique des documents légaux.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        67,
+        68,
+        46
+      ],
+      "localisation": "Brazzaville, Ouenzé",
+      "nb_max_de_candidatures": 15,
+      "budget": "220000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-10-15",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 35,
+    "fields": {
+      "institution_id": 41,
+      "titre": "Initiation au Langage C++ et C# (.NET)",
+      "description": "TechBridge Congo recrute un enseignant d'algorithmie système pour aborder la programmation orientée objet bas niveau et le framework .NET.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        5,
+        6
+      ],
+      "localisation": "Pointe-Noire",
+      "nb_max_de_candidatures": 20,
+      "budget": "450000.00",
+      "date_debut": "2026-10-15",
+      "date_cloture": "2026-11-30",
+      "date_publication": "2026-09-24T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 36,
+    "fields": {
+      "institution_id": 94,
+      "titre": "Formateur en Audiovisuel: Photographie et Montage Vidéo",
+      "description": "L'Institut de Formation aux Métiers du Digital recherche son formateur technique pour apprendre la prise de vue réelle et le traitement d'image sur Premiere Pro.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        55,
+        54,
+        77,
+        17
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 35,
+      "budget": "480000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-11-15",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 37,
+    "fields": {
+      "institution_id": 99,
+      "titre": "Formateur Maquillage Professionnel et Coiffure",
+      "description": "Le Centre de Perfectionnement Professionnel cherche une esthéticienne-cosméticienne pour former un groupe de femmes artisanes.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        86,
+        85
+      ],
+      "localisation": "Brazzaville, Moungali",
+      "nb_max_de_candidatures": 15,
+      "budget": "300000.00",
+      "date_debut": "2026-10-10",
+      "date_cloture": "2026-11-10",
+      "date_publication": "2026-09-19T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 38,
+    "fields": {
+      "institution_id": 47,
+      "titre": "Formateur Langues Professionnelles : Anglais des Affaires",
+      "description": "Congo Digital Academy recherche un traducteur ou formateur bilingue pour préparer notre équipe technique à échanger avec des clients internationaux.",
+      "type_offre": "inter",
+      "statut": "publiee",
+      "competences": [
+        49,
+        48,
+        50
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 40,
+      "budget": "350000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-12-01",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 39,
+    "fields": {
+      "institution_id": 92,
+      "titre": "Formateur Microsoft Azure Cloud",
+      "description": "Congo Business School recherche un ingénieur certifié Microsoft Azure pour animer un module Cloud à destination de nos analystes métiers.",
+      "type_offre": "intra",
+      "statut": "publiee",
+      "competences": [
+        25,
+        69
+      ],
+      "localisation": "Brazzaville",
+      "nb_max_de_candidatures": 15,
+      "budget": "600000.00",
+      "date_debut": "2026-11-01",
+      "date_cloture": "2026-11-15",
+      "date_publication": "2026-10-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "offre.offre",
+    "pk": 40,
+    "fields": {
+      "institution_id": 42,
+      "titre": "Formateur en Maintenance Industrielle et Électricité",
+      "description": "Le Cabinet Excellence RH Congo recherche un technicien sénior pour animer un atelier de maintenance préventive d'équipements industriels.",
+      "type_offre": "mission_longue",
+      "statut": "publiee",
+      "competences": [
+        94,
+        96
+      ],
+      "localisation": "Pointe-Noire, Zone Industrielle",
+      "nb_max_de_candidatures": 20,
+      "budget": "500000.00",
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-11-30",
+      "date_publication": "2026-09-10T09:00:00Z"
+    }
+  }
+]

@@ -1,0 +1,903 @@
+[
+    {
+        "model": "core.competence",
+        "pk": 1,
+        "fields": {
+            "nom": "Python",
+            "slug": "python",
+            "categorie": "Programmation"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 2,
+        "fields": {
+            "nom": "JavaScript",
+            "slug": "javascript",
+            "categorie": "Programmation"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 3,
+        "fields": {
+            "nom": "Java",
+            "slug": "java",
+            "categorie": "Programmation"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 4,
+        "fields": {
+            "nom": "PHP",
+            "slug": "php",
+            "categorie": "Programmation"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 5,
+        "fields": {
+            "nom": "C++",
+            "slug": "cpp",
+            "categorie": "Programmation"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 6,
+        "fields": {
+            "nom": "C#",
+            "slug": "csharp",
+            "categorie": "Programmation"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 7,
+        "fields": {
+            "nom": "Django",
+            "slug": "django",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 8,
+        "fields": {
+            "nom": "React",
+            "slug": "react",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 9,
+        "fields": {
+            "nom": "Vue.js",
+            "slug": "vuejs",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 10,
+        "fields": {
+            "nom": "Node.js",
+            "slug": "nodejs",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 11,
+        "fields": {
+            "nom": "HTML",
+            "slug": "html",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 12,
+        "fields": {
+            "nom": "CSS",
+            "slug": "css",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 13,
+        "fields": {
+            "nom": "Tailwind CSS",
+            "slug": "tailwind-css",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 14,
+        "fields": {
+            "nom": "Bootstrap",
+            "slug": "bootstrap",
+            "categorie": "Développement Web"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 15,
+        "fields": {
+            "nom": "UI/UX Design",
+            "slug": "ui-ux-design",
+            "categorie": "Design"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 16,
+        "fields": {
+            "nom": "Figma",
+            "slug": "figma",
+            "categorie": "Design"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 17,
+        "fields": {
+            "nom": "Adobe Photoshop",
+            "slug": "adobe-photoshop",
+            "categorie": "Graphisme"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 18,
+        "fields": {
+            "nom": "Adobe Illustrator",
+            "slug": "adobe-illustrator",
+            "categorie": "Graphisme"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 19,
+        "fields": {
+            "nom": "Réseaux Cisco",
+            "slug": "reseaux-cisco",
+            "categorie": "Réseau"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 20,
+        "fields": {
+            "nom": "Administration Linux",
+            "slug": "administration-linux",
+            "categorie": "Système"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 21,
+        "fields": {
+            "nom": "Cybersécurité",
+            "slug": "cybersecurite",
+            "categorie": "Sécurité"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 22,
+        "fields": {
+            "nom": "Docker",
+            "slug": "docker",
+            "categorie": "DevOps"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 23,
+        "fields": {
+            "nom": "Kubernetes",
+            "slug": "kubernetes",
+            "categorie": "DevOps"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 24,
+        "fields": {
+            "nom": "AWS",
+            "slug": "aws",
+            "categorie": "Cloud"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 25,
+        "fields": {
+            "nom": "Microsoft Azure",
+            "slug": "microsoft-azure",
+            "categorie": "Cloud"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 26,
+        "fields": {
+            "nom": "MySQL",
+            "slug": "mysql",
+            "categorie": "Base de données"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 27,
+        "fields": {
+            "nom": "PostgreSQL",
+            "slug": "postgresql",
+            "categorie": "Base de données"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 28,
+        "fields": {
+            "nom": "MongoDB",
+            "slug": "mongodb",
+            "categorie": "Base de données"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 29,
+        "fields": {
+            "nom": "Machine Learning",
+            "slug": "machine-learning",
+            "categorie": "Intelligence Artificielle"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 30,
+        "fields": {
+            "nom": "Intelligence Artificielle",
+            "slug": "intelligence-artificielle",
+            "categorie": "Intelligence Artificielle"
+        }
+    }
+    ,
+    {
+        "model": "core.competence",
+        "pk": 31,
+        "fields": {
+            "nom": "Marketing Digital",
+            "slug": "marketing-digital",
+            "categorie": "Marketing"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 32,
+        "fields": {
+            "nom": "SEO",
+            "slug": "seo",
+            "categorie": "Marketing"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 33,
+        "fields": {
+            "nom": "Community Management",
+            "slug": "community-management",
+            "categorie": "Marketing"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 34,
+        "fields": {
+            "nom": "Publicité Facebook",
+            "slug": "publicite-facebook",
+            "categorie": "Marketing"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 35,
+        "fields": {
+            "nom": "Google Ads",
+            "slug": "google-ads",
+            "categorie": "Marketing"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 36,
+        "fields": {
+            "nom": "Rédaction Web",
+            "slug": "redaction-web",
+            "categorie": "Communication"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 37,
+        "fields": {
+            "nom": "Copywriting",
+            "slug": "copywriting",
+            "categorie": "Communication"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 38,
+        "fields": {
+            "nom": "Prise de parole en public",
+            "slug": "prise-de-parole-en-public",
+            "categorie": "Communication"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 39,
+        "fields": {
+            "nom": "Gestion de projet",
+            "slug": "gestion-de-projet",
+            "categorie": "Management"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 40,
+        "fields": {
+            "nom": "Leadership",
+            "slug": "leadership",
+            "categorie": "Management"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 41,
+        "fields": {
+            "nom": "Gestion d'équipe",
+            "slug": "gestion-dequipe",
+            "categorie": "Management"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 42,
+        "fields": {
+            "nom": "Comptabilité",
+            "slug": "comptabilite",
+            "categorie": "Finance"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 43,
+        "fields": {
+            "nom": "Analyse financière",
+            "slug": "analyse-financiere",
+            "categorie": "Finance"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 44,
+        "fields": {
+            "nom": "Gestion budgétaire",
+            "slug": "gestion-budgetaire",
+            "categorie": "Finance"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 45,
+        "fields": {
+            "nom": "Excel Avancé",
+            "slug": "excel-avance",
+            "categorie": "Bureautique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 46,
+        "fields": {
+            "nom": "Microsoft Word",
+            "slug": "microsoft-word",
+            "categorie": "Bureautique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 47,
+        "fields": {
+            "nom": "PowerPoint",
+            "slug": "powerpoint",
+            "categorie": "Bureautique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 48,
+        "fields": {
+            "nom": "Français",
+            "slug": "francais",
+            "categorie": "Langues"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 49,
+        "fields": {
+            "nom": "Anglais",
+            "slug": "anglais",
+            "categorie": "Langues"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 50,
+        "fields": {
+            "nom": "Espagnol",
+            "slug": "espagnol",
+            "categorie": "Langues"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 51,
+        "fields": {
+            "nom": "Pédagogie",
+            "slug": "pedagogie",
+            "categorie": "Enseignement"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 52,
+        "fields": {
+            "nom": "Ingénierie pédagogique",
+            "slug": "ingenierie-pedagogique",
+            "categorie": "Enseignement"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 53,
+        "fields": {
+            "nom": "Création de contenu",
+            "slug": "creation-de-contenu",
+            "categorie": "Création"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 54,
+        "fields": {
+            "nom": "Montage vidéo",
+            "slug": "montage-video",
+            "categorie": "Audiovisuel"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 55,
+        "fields": {
+            "nom": "Photographie",
+            "slug": "photographie",
+            "categorie": "Audiovisuel"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 56,
+        "fields": {
+            "nom": "Électricité bâtiment",
+            "slug": "electricite-batiment",
+            "categorie": "Technique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 57,
+        "fields": {
+            "nom": "Maintenance informatique",
+            "slug": "maintenance-informatique",
+            "categorie": "Technique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 58,
+        "fields": {
+            "nom": "Entrepreneuriat",
+            "slug": "entrepreneuriat",
+            "categorie": "Business"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 59,
+        "fields": {
+            "nom": "Vente",
+            "slug": "vente",
+            "categorie": "Commerce"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 60,
+        "fields": {
+            "nom": "Service client",
+            "slug": "service-client",
+            "categorie": "Commerce"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 61,
+        "fields": {
+            "nom": "Négociation commerciale",
+            "slug": "negociation-commerciale",
+            "categorie": "Commerce"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 62,
+        "fields": {
+            "nom": "Gestion des ressources humaines",
+            "slug": "gestion-des-ressources-humaines",
+            "categorie": "Ressources Humaines"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 63,
+        "fields": {
+            "nom": "Recrutement",
+            "slug": "recrutement",
+            "categorie": "Ressources Humaines"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 64,
+        "fields": {
+            "nom": "Gestion de paie",
+            "slug": "gestion-de-paie",
+            "categorie": "Ressources Humaines"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 65,
+        "fields": {
+            "nom": "Droit du travail",
+            "slug": "droit-du-travail",
+            "categorie": "Juridique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 66,
+        "fields": {
+            "nom": "Secrétariat bureautique",
+            "slug": "secretariat-bureautique",
+            "categorie": "Administration"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 67,
+        "fields": {
+            "nom": "Gestion administrative",
+            "slug": "gestion-administrative",
+            "categorie": "Administration"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 68,
+        "fields": {
+            "nom": "Archivage numérique",
+            "slug": "archivage-numerique",
+            "categorie": "Administration"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 69,
+        "fields": {
+            "nom": "Analyse de données",
+            "slug": "analyse-de-donnees",
+            "categorie": "Data"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 70,
+        "fields": {
+            "nom": "Power BI",
+            "slug": "power-bi",
+            "categorie": "Data"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 71,
+        "fields": {
+            "nom": "Tableau",
+            "slug": "tableau",
+            "categorie": "Data"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 72,
+        "fields": {
+            "nom": "Data Science",
+            "slug": "data-science",
+            "categorie": "Data"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 73,
+        "fields": {
+            "nom": "Deep Learning",
+            "slug": "deep-learning",
+            "categorie": "Intelligence Artificielle"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 74,
+        "fields": {
+            "nom": "Traitement du langage naturel",
+            "slug": "traitement-langage-naturel",
+            "categorie": "Intelligence Artificielle"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 75,
+        "fields": {
+            "nom": "Computer Vision",
+            "slug": "computer-vision",
+            "categorie": "Intelligence Artificielle"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 76,
+        "fields": {
+            "nom": "Canva",
+            "slug": "canva",
+            "categorie": "Design"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 77,
+        "fields": {
+            "nom": "Adobe Premiere Pro",
+            "slug": "adobe-premiere-pro",
+            "categorie": "Audiovisuel"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 78,
+        "fields": {
+            "nom": "After Effects",
+            "slug": "after-effects",
+            "categorie": "Audiovisuel"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 79,
+        "fields": {
+            "nom": "Motion Design",
+            "slug": "motion-design",
+            "categorie": "Audiovisuel"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 80,
+        "fields": {
+            "nom": "Animation 3D",
+            "slug": "animation-3d",
+            "categorie": "Audiovisuel"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 81,
+        "fields": {
+            "nom": "Blender",
+            "slug": "blender",
+            "categorie": "Audiovisuel"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 82,
+        "fields": {
+            "nom": "Cuisine professionnelle",
+            "slug": "cuisine-professionnelle",
+            "categorie": "Restauration"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 83,
+        "fields": {
+            "nom": "Pâtisserie",
+            "slug": "patisserie",
+            "categorie": "Restauration"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 84,
+        "fields": {
+            "nom": "Nutrition",
+            "slug": "nutrition",
+            "categorie": "Santé"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 85,
+        "fields": {
+            "nom": "Coiffure",
+            "slug": "coiffure",
+            "categorie": "Beauté"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 86,
+        "fields": {
+            "nom": "Maquillage professionnel",
+            "slug": "maquillage-professionnel",
+            "categorie": "Beauté"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 87,
+        "fields": {
+            "nom": "Stylisme",
+            "slug": "stylisme",
+            "categorie": "Mode"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 88,
+        "fields": {
+            "nom": "Couture",
+            "slug": "couture",
+            "categorie": "Mode"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 89,
+        "fields": {
+            "nom": "Élevage",
+            "slug": "elevage",
+            "categorie": "Agriculture"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 90,
+        "fields": {
+            "nom": "Agriculture moderne",
+            "slug": "agriculture-moderne",
+            "categorie": "Agriculture"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 91,
+        "fields": {
+            "nom": "Gestion logistique",
+            "slug": "gestion-logistique",
+            "categorie": "Logistique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 92,
+        "fields": {
+            "nom": "Transit et douane",
+            "slug": "transit-et-douane",
+            "categorie": "Logistique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 93,
+        "fields": {
+            "nom": "Gestion des stocks",
+            "slug": "gestion-des-stocks",
+            "categorie": "Logistique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 94,
+        "fields": {
+            "nom": "Maintenance industrielle",
+            "slug": "maintenance-industrielle",
+            "categorie": "Industrie"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 95,
+        "fields": {
+            "nom": "Énergie solaire",
+            "slug": "energie-solaire",
+            "categorie": "Énergie"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 96,
+        "fields": {
+            "nom": "Installation électrique",
+            "slug": "installation-electrique",
+            "categorie": "Technique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 97,
+        "fields": {
+            "nom": "Plomberie",
+            "slug": "plomberie",
+            "categorie": "Technique"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 98,
+        "fields": {
+            "nom": "Gestion hôtelière",
+            "slug": "gestion-hoteliere",
+            "categorie": "Hôtellerie"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 99,
+        "fields": {
+            "nom": "Tourisme",
+            "slug": "tourisme",
+            "categorie": "Hôtellerie"
+        }
+    },
+    {
+        "model": "core.competence",
+        "pk": 100,
+        "fields": {
+            "nom": "Développement personnel",
+            "slug": "developpement-personnel",
+            "categorie": "Coaching"
+        }
+    }
+]

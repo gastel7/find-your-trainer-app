@@ -1,0 +1,150 @@
+{% load static %}
+
+<div class="inst-detail-page">
+
+    <a href="{% url 'account:institutions_list' %}" class="inst-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Toutes les institutions
+    </a>
+
+    <div class="inst-detail-grid">
+
+        <div class="inst-detail-main">
+
+            <div class="inst-detail-header">
+                <div class="inst-avatar inst-avatar-lg">
+                    {% if institution.user.profile_picture %}
+                        <img src="{{ institution.user.profile_picture.url }}" alt="{{ institution.nom_organisation }}">
+                    {% else %}
+                        {{ institution.nom_organisation|slice:":2"|upper }}
+                    {% endif %}
+                </div>
+
+                <div>
+                    <h1 class="inst-detail-name">
+                        {{ institution.nom_organisation }}
+                        {% if institution.is_verified %}
+                            <span class="inst-detail-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                     viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                                </svg>
+                                Vérifié
+                            </span>
+                        {% endif %}
+                    </h1>
+
+                    {% if institution.secteur %}
+                        <p class="inst-detail-secteur">{{ institution.secteur }}</p>
+                    {% endif %}
+
+                    <div class="inst-detail-meta">
+                        {% if institution.localisation_institution %}
+                        <span class="inst-meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            {{ institution.localisation_institution }}
+                        </span>
+                        {% endif %}
+
+                        {% if institution.taille_effectif %}
+                        <span class="inst-meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            {{ institution.taille_effectif }}
+                        </span>
+                        {% endif %}
+
+                        {% if institution.site_web %}
+                        <a href="{{ institution.site_web }}" target="_blank" rel="noopener" class="inst-meta-item inst-meta-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/>
+                            </svg>
+                            {{ institution.site_web }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <section class="inst-detail-section">
+                <h2>À propos</h2>
+                <p>{{ institution.description|default:"Aucune description disponible pour le moment." }}</p>
+            </section>
+
+            {% if besoins_tags %}
+            <section class="inst-detail-section">
+                <h2>Besoins en formation</h2>
+                <div class="inst-tags">
+                    {% for tag in besoins_tags %}
+                        <span class="inst-tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+        </div>
+
+        <aside class="inst-detail-sidebar">
+            <p class="inst-sidebar-eyebrow">Offres ouvertes</p>
+            <p class="inst-sidebar-count">{{ offres_ouvertes }}</p>
+
+            <a href="{% url 'offre:offres_list' %}?institution={{ institution.pk }}" class="inst-btn inst-btn-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 7h-3a2 2 0 0 1-2-2V2"/><path d="M9 22V12h6v10"/>
+                    <path d="M4 7h16v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                </svg>
+                Voir les offres
+            </a>
+
+            <a href="{% url 'chat:chat_room' institution.user.pk %}" class="inst-btn inst-btn-accent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                Contacter
+            </a>
+
+            <div class="inst-sidebar-divider"></div>
+
+            <div class="inst-sidebar-info">
+                {% if institution.secteur %}
+                <div class="inst-sidebar-row">
+                    <span>Secteur</span>
+                    <strong>{{ institution.secteur }}</strong>
+                </div>
+                {% endif %}
+                {% if institution.taille_effectif %}
+                <div class="inst-sidebar-row">
+                    <span>Taille</span>
+                    <strong>{{ institution.taille_effectif }}</strong>
+                </div>
+                {% endif %}
+                {% if institution.site_web %}
+                <div class="inst-sidebar-row">
+                    <span>Site web</span>
+                    <strong><a href="{{ institution.site_web }}" target="_blank" rel="noopener">{{ institution.site_web }}</a></strong>
+                </div>
+                {% endif %}
+            </div>
+        </aside>
+
+    </div>
+</div>

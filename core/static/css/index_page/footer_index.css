@@ -1,0 +1,119 @@
+footer {
+    border-top: solid 1px #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.footer_nav_links, .footer_copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: #ccc solid 1px;
+
+}
+
+.footer_nav_links_content{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 380px 1fr 1fr;
+    gap: 160px;
+    align-items: center;
+    
+    /* padding: 56px 32px 56px 50px; */
+    padding: 45px 0;
+}
+
+
+
+
+.footer_container_logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer_container_logo svg{
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    background: linear-gradient(to left, #091123, #4a6ab6);
+}
+
+
+.footer_nav_links strong#footer-logo-text{
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #000;
+}
+
+.footer_nav_links h3{
+    color: #000;
+    font-size: 1.12em;
+    font-weight: 700;
+}
+
+
+.footer_nav_links p{
+    color: #555;
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+.footer_nav_links p a{
+    color: #555;
+    text-decoration: none;
+}
+
+.footer_nav_links p a:hover{
+    color: #000;
+}
+
+.footer_copyright_content{
+    text-align: center;
+    color: #555;
+    font-size: 0.89em;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    /* padding: 0 50px; */
+}
+
+.footer_copyright{
+    border-bottom: none;
+    padding-bottom: 30px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   DARK MODE
+══════════════════════════════════════════════════════════════════ */
+
+body.dark footer {
+    background-color: #0b0e14;
+    border-top-color: #242f41;
+}
+
+body.dark .footer_nav_links,
+body.dark .footer_copyright {
+    border-bottom-color: #242f41;
+}
+
+body.dark .footer_nav_links strong#footer-logo-text,
+body.dark .footer_nav_links h3 {
+    color: #f9fafb;
+}
+
+body.dark .footer_nav_links p,
+body.dark .footer_nav_links p a,
+body.dark .footer_copyright_content {
+    color: #8f9cae;
+}
+
+body.dark .footer_nav_links p a:hover {
+    color: #f9fafb;
+}

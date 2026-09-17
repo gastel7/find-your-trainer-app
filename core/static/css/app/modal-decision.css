@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════════════════
+   modal-decision.css
+   Modal de décision des candidatures (accepter / refuser / retirer)
+   À lier dans les templates candidatures_recues.html et mes_candidatures.html
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── Overlay — caché par défaut ──────────────────────────────────── */
+#decisionModal.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: none;                /* CACHÉ par défaut */
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+#decisionModal.modal-overlay.show {
+    display: flex;                /* VISIBLE quand .show est ajouté en JS */
+}
+
+/* ── Boîte modale ────────────────────────────────────────────────── */
+#decisionModal .custom-modal {
+    background: var(--bg-card, #fff);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    overflow: hidden;
+}
+
+/* ── Header ──────────────────────────────────────────────────────── */
+#decisionModal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border, #e5e7eb);
+}
+
+#decisionModal .modal-header h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary, #111);
+}
+
+#decisionModal .close-modal {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text-muted, #6b7280);
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: background .15s;
+}
+
+#decisionModal .close-modal:hover {
+    background: var(--bg-hover, #f3f4f6);
+}
+
+/* ── Corps ───────────────────────────────────────────────────────── */
+#decisionModal .modal-body {
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#decisionModal #decisionQuestion {
+    font-size: .9rem;
+    color: var(--text-secondary, #374151);
+    margin: 0;
+}
+
+#decisionModal .form-group label {
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--text-primary, #111);
+    display: block;
+    margin-bottom: 6px;
+}
+
+#decisionModal .form-control {
+    width: 100%;
+    background: var(--bg-input, #fff);
+    border: 1.5px solid var(--border, #e5e7eb);
+    color: var(--text-primary, #111);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: .875rem;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    transition: border-color .15s;
+}
+
+#decisionModal .form-control:focus { border-color: #6366f1; }
+
+/* ── Avertissement ───────────────────────────────────────────────── */
+#decisionModal .warning-box {
+    background: rgba(245, 158, 11, 0.10);
+    border: 1px solid rgba(245, 158, 11, 0.30);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: .82rem;
+    color: #b45309;
+}
+
+body.dark #decisionModal .warning-box {
+    color: #f59e0b;
+}
+
+/* ── Actions ─────────────────────────────────────────────────────── */
+#decisionModal .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#decisionModal .btn-cancel {
+    padding: 9px 18px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border, #e5e7eb);
+    background: none;
+    color: var(--text-primary, #111);
+    font-size: .875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+#decisionModal .btn-cancel:hover { background: var(--bg-hover, #f3f4f6); }
+
+#decisionModal .btn-confirm-delete,
+#decisionModal #decisionConfirmButton {
+    padding: 9px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #1e1b5e;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity .15s;
+}
+
+#decisionModal .btn-confirm-delete:hover,
+#decisionModal #decisionConfirmButton:hover { opacity: .88; }

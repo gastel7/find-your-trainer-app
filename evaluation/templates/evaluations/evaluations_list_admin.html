@@ -1,0 +1,133 @@
+{% extends "core/app/dashboard.html" %}
+{% load static %}
+
+{% block page_name %}<span class="page_name">Évaluations</span>{% endblock %}
+
+{% block main %}
+    <main style="padding-bottom: 50px;">
+
+        <section class="page-head">
+            <div>
+                <div class="eyebrow">Réputation</div>
+                <h1>Évaluations de la plateforme</h1>
+                <p class="subtitle">
+                    Vue d'ensemble des avis reçus par les formateurs et institutions.
+                    {% if total_utilisateurs_evalues %}
+                        {{ total_utilisateurs_evalues }} utilisateur{{ total_utilisateurs_evalues|pluralize }} évalué{{ total_utilisateurs_evalues|pluralize }}.
+                    {% endif %}
+                </p>
+            </div>
+        </section>
+
+        <section class="view">
+            <div class="card">
+                <div class="card-head">
+                    <h2>Utilisateurs évalués</h2>
+                    <span class="chip">{{ total_utilisateurs_evalues }} au total</span>
+                </div>
+
+                <div class="eval-admin-filters">
+                    <a class="filter {% if not note_filter %}active{% endif %}" href="{% url 'evaluation:evaluations_list' %}">Tous</a>
+                    <a class="filter {% if note_filter == 'non_note' %}active{% endif %}" href="?note=non_note">Non notés</a>
+                    <a class="filter {% if note_filter == '1-2' %}active{% endif %}" href="?note=1-2">Entre 1 et 2</a>
+                    <a class="filter {% if note_filter == '2-3' %}active{% endif %}" href="?note=2-3">Entre 2 et 3</a>
+                    <a class="filter {% if note_filter == '3-4' %}active{% endif %}" href="?note=3-4">Entre 3 et 4</a>
+                    <a class="filter {% if note_filter == '4-5' %}active{% endif %}" href="?note=4-5">Entre 4 et 5</a>
+                </div>
+
+                {% if utilisateurs_evalues %}
+                <ul class="eval-admin-list">
+                    {% for u in utilisateurs_evalues %}
+                    <li class="eval-admin-item">
+                        <div class="avatar" style="--c:#6366f1">
+                            {% if u.first_name %}{{ u.first_name|slice:":1"|upper }}{{ u.last_name|slice:":1"|upper }}{% else %}{{ u.username|slice:":2"|upper }}{% endif %}
+                        </div>
+
+                        <div class="eval-admin-meta">
+                            <span class="eval-admin-name">
+                                {% if u.first_name %}{{ u.first_name }} {{ u.last_name }}{% else %}{{ u.username }}{% endif %}
+                            </span>
+                            <span class="eval-admin-role">
+                                {% if u.role == 'formateur' %}Formateur
+                                {% elif u.role == 'institution' %}Institution
+                                {% else %}{{ u.role }}
+                                {% endif %}
+                            </span>
+                        </div>
+
+                        <div class="eval-admin-stars">
+                            {% with u.note_moyenne|floatformat:"0"|add:"0" as note_int %}
+                                {% for i in "12345" %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        {% if forloop.counter <= note_int %}
+                                            fill="#f59e0b" stroke="#f59e0b"
+                                        {% else %}
+                                            fill="none" stroke="#d1d5db"
+                                        {% endif %}
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                    </svg>
+                                {% endfor %}
+                            {% endwith %}
+                            <span class="eval-admin-note">{{ u.note_moyenne }}/5</span>
+                        </div>
+
+                        <span class="eval-admin-count">{{ u.nombre_avis }} avis</span>
+
+                        {% if u.role == 'formateur' %}
+                            <a class="eval-admin-link" href="{% url 'account:detail_formateur' u.id %}">Voir le profil →</a>
+                        {% elif u.role == 'institution' %}
+                            <a class="eval-admin-link" href="{% url 'account:detail_institution' u.id %}">Voir le profil →</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="empty-state">Aucune évaluation n'a encore été laissée sur la plateforme.</p>
+                {% endif %}
+
+                {% include 'core/partials/pagination.html' %}
+            </div>
+        </section>
+    </main>
+
+<style>
+.eval-admin-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.eval-admin-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.eval-admin-filters .filter {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border, #e5e7eb);
+    font-size: .8rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .15s;
+}
+.eval-admin-item {
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--border, #f0f0f0);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.eval-admin-item:last-child { border-bottom: none; }
+.eval-admin-meta { display: flex; flex-direction: column; gap: 2px; min-width: 160px; }
+.eval-admin-name { font-size: .9rem; font-weight: 600; color: var(--text-primary,#111); }
+.eval-admin-role { font-size: .75rem; color: var(--text-muted,#6b7280); }
+.eval-admin-stars { display: flex; align-items: center; gap: 2px; }
+.eval-admin-note { font-size: .8rem; font-weight: 600; color: var(--text-primary,#111); margin-left: 6px; }
+.eval-admin-count { font-size: .8rem; color: var(--text-muted,#6b7280); margin-left: auto; }
+.eval-admin-link {
+    font-size: .8rem;
+    font-weight: 600;
+    color: #6366f1;
+    text-decoration: none;
+}
+.eval-admin-link:hover { opacity: .75; }
+</style>
+
+{% endblock %}

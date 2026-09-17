@@ -1,0 +1,21 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %}{{ institution.nom_organisation }}{% endblock %}
+
+{% block page_name %}
+    <a href="{% url 'account:institutions_list' %}" class="page_name_link">Institutions</a>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    <span class="page_name">{{ institution.nom_organisation }}</span>
+{% endblock %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/account/institutions.css' %}">
+{% endblock %}
+
+{% block main %}
+<main class="page">
+    {% include 'account/app/shared/institution_detail_content.html' %}
+</main>
+{% endblock %}

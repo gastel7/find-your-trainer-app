@@ -1,0 +1,416 @@
+{% load static %}
+{% load humanize %}
+
+<div class="db-page">
+
+    <!-- ── En-tête ──────────────────────────────────────────────── -->
+    <div class="db-page-head">
+        <div>
+            <p class="db-eyebrow">Mon espace</p>
+            <h1 class="db-title">
+                Bonjour{% if user.first_name %}, {{ user.first_name }}{% endif %} 👋
+            </h1>
+            <p class="db-subtitle">Voici un aperçu de votre activité.</p>
+        </div>
+    </div>
+
+
+    {# ═══════════════════════ VUE FORMATEUR ══════════════════════ #}
+    {% if role_actif == 'formateur' %}
+
+    <!-- Stats -->
+    <div class="db-stats-grid">
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#6366f1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">{{ nb_candidatures }}</div>
+            <div class="db-stat-label">Candidatures envoyées</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#f59e0b">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">{{ messages_non_lus }}</div>
+            <div class="db-stat-label">Messages non lus</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#ec4899">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">
+                {% if note_moyenne %}{{ note_moyenne }}{% else %}—{% endif %}
+            </div>
+            <div class="db-stat-label">
+                Note moyenne
+                {% if nb_avis %}<span class="db-chip">{{ nb_avis }} avis</span>{% endif %}
+            </div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#14b8a6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">{{ formations|length }}</div>
+            <div class="db-stat-label">Formations publiées</div>
+        </article>
+
+    </div>
+
+    <!-- Grille principale -->
+    <div class="db-grid-3">
+
+        <!-- Candidatures (large) -->
+        <article class="db-card db-span-2">
+            <div class="db-card-head">
+                <h2>Mes candidatures</h2>
+                <a href="{% url 'candidature:mes_candidatures' %}" class="db-ghost-link">Voir tout →</a>
+            </div>
+
+            {% if candidatures %}
+            <ul class="db-row-list">
+                {% for candidature in candidatures %}
+                <li class="db-row">
+                    <span class="db-dot" style="
+                        {% if candidature.statut == 'en_attente' %}--c:#f59e0b
+                        {% elif candidature.statut == 'acceptee' %}--c:#16a34a
+                        {% elif candidature.statut == 'refusee' %}--c:#dc2626
+                        {% else %}--c:#6b7280{% endif %}
+                    "></span>
+                    <div class="db-row-main">
+                        <div class="db-row-title">{{ candidature.offre.titre }}</div>
+                        <div class="db-row-sub">
+                            {% if candidature.offre.institution_id %}
+                                {{ candidature.offre.institution_id.nom_organisation }} •
+                            {% endif %}
+                            {{ candidature.date_candidature|timesince }} ago
+                        </div>
+                    </div>
+                    <span class="db-badge" style="
+                        {% if candidature.statut == 'en_attente' %}--c:#f59e0b
+                        {% elif candidature.statut == 'acceptee' %}--c:#16a34a
+                        {% elif candidature.statut == 'refusee' %}--c:#dc2626
+                        {% else %}--c:#6b7280{% endif %}
+                    ">{{ candidature.get_statut_display }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="db-empty">Aucune candidature pour le moment. <a href="{% url 'offre:offres_list' %}">Voir les offres →</a></p>
+            {% endif %}
+        </article>
+
+        <!-- Messagerie -->
+        <article class="db-card">
+            <div class="db-card-head">
+                <h2>Messagerie</h2>
+                <a href="{% url 'chat:index' %}" class="db-ghost-link">Ouvrir →</a>
+            </div>
+
+            {% if conversations %}
+            <ul class="db-msg-list">
+                {% for msg in conversations %}
+                <li class="db-msg">
+                    <div class="db-avatar" style="--c:#6366f1">
+                        {{ msg.expediteur_id.first_name|slice:":1"|upper }}{{ msg.expediteur_id.last_name|slice:":1"|upper }}
+                    </div>
+                    <div class="db-msg-body">
+                        <div class="db-msg-top">
+                            <span class="db-msg-name">
+                                {{ msg.expediteur_id.first_name }} {{ msg.expediteur_id.last_name }}
+                            </span>
+                            <span class="db-msg-time">{{ msg.date_envoi|timesince }}</span>
+                        </div>
+                        <div class="db-msg-text">{{ msg.contenu|truncatechars:50 }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="db-empty">Aucun message reçu.</p>
+            {% endif %}
+        </article>
+
+    </div>
+
+    <!-- Grille secondaire -->
+    <div class="db-grid-2">
+
+        <!-- Formations -->
+        <article class="db-card">
+            <div class="db-card-head">
+                <h2>Mes formations</h2>
+                <a href="{% url 'formation:formations_list' %}" class="db-ghost-link">Voir tout →</a>
+            </div>
+
+            {% if formations %}
+            <ul class="db-row-list">
+                {% for formation in formations %}
+                <li class="db-row">
+                    <div class="db-row-main">
+                        <div class="db-row-title">{{ formation.titre }}</div>
+                        <div class="db-row-sub">
+                            {{ formation.nb_inscrits }} inscrit{{ formation.nb_inscrits|pluralize }}
+                            • {{ formation.places_restantes }} place{{ formation.places_restantes|pluralize }} restante{{ formation.places_restantes|pluralize }}
+                        </div>
+                    </div>
+                    <span class="db-pill {% if formation.est_terminee %}{% else %}db-pill-active{% endif %}">
+                        {% if formation.est_terminee %}Terminée{% else %}Active{% endif %}
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="db-empty">Aucune formation publiée. <a href="{% url 'formation:publier_formation' %}">En créer une →</a></p>
+            {% endif %}
+        </article>
+
+        <!-- Prochaine mission -->
+        {% if prochaine_mission %}
+        <article class="db-card db-hero-card">
+            <div class="db-halo"></div>
+            <div class="db-hero-inner">
+                <div class="db-hero-ico">📅</div>
+                <h3>Prochaine mission</h3>
+                <p>{{ prochaine_mission.offre.titre }}
+                    {% if prochaine_mission.offre.institution_id %}
+                        • {{ prochaine_mission.offre.institution_id.nom_organisation }}
+                    {% endif %}
+                    {% if prochaine_mission.offre.date_debut %}
+                        • {{ prochaine_mission.offre.date_debut|date:"d/m/Y" }}
+                    {% endif %}
+                </p>
+                {% if jours_avant_mission is not None %}
+                <div class="db-hero-big">{{ jours_avant_mission }} j</div>
+                <p class="db-hero-small">avant le démarrage</p>
+                {% endif %}
+            </div>
+        </article>
+        {% else %}
+        <article class="db-card db-hero-card">
+            <div class="db-halo"></div>
+            <div class="db-hero-inner">
+                <div class="db-hero-ico">🎯</div>
+                <h3>Trouvez votre prochaine mission</h3>
+                <p>Parcourez les offres et candidatez dès maintenant.</p>
+                <a href="{% url 'offre:offres_list' %}" class="db-btn-accent">Voir les offres</a>
+            </div>
+        </article>
+        {% endif %}
+
+    </div>
+
+
+    {# ══════════════════════ VUE INSTITUTION ══════════════════════ #}
+    {% elif role_actif == 'institution' %}
+
+    <!-- Stats -->
+    <div class="db-stats-grid">
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#6366f1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">{{ nb_offres }}</div>
+            <div class="db-stat-label">Offres publiées</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#f59e0b">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">{{ nb_candidatures_recues }}</div>
+            <div class="db-stat-label">Candidatures reçues</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#16a34a">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">{{ nb_missions_actives }}</div>
+            <div class="db-stat-label">Missions actives</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top">
+                <div class="db-stat-icon" style="--c:#21b8a6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+            </div>
+            <div class="db-stat-value">{{ messages_non_lus }}</div>
+            <div class="db-stat-label">Messages non lus</div>
+        </article>
+
+    </div>
+
+    <div class="db-grid-3">
+
+        <!-- Offres actives (large) -->
+        <article class="db-card db-span-2">
+            <div class="db-card-head">
+                <h2>Mes offres actives</h2>
+                <a href="{% url 'offre:ajouter_offre' %}" class="db-btn-dark">+ Nouvelle offre</a>
+            </div>
+
+            {% if offres %}
+            <ul class="db-row-list">
+                {% for offre in offres %}
+                <li class="db-row db-row-offer">
+                    <div class="db-row-main">
+                        <div class="db-row-title">{{ offre.titre }}</div>
+                        <div class="db-row-sub">
+                            {{ offre.candidatures.count }} candidature{{ offre.candidatures.count|pluralize }}
+                            {% if offre.date_cloture %} • Clôture le {{ offre.date_cloture|date:"d/m/Y" }}{% endif %}
+                        </div>
+                    </div>
+                    <span class="db-pill {% if offre.statut == 'publiee' %}db-pill-active{% endif %}">
+                        {{ offre.get_statut_display }}
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="db-empty">Aucune offre publiée. <a href="{% url 'offre:ajouter_offre' %}">Créer une offre →</a></p>
+            {% endif %}
+        </article>
+
+        <!-- Messagerie -->
+        <article class="db-card">
+            <div class="db-card-head">
+                <h2>Messagerie</h2>
+                <a href="{% url 'chat:index' %}" class="db-ghost-link">Ouvrir →</a>
+            </div>
+
+            {% if conversations %}
+            <ul class="db-msg-list">
+                {% for msg in conversations %}
+                <li class="db-msg">
+                    <div class="db-avatar" style="--c:#f59e0b">
+                        {{ msg.expediteur_id.first_name|slice:":1"|upper }}{{ msg.expediteur_id.last_name|slice:":1"|upper }}
+                    </div>
+                    <div class="db-msg-body">
+                        <div class="db-msg-top">
+                            <span class="db-msg-name">
+                                {{ msg.expediteur_id.first_name }} {{ msg.expediteur_id.last_name }}
+                            </span>
+                            <span class="db-msg-time">{{ msg.date_envoi|timesince }}</span>
+                        </div>
+                        <div class="db-msg-text">{{ msg.contenu|truncatechars:50 }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="db-empty">Aucun message reçu.</p>
+            {% endif %}
+        </article>
+    </div>
+
+    <!-- CTA large -->
+    <article class="db-card db-hero-card db-hero-wide">
+        <div class="db-halo db-halo-accent"></div>
+        <div class="db-hero-wide-inner">
+            <div>
+                <h3>Besoin d'un formateur rapidement ?</h3>
+                <p>Publiez une nouvelle offre et recevez vos premières candidatures sous 24h.</p>
+            </div>
+            <a href="{% url 'offre:ajouter_offre' %}" class="db-btn-accent">Publier une offre</a>
+        </div>
+    </article>
+
+
+    {# ═══════════════════════ VUE ADMIN ══════════════════════════ #}
+    {% else %}
+
+    <div class="db-stats-grid">
+
+        <article class="db-stat-card">
+            <div class="db-stat-top"><div class="db-stat-icon" style="--c:#6366f1">👨‍🏫</div></div>
+            <div class="db-stat-value">{{ nb_formateurs }}</div>
+            <div class="db-stat-label">Formateurs</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top"><div class="db-stat-icon" style="--c:#f59e0b">🏢</div></div>
+            <div class="db-stat-value">{{ nb_institutions }}</div>
+            <div class="db-stat-label">Institutions</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top"><div class="db-stat-icon" style="--c:#14b8a6">📄</div></div>
+            <div class="db-stat-value">{{ nb_offres }}</div>
+            <div class="db-stat-label">Offres publiées</div>
+        </article>
+
+        <article class="db-stat-card">
+            <div class="db-stat-top"><div class="db-stat-icon" style="--c:#ec4899">📚</div></div>
+            <div class="db-stat-value">{{ nb_formations }}</div>
+            <div class="db-stat-label">Formations</div>
+        </article>
+
+    </div>
+
+    <div class="db-grid-2">
+
+        <article class="db-card">
+            <div class="db-card-head">
+                <h2>Derniers formateurs inscrits</h2>
+                <a href="{% url 'account:formateurs_list' %}" class="db-ghost-link">Voir tout →</a>
+            </div>
+            <ul class="db-msg-list">
+                {% for f in derniers_formateurs %}
+                <li class="db-msg">
+                    <div class="db-avatar" style="--c:#6366f1">
+                        {{ f.user.first_name|slice:":1"|upper }}{{ f.user.last_name|slice:":1"|upper }}
+                    </div>
+                    <div class="db-msg-body">
+                        <div class="db-msg-name">{{ f.user.first_name }} {{ f.user.last_name }}</div>
+                        <div class="db-msg-text">{{ f.titre_professionnel|default:"—" }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </article>
+
+        <article class="db-card">
+            <div class="db-card-head">
+                <h2>Dernières offres publiées</h2>
+                <a href="{% url 'offre:offres_list' %}" class="db-ghost-link">Voir tout →</a>
+            </div>
+            <ul class="db-row-list">
+                {% for offre in dernieres_offres %}
+                <li class="db-row">
+                    <div class="db-row-main">
+                        <div class="db-row-title">{{ offre.titre }}</div>
+                        <div class="db-row-sub">{{ offre.institution_id.nom_organisation }}</div>
+                    </div>
+                    <span class="db-pill {% if offre.statut == 'publiee' %}db-pill-active{% endif %}">
+                        {{ offre.get_statut_display }}
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </article>
+
+    </div>
+
+    {% endif %}
+
+</div>

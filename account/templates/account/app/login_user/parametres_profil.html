@@ -1,0 +1,469 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %} Paramètres {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/offre/offre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/offre/edit-offre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/account/parametres.css' %}">
+
+    <style>
+        #avatarPreview { cursor: pointer; }
+
+        #photoPreviewModal            { position:fixed; inset:0; background:rgba(0,0,0,.65); backdrop-filter:blur(4px); z-index:2000; display:flex; align-items:center; justify-content:center; padding:24px; }
+        #photoPreviewModal.hidden      { display:none; }
+        #photoPreviewModal .photo-preview-box { position:relative; max-width:min(90vw, 480px); max-height:90vh; }
+        #photoPreviewModal .photo-preview-box img { display:block; width:100%; max-height:90vh; object-fit:contain; border-radius:16px; box-shadow:0 24px 64px rgba(0,0,0,.35); }
+        #photoPreviewModal .photo-preview-close { position:absolute; top:-16px; right:-16px; width:36px; height:36px; border-radius:50%; background:var(--bg-card,#fff); border:1px solid var(--border,#e5e7eb); color:var(--text-primary,#111); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 16px rgba(0,0,0,.2); transition:background .15s; }
+        #photoPreviewModal .photo-preview-close:hover { background:var(--bg-hover,#f3f4f6); }
+    </style>
+{% endblock %}
+
+{% block page_name %}
+    <span class="page_name">Paramètres</span>
+{% endblock %}
+
+{% block main %}
+<main class="page">
+
+    <div class="top-bar">
+        <div class="top-bar-title">
+            <span>Compte</span>
+            <h1>Paramètres</h1>
+        </div>
+    </div>
+
+    <div class="parametres-layout">
+
+        <!-- Onglets -->
+        <nav class="parametres-tabs" aria-label="Sections des paramètres">
+            <a href="{% url 'account:parametres_profil' %}"
+               class="tab {% if not request.GET.section %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Profil
+            </a>
+            <a href="?section=securite"
+               class="tab {% if request.GET.section == 'securite' %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Sécurité
+            </a>
+            <a href="?section=notifications"
+               class="tab {% if request.GET.section == 'notifications' %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+                Notifications
+            </a>
+            <a href="?section=facturation"
+               class="tab {% if request.GET.section == 'facturation' %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                Facturation
+            </a>
+            <a href="?section=confidentialite"
+               class="tab {% if request.GET.section == 'confidentialite' %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                Confidentialité
+            </a>
+        </nav>
+
+        <!-- Contenu : Profil ou section "bientôt disponible" -->
+        {% if request.GET.section %}
+
+        <section class="offre-card parametres-card parametres-soon">
+            <p class="soon-text">
+                Section
+                <strong>
+                    {% if request.GET.section == 'securite' %}Sécurité
+                    {% elif request.GET.section == 'notifications' %}Notifications
+                    {% elif request.GET.section == 'facturation' %}Facturation
+                    {% elif request.GET.section == 'confidentialite' %}Confidentialité
+                    {% endif %}
+                </strong>
+                — bientôt disponible.
+            </p>
+        </section>
+
+        {% else %}
+
+        <!-- Carte du formulaire Profil -->
+        <section class="offre-card parametres-card">
+
+            <h2 class="parametres-card-title">
+                {% if request.user.role == 'formateur' %}Profil formateur
+                {% elif request.user.role == 'institution' %}Profil institution
+                {% else %}Profil administrateur
+                {% endif %}
+            </h2>
+            <p class="subtitle">Ces informations sont visibles publiquement sur votre fiche.</p>
+
+            {% if user_form.errors or profil_form.errors %}
+                <div class="form-error-box">
+                    {{ user_form.errors }}
+                    {% if profil_form %}{{ profil_form.errors }}{% endif %}
+                </div>
+            {% endif %}
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- Bouton de bascule entre les 2 sections -->
+                <div class="profil-subtabs">
+                    <button type="button" class="profil-subtab active" data-target="personnel">
+                        Informations personnelles
+                    </button>
+                    <button type="button" class="profil-subtab" data-target="professionnel">
+                        Informations professionnelles
+                    </button>
+                </div>
+
+                <!-- ═══════ SECTION 1 : Informations personnelles ═══════ -->
+                <div class="profil-section" data-section="personnel">
+
+                    <!-- Photo de profil -->
+                    <div class="profil-photo-row">
+                        <div class="profil_avatar avatar-lg" id="avatarPreview">
+                            {% if request.user.profile_picture %}
+                                <img id="avatarPreviewImg" src="{{ request.user.profile_picture.url }}" alt="Photo de {{ request.user.first_name|default:request.user.username }}">
+                            {% else %}
+                                <span id="avatarPreviewInitials">{{ request.user.username|upper|slice:":2" }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="profil-photo-infos">
+                            <p class="photo-label">Photo de profil</p>
+                            <p class="photo-hint">JPG ou PNG, 2 Mo maximum.</p>
+                            <label for="id_profile_picture" class="btn-importer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                                Importer
+                            </label>
+                            {{ user_form.profile_picture }}
+                        </div>
+                    </div>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Civilité</label>
+                            {{ user_form.civilite }}
+                        </p>
+                    </section>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Prénom</label>
+                            {{ user_form.first_name }}
+                        </p>
+                        <p>
+                            <label>Nom</label>
+                            {{ user_form.last_name }}
+                        </p>
+                    </section>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Date de naissance</label>
+                            {{ user_form.date_naissance }}
+                        </p>
+                        <p>
+                            <label>Nationalité</label>
+                            {{ user_form.nationalite }}
+                        </p>
+                    </section>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Nom d'utilisateur</label>
+                            {{ user_form.username }}
+                        </p>
+                        <p>
+                            <label>Email</label>
+                            {{ user_form.email }}
+                        </p>
+                    </section>
+
+                </div>
+
+                <!-- ═══════ SECTION 2 : Informations professionnelles ═══════ -->
+                <div class="profil-section" data-section="professionnel" hidden>
+
+                {% if request.user.role == 'formateur' and profil_form %}
+
+                    <p>
+                        <label>Titre professionnel</label>
+                        {{ profil_form.titre_professionnel }}
+                    </p>
+
+                    <p>
+                        <label>Bio</label>
+                        {{ profil_form.biographie }}
+                    </p>
+
+                    <section class="form_content_sub" style="margin-bottom: 20px;">
+                        <label>Compétences</label>
+
+                        <div class="competence-wrapper">
+                            <div id="selected-competences-profil" class="selected-tags">
+                                {% for competence in profil_form.instance.competences.all %}
+                                    <span class="tag" data-id="{{ competence.id }}" data-name="{{ competence.nom }}">
+                                        {{ competence.nom }}
+                                        <button type="button" class="remove-tag">×</button>
+                                        <input type="hidden" name="competences" value="{{ competence.id }}">
+                                    </span>
+                                {% endfor %}
+                            </div>
+
+                            <input type="text" id="competence-search-profil" class="form-control" placeholder="Ex : HTML, React, Laravel...">
+
+                            <div id="competence-dropdown-profil" class="competence-dropdown"></div>
+                        </div>
+                    </section>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Localisation</label>
+                            {{ profil_form.localisation_formateur }}
+                        </p>
+                        <p>
+                            <label>Tarif journalier (€)</label>
+                            {{ profil_form.tarif_journalier }}
+                        </p>
+                    </section>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Téléphone</label>
+                            {{ profil_form.telephone }}
+                        </p>
+                        <p>
+                            <label>Années d'expérience</label>
+                            {{ profil_form.experience_annees }}
+                        </p>
+                    </section>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Délai de réponse</label>
+                            {{ profil_form.delai_reponse }}
+                        </p>
+                        <p>
+                            <label>Disponibilité</label>
+                            {{ profil_form.disponibilite }}
+                        </p>
+                    </section>
+
+                    <p>
+                        <label>Langues</label>
+                        {{ profil_form.langues }}
+                    </p>
+
+                {% elif request.user.role == 'institution' and profil_form %}
+
+                    <p>
+                        <label>Nom de l'organisation</label>
+                        {{ profil_form.nom_organisation }}
+                    </p>
+
+                    <p>
+                        <label>Description</label>
+                        {{ profil_form.description }}
+                    </p>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Localisation</label>
+                            {{ profil_form.localisation_institution }}
+                        </p>
+                        <p>
+                            <label>Site web</label>
+                            {{ profil_form.site_web }}
+                        </p>
+                    </section>
+
+                    <section class="form_content">
+                        <p>
+                            <label>Secteur</label>
+                            {{ profil_form.secteur }}
+                        </p>
+                        <p>
+                            <label>Taille de l'effectif</label>
+                            {{ profil_form.taille_effectif }}
+                        </p>
+                    </section>
+
+                {% else %}
+                    <p class="subtitle">Rien à configurer ici pour l'instant.</p>
+                {% endif %}
+
+                </div>
+
+                <section class="btn_container">
+                    <button class="btn-submit" type="submit">Enregistrer</button>
+                </section>
+            </form>
+        </section>
+
+        {% endif %}{# fin if request.GET.section #}
+
+    </div>
+
+    <!-- Modal de prévisualisation de la photo de profil.
+         Placé hors de .offre-card à dessein : offre.css a un
+         ".offre-card:hover { transform: translateY(-2px); }", et un
+         transform sur un ancêtre change le repère de positionnement
+         d'un position:fixed — ce qui faisait "sauter" le modal d'un
+         repère à l'autre à chaque survol de la carte. En le sortant
+         complètement de la carte, il reste fixé à la fenêtre, point. -->
+    <div id="photoPreviewModal" class="hidden">
+        <div class="photo-preview-box">
+            <button type="button" class="photo-preview-close" aria-label="Fermer" onclick="closePhotoPreviewModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+            <img id="photoPreviewImg" src="" alt="Aperçu de la photo de profil">
+        </div>
+    </div>
+
+
+</main>
+{% endblock %}
+
+{% block js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // ── Bascule Informations personnelles / professionnelles ────────
+    const subtabs = document.querySelectorAll('.profil-subtab');
+    const sections = document.querySelectorAll('.profil-section');
+
+    subtabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const target = btn.getAttribute('data-target');
+
+            subtabs.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            sections.forEach(function (section) {
+                section.hidden = section.getAttribute('data-section') !== target;
+            });
+        });
+    });
+
+    // ── Aperçu instantané de la photo importée ─────────────────────
+    const fileInput = document.getElementById('id_profile_picture');
+    const avatarPreview = document.getElementById('avatarPreview');
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                avatarPreview.innerHTML = `<img src="${e.target.result}" alt="Aperçu photo de profil">`;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // ── Modal de prévisualisation de la photo (clic sur l'avatar) ───
+    const photoModal = document.getElementById('photoPreviewModal');
+    const photoModalImg = document.getElementById('photoPreviewImg');
+
+    window.closePhotoPreviewModal = function () {
+        if (photoModal) photoModal.classList.add('hidden');
+    };
+
+    if (avatarPreview && photoModal && photoModalImg) {
+        avatarPreview.addEventListener('click', function () {
+            const img = avatarPreview.querySelector('img');
+            if (!img) return; // rien à prévisualiser tant qu'il n'y a que les initiales
+            photoModalImg.src = img.src;
+            photoModal.classList.remove('hidden');
+        });
+
+        // Clic sur l'overlay (en dehors de l'image et de la croix) → fermer
+        photoModal.addEventListener('click', function (e) {
+            if (e.target === photoModal) {
+                window.closePhotoPreviewModal();
+            }
+        });
+    }
+
+    // ── Compétences (même logique que sur le formulaire de formation) ──
+    const competenceInput = document.getElementById('competence-search-profil');
+    const competenceDropdown = document.getElementById('competence-dropdown-profil');
+    const selectedCompetences = document.getElementById('selected-competences-profil');
+
+    if (competenceInput) {
+        competenceInput.addEventListener('input', async function () {
+            const query = competenceInput.value.trim();
+
+            if (query.length < 1) {
+                competenceDropdown.style.display = 'none';
+                return;
+            }
+
+            const response = await fetch(`/search-competence/?q=${query}`);
+            const data = await response.json();
+
+            competenceDropdown.innerHTML = '';
+
+            data.forEach(function (item) {
+                const exists = selectedCompetences.querySelector(`[data-id="${item.id}"]`);
+                if (exists) return;
+
+                const div = document.createElement('div');
+                div.classList.add('dropdown-item');
+                div.textContent = item.nom;
+
+                div.addEventListener('click', function () {
+                    addCompetenceTag(item.id, item.nom);
+                    competenceInput.value = '';
+                    competenceDropdown.style.display = 'none';
+                });
+
+                competenceDropdown.appendChild(div);
+            });
+
+            competenceDropdown.style.display = 'block';
+        });
+    }
+
+    function addCompetenceTag(id, name) {
+        const exists = selectedCompetences.querySelector(`[data-id="${id}"]`);
+        if (exists) return;
+
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.setAttribute('data-id', id);
+        span.setAttribute('data-name', name);
+
+        span.innerHTML = `
+            ${name}
+            <button type="button" class="remove-tag">×</button>
+            <input type="hidden" name="competences" value="${id}">
+        `;
+
+        span.querySelector('.remove-tag').addEventListener('click', function () {
+            span.remove();
+        });
+
+        selectedCompetences.appendChild(span);
+    }
+
+    document.querySelectorAll('#selected-competences-profil .remove-tag').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            btn.parentElement.remove();
+        });
+    });
+
+    document.addEventListener('click', function (e) {
+        if (
+            competenceDropdown &&
+            !competenceDropdown.contains(e.target) &&
+            e.target !== competenceInput
+        ) {
+            competenceDropdown.style.display = 'none';
+        }
+    });
+
+});
+</script>
+{% endblock %}

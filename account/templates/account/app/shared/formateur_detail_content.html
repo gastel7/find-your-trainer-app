@@ -1,0 +1,182 @@
+{% load static %}
+
+<div class="formateur-detail-page">
+
+    <a href="{% url 'account:formateurs_list' %}" class="formateur-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Tous les formateurs
+    </a>
+
+    <div class="formateur-detail-grid">
+
+        <div class="formateur-detail-main">
+
+            <div class="formateur-detail-header">
+                <div class="formateur-avatar formateur-avatar-lg avatar-indigo">
+                    {% if formateur.user.profile_picture %}
+                        <img src="{{ formateur.user.profile_picture.url }}" alt="{{ formateur.user.first_name }}">
+                    {% else %}
+                        {{ formateur.user.first_name|slice:":1"|upper }}{{ formateur.user.last_name|slice:":1"|upper }}
+                    {% endif %}
+                </div>
+
+                <div>
+                    <h1 class="formateur-detail-name">
+                        {{ formateur.user.first_name }} {{ formateur.user.last_name }}
+                        {% if formateur.is_verified %}
+                            <span class="formateur-detail-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                     viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                                </svg>
+                                Vérifié
+                            </span>
+                        {% endif %}
+                    </h1>
+
+                    {% if formateur.titre_professionnel %}
+                        <p class="formateur-detail-titre">{{ formateur.titre_professionnel }}</p>
+                    {% endif %}
+
+                    <div class="formateur-detail-meta">
+                        {% if formateur.localisation_formateur %}
+                        <span class="formateur-meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            {{ formateur.localisation_formateur }}
+                        </span>
+                        {% endif %}
+
+                        {% if note_globale %}
+                        <span class="formateur-meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                 viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            {{ note_globale }} ({{ nb_evaluations }} avis)
+                        </span>
+                        {% endif %}
+
+                        {% if formateur.experience_annees %}
+                        <span class="formateur-meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                            </svg>
+                            {{ formateur.experience_annees }} an{{ formateur.experience_annees|pluralize }} d'expérience
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <section class="formateur-detail-section">
+                <h2>À propos</h2>
+                <p>{{ formateur.biographie|default:"Aucune biographie renseignée pour le moment." }}</p>
+            </section>
+
+            {% with competences=formateur.competences.all %}
+            {% if competences %}
+            <section class="formateur-detail-section">
+                <h2>Compétences</h2>
+                <div class="formateur-competences">
+                    {% for comp in competences %}
+                        <span class="competence-tag">{{ comp.nom }}</span>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+            {% endwith %}
+
+            <section class="formateur-detail-section">
+                <h2>Avis récents</h2>
+                {% if avis_list %}
+                    <div class="formateur-avis-list">
+                        {% for avis in avis_list %}
+                        <div class="formateur-avis-card">
+                            <div class="formateur-avis-stars">
+                                {% for i in "12345" %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                         fill="{% if forloop.counter <= avis.note %}#f59e0b{% else %}none{% endif %}"
+                                         stroke="#f59e0b" stroke-width="1">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                    </svg>
+                                {% endfor %}
+                            </div>
+                            <p class="formateur-avis-text">"{{ avis.commentaire }}"</p>
+                            <p class="formateur-avis-auteur">
+                                — {{ avis.auteur_nom }}{% if avis.structure %}, {{ avis.structure }}{% endif %}
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="formateur-avis-empty">Aucun avis pour le moment.</p>
+                {% endif %}
+            </section>
+
+        </div>
+
+        <aside class="formateur-detail-sidebar">
+            <p class="formateur-sidebar-eyebrow">Tarif journalier</p>
+            <p class="formateur-sidebar-price">
+                {% if formateur.tarif_journalier %}
+                    {{ formateur.tarif_journalier|floatformat:0 }} €/j
+                {% else %}
+                    —
+                {% endif %}
+            </p>
+
+            <a href="{% url 'chat:chat_room' formateur.user.pk %}" class="formateur-btn formateur-btn-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                Contacter
+            </a>
+
+            {% if request.user.role == 'institution' %}
+            <a href="{% url 'offre:ajouter_offre' %}" class="formateur-btn formateur-btn-accent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+                Proposer une mission
+            </a>
+            {% endif %}
+
+            <div class="formateur-sidebar-divider"></div>
+
+            <div class="formateur-sidebar-info">
+                {% if formateur.delai_reponse %}
+                <div class="formateur-sidebar-row">
+                    <span>Délai de réponse</span>
+                    <strong>{{ formateur.delai_reponse }}</strong>
+                </div>
+                {% endif %}
+                {% if formateur.disponibilite %}
+                <div class="formateur-sidebar-row">
+                    <span>Disponibilité</span>
+                    <strong>{{ formateur.disponibilite }}</strong>
+                </div>
+                {% endif %}
+                {% if formateur.langues %}
+                <div class="formateur-sidebar-row">
+                    <span>Langues</span>
+                    <strong>{{ formateur.langues }}</strong>
+                </div>
+                {% endif %}
+            </div>
+        </aside>
+
+    </div>
+</div>

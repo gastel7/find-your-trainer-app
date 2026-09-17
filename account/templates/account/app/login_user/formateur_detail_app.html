@@ -1,0 +1,20 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %}{{ formateur.user.first_name }} {{ formateur.user.last_name }}{% endblock %}
+
+{% block page_name %}
+    <a href="{% url 'account:formateurs_list' %}" class="page_name_link">Formateurs</a>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    <span class="page_name">{{ formateur.user.first_name }} {{ formateur.user.last_name }}</span>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/account/formateurs.css' %}">
+{% endblock %}
+
+{% block main %}
+    <main class="page">
+        {% include 'account/app/shared/formateur_detail_content.html' %}
+    </main>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% load static %}
+<div class="formateurs-page">
+
+    <!-- ── En-tête ──────────────────────────────────────────────── -->
+    <section class="formateurs-header">
+        <p class="formateurs-label">RECHERCHE</p>
+        <h1>Les formateurs de la plateforme</h1>
+        <p class="formateurs-subtitle">
+            <strong>{{ total_count }}</strong>
+            profil{{ total_count|pluralize }} disponible{{ total_count|pluralize }}.
+        </p>
+    </section>
+
+    <!-- ── Barre de recherche + filtre ville ────────────────────── -->
+    <form method="get" class="formateurs-filters" role="search">
+
+        <div class="formateurs-search-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="formateurs-search-icon" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.34-4.34"/>
+            </svg>
+
+            <input
+                type="search"
+                name="q"
+                value="{{ search_query }}"
+                placeholder="Rechercher un nom, une compétence..."
+                class="formateurs-search-input"
+                aria-label="Rechercher un formateur"
+            >
+        </div>
+
+        <!-- Filtre ville dynamique -->
+        <select
+            name="ville"
+            class="formateurs-city-select"
+            onchange="this.form.submit()"
+            aria-label="Filtrer par ville"
+        >
+            <option value="">Toutes les villes</option>
+            {% for ville in villes_disponibles %}
+                <option value="{{ ville }}" {% if selected_city == ville %}selected{% endif %}>
+                    {{ ville }}
+                </option>
+            {% endfor %}
+        </select>
+
+    </form>
+
+    <!-- ── Grille des formateurs ─────────────────────────────────── -->
+    <section class="formateurs-grid" aria-label="Liste des formateurs">
+
+        {% for formateur in formateurs %}
+
+        <article class="formateur-card">
+
+            <div class="formateur-card-body">
+
+                <!-- Avatar -->
+                <div class="formateur-avatar
+                    {% cycle 'avatar-indigo' 'avatar-orange' 'avatar-pink' 'avatar-teal' 'avatar-purple' 'avatar-amber' %}
+                ">
+                    {% if formateur.user.profile_picture %}
+                        <img src="{{ formateur.user.profile_picture.url }}"
+                             alt="Photo de {{ formateur.user.first_name }}">
+                    {% else %}
+                        {{ formateur.user.first_name|slice:":1"|upper }}{{ formateur.user.last_name|slice:":1"|upper }}
+                    {% endif %}
+                </div>
+
+                <!-- Infos -->
+                <div class="formateur-infos">
+
+                    <div class="formateur-name-row">
+                        <h3 class="formateur-name">
+                            {{ formateur.user.first_name }} {{ formateur.user.last_name }}
+                        </h3>
+                        {% if formateur.is_verified %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                 viewBox="0 0 24 24" fill="#4F46E5" class="formateur-verified"
+                                 title="Profil vérifié" aria-label="Profil vérifié">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                            </svg>
+                        {% endif %}
+                    </div>
+
+                    {% if formateur.titre_professionnel %}
+                        <p class="formateur-titre">{{ formateur.titre_professionnel }}</p>
+                    {% endif %}
+
+                    <div class="formateur-meta">
+                        {% if formateur.localisation_formateur %}
+                        <span class="formateur-loc">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            {{ formateur.localisation_formateur }}
+                        </span>
+                        {% endif %}
+
+                        {% if formateur.note_globale %}
+                        <span class="formateur-note">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                 viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b"
+                                 stroke-width="1" aria-hidden="true">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            {{ formateur.note_globale }} ({{ formateur.nb_evaluations }})
+                        </span>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Compétences -->
+            {% with competences=formateur.competences.all|slice:":4" %}
+            {% if competences %}
+            <div class="formateur-competences">
+                {% for comp in competences %}
+                    <span class="competence-tag">{{ comp.nom }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <!-- Pied de carte -->
+            <section class="formateur-card-footer">
+                <span class="formateur-tarif">
+                    {% if formateur.tarif_journalier %}
+                        <strong>{{ formateur.tarif_journalier|floatformat:0 }} €/j</strong>
+                    {% else %}
+                        <strong>—</strong>
+                    {% endif %}
+                </span>
+
+                <a href="{% url 'account:detail_formateur' formateur.pk %}" class="formateur-link">
+                    Voir le profil →
+                </a>
+            </section>
+
+        </article>
+
+        {% empty %}
+
+        <div class="formateurs-empty">
+            <p>Aucun formateur ne correspond à vos critères.</p>
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+    {% include 'core/partials/pagination.html' with page_obj=page_obj %}
+
+</div>

@@ -1,0 +1,182 @@
+{% block sidebar %}
+    <div class="sidebar_container">
+        <aside class="sidebar">
+            <section class="sidebar_content">
+                <!-- logo -->
+                <div class="container-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-5 w-5" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+
+                    <span class="logo-text-container">
+                        <strong class="logo-text">Find Your Trainer</strong>
+                        <span class="logo-subtext">WORKSPACE</span>
+                    </span>                     
+                </div>
+
+            
+                <!-- La workspace -->
+                <div class="workspace">
+                    <nav class="navigation">
+                        <div class="navigation_content">
+                            <!-- Espace -->
+                            <section>
+                                <h2>Espace</h2>
+
+                                <ul>
+                                    <li class="{% if request.path == '/dashboard/' %}active{% endif %}">
+                                        <a class="nav-item" href="{% url 'core:dashboard' %}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard h-4 w-4 shrink-0" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                                            <span class="anchor_text">Tableau de bord</span>
+                                        </a>
+
+                                        <span class="floting_text">Tableau de bord</span>
+                                    </li>
+
+                                    {% if user.role == 'formateur' %}
+                                        <li class="{% if request.path == '/institutions-list/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'account:institutions_list' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 h-3.5 w-3.5" aria-hidden="true"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+                                                <span class="anchor_text">Institutions</span>
+                                            </a>
+
+                                            <span class="floting_text">Institutions</span>
+                                        </li>
+                                    {% elif user.role == 'institution' %}
+                                        <li class="{% if request.path == '/formateurs-list/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'account:formateurs_list' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4 shrink-0" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                                <span class="anchor_text">Formateurs</span>
+                                            </a>
+                                            
+                                            <span class="floting_text">Formateurs</span>
+                                        </li>
+                                    {% else %}
+                                        <li class="{% if request.path == '/institutions-list/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'account:institutions_list' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 h-3.5 w-3.5" aria-hidden="true"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+                                                
+                                                <span class="anchor_text">Institutions</span>
+                                            </a>
+
+                                            <span class="floting_text">Institutions</span>
+                                        </li>
+                                        <li class="{% if request.path == '/formateurs-list/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'account:formateurs_list' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4 shrink-0" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                                <span class="anchor_text">Formateurs</span>
+                                            </a>
+
+                                            <span class="floting_text">Formateurs</span>
+                                        </li>
+                                    {% endif %}
+
+                                    <li class="{% if request.path == '/list-offres/' %}active{% endif %}">
+                                        <a class="nav-item" href="{% url 'offre:offres_list' %}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase h-4 w-4 shrink-0" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+                                            <span class="anchor_text">Offres</span>
+                                        </a>
+
+                                        <span class="floting_text">Offres</span>
+                                    </li>
+                                    <li class="{% if request.path == '/formations/' %}active{% endif %}">
+                                        <a class="nav-item" href="{% url 'formation:formations_list' %}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open h-4 w-4 shrink-0" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+                                            <span class="anchor_text">Formations</span>
+                                        </a>
+
+                                        <span class="floting_text">Formations</span>
+                                    </li>
+
+                                    {% if user.role == 'formateur' %}
+                                        <li class="{% if request.path == '/mes-candidatures/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'candidature:mes_candidatures' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send h-4 w-4 shrink-0" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+                                                <span class="anchor_text">Candidatures</span>
+                                            </a>
+
+                                            <span class="floting_text">Candidatures</span>
+                                        </li>
+                                    {% elif user.role == 'institution' %}
+                                        <li class="{% if request.path == '/candidatures-recues/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'candidature:candidatures_recues' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-inbox h-4 w-4 shrink-0" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+                                                <span class="anchor_text">Candidatures</span>
+                                            </a>
+
+                                            <span class="floting_text">Candidatures</span>
+                                        </li>
+                                    {% else %}
+                                        <li class="{% if request.path == '/mes-candidatures/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'candidature:mes_candidatures' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send h-4 w-4 shrink-0" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+                                                <span class="anchor_text">Candidatures envoyées</span>
+                                            </a>
+
+                                            <span class="floting_text">Candidatures envoyées</span>
+                                        </li>
+                                        <li class="{% if request.path == '/candidatures-recues/' %}active{% endif %}">
+                                            <a class="nav-item" href="{% url 'candidature:candidatures_recues' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-inbox h-4 w-4 shrink-0" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+                                                <span class="anchor_text">Candidatures reçues</span>
+                                            </a>
+
+                                            <span class="floting_text">Candidatures reçues</span>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </section>
+
+                        
+                            <!-- Communication -->
+                            <section>
+                                <h2>Communication</h2>
+
+                                <ul>
+                                    <li class="{% if '/chat/' in request.path %}active{% endif %}">
+                                        <a class="nav-item" href="{% url 'chat:chat_accueil' %}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square h-4 w-4 shrink-0" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>  
+                                            <span class="anchor_text">Messagerie</span>
+                                        </a>
+
+                                        <span class="floting_text">Messagerie</span>
+                                    </li>
+                                    <li  class="{% if request.path == '/evaluations/' %}active{% endif %}">
+                                        <a class="nav-item" href="{% url 'evaluation:evaluations_list' %}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 shrink-0" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                            <span class="anchor_text">Evaluations</span>
+                                        </a>
+
+                                        <span class="floting_text">Evaluations</span>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+
+
+                        <!-- Les paramètres et la déconnexion -->
+                        <div class="setings_and_logout_container">
+                            <ul>
+                                <li  class="{% if request.path == '/parametres/' %}active{% endif %}">
+                                    <a class="nav-item" href="{% url 'account:parametres_profil' %}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings h-4 w-4 shrink-0" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        <span class="anchor_text">Paramètres</span>
+                                    </a>
+
+                                    <span class="floting_text">Paramètres</span>
+                                </li>
+
+                                <li id="logout">
+                                    <a class="nav-item" href="{% url 'account:log_out' %}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out h-4 w-4 shrink-0" aria-hidden="true"><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path></svg>
+                                        <span class="anchor_text">Déconnexion</span>
+                                    </a>
+
+                                    <span class="floting_text">Déconnexion</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </section>
+        </aside>
+    </div>
+{% endblock %}

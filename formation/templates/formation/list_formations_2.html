@@ -1,0 +1,301 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+    Mes formations
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/offre/offre.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/formation/list_formation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app/sidebar.css' %}">
+{% endblock %}
+
+{% block page_name %}
+    <span class="page_name">
+        Formations
+    </span>
+{% endblock %}
+
+{% block main %}
+<main class="page">
+    <!-- HEADER -->
+    <div class="top-bar">
+        <div class="top-bar-title">
+            <span>Formations</span>
+
+            <h1>Toutes les formations</h1>
+            <p class="subtitle">Gérez les formations publiées sur la plateforme.</p>
+        </div>
+
+        <div class="header-actions">
+            {% if request.user.role == 'formateur' or request.user.role == 'admin' %}
+                <a class="btn-add" href="{% url 'formation:publier_formation' %}">+ Ajouter une formation</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Filtres et recherche -->
+    <div class="toolbar">
+        <!-- Filtres -->
+        <div class="filters">
+            <a class="filter {% if not categorie %}active{% endif %}" href="{% url 'formation:formations_list' %}">Tous</a>
+            <a class="filter {% if categorie == 'developpement' %}active{% endif %}" href="?categorie=developpement">Dev</a>
+            <a class="filter {% if categorie == 'data_ia' %}active{% endif %}" href="?categorie=data_ia">Data & IA</a>
+            <a class="filter {% if categorie == 'design' %}active{% endif %}" href="?categorie=design">Design</a>
+            <a class="filter {% if categorie == 'cybersecurite' %}active{% endif %}" href="?categorie=cybersecurite">Cybersécurité</a>
+            <a class="filter {% if categorie == 'management' %}active{% endif %}" href="?categorie=management">Management</a>
+            <a class="filter {% if categorie == 'cloud' %}active{% endif %}" href="?categorie=cloud">Cloud</a>
+            <a class="filter {% if categorie == 'autres' %}active{% endif %}" href="?categorie=autres">Autres</a>    
+        </div>
+
+
+        <!-- Recherche  -->
+        <form method="GET" action="" class="search-form">
+            <!-- On conserve les filtres actuels dans des champs cachés pour ne pas les perdre lors de la recherche -->
+            {% if type_filtre %}<input type="hidden" name="type" value="">{% endif %}
+            {% if mes_offres %}<input type="hidden" name="" value="">{% endif %}
+            
+            <div class="search-input-wrapper">
+                <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.34-4.34"></path></svg>
+                <input type="text" name="q" placeholder="Rechercher par mot-clé..." value="{{ query|default:'' }}">
+            
+                {% if categorie %}
+                    <input type="hidden" name="categorie" value="{{ categorie }}">
+                {% endif %}
+
+                <!-- Le bouton X s'affiche uniquement si une recherche 'query' existe -->
+                {% if query %}
+                    <a href="" class="reset-search-btn" title="Effacer la recherche">×</a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+
+
+<!-- Liste des formations -->
+<div class="formations-grid">
+    {% if formations %}
+        {% for formation in formations %}
+            <div class="formation-card">
+
+                <!-- Header coloré -->
+                <div class="formation-header {% if formation.categorie == 'developpement' %} dev-header {% elif formation.categorie == 'Data & IA' %} data-header {% elif formation.categorie == 'Design' %} design-header {% elif formation.categorie == 'Cybersécurité' %} cyber-header {% elif formation.categorie == 'Management' %} management-header {% elif formation.categorie == 'Cloud' %}cloud-header {% endif %}">
+                    <span class="niveau-badge">
+                        {{ formation.get_niveau_display }}
+                    </span>
+
+                    <span class="categorie-label">
+                        {{ formation.categorie }}
+                    </span>
+                </div>
+
+                <!-- Contenu -->
+                <div class="formation-body">
+                    <h3 class="formation-title">{{ formation.titre }}</h3>
+
+                    <p class="formation-description">
+                        {{ formation.description|truncatechars:120 }}
+                    </p>
+
+                    <div class="formation-meta">
+                        <div>
+                            <!-- Le formateur -->
+                            <p class="container_text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-3 w-3" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <span>
+                                    {{ formation.formateur.user.first_name }}
+                                    {{ formation.formateur.user.last_name }}
+                                </span>
+                            </p>
+                            
+                            <!-- Les co_intervenants -->
+                            <p class="container_text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4 shrink-0" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                <span>{{ formation.co_intervenants.count }} co-intervenant{% if formation.co_intervenants.count > 1 %}s{% endif %}</span>
+                            </p>
+
+                            <!-- La durée -->
+                            <p class="container_text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-3 w-3" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                <!-- <span>{{ formation.duree }}</span> -->
+                                
+                                <span>3 jours</span>
+                            </p>   
+                        </div>                     
+                    </div>
+                </div>
+
+
+                <!-- Footer -->
+                <div class="formation-footer">
+                    <span class="formation-price">{{ formation.prix|floatformat:0 }} €</span>
+
+                    <div class="formation-actions">
+                        <a class="btn-edit" href="{% url 'formation:edit_formation' formation.pk %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M576-96v-113l210-209q7.26-7.41 16.13-10.71Q811-432 819.76-432q9.55 0 18.31 3.5Q846.83-425 854-418l44 45q6.59 7.26 10.29 16.13Q912-348 912-339.24t-3.29 17.92q-3.3 9.15-10.71 16.32L689-96H576Zm288-243-45-45 45 45ZM624-144h45l115-115-22-23-22-22-116 115v45ZM264-96q-30 0-51-21.15T192-168v-624q0-29.7 21.15-50.85Q234.3-864 264-864h312l192 192v152h-72v-104H528v-168H264v624h240v72H264Zm252-384Zm246 198-22-22 44 45-22-23Z"/></svg>
+                        </a>
+
+                        <button class="btn-delete open-delete-modal" type="button" data-delete-url="{% url 'formation:supprimer_formation' formation.pk %}" data-formation-title="{{ formation.titre }}" data-formateur-name="{{ formation.formateur.user.first_name }} {{ formation.formateur.user.last_name }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p>
+            Vous n'avez publié aucune formation pour le moment.
+        </p>
+    {% endif %}
+</div>
+</main>
+
+
+<!-- MODAL SUPPRESSION -->
+<div class="modal-overlay" id="deleteModal">
+
+    <div class="custom-modal delete-modal">
+
+        <div class="modal-header">
+            <h2>Supprimer une formation</h2>
+            <button class="close-modal"data-close>×</button>
+        </div>
+
+        <div class="modal-body">
+
+            <p>Voulez-vous vraiment supprimer :<strong id="formationDeleteName"></strong>?</p>
+
+            <p>Créée par <span class="modal-company" id="modalFormateur"> </span></p>
+
+            <form method="POST" id="deleteForm">
+                {% csrf_token %}
+                
+                <div class="delete-actions">
+                    <button type="button" class="btn-cancel" data-close>Annuler</button>
+
+                    <button
+                        type="submit"
+                        class="btn-confirm-delete">
+
+                        Supprimer
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+document.addEventListener(
+    'DOMContentLoaded',
+    function(){
+
+        const modal =
+            document.getElementById(
+                'deleteModal'
+            );
+
+        const deleteForm =
+            document.getElementById(
+                'deleteForm'
+            );
+
+        const formationName =
+            document.getElementById(
+                'formationDeleteName'
+            );
+
+        const modalFormateur =
+            document.getElementById(
+                'modalFormateur'
+            );
+
+        const deleteButtons =
+            document.querySelectorAll(
+                '.open-delete-modal'
+            );
+
+        deleteButtons.forEach(
+            function(button){
+
+                button.addEventListener(
+                    'click',
+                    function(e){
+
+                        e.preventDefault();
+
+                        const deleteUrl =
+                            this.dataset.deleteUrl;
+
+                        const title =
+                            this.dataset.formationTitle;
+
+                        const formateur =
+                            this.dataset.formateurName;
+
+                        deleteForm.action =
+                            deleteUrl;
+
+                        formationName.textContent =
+                            title;
+
+                        modalFormateur.textContent =
+                            formateur;
+
+                        modal.classList.add(
+                            'active'
+                        );
+                    }
+                );
+            }
+        );
+
+        document.querySelectorAll(
+            '[data-close]'
+        ).forEach(
+            function(button){
+
+                button.addEventListener(
+                    'click',
+                    function(){
+
+                        modal.classList.remove(
+                            'active'
+                        );
+                    }
+                );
+            }
+        );
+
+        modal.addEventListener(
+            'click',
+            function(e){
+
+                if(
+                    e.target === modal
+                ){
+
+                    modal.classList.remove(
+                        'active'
+                    );
+                }
+            }
+        );
+    }
+);
+</script>
+{% endblock %}
+

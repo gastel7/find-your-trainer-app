@@ -1,0 +1,349 @@
+{% if role_actif == 'formateur' %}
+    {% include 'core/app/dashboard_formateur.html' %}
+
+{% elif role_actif == 'institution' %}
+    {% include 'core/app/dashboard_institution.html' %}
+
+{% else %}
+
+<section class="page-head">
+    <div>
+        <div class="eyebrow">Tableau de bord Admin</div>
+        <h1>
+            Bonjour
+            {% if user.first_name %}
+                <span style="text-transform:capitalize;">{{ user.first_name }}</span>
+            {% else %}
+                <span style="text-transform:capitalize;">{{ user.username }}</span>
+            {% endif %}
+            👋
+        </h1>
+        <p class="subtitle">Voici un aperçu des activités de cette semaine.</p>
+    </div>
+
+    <div class="topbar-actions">
+        <button id="roleToggle" class="role-switch" aria-label="Changer de vue">
+            <span class="role-opt is-active" data-role="formateur">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="1.75"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                Formateurs
+            </span>
+            <span class="role-opt" data-role="institution">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="1.75"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+                </svg>
+                Institutions
+            </span>
+        </button>
+    </div>
+</section>
+
+<section class="view">
+    <!-- Vue Formateurs -->
+    <div id="view-formateur">
+        <div class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#6366f1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    {% if admin_f.nouveaux_formateurs %}
+                        <span class="chip">+{{ admin_f.nouveaux_formateurs }} cette sem.</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">{{ admin_f.nb_formateurs }}</div>
+                <div class="stat-label">Formateurs inscrits</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#f59e0b">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 2 11 13"/>
+                            <path d="M22 2 15 22 11 13 2 9l20-7z"/>
+                        </svg>
+                    </div>
+                    {% if admin_f.candidatures_semaine %}
+                        <span class="chip">+{{ admin_f.candidatures_semaine }} cette sem.</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">{{ admin_f.nb_candidatures_total }}</div>
+                <div class="stat-label">Candidatures envoyées</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#14b8a6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    {% if admin_f.formations_semaine %}
+                        <span class="chip">+{{ admin_f.formations_semaine }} cette sem.</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">{{ admin_f.nb_formations_total }}</div>
+                <div class="stat-label">Formations publiées</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#ec4899">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    {% if admin_f.nb_avis_total %}
+                        <span class="chip">{{ admin_f.nb_avis_total }} avis</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">
+                    {% if admin_f.note_moyenne_globale %}{{ admin_f.note_moyenne_globale }}{% else %}—{% endif %}
+                </div>
+                <div class="stat-label">Note moyenne globale</div>
+            </article>
+        </div>
+
+        <div class="grid-2">
+            <article class="card">
+                <div class="card-head">
+                    <h2>Derniers formateurs inscrits</h2>
+                    <a href="{% url 'account:formateurs_list' %}" class="ghost-link">Voir tout</a>
+                </div>
+                {% if derniers_formateurs %}
+                    <ul class="msg-list">
+                        {% for f in derniers_formateurs %}
+                        <li class="msg">
+                            {% if f.user.username %}
+                                <div class="avatar" style="--c:#6366f1">
+                                    {{ f.user.username|slice:":2"|upper }}
+                                </div>
+                            {% else %}
+                                <div class="avatar" style="--c:#6366f1">
+                                    {{ f.user.first_name|slice:":1"|upper }}{{ f.user.last_name|slice:":1"|upper }}
+                                </div>
+                            {% endif %}
+                            <div class="msg-body">
+                                <div class="msg-top">
+                                    {% if f.user.username %}
+                                        <span class="msg-name">{{ f.user.username }}</span>
+                                    {% else %}
+                                        <span class="msg-name">{{ f.user.first_name }} {{ f.user.last_name }}</span>
+                                    {% endif %}
+
+                                    <span class="msg-time">{{ f.user.date_inscription|timesince }}</span>
+                                </div>
+                                <div class="msg-text">{{ f.titre_professionnel|default:"—" }}</div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p class="empty-state">Aucun formateur inscrit.</p>
+                {% endif %}
+            </article>
+
+            <article class="card">
+                <div class="card-head">
+                    <h2>Candidatures cette semaine</h2>
+                    {% if admin_f.candidatures_semaine %}
+                        <span class="chip">{{ admin_f.candidatures_semaine }} nouvelles</span>
+                    {% endif %}
+                </div>
+                {% if dernieres_candidatures %}
+                <ul class="row-list">
+                    {% for c in dernieres_candidatures %}
+                    <li class="row">
+                        <span class="dot" style="
+                            --c: {% if c.statut == 'en_attente' %}#f59e0b
+                               {% elif c.statut == 'acceptee' %}#16a34a
+                               {% elif c.statut == 'refusee' %}#dc2626
+                               {% else %}#6b7280{% endif %}
+                        "></span>
+                        <div class="row-main">
+                            <div class="row-title">{{ c.offre.titre }}</div>
+                            <div class="row-sub">
+                                {{ c.formateur.user.first_name }} {{ c.formateur.user.last_name }}
+                                · il y a {{ c.date_candidature|timesince }}
+                            </div>
+                        </div>
+                        <span class="badge" style="
+                            --c: {% if c.statut == 'en_attente' %}#f59e0b
+                               {% elif c.statut == 'acceptee' %}#16a34a
+                               {% elif c.statut == 'refusee' %}#dc2626
+                               {% else %}#6b7280{% endif %}
+                        ">{{ c.get_statut_display }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="empty-state">Aucune candidature cette semaine.</p>
+                {% endif %}
+            </article>
+
+        </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         VUE INSTITUTIONS
+    ══════════════════════════════════════════════ -->
+    <div id="view-institution" class="hidden">
+
+        <div class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#6366f1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+                        </svg>
+                    </div>
+                    {% if admin_i.nouvelles_institutions %}
+                        <span class="chip">+{{ admin_i.nouvelles_institutions }} cette sem.</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">{{ admin_i.nb_institutions }}</div>
+                <div class="stat-label">Institutions inscrites</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#f59e0b">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    {% if admin_i.offres_semaine %}
+                        <span class="chip">+{{ admin_i.offres_semaine }} cette sem.</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">{{ admin_i.nb_offres_total }}</div>
+                <div class="stat-label">Offres publiées</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#16a34a">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    {% if admin_i.nb_missions_actives %}
+                        <span class="chip">En cours</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">{{ admin_i.nb_missions_actives }}</div>
+                <div class="stat-label">Missions actives</div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon" style="--c:#ec4899">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.75"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    {% if admin_i.candidatures_semaine %}
+                        <span class="chip">+{{ admin_i.candidatures_semaine }} cette sem.</span>
+                    {% endif %}
+                </div>
+                <div class="stat-value">{{ admin_i.nb_candidatures_recues }}</div>
+                <div class="stat-label">Candidatures reçues</div>
+            </article>
+
+        </div>
+
+        <div class="grid-2">
+
+            <article class="card">
+                <div class="card-head">
+                    <h2>Dernières offres publiées</h2>
+                    <a href="{% url 'offre:offres_list' %}" class="ghost-link">Voir tout</a>
+                </div>
+                {% if dernieres_offres %}
+                <ul class="row-list">
+                    {% for offre in dernieres_offres %}
+                    <li class="row">
+                        <div class="row-main">
+                            <div class="row-title">{{ offre.titre }}</div>
+                            <div class="row-sub">
+                                {{ offre.institution_id.nom_organisation }}
+                                · {{ offre.candidatures.count }} candidature{{ offre.candidatures.count|pluralize }}
+                            </div>
+                        </div>
+                        <span class="pill {% if offre.statut == 'publiee' %}pill-active{% endif %}">
+                            {{ offre.get_statut_display }}
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="empty-state">Aucune offre publiée.</p>
+                {% endif %}
+            </article>
+
+            <article class="card">
+                <div class="card-head">
+                    <h2>Institutions les plus actives</h2>
+                    <span class="chip">cette semaine</span>
+                </div>
+                {% if institutions_actives %}
+                <ul class="row-list">
+                    {% for inst in institutions_actives %}
+                    <li class="row">
+                        <div class="avatar" style="--c:#f59e0b">
+                            {{ inst.nom_organisation|slice:":2"|upper }}
+                        </div>
+                        <div class="row-main">
+                            <div class="row-title">{{ inst.nom_organisation }}</div>
+                            <div class="row-sub">{{ inst.nb_offres_semaine }} offre{{ inst.nb_offres_semaine|pluralize }} cette semaine</div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="empty-state">Aucune activité cette semaine.</p>
+                {% endif %}
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

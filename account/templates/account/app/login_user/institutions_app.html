@@ -1,0 +1,18 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %}Institutions{% endblock %}
+
+{% block page_name %}
+<span class="page_name">Institutions</span>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/account/institutions.css' %}">
+{% endblock %}
+
+{% block main %}
+<main class="page">
+    {% include 'account/app/shared/institutions_content.html' %}
+</main>
+{% endblock %}

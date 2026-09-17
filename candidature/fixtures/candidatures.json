@@ -1,0 +1,3737 @@
+[
+  {
+    "model": "candidature.candidature",
+    "pk": 1,
+    "fields": {
+      "offre": 2,
+      "formateur": 14,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en comptabilité (8 ans d'expérience) m'a permis de développer une réelle maîtrise de Analyse financière, Gestion budgétaire.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-26T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 2,
+    "fields": {
+      "offre": 2,
+      "formateur": 30,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en comptabilité (8 ans d'expérience) m'a permis de développer une réelle maîtrise de Analyse financière, Gestion budgétaire.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-20T09:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 3,
+    "fields": {
+      "offre": 2,
+      "formateur": 126,
+      "message": "Je souhaite mettre mon expertise en Analyse financière, Gestion budgétaire au service de cette mission. Fort de 10 ans d'expérience en tant que formatrice en comptabilité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-27T09:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-07T15:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Candidature de qualité mais poste déjà pourvu."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 4,
+    "fields": {
+      "offre": 2,
+      "formateur": 6,
+      "message": "Ayant développé une solide pratique de Analyse financière, Gestion budgétaire au cours de mes 8 années en tant que formateur en comptabilité, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-27T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-02T11:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 5,
+    "fields": {
+      "offre": 2,
+      "formateur": 8,
+      "message": "Ayant développé une solide pratique de Entrepreneuriat au cours de mes 6 années en tant que formatrice en entrepreneuriat, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-28T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-30T15:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 6,
+    "fields": {
+      "offre": 2,
+      "formateur": 106,
+      "message": "Je souhaite mettre mon expertise en Analyse financière, Gestion budgétaire au service de cette mission. Fort de 8 ans d'expérience en tant que formatrice en comptabilité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-17T09:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-27T09:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Candidature de qualité mais poste déjà pourvu."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 7,
+    "fields": {
+      "offre": 2,
+      "formateur": 108,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en entrepreneuriat (10 ans d'expérience) m'a permis de développer une réelle maîtrise de Entrepreneuriat.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-06T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-12T11:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Profil solide, expérience pertinente et disponibilité immédiate."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 8,
+    "fields": {
+      "offre": 2,
+      "formateur": 148,
+      "message": "Actuellement formatrice en entrepreneuriat avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Entrepreneuriat.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-07T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-16T11:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 9,
+    "fields": {
+      "offre": 2,
+      "formateur": 22,
+      "message": "Je souhaite mettre mon expertise en Analyse financière, Gestion budgétaire au service de cette mission. Fort de 8 ans d'expérience en tant que formateur en comptabilité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-09T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-11T15:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Candidature de qualité mais poste déjà pourvu."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 10,
+    "fields": {
+      "offre": 2,
+      "formateur": 128,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en entrepreneuriat (3 ans d'expérience) m'a permis de développer une réelle maîtrise de Entrepreneuriat.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-04T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-05T15:00:00Z",
+      "traitee_par": 100,
+      "commentaire_decision": "Entretien concluant, candidature retenue."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 11,
+    "fields": {
+      "offre": 3,
+      "formateur": 149,
+      "message": "Actuellement formatrice en cybersécurité avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Réseaux Cisco, Administration Linux, Cybersécurité.",
+      "statut": "retiree",
+      "date_candidature": "2027-03-07T09:00:00Z",
+      "cv": null,
+      "date_traitement": "2027-03-13T15:00:00Z",
+      "traitee_par": 149,
+      "commentaire_decision": "Conflit d'agenda de dernière minute."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 12,
+    "fields": {
+      "offre": 3,
+      "formateur": 71,
+      "message": "Actuellement formateur en réseaux informatiques avec 9 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Réseaux Cisco, Administration Linux.",
+      "statut": "refusee",
+      "date_candidature": "2027-01-02T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2027-01-03T11:00:00Z",
+      "traitee_par": 98,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 13,
+    "fields": {
+      "offre": 3,
+      "formateur": 133,
+      "message": "Ayant développé une solide pratique de Réseaux Cisco, Administration Linux au cours de mes 8 années en tant que formatrice en réseaux informatiques, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-23T09:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 14,
+    "fields": {
+      "offre": 3,
+      "formateur": 129,
+      "message": "Ayant développé une solide pratique de Réseaux Cisco, Administration Linux, Cybersécurité au cours de mes 4 années en tant que formatrice en cybersécurité, cette offre correspond exactement à mon profil.",
+      "statut": "retiree",
+      "date_candidature": "2027-03-25T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2027-03-29T11:00:00Z",
+      "traitee_par": 129,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 15,
+    "fields": {
+      "offre": 3,
+      "formateur": 109,
+      "message": "Actuellement formatrice en cybersécurité avec 11 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Réseaux Cisco, Administration Linux, Cybersécurité.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-30T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-03T11:00:00Z",
+      "traitee_par": 98,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 16,
+    "fields": {
+      "offre": 3,
+      "formateur": 79,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en réseaux informatiques (9 ans d'expérience) m'a permis de développer une réelle maîtrise de Réseaux Cisco, Administration Linux.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-20T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-24T09:00:00Z",
+      "traitee_par": 98,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 17,
+    "fields": {
+      "offre": 3,
+      "formateur": 83,
+      "message": "Ayant développé une solide pratique de Réseaux Cisco, Administration Linux, Cybersécurité au cours de mes 7 années en tant que formateur en cybersécurité, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-25T10:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-26T11:00:00Z",
+      "traitee_par": 98,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 18,
+    "fields": {
+      "offre": 3,
+      "formateur": 51,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en cybersécurité (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Réseaux Cisco, Administration Linux, Cybersécurité.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-16T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 19,
+    "fields": {
+      "offre": 3,
+      "formateur": 75,
+      "message": "Je souhaite mettre mon expertise en Réseaux Cisco, Administration Linux, Cybersécurité au service de cette mission. Fort de 7 ans d'expérience en tant que formateur en cybersécurité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2027-01-24T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 20,
+    "fields": {
+      "offre": 3,
+      "formateur": 59,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en cybersécurité (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Réseaux Cisco, Administration Linux, Cybersécurité.",
+      "statut": "acceptee",
+      "date_candidature": "2027-01-04T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2027-01-06T11:00:00Z",
+      "traitee_par": 98,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 21,
+    "fields": {
+      "offre": 3,
+      "formateur": 63,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en réseaux informatiques (9 ans d'expérience) m'a permis de développer une réelle maîtrise de Réseaux Cisco, Administration Linux.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-25T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 22,
+    "fields": {
+      "offre": 5,
+      "formateur": 117,
+      "message": "Je souhaite mettre mon expertise en Nutrition au service de cette mission. Fort de 10 ans d'expérience en tant que formatrice en nutrition, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-30T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-02T09:00:00Z",
+      "traitee_par": 96,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 23,
+    "fields": {
+      "offre": 5,
+      "formateur": 114,
+      "message": "Actuellement formatrice en pédagogie avec 7 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Pédagogie.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-03T14:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-11T09:00:00Z",
+      "traitee_par": 96,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 24,
+    "fields": {
+      "offre": 5,
+      "formateur": 56,
+      "message": "Actuellement formatrice en pédagogie avec 10 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Pédagogie.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-25T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-27T09:00:00Z",
+      "traitee_par": 96,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 25,
+    "fields": {
+      "offre": 5,
+      "formateur": 137,
+      "message": "Ayant développé une solide pratique de Nutrition au cours de mes 3 années en tant que formatrice en nutrition, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-11T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-20T09:00:00Z",
+      "traitee_par": 96,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 26,
+    "fields": {
+      "offre": 5,
+      "formateur": 134,
+      "message": "Je souhaite mettre mon expertise en Pédagogie au service de cette mission. Fort de 9 ans d'expérience en tant que formatrice en pédagogie, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-27T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-06T11:00:00Z",
+      "traitee_par": 96,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 27,
+    "fields": {
+      "offre": 6,
+      "formateur": 84,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en design graphique (5 ans d'expérience) m'a permis de développer une réelle maîtrise de Figma, Adobe Photoshop, UI/UX Design.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-30T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 28,
+    "fields": {
+      "offre": 6,
+      "formateur": 150,
+      "message": "Je souhaite mettre mon expertise en Figma, Adobe Photoshop, UI/UX Design au service de cette mission. Fort de 7 ans d'expérience en tant que formatrice en design graphique, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-09T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-10T11:00:00Z",
+      "traitee_par": 94,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 29,
+    "fields": {
+      "offre": 6,
+      "formateur": 68,
+      "message": "Actuellement formatrice en design graphique avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Figma, Adobe Photoshop, UI/UX Design.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-04T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-07T09:00:00Z",
+      "traitee_par": 68,
+      "commentaire_decision": "Indisponible finalement sur la période proposée."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 30,
+    "fields": {
+      "offre": 6,
+      "formateur": 60,
+      "message": "Actuellement formatrice en design graphique avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Figma, Adobe Photoshop, UI/UX Design.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-23T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 31,
+    "fields": {
+      "offre": 6,
+      "formateur": 110,
+      "message": "Actuellement formatrice en design graphique avec 3 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Figma, Adobe Photoshop, UI/UX Design.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-06T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-08T15:00:00Z",
+      "traitee_par": 94,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 32,
+    "fields": {
+      "offre": 6,
+      "formateur": 52,
+      "message": "Actuellement formatrice en design graphique avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Figma, Adobe Photoshop, UI/UX Design.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-05T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-07T15:00:00Z",
+      "traitee_par": 94,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 33,
+    "fields": {
+      "offre": 6,
+      "formateur": 130,
+      "message": "Je souhaite mettre mon expertise en Figma, Adobe Photoshop, UI/UX Design au service de cette mission. Fort de 5 ans d'expérience en tant que formatrice en design graphique, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-20T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 34,
+    "fields": {
+      "offre": 7,
+      "formateur": 146,
+      "message": "Je souhaite mettre mon expertise en Comptabilité au service de cette mission. Fort de 3 ans d'expérience en tant que formatrice en comptabilité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-04T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 35,
+    "fields": {
+      "offre": 7,
+      "formateur": 30,
+      "message": "Ayant développé une solide pratique de Comptabilité au cours de mes 8 années en tant que formateur en comptabilité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-02T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 36,
+    "fields": {
+      "offre": 7,
+      "formateur": 126,
+      "message": "Ayant développé une solide pratique de Comptabilité au cours de mes 10 années en tant que formatrice en comptabilité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-08-31T14:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 37,
+    "fields": {
+      "offre": 7,
+      "formateur": 106,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en comptabilité (8 ans d'expérience) m'a permis de développer une réelle maîtrise de Comptabilité.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-17T14:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-20T09:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 38,
+    "fields": {
+      "offre": 7,
+      "formateur": 10,
+      "message": "Ayant développé une solide pratique de Excel Avancé au cours de mes 4 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-21T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-30T09:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 39,
+    "fields": {
+      "offre": 7,
+      "formateur": 102,
+      "message": "Je souhaite mettre mon expertise en Excel Avancé au service de cette mission. Fort de 4 ans d'expérience en tant que formatrice en bureautique, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-08-31T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-03T09:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 40,
+    "fields": {
+      "offre": 7,
+      "formateur": 142,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en bureautique (8 ans d'expérience) m'a permis de développer une réelle maîtrise de Excel Avancé.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-29T09:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 41,
+    "fields": {
+      "offre": 7,
+      "formateur": 22,
+      "message": "Ayant développé une solide pratique de Comptabilité au cours de mes 8 années en tant que formateur en comptabilité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-19T09:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 42,
+    "fields": {
+      "offre": 7,
+      "formateur": 6,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en comptabilité (8 ans d'expérience) m'a permis de développer une réelle maîtrise de Comptabilité.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-16T09:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-25T09:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 43,
+    "fields": {
+      "offre": 7,
+      "formateur": 18,
+      "message": "Ayant développé une solide pratique de Excel Avancé au cours de mes 4 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-03T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-08T11:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": "Candidature de qualité mais poste déjà pourvu."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 44,
+    "fields": {
+      "offre": 9,
+      "formateur": 25,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en développement web (5 ans d'expérience) m'a permis de développer une réelle maîtrise de JavaScript, Django.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-27T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-03T09:00:00Z",
+      "traitee_par": 47,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 45,
+    "fields": {
+      "offre": 9,
+      "formateur": 101,
+      "message": "Actuellement formatrice en développement web avec 3 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en JavaScript, Django.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-03T09:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-05T09:00:00Z",
+      "traitee_par": 47,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 46,
+    "fields": {
+      "offre": 9,
+      "formateur": 33,
+      "message": "Ayant développé une solide pratique de JavaScript, Django au cours de mes 5 années en tant que formateur en développement web, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-28T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-30T11:00:00Z",
+      "traitee_par": 47,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 47,
+    "fields": {
+      "offre": 9,
+      "formateur": 17,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en développement web (5 ans d'expérience) m'a permis de développer une réelle maîtrise de JavaScript, Django.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-30T10:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-05T11:00:00Z",
+      "traitee_par": 17,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 48,
+    "fields": {
+      "offre": 9,
+      "formateur": 9,
+      "message": "Je souhaite mettre mon expertise en JavaScript, Django au service de cette mission. Fort de 5 ans d'expérience en tant que formateur en développement web, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-02T10:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 49,
+    "fields": {
+      "offre": 9,
+      "formateur": 141,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en développement web (7 ans d'expérience) m'a permis de développer une réelle maîtrise de JavaScript, Django.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-11T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 50,
+    "fields": {
+      "offre": 10,
+      "formateur": 119,
+      "message": "Ayant développé une solide pratique de Couture, Stylisme au cours de mes 3 années en tant que formatrice en couture et stylisme, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-01T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 51,
+    "fields": {
+      "offre": 10,
+      "formateur": 139,
+      "message": "Je souhaite mettre mon expertise en Couture, Stylisme au service de cette mission. Fort de 5 ans d'expérience en tant que formatrice en couture et stylisme, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-17T09:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 52,
+    "fields": {
+      "offre": 11,
+      "formateur": 16,
+      "message": "Ayant développé une solide pratique de Leadership au cours de mes 6 années en tant que formatrice en entrepreneuriat, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-19T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-21T11:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 53,
+    "fields": {
+      "offre": 11,
+      "formateur": 24,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en entrepreneuriat (6 ans d'expérience) m'a permis de développer une réelle maîtrise de Leadership.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-13T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-18T15:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 54,
+    "fields": {
+      "offre": 11,
+      "formateur": 132,
+      "message": "Actuellement formatrice en management avec 7 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Leadership, Gestion d'équipe.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-16T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 55,
+    "fields": {
+      "offre": 11,
+      "formateur": 15,
+      "message": "Actuellement formateur en communication avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Prise de parole en public.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-17T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 56,
+    "fields": {
+      "offre": 11,
+      "formateur": 54,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 8 années en tant que formatrice en management, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-27T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-02T11:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 57,
+    "fields": {
+      "offre": 11,
+      "formateur": 123,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 7 années en tant que formatrice en gestion de projet, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-30T09:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 58,
+    "fields": {
+      "offre": 11,
+      "formateur": 147,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en communication (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Prise de parole en public.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-14T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 59,
+    "fields": {
+      "offre": 11,
+      "formateur": 35,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 7 années en tant que formateur en gestion de projet, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-15T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-19T11:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 60,
+    "fields": {
+      "offre": 11,
+      "formateur": 143,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 9 années en tant que formatrice en gestion de projet, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-22T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 61,
+    "fields": {
+      "offre": 11,
+      "formateur": 103,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 5 années en tant que formatrice en gestion de projet, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-14T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-15T09:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 62,
+    "fields": {
+      "offre": 11,
+      "formateur": 78,
+      "message": "Actuellement formatrice en management avec 8 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Leadership, Gestion d'équipe.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-08T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-09T11:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 63,
+    "fields": {
+      "offre": 11,
+      "formateur": 70,
+      "message": "Actuellement formatrice en management avec 8 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Leadership, Gestion d'équipe.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-24T14:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 64,
+    "fields": {
+      "offre": 11,
+      "formateur": 31,
+      "message": "Je souhaite mettre mon expertise en Prise de parole en public au service de cette mission. Fort de 4 ans d'expérience en tant que formateur en communication, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-07T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 65,
+    "fields": {
+      "offre": 11,
+      "formateur": 7,
+      "message": "Je souhaite mettre mon expertise en Prise de parole en public au service de cette mission. Fort de 4 ans d'expérience en tant que formateur en communication, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-03T10:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 66,
+    "fields": {
+      "offre": 11,
+      "formateur": 108,
+      "message": "Actuellement formatrice en entrepreneuriat avec 10 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Leadership.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-05T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-14T15:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": "Entretien concluant, candidature retenue."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 67,
+    "fields": {
+      "offre": 11,
+      "formateur": 3,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 7 années en tant que formateur en gestion de projet, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-14T09:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 68,
+    "fields": {
+      "offre": 11,
+      "formateur": 32,
+      "message": "Actuellement formatrice en entrepreneuriat avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Leadership.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-09T09:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 69,
+    "fields": {
+      "offre": 11,
+      "formateur": 8,
+      "message": "Ayant développé une solide pratique de Leadership au cours de mes 6 années en tant que formatrice en entrepreneuriat, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-03T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-13T11:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 70,
+    "fields": {
+      "offre": 11,
+      "formateur": 19,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 7 années en tant que formateur en gestion de projet, cette offre correspond exactement à mon profil.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-15T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-16T15:00:00Z",
+      "traitee_par": 19,
+      "commentaire_decision": "Conflit d'agenda de dernière minute."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 71,
+    "fields": {
+      "offre": 11,
+      "formateur": 62,
+      "message": "Ayant développé une solide pratique de Leadership, Gestion d'équipe au cours de mes 8 années en tant que formatrice en management, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-11T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-13T09:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 72,
+    "fields": {
+      "offre": 11,
+      "formateur": 128,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en entrepreneuriat (3 ans d'expérience) m'a permis de développer une réelle maîtrise de Leadership.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-22T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-01T09:00:00Z",
+      "traitee_par": 99,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 73,
+    "fields": {
+      "offre": 11,
+      "formateur": 112,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en management (5 ans d'expérience) m'a permis de développer une réelle maîtrise de Leadership, Gestion d'équipe.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-29T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 74,
+    "fields": {
+      "offre": 11,
+      "formateur": 148,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en entrepreneuriat (5 ans d'expérience) m'a permis de développer une réelle maîtrise de Leadership.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-18T09:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-21T09:00:00Z",
+      "traitee_par": 148,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 75,
+    "fields": {
+      "offre": 12,
+      "formateur": 128,
+      "message": "Ayant développé une solide pratique de Leadership au cours de mes 3 années en tant que formatrice en entrepreneuriat, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-09T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-11T15:00:00Z",
+      "traitee_par": 95,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 76,
+    "fields": {
+      "offre": 12,
+      "formateur": 19,
+      "message": "Ayant développé une solide pratique de Leadership au cours de mes 7 années en tant que formateur en gestion de projet, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-21T14:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-22T11:00:00Z",
+      "traitee_par": 95,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 77,
+    "fields": {
+      "offre": 12,
+      "formateur": 23,
+      "message": "Ayant développé une solide pratique de Prise de parole en public au cours de mes 4 années en tant que formateur en communication, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-26T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-03T11:00:00Z",
+      "traitee_par": 95,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 78,
+    "fields": {
+      "offre": 12,
+      "formateur": 127,
+      "message": "Je souhaite mettre mon expertise en Prise de parole en public au service de cette mission. Fort de 11 ans d'expérience en tant que formatrice en communication, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-25T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-30T09:00:00Z",
+      "traitee_par": 127,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 79,
+    "fields": {
+      "offre": 12,
+      "formateur": 112,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en management (5 ans d'expérience) m'a permis de développer une réelle maîtrise de Leadership.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-13T16:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 80,
+    "fields": {
+      "offre": 12,
+      "formateur": 62,
+      "message": "Ayant développé une solide pratique de Leadership au cours de mes 8 années en tant que formatrice en management, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-13T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-17T09:00:00Z",
+      "traitee_par": 95,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 81,
+    "fields": {
+      "offre": 12,
+      "formateur": 70,
+      "message": "Actuellement formatrice en management avec 8 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Leadership.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-15T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 82,
+    "fields": {
+      "offre": 12,
+      "formateur": 35,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en gestion de projet (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Leadership.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-08T09:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 83,
+    "fields": {
+      "offre": 12,
+      "formateur": 8,
+      "message": "Ayant développé une solide pratique de Leadership au cours de mes 6 années en tant que formatrice en entrepreneuriat, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-08T16:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 84,
+    "fields": {
+      "offre": 12,
+      "formateur": 138,
+      "message": "Actuellement formatrice en développement personnel avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Développement personnel.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-11T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-14T11:00:00Z",
+      "traitee_par": 95,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 85,
+    "fields": {
+      "offre": 13,
+      "formateur": 23,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en communication (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Rédaction Web, Copywriting.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-31T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 86,
+    "fields": {
+      "offre": 13,
+      "formateur": 4,
+      "message": "Actuellement formateur en marketing digital avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en SEO.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-12T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-13T11:00:00Z",
+      "traitee_par": 93,
+      "commentaire_decision": "Entretien concluant, candidature retenue."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 87,
+    "fields": {
+      "offre": 13,
+      "formateur": 147,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en communication (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Rédaction Web, Copywriting.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-30T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 88,
+    "fields": {
+      "offre": 13,
+      "formateur": 127,
+      "message": "Actuellement formatrice en communication avec 11 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Rédaction Web, Copywriting.",
+      "statut": "retiree",
+      "date_candidature": "2026-11-28T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-02T09:00:00Z",
+      "traitee_par": 127,
+      "commentaire_decision": "Conflit d'agenda de dernière minute."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 89,
+    "fields": {
+      "offre": 13,
+      "formateur": 28,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en marketing digital (6 ans d'expérience) m'a permis de développer une réelle maîtrise de SEO.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-14T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 90,
+    "fields": {
+      "offre": 13,
+      "formateur": 7,
+      "message": "Je souhaite mettre mon expertise en Rédaction Web, Copywriting au service de cette mission. Fort de 4 ans d'expérience en tant que formateur en communication, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-20T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-29T09:00:00Z",
+      "traitee_par": 93,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 91,
+    "fields": {
+      "offre": 13,
+      "formateur": 15,
+      "message": "Actuellement formateur en communication avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Rédaction Web, Copywriting.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-06T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 92,
+    "fields": {
+      "offre": 13,
+      "formateur": 124,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en marketing digital (8 ans d'expérience) m'a permis de développer une réelle maîtrise de SEO.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-14T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-16T09:00:00Z",
+      "traitee_par": 93,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 93,
+    "fields": {
+      "offre": 13,
+      "formateur": 144,
+      "message": "Ayant développé une solide pratique de SEO au cours de mes 10 années en tant que formatrice en marketing digital, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-03T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-11T11:00:00Z",
+      "traitee_par": 93,
+      "commentaire_decision": "Candidature de qualité mais poste déjà pourvu."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 94,
+    "fields": {
+      "offre": 14,
+      "formateur": 76,
+      "message": "Actuellement formatrice en design graphique avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Adobe Illustrator.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-21T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-01T09:00:00Z",
+      "traitee_par": 89,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 95,
+    "fields": {
+      "offre": 14,
+      "formateur": 60,
+      "message": "Ayant développé une solide pratique de Adobe Illustrator au cours de mes 5 années en tant que formatrice en design graphique, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-12-14T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-21T11:00:00Z",
+      "traitee_par": 89,
+      "commentaire_decision": "Profil solide, expérience pertinente et disponibilité immédiate."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 96,
+    "fields": {
+      "offre": 14,
+      "formateur": 52,
+      "message": "Ayant développé une solide pratique de Adobe Illustrator au cours de mes 5 années en tant que formatrice en design graphique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-12T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 97,
+    "fields": {
+      "offre": 14,
+      "formateur": 130,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en design graphique (5 ans d'expérience) m'a permis de développer une réelle maîtrise de Adobe Illustrator.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-21T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-29T11:00:00Z",
+      "traitee_par": 89,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 98,
+    "fields": {
+      "offre": 14,
+      "formateur": 68,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en design graphique (5 ans d'expérience) m'a permis de développer une réelle maîtrise de Adobe Illustrator.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-27T09:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 99,
+    "fields": {
+      "offre": 14,
+      "formateur": 150,
+      "message": "Je souhaite mettre mon expertise en Adobe Illustrator au service de cette mission. Fort de 7 ans d'expérience en tant que formatrice en design graphique, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-09T16:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 100,
+    "fields": {
+      "offre": 15,
+      "formateur": 145,
+      "message": "Ayant développé une solide pratique de Gestion des ressources humaines, Recrutement au cours de mes 11 années en tant que formatrice en ressources humaines, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-08T09:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 101,
+    "fields": {
+      "offre": 15,
+      "formateur": 105,
+      "message": "Je souhaite mettre mon expertise en Gestion des ressources humaines, Recrutement au service de cette mission. Fort de 7 ans d'expérience en tant que formatrice en ressources humaines, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-22T09:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 102,
+    "fields": {
+      "offre": 15,
+      "formateur": 29,
+      "message": "Je souhaite mettre mon expertise en Gestion des ressources humaines, Recrutement au service de cette mission. Fort de 5 ans d'expérience en tant que formatrice en ressources humaines, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-19T10:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-24T09:00:00Z",
+      "traitee_par": 88,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 103,
+    "fields": {
+      "offre": 15,
+      "formateur": 125,
+      "message": "Je souhaite mettre mon expertise en Gestion des ressources humaines, Recrutement au service de cette mission. Fort de 9 ans d'expérience en tant que formatrice en ressources humaines, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-22T16:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 104,
+    "fields": {
+      "offre": 15,
+      "formateur": 5,
+      "message": "Ayant développé une solide pratique de Gestion des ressources humaines, Recrutement au cours de mes 5 années en tant que formatrice en ressources humaines, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-08T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 105,
+    "fields": {
+      "offre": 16,
+      "formateur": 2,
+      "message": "Ayant développé une solide pratique de Excel Avancé, Microsoft Word au cours de mes 4 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-05T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-14T09:00:00Z",
+      "traitee_par": 87,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 106,
+    "fields": {
+      "offre": 16,
+      "formateur": 142,
+      "message": "Ayant développé une solide pratique de Excel Avancé, Microsoft Word au cours de mes 8 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-09T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 107,
+    "fields": {
+      "offre": 16,
+      "formateur": 34,
+      "message": "Ayant développé une solide pratique de Excel Avancé, Microsoft Word au cours de mes 4 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-25T16:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 108,
+    "fields": {
+      "offre": 16,
+      "formateur": 18,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en bureautique (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Excel Avancé, Microsoft Word.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-06T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 109,
+    "fields": {
+      "offre": 16,
+      "formateur": 26,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en bureautique (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Excel Avancé, Microsoft Word.",
+      "statut": "acceptee",
+      "date_candidature": "2026-08-27T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-08-31T09:00:00Z",
+      "traitee_par": 87,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 110,
+    "fields": {
+      "offre": 16,
+      "formateur": 10,
+      "message": "Ayant développé une solide pratique de Excel Avancé, Microsoft Word au cours de mes 4 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-11T09:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-16T09:00:00Z",
+      "traitee_par": 87,
+      "commentaire_decision": "Profil solide, expérience pertinente et disponibilité immédiate."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 111,
+    "fields": {
+      "offre": 16,
+      "formateur": 102,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en bureautique (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Excel Avancé, Microsoft Word.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-10T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-20T09:00:00Z",
+      "traitee_par": 87,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 112,
+    "fields": {
+      "offre": 20,
+      "formateur": 125,
+      "message": "Ayant développé une solide pratique de Droit du travail, Gestion des ressources humaines au cours de mes 9 années en tant que formatrice en ressources humaines, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-16T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-23T09:00:00Z",
+      "traitee_par": 46,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 113,
+    "fields": {
+      "offre": 20,
+      "formateur": 5,
+      "message": "Actuellement formatrice en ressources humaines avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Droit du travail, Gestion des ressources humaines.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-03T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-09T09:00:00Z",
+      "traitee_par": 5,
+      "commentaire_decision": "Indisponible finalement sur la période proposée."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 114,
+    "fields": {
+      "offre": 20,
+      "formateur": 105,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en ressources humaines (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Droit du travail, Gestion des ressources humaines.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-01T14:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 115,
+    "fields": {
+      "offre": 20,
+      "formateur": 13,
+      "message": "Actuellement formatrice en ressources humaines avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Droit du travail, Gestion des ressources humaines.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-14T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-22T09:00:00Z",
+      "traitee_par": 46,
+      "commentaire_decision": "Profil solide, expérience pertinente et disponibilité immédiate."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 116,
+    "fields": {
+      "offre": 20,
+      "formateur": 29,
+      "message": "Je souhaite mettre mon expertise en Droit du travail, Gestion des ressources humaines au service de cette mission. Fort de 5 ans d'expérience en tant que formatrice en ressources humaines, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-15T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-24T09:00:00Z",
+      "traitee_par": 46,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 117,
+    "fields": {
+      "offre": 21,
+      "formateur": 85,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en data et analyse (6 ans d'expérience) m'a permis de développer une réelle maîtrise de Data Science.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-22T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-23T15:00:00Z",
+      "traitee_par": 44,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 118,
+    "fields": {
+      "offre": 21,
+      "formateur": 56,
+      "message": "Je souhaite mettre mon expertise en Pédagogie au service de cette mission. Fort de 10 ans d'expérience en tant que formatrice en pédagogie, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-12-15T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-23T09:00:00Z",
+      "traitee_par": 44,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 119,
+    "fields": {
+      "offre": 21,
+      "formateur": 53,
+      "message": "Je souhaite mettre mon expertise en Data Science au service de cette mission. Fort de 6 ans d'expérience en tant que formateur en data et analyse, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-28T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-02T11:00:00Z",
+      "traitee_par": 53,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 120,
+    "fields": {
+      "offre": 21,
+      "formateur": 111,
+      "message": "Actuellement formatrice en data et analyse avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Data Science.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-11T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 121,
+    "fields": {
+      "offre": 21,
+      "formateur": 67,
+      "message": "Je souhaite mettre mon expertise en Cybersécurité au service de cette mission. Fort de 7 ans d'expérience en tant que formateur en cybersécurité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "retiree",
+      "date_candidature": "2026-11-11T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-12T09:00:00Z",
+      "traitee_par": 67,
+      "commentaire_decision": "Indisponible finalement sur la période proposée."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 122,
+    "fields": {
+      "offre": 21,
+      "formateur": 80,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en pédagogie (10 ans d'expérience) m'a permis de développer une réelle maîtrise de Pédagogie.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-24T16:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 123,
+    "fields": {
+      "offre": 21,
+      "formateur": 72,
+      "message": "Je souhaite mettre mon expertise en Pédagogie au service de cette mission. Fort de 10 ans d'expérience en tant que formatrice en pédagogie, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-25T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 124,
+    "fields": {
+      "offre": 22,
+      "formateur": 129,
+      "message": "Ayant développé une solide pratique de Administration Linux au cours de mes 4 années en tant que formatrice en cybersécurité, cette offre correspond exactement à mon profil.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-09T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-11T11:00:00Z",
+      "traitee_par": 129,
+      "commentaire_decision": "Indisponible finalement sur la période proposée."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 125,
+    "fields": {
+      "offre": 22,
+      "formateur": 67,
+      "message": "Actuellement formateur en cybersécurité avec 7 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Administration Linux.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-15T09:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-18T11:00:00Z",
+      "traitee_par": 43,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 126,
+    "fields": {
+      "offre": 22,
+      "formateur": 149,
+      "message": "Je souhaite mettre mon expertise en Administration Linux au service de cette mission. Fort de 6 ans d'expérience en tant que formatrice en cybersécurité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-08T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 127,
+    "fields": {
+      "offre": 22,
+      "formateur": 59,
+      "message": "Ayant développé une solide pratique de Administration Linux au cours de mes 7 années en tant que formateur en cybersécurité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-30T16:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 128,
+    "fields": {
+      "offre": 22,
+      "formateur": 109,
+      "message": "Ayant développé une solide pratique de Administration Linux au cours de mes 11 années en tant que formatrice en cybersécurité, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-12T16:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-21T15:00:00Z",
+      "traitee_par": 43,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 129,
+    "fields": {
+      "offre": 22,
+      "formateur": 63,
+      "message": "Actuellement formateur en réseaux informatiques avec 9 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Maintenance informatique, Administration Linux.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-23T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 130,
+    "fields": {
+      "offre": 22,
+      "formateur": 71,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en réseaux informatiques (9 ans d'expérience) m'a permis de développer une réelle maîtrise de Maintenance informatique, Administration Linux.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-27T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 131,
+    "fields": {
+      "offre": 22,
+      "formateur": 75,
+      "message": "Ayant développé une solide pratique de Administration Linux au cours de mes 7 années en tant que formateur en cybersécurité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-19T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 132,
+    "fields": {
+      "offre": 22,
+      "formateur": 113,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en réseaux informatiques (6 ans d'expérience) m'a permis de développer une réelle maîtrise de Maintenance informatique, Administration Linux.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-22T10:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 133,
+    "fields": {
+      "offre": 22,
+      "formateur": 83,
+      "message": "Je souhaite mettre mon expertise en Administration Linux au service de cette mission. Fort de 7 ans d'expérience en tant que formateur en cybersécurité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-20T10:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-28T09:00:00Z",
+      "traitee_par": 43,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 134,
+    "fields": {
+      "offre": 22,
+      "formateur": 79,
+      "message": "Actuellement formateur en réseaux informatiques avec 9 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Maintenance informatique, Administration Linux.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-04T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-05T11:00:00Z",
+      "traitee_par": 43,
+      "commentaire_decision": "Profil solide, expérience pertinente et disponibilité immédiate."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 135,
+    "fields": {
+      "offre": 22,
+      "formateur": 133,
+      "message": "Ayant développé une solide pratique de Maintenance informatique, Administration Linux au cours de mes 8 années en tant que formatrice en réseaux informatiques, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-16T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-24T15:00:00Z",
+      "traitee_par": 43,
+      "commentaire_decision": "Entretien concluant, candidature retenue."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 136,
+    "fields": {
+      "offre": 23,
+      "formateur": 15,
+      "message": "Actuellement formateur en communication avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Prise de parole en public.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-18T09:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 137,
+    "fields": {
+      "offre": 23,
+      "formateur": 127,
+      "message": "Actuellement formatrice en communication avec 11 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Prise de parole en public.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-23T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-25T09:00:00Z",
+      "traitee_par": 42,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 138,
+    "fields": {
+      "offre": 23,
+      "formateur": 114,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en pédagogie (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Pédagogie, Ingénierie pédagogique.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-05T16:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 139,
+    "fields": {
+      "offre": 23,
+      "formateur": 134,
+      "message": "Je souhaite mettre mon expertise en Pédagogie, Ingénierie pédagogique au service de cette mission. Fort de 9 ans d'expérience en tant que formatrice en pédagogie, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-13T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-16T11:00:00Z",
+      "traitee_par": 42,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 140,
+    "fields": {
+      "offre": 23,
+      "formateur": 64,
+      "message": "Je souhaite mettre mon expertise en Pédagogie, Ingénierie pédagogique au service de cette mission. Fort de 10 ans d'expérience en tant que formatrice en pédagogie, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-23T14:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-28T15:00:00Z",
+      "traitee_par": 42,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 141,
+    "fields": {
+      "offre": 23,
+      "formateur": 31,
+      "message": "Actuellement formateur en communication avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Prise de parole en public.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-21T16:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 142,
+    "fields": {
+      "offre": 23,
+      "formateur": 7,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en communication (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Prise de parole en public.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-30T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-02T09:00:00Z",
+      "traitee_par": 7,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 143,
+    "fields": {
+      "offre": 23,
+      "formateur": 23,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en communication (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Prise de parole en public.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-15T16:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 144,
+    "fields": {
+      "offre": 23,
+      "formateur": 107,
+      "message": "Ayant développé une solide pratique de Prise de parole en public au cours de mes 9 années en tant que formatrice en communication, cette offre correspond exactement à mon profil.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-28T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-30T09:00:00Z",
+      "traitee_par": 107,
+      "commentaire_decision": "Indisponible finalement sur la période proposée."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 145,
+    "fields": {
+      "offre": 23,
+      "formateur": 147,
+      "message": "Actuellement formatrice en communication avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Prise de parole en public.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-27T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 146,
+    "fields": {
+      "offre": 23,
+      "formateur": 72,
+      "message": "Actuellement formatrice en pédagogie avec 10 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Pédagogie, Ingénierie pédagogique.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-03T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 147,
+    "fields": {
+      "offre": 23,
+      "formateur": 56,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en pédagogie (10 ans d'expérience) m'a permis de développer une réelle maîtrise de Pédagogie, Ingénierie pédagogique.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-15T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 148,
+    "fields": {
+      "offre": 24,
+      "formateur": 25,
+      "message": "Ayant développé une solide pratique de JavaScript au cours de mes 5 années en tant que formateur en développement web, cette offre correspond exactement à mon profil.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-02T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-08T09:00:00Z",
+      "traitee_par": 25,
+      "commentaire_decision": "Conflit d'agenda de dernière minute."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 149,
+    "fields": {
+      "offre": 24,
+      "formateur": 17,
+      "message": "Ayant développé une solide pratique de JavaScript au cours de mes 5 années en tant que formateur en développement web, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-24T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 150,
+    "fields": {
+      "offre": 24,
+      "formateur": 9,
+      "message": "Actuellement formateur en développement web avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en JavaScript.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-01T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-03T09:00:00Z",
+      "traitee_par": 41,
+      "commentaire_decision": "Entretien concluant, candidature retenue."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 151,
+    "fields": {
+      "offre": 24,
+      "formateur": 1,
+      "message": "Je souhaite mettre mon expertise en JavaScript au service de cette mission. Fort de 5 ans d'expérience en tant que formateur en développement web, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-20T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-26T09:00:00Z",
+      "traitee_par": 41,
+      "commentaire_decision": "Candidature de qualité mais poste déjà pourvu."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 152,
+    "fields": {
+      "offre": 24,
+      "formateur": 141,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en développement web (7 ans d'expérience) m'a permis de développer une réelle maîtrise de JavaScript.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-06T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-11T15:00:00Z",
+      "traitee_par": 41,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 153,
+    "fields": {
+      "offre": 24,
+      "formateur": 101,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en développement web (3 ans d'expérience) m'a permis de développer une réelle maîtrise de JavaScript.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-26T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-29T09:00:00Z",
+      "traitee_par": 41,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 154,
+    "fields": {
+      "offre": 25,
+      "formateur": 28,
+      "message": "Actuellement formateur en marketing digital avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Publicité Facebook, Google Ads, Marketing Digital.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-05T09:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 155,
+    "fields": {
+      "offre": 25,
+      "formateur": 104,
+      "message": "Je souhaite mettre mon expertise en Publicité Facebook, Google Ads, Marketing Digital au service de cette mission. Fort de 6 ans d'expérience en tant que formatrice en marketing digital, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-07T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-08T15:00:00Z",
+      "traitee_par": 40,
+      "commentaire_decision": "Entretien concluant, candidature retenue."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 156,
+    "fields": {
+      "offre": 25,
+      "formateur": 144,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en marketing digital (10 ans d'expérience) m'a permis de développer une réelle maîtrise de Publicité Facebook, Google Ads, Marketing Digital.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-30T09:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-06T09:00:00Z",
+      "traitee_par": 144,
+      "commentaire_decision": "Indisponible finalement sur la période proposée."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 157,
+    "fields": {
+      "offre": 25,
+      "formateur": 12,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en marketing digital (6 ans d'expérience) m'a permis de développer une réelle maîtrise de Publicité Facebook, Google Ads, Marketing Digital.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-14T09:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 158,
+    "fields": {
+      "offre": 25,
+      "formateur": 124,
+      "message": "Actuellement formatrice en marketing digital avec 8 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Publicité Facebook, Google Ads, Marketing Digital.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-28T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 159,
+    "fields": {
+      "offre": 26,
+      "formateur": 69,
+      "message": "Je souhaite mettre mon expertise en Data Science, Analyse de données, Power BI, Tableau au service de cette mission. Fort de 6 ans d'expérience en tant que formateur en data et analyse, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-16T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-20T09:00:00Z",
+      "traitee_par": 39,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 160,
+    "fields": {
+      "offre": 26,
+      "formateur": 61,
+      "message": "Actuellement formateur en data et analyse avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Data Science, Analyse de données, Power BI, Tableau.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-20T14:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 161,
+    "fields": {
+      "offre": 26,
+      "formateur": 73,
+      "message": "Je souhaite mettre mon expertise en Analyse de données au service de cette mission. Fort de 7 ans d'expérience en tant que formateur en qualité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-09T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-14T15:00:00Z",
+      "traitee_par": 39,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 162,
+    "fields": {
+      "offre": 26,
+      "formateur": 111,
+      "message": "Actuellement formatrice en data et analyse avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Data Science, Analyse de données, Power BI, Tableau.",
+      "statut": "acceptee",
+      "date_candidature": "2026-12-19T14:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-29T09:00:00Z",
+      "traitee_par": 39,
+      "commentaire_decision": "Profil solide, expérience pertinente et disponibilité immédiate."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 163,
+    "fields": {
+      "offre": 26,
+      "formateur": 135,
+      "message": "Je souhaite mettre mon expertise en Analyse de données au service de cette mission. Fort de 10 ans d'expérience en tant que formatrice en qualité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2027-01-01T10:15:00Z",
+      "cv": null,
+      "date_traitement": "2027-01-06T15:00:00Z",
+      "traitee_par": 39,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 164,
+    "fields": {
+      "offre": 26,
+      "formateur": 81,
+      "message": "Je souhaite mettre mon expertise en Analyse de données au service de cette mission. Fort de 7 ans d'expérience en tant que formateur en qualité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "retiree",
+      "date_candidature": "2026-11-28T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-30T09:00:00Z",
+      "traitee_par": 81,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 165,
+    "fields": {
+      "offre": 26,
+      "formateur": 57,
+      "message": "Ayant développé une solide pratique de Analyse de données au cours de mes 7 années en tant que formateur en qualité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-29T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 166,
+    "fields": {
+      "offre": 26,
+      "formateur": 131,
+      "message": "Je souhaite mettre mon expertise en Data Science, Analyse de données, Power BI, Tableau au service de cette mission. Fort de 6 ans d'expérience en tant que formatrice en data et analyse, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2027-01-13T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 167,
+    "fields": {
+      "offre": 26,
+      "formateur": 85,
+      "message": "Actuellement formateur en data et analyse avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Data Science, Analyse de données, Power BI, Tableau.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-10T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 168,
+    "fields": {
+      "offre": 26,
+      "formateur": 65,
+      "message": "Actuellement formateur en qualité avec 7 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Analyse de données.",
+      "statut": "refusee",
+      "date_candidature": "2027-01-24T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2027-02-03T09:00:00Z",
+      "traitee_par": 39,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 169,
+    "fields": {
+      "offre": 26,
+      "formateur": 53,
+      "message": "Je souhaite mettre mon expertise en Data Science, Analyse de données, Power BI, Tableau au service de cette mission. Fort de 6 ans d'expérience en tant que formateur en data et analyse, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-12T16:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 170,
+    "fields": {
+      "offre": 29,
+      "formateur": 25,
+      "message": "Je souhaite mettre mon expertise en JavaScript, HTML, CSS au service de cette mission. Fort de 5 ans d'expérience en tant que formateur en développement web, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-30T14:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 171,
+    "fields": {
+      "offre": 29,
+      "formateur": 101,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en développement web (3 ans d'expérience) m'a permis de développer une réelle maîtrise de JavaScript, HTML, CSS.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-17T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-21T09:00:00Z",
+      "traitee_par": 36,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 172,
+    "fields": {
+      "offre": 29,
+      "formateur": 9,
+      "message": "Ayant développé une solide pratique de JavaScript, HTML, CSS au cours de mes 5 années en tant que formateur en développement web, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-15T09:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-19T09:00:00Z",
+      "traitee_par": 36,
+      "commentaire_decision": "Profil solide, expérience pertinente et disponibilité immédiate."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 173,
+    "fields": {
+      "offre": 29,
+      "formateur": 141,
+      "message": "Ayant développé une solide pratique de JavaScript, HTML, CSS au cours de mes 7 années en tant que formatrice en développement web, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-11T10:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-20T15:00:00Z",
+      "traitee_par": 36,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 174,
+    "fields": {
+      "offre": 29,
+      "formateur": 1,
+      "message": "Actuellement formateur en développement web avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en JavaScript, HTML, CSS.",
+      "statut": "acceptee",
+      "date_candidature": "2026-12-01T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-03T11:00:00Z",
+      "traitee_par": 36,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 175,
+    "fields": {
+      "offre": 29,
+      "formateur": 33,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en développement web (5 ans d'expérience) m'a permis de développer une réelle maîtrise de JavaScript, HTML, CSS.",
+      "statut": "acceptee",
+      "date_candidature": "2027-01-01T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2027-01-09T09:00:00Z",
+      "traitee_par": 36,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 176,
+    "fields": {
+      "offre": 29,
+      "formateur": 17,
+      "message": "Actuellement formateur en développement web avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en JavaScript, HTML, CSS.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-06T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 177,
+    "fields": {
+      "offre": 34,
+      "formateur": 2,
+      "message": "Ayant développé une solide pratique de Microsoft Word au cours de mes 4 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-27T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 178,
+    "fields": {
+      "offre": 34,
+      "formateur": 142,
+      "message": "Ayant développé une solide pratique de Microsoft Word au cours de mes 8 années en tant que formatrice en bureautique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-15T09:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 179,
+    "fields": {
+      "offre": 34,
+      "formateur": 18,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en bureautique (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Microsoft Word.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-22T10:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 180,
+    "fields": {
+      "offre": 34,
+      "formateur": 102,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en bureautique (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Microsoft Word.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-01T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-09T15:00:00Z",
+      "traitee_par": 49,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 181,
+    "fields": {
+      "offre": 34,
+      "formateur": 122,
+      "message": "Actuellement formatrice en bureautique avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Microsoft Word.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-11T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-15T11:00:00Z",
+      "traitee_par": 49,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 182,
+    "fields": {
+      "offre": 36,
+      "formateur": 68,
+      "message": "Je souhaite mettre mon expertise en Adobe Photoshop au service de cette mission. Fort de 5 ans d'expérience en tant que formatrice en design graphique, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-30T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-01T09:00:00Z",
+      "traitee_par": 94,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 183,
+    "fields": {
+      "offre": 36,
+      "formateur": 60,
+      "message": "Actuellement formatrice en design graphique avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Adobe Photoshop.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-15T09:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 184,
+    "fields": {
+      "offre": 36,
+      "formateur": 52,
+      "message": "Ayant développé une solide pratique de Adobe Photoshop au cours de mes 5 années en tant que formatrice en design graphique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-05T09:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 185,
+    "fields": {
+      "offre": 36,
+      "formateur": 110,
+      "message": "Je souhaite mettre mon expertise en Adobe Photoshop au service de cette mission. Fort de 3 ans d'expérience en tant que formatrice en design graphique, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-06T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 186,
+    "fields": {
+      "offre": 36,
+      "formateur": 84,
+      "message": "Ayant développé une solide pratique de Adobe Photoshop au cours de mes 5 années en tant que formatrice en design graphique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-21T14:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 187,
+    "fields": {
+      "offre": 36,
+      "formateur": 76,
+      "message": "Actuellement formatrice en design graphique avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Adobe Photoshop.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-22T10:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 188,
+    "fields": {
+      "offre": 37,
+      "formateur": 120,
+      "message": "Actuellement formatrice en maquillage professionnel avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Coiffure, Maquillage professionnel.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-11T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 189,
+    "fields": {
+      "offre": 38,
+      "formateur": 116,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en langues (9 ans d'expérience) m'a permis de développer une réelle maîtrise de Français, Anglais, Espagnol.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-13T16:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 190,
+    "fields": {
+      "offre": 38,
+      "formateur": 136,
+      "message": "Actuellement formatrice en langues avec 11 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Français, Anglais, Espagnol.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-16T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-09-19T11:00:00Z",
+      "traitee_par": 47,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 191,
+    "fields": {
+      "offre": 38,
+      "formateur": 82,
+      "message": "Je souhaite mettre mon expertise en Français, Anglais, Espagnol au service de cette mission. Fort de 6 ans d'expérience en tant que formatrice en langues, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "retiree",
+      "date_candidature": "2026-11-16T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-17T11:00:00Z",
+      "traitee_par": 82,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 192,
+    "fields": {
+      "offre": 38,
+      "formateur": 66,
+      "message": "Actuellement formatrice en langues avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Français, Anglais, Espagnol.",
+      "statut": "acceptee",
+      "date_candidature": "2026-09-22T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-01T11:00:00Z",
+      "traitee_par": 47,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 193,
+    "fields": {
+      "offre": 38,
+      "formateur": 58,
+      "message": "Ayant développé une solide pratique de Français, Anglais, Espagnol au cours de mes 6 années en tant que formatrice en langues, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-09-30T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-08T09:00:00Z",
+      "traitee_par": 47,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 194,
+    "fields": {
+      "offre": 38,
+      "formateur": 74,
+      "message": "Je souhaite mettre mon expertise en Français, Anglais, Espagnol au service de cette mission. Fort de 6 ans d'expérience en tant que formatrice en langues, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-30T09:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-06T11:00:00Z",
+      "traitee_par": 47,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 195,
+    "fields": {
+      "offre": 39,
+      "formateur": 77,
+      "message": "Ayant développé une solide pratique de Analyse de données au cours de mes 6 années en tant que formateur en data et analyse, cette offre correspond exactement à mon profil.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-14T10:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-22T09:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": "Profil intéressant mais expérience insuffisante par rapport aux autres candidatures reçues."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 196,
+    "fields": {
+      "offre": 39,
+      "formateur": 131,
+      "message": "Actuellement formatrice en data et analyse avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Analyse de données.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-02T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-05T11:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 197,
+    "fields": {
+      "offre": 39,
+      "formateur": 57,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en qualité (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Analyse de données.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-27T10:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 198,
+    "fields": {
+      "offre": 39,
+      "formateur": 135,
+      "message": "Ayant développé une solide pratique de Analyse de données au cours de mes 10 années en tant que formatrice en qualité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-26T10:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 199,
+    "fields": {
+      "offre": 39,
+      "formateur": 53,
+      "message": "Actuellement formateur en data et analyse avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Analyse de données.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-20T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-23T09:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 200,
+    "fields": {
+      "offre": 39,
+      "formateur": 73,
+      "message": "Je souhaite mettre mon expertise en Analyse de données au service de cette mission. Fort de 7 ans d'expérience en tant que formateur en qualité, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-23T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 201,
+    "fields": {
+      "offre": 39,
+      "formateur": 115,
+      "message": "Actuellement formatrice en qualité avec 8 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Analyse de données.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-23T16:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 202,
+    "fields": {
+      "offre": 39,
+      "formateur": 61,
+      "message": "Je souhaite mettre mon expertise en Analyse de données au service de cette mission. Fort de 6 ans d'expérience en tant que formateur en data et analyse, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-30T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 203,
+    "fields": {
+      "offre": 39,
+      "formateur": 81,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en qualité (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Analyse de données.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-17T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-18T09:00:00Z",
+      "traitee_par": 92,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 204,
+    "fields": {
+      "offre": 39,
+      "formateur": 65,
+      "message": "Ayant développé une solide pratique de Analyse de données au cours de mes 7 années en tant que formateur en qualité, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-25T14:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 205,
+    "fields": {
+      "offre": 1,
+      "formateur": 153,
+      "message": "Je souhaite mettre mon expertise en Gestion logistique, Transit et douane au service de cette mission. Fort de 11 ans d'expérience en tant que formateur en transit et logistique, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-17T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 206,
+    "fields": {
+      "offre": 1,
+      "formateur": 151,
+      "message": "Ayant développé une solide pratique de Gestion logistique, Transit et douane au cours de mes 6 années en tant que formateur en transit et logistique, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-28T14:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 207,
+    "fields": {
+      "offre": 4,
+      "formateur": 159,
+      "message": "Je souhaite mettre mon expertise en Python, Deep Learning, Traitement du langage naturel, Computer Vision, Intelligence Artificielle au service de cette mission. Fort de 7 ans d'expérience en tant que formatrice en intelligence artificielle, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-26T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-05T11:00:00Z",
+      "traitee_par": 97,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 208,
+    "fields": {
+      "offre": 4,
+      "formateur": 161,
+      "message": "Ayant développé une solide pratique de Python, Deep Learning, Traitement du langage naturel, Computer Vision, Intelligence Artificielle au cours de mes 9 années en tant que formateur en intelligence artificielle, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-08T09:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 209,
+    "fields": {
+      "offre": 4,
+      "formateur": 160,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en intelligence artificielle (9 ans d'expérience) m'a permis de développer une réelle maîtrise de Python, Deep Learning, Traitement du langage naturel, Computer Vision, Intelligence Artificielle.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-19T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-24T11:00:00Z",
+      "traitee_par": 97,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 210,
+    "fields": {
+      "offre": 8,
+      "formateur": 167,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en plomberie (9 ans d'expérience) m'a permis de développer une réelle maîtrise de Installation électrique.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-22T14:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-31T15:00:00Z",
+      "traitee_par": 91,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 211,
+    "fields": {
+      "offre": 8,
+      "formateur": 166,
+      "message": "Je souhaite mettre mon expertise en Installation électrique au service de cette mission. Fort de 4 ans d'expérience en tant que formatrice en plomberie, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-20T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-23T15:00:00Z",
+      "traitee_par": 91,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 212,
+    "fields": {
+      "offre": 8,
+      "formateur": 165,
+      "message": "Actuellement formateur en électricité et énergie solaire avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Électricité bâtiment, Installation électrique, Énergie solaire.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-20T14:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 213,
+    "fields": {
+      "offre": 8,
+      "formateur": 163,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en électricité et énergie solaire (10 ans d'expérience) m'a permis de développer une réelle maîtrise de Électricité bâtiment, Installation électrique, Énergie solaire.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-24T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-28T15:00:00Z",
+      "traitee_par": 163,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 214,
+    "fields": {
+      "offre": 17,
+      "formateur": 171,
+      "message": "Ayant développé une solide pratique de AWS, Docker, Kubernetes au cours de mes 4 années en tant que formateur cloud & devops, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2027-01-25T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 215,
+    "fields": {
+      "offre": 17,
+      "formateur": 170,
+      "message": "Ayant développé une solide pratique de AWS, Docker, Kubernetes au cours de mes 9 années en tant que formateur cloud & devops, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-12-01T09:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-10T11:00:00Z",
+      "traitee_par": 86,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 216,
+    "fields": {
+      "offre": 18,
+      "formateur": 192,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en hôtellerie et tourisme (7 ans d'expérience) m'a permis de développer une réelle maîtrise de Service client.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-20T09:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 217,
+    "fields": {
+      "offre": 18,
+      "formateur": 191,
+      "message": "Actuellement formateur en hôtellerie et tourisme avec 4 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Service client.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-03T09:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 218,
+    "fields": {
+      "offre": 18,
+      "formateur": 190,
+      "message": "Je souhaite mettre mon expertise en Service client au service de cette mission. Fort de 8 ans d'expérience en tant que formatrice en hôtellerie et tourisme, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-18T16:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 219,
+    "fields": {
+      "offre": 19,
+      "formateur": 182,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en développement php (4 ans d'expérience) m'a permis de développer une réelle maîtrise de MySQL, PHP, Bootstrap.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-30T16:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-31T11:00:00Z",
+      "traitee_par": 48,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 220,
+    "fields": {
+      "offre": 19,
+      "formateur": 180,
+      "message": "Je souhaite mettre mon expertise en MySQL, PHP, Bootstrap au service de cette mission. Fort de 8 ans d'expérience en tant que formatrice en développement php, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-12T14:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 221,
+    "fields": {
+      "offre": 19,
+      "formateur": 183,
+      "message": "Ayant développé une solide pratique de MySQL, PHP, Bootstrap au cours de mes 9 années en tant que formateur en développement php, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-20T10:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 222,
+    "fields": {
+      "offre": 19,
+      "formateur": 181,
+      "message": "Je souhaite mettre mon expertise en MySQL, PHP, Bootstrap au service de cette mission. Fort de 9 ans d'expérience en tant que formatrice en développement php, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-03T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-12T11:00:00Z",
+      "traitee_par": 48,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 223,
+    "fields": {
+      "offre": 19,
+      "formateur": 184,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en développement php (10 ans d'expérience) m'a permis de développer une réelle maîtrise de MySQL, PHP, Bootstrap.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-29T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-02T09:00:00Z",
+      "traitee_par": 184,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 224,
+    "fields": {
+      "offre": 27,
+      "formateur": 185,
+      "message": "Je souhaite mettre mon expertise en Élevage, Agriculture moderne au service de cette mission. Fort de 5 ans d'expérience en tant que formateur en agriculture moderne, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-24T09:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-30T11:00:00Z",
+      "traitee_par": 38,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 225,
+    "fields": {
+      "offre": 27,
+      "formateur": 187,
+      "message": "Je souhaite mettre mon expertise en Élevage, Agriculture moderne au service de cette mission. Fort de 12 ans d'expérience en tant que formateur en agriculture moderne, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "retiree",
+      "date_candidature": "2026-10-26T14:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-28T15:00:00Z",
+      "traitee_par": 187,
+      "commentaire_decision": "A trouvé une autre mission entre-temps."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 226,
+    "fields": {
+      "offre": 27,
+      "formateur": 188,
+      "message": "Je souhaite mettre mon expertise en Élevage, Agriculture moderne au service de cette mission. Fort de 5 ans d'expérience en tant que formateur en agriculture moderne, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-04T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-13T15:00:00Z",
+      "traitee_par": 38,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 227,
+    "fields": {
+      "offre": 27,
+      "formateur": 186,
+      "message": "Actuellement formatrice en agriculture moderne avec 11 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Élevage, Agriculture moderne.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-10T14:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 228,
+    "fields": {
+      "offre": 28,
+      "formateur": 190,
+      "message": "Actuellement formatrice en hôtellerie et tourisme avec 8 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Gestion hôtelière, Tourisme, Service client.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-16T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 229,
+    "fields": {
+      "offre": 28,
+      "formateur": 175,
+      "message": "Actuellement formatrice en vente et négociation avec 5 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Service client.",
+      "statut": "refusee",
+      "date_candidature": "2026-10-20T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-22T11:00:00Z",
+      "traitee_par": 37,
+      "commentaire_decision": "Nous avons retenu un profil plus proche du besoin exprimé."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 230,
+    "fields": {
+      "offre": 28,
+      "formateur": 176,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en vente et négociation (12 ans d'expérience) m'a permis de développer une réelle maîtrise de Service client.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-18T10:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-25T09:00:00Z",
+      "traitee_par": 37,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 231,
+    "fields": {
+      "offre": 28,
+      "formateur": 191,
+      "message": "Ayant développé une solide pratique de Gestion hôtelière, Tourisme, Service client au cours de mes 4 années en tant que formateur en hôtellerie et tourisme, cette offre correspond exactement à mon profil.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-05T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-15T15:00:00Z",
+      "traitee_par": 37,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 232,
+    "fields": {
+      "offre": 30,
+      "formateur": 156,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en transit et logistique (3 ans d'expérience) m'a permis de développer une réelle maîtrise de Gestion logistique, Gestion des stocks.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-13T14:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 233,
+    "fields": {
+      "offre": 30,
+      "formateur": 155,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en transit et logistique (11 ans d'expérience) m'a permis de développer une réelle maîtrise de Gestion logistique, Gestion des stocks.",
+      "statut": "retiree",
+      "date_candidature": "2026-09-30T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-03T09:00:00Z",
+      "traitee_par": 155,
+      "commentaire_decision": "Indisponible finalement sur la période proposée."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 234,
+    "fields": {
+      "offre": 30,
+      "formateur": 151,
+      "message": "Actuellement formateur en transit et logistique avec 6 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Gestion logistique, Gestion des stocks.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-04T09:45:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 235,
+    "fields": {
+      "offre": 30,
+      "formateur": 153,
+      "message": "Actuellement formateur en transit et logistique avec 11 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Gestion logistique, Gestion des stocks.",
+      "statut": "en_attente",
+      "date_candidature": "2026-09-21T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 236,
+    "fields": {
+      "offre": 31,
+      "formateur": 166,
+      "message": "Je souhaite mettre mon expertise en Installation électrique, Plomberie au service de cette mission. Fort de 4 ans d'expérience en tant que formatrice en plomberie, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-10T14:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 237,
+    "fields": {
+      "offre": 31,
+      "formateur": 169,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en maintenance industrielle (5 ans d'expérience) m'a permis de développer une réelle maîtrise de Installation électrique.",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-08T16:30:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 238,
+    "fields": {
+      "offre": 33,
+      "formateur": 196,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en animation 3d (3 ans d'expérience) m'a permis de développer une réelle maîtrise de Animation 3D, Blender, Motion Design.",
+      "statut": "refusee",
+      "date_candidature": "2026-12-06T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-15T15:00:00Z",
+      "traitee_par": 89,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 239,
+    "fields": {
+      "offre": 33,
+      "formateur": 194,
+      "message": "Je souhaite mettre mon expertise en Animation 3D, Blender, Motion Design au service de cette mission. Fort de 4 ans d'expérience en tant que formatrice en animation 3d, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "en_attente",
+      "date_candidature": "2026-11-23T09:15:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 240,
+    "fields": {
+      "offre": 33,
+      "formateur": 195,
+      "message": "Je souhaite mettre mon expertise en Animation 3D, Blender, Motion Design au service de cette mission. Fort de 4 ans d'expérience en tant que formatrice en animation 3d, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-12-04T16:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-12T15:00:00Z",
+      "traitee_par": 89,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 241,
+    "fields": {
+      "offre": 33,
+      "formateur": 197,
+      "message": "Actuellement formatrice en animation 3d avec 8 ans d'expérience, je suis particulièrement motivé(e) par cette mission qui mobilise mes compétences en Animation 3D, Blender, Motion Design.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-08T09:45:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-18T09:00:00Z",
+      "traitee_par": 89,
+      "commentaire_decision": "Excellente adéquation entre les compétences du candidat et les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 242,
+    "fields": {
+      "offre": 35,
+      "formateur": 198,
+      "message": "Je souhaite mettre mon expertise en C++, C# au service de cette mission. Fort de 5 ans d'expérience en tant que formateur en programmation c++/c#, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-10-15T16:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-10-25T09:00:00Z",
+      "traitee_par": 41,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 243,
+    "fields": {
+      "offre": 35,
+      "formateur": 199,
+      "message": "Ayant développé une solide pratique de C++, C# au cours de mes 5 années en tant que formateur en programmation c++/c#, cette offre correspond exactement à mon profil.",
+      "statut": "en_attente",
+      "date_candidature": "2026-10-15T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 244,
+    "fields": {
+      "offre": 35,
+      "formateur": 200,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formateur en programmation c++/c# (6 ans d'expérience) m'a permis de développer une réelle maîtrise de C++, C#.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-30T10:30:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-04T11:00:00Z",
+      "traitee_par": 41,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 245,
+    "fields": {
+      "offre": 40,
+      "formateur": 169,
+      "message": "Je souhaite mettre mon expertise en Installation électrique, Maintenance industrielle au service de cette mission. Fort de 5 ans d'expérience en tant que formateur en maintenance industrielle, je suis convaincu de pouvoir répondre aux attentes de votre offre.",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-18T14:15:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-25T11:00:00Z",
+      "traitee_par": 42,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 246,
+    "fields": {
+      "offre": 40,
+      "formateur": 166,
+      "message": "Je candidate avec enthousiasme à cette offre : mon parcours de formatrice en plomberie (4 ans d'expérience) m'a permis de développer une réelle maîtrise de Installation électrique.",
+      "statut": "refusee",
+      "date_candidature": "2026-11-06T09:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-11-13T15:00:00Z",
+      "traitee_par": 42,
+      "commentaire_decision": "Disponibilité du candidat incompatible avec le calendrier de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 247,
+    "fields": {
+      "offre": 32,
+      "formateur": 202,
+      "message": "Formateur(trice) en cuisine professionnelle, je souhaite partager mon expertise en Cuisine professionnelle, Pâtisserie lors de cette mission (3 ans d'expérience).",
+      "statut": "acceptee",
+      "date_candidature": "2026-11-30T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2026-12-05T11:00:00Z",
+      "traitee_par": 45,
+      "commentaire_decision": "Excellente adéquation avec les besoins de la mission."
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 248,
+    "fields": {
+      "offre": 32,
+      "formateur": 203,
+      "message": "Formateur(trice) en cuisine professionnelle, je souhaite partager mon expertise en Cuisine professionnelle, Pâtisserie lors de cette mission (5 ans d'expérience).",
+      "statut": "en_attente",
+      "date_candidature": "2026-12-24T10:00:00Z",
+      "cv": null,
+      "date_traitement": null,
+      "traitee_par": null,
+      "commentaire_decision": ""
+    }
+  },
+  {
+    "model": "candidature.candidature",
+    "pk": 249,
+    "fields": {
+      "offre": 32,
+      "formateur": 205,
+      "message": "Formateur(trice) en cuisine professionnelle, je souhaite partager mon expertise en Cuisine professionnelle, Pâtisserie lors de cette mission (8 ans d'expérience).",
+      "statut": "acceptee",
+      "date_candidature": "2026-12-27T10:00:00Z",
+      "cv": null,
+      "date_traitement": "2027-01-01T11:00:00Z",
+      "traitee_par": 45,
+      "commentaire_decision": "Excellente adéquation avec les besoins de la mission."
+    }
+  }
+]

@@ -1,0 +1,311 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tableau de bord{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'images/image.png' %}">
+
+    <!-- ── CSS global (thème + dark mode) ──────────────────────── -->
+    <link rel="stylesheet" href="{% static 'css/app/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app/header.css' %}">
+
+    <style>
+        html, body{ 
+            min-height: 100%; 
+        }
+
+        .container{
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .container-sub{
+            flex: 1;
+            margin-left: 255px;
+            margin-top: 56px;
+            min-width: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main{ 
+            flex: 1; 
+            padding-top: 56px; 
+        }
+
+        /* Sidebar collapsed — rail d'icônes (voir sidebar.css pour le
+           détail : texte caché, icônes centrées, tooltip au survol).
+           Avant : transform:translateX(-255px) faisait glisser toute
+           la sidebar hors écran au lieu de la rétrécir en rail. */
+        .sidebar--collapsed.sidebar_container{ 
+            width: 72px; 
+        }
+        .sidebar--collapsed.container-sub{ 
+            margin-left: 72px; 
+        }
+
+        /* Toasts */
+        #toastContainer{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Dropdown notifications — scopé sous #notifDropdown pour ne
+           jamais entrer en collision avec le CSS des autres pages. */
+        #notifDropdown {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 320px;
+            max-height: 420px;
+            overflow-y: auto;
+            background: var(--bg-card, #fff);
+            border: 1px solid var(--border, #e5e7eb);
+            border-radius: 14px;
+            box-shadow: 0 16px 40px rgba(0,0,0,.18);
+            z-index: 500;
+        }
+        #notifDropdown .notif-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border, #e5e7eb);
+            font-weight: 700;
+            font-size: .9rem;
+            color: var(--text-primary, #111);
+        }
+        #notifDropdown .notif-head button {
+            background: none;
+            border: none;
+            color: #6366f1;
+            font-size: .78rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        #notifDropdown .notif-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border, #f3f4f6);
+            cursor: pointer;
+            transition: background .15s;
+        }
+        #notifDropdown .notif-item:hover { background: var(--bg-hover, #f9fafb); }
+        #notifDropdown .notif-item--unread { background: rgba(99,102,241,.08); }
+        #notifDropdown .notif-item-titre {
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--text-primary, #111);
+            margin: 0 0 2px;
+        }
+        #notifDropdown .notif-item-message {
+            font-size: .8rem;
+            color: var(--text-muted, #6b7280);
+            margin: 0 0 4px;
+        }
+        #notifDropdown .notif-item-date {
+            font-size: .7rem;
+            color: var(--text-muted, #9ca3af);
+        }
+        #notifDropdown .notif-empty {
+            padding: 30px 16px;
+            text-align: center;
+            font-size: .85rem;
+            color: var(--text-muted, #6b7280);
+        }
+
+        .toast{
+            min-width: 320px;
+            max-width: 420px;
+            padding: 16px 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,.15);
+            animation: toastIn .3s ease;
+        }
+
+        .toast.hide{ 
+            animation: toastOut .3s ease forwards; 
+        }
+
+        @keyframes toastIn{ 
+            from{ 
+                opacity:0; 
+                transform:translateX(50px); 
+            } 
+            to{ 
+                opacity:1; 
+                transform:translateX(0);     
+            } 
+        }
+
+        @keyframes toastOut{ 
+            from{ 
+                opacity:1; 
+                transform:translateX(0);    
+            } 
+            to{ 
+                opacity:0; 
+                transform:translateX(50px);  
+            } 
+        }
+    </style>
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/app/dashboard.css' %}">
+        <style>
+            .view{ 
+                padding-bottom: 30px;
+            } 
+        </style>
+    {% endblock %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- ── app.js : bouton dark mode, toasts, sidebar toggle, etc.
+         (le thème lui-même est déjà appliqué par le script inline en
+         tête de <body>, pour éviter le flash au chargement) ── -->
+    <script src="{% static 'js/app/app.js' %}" defer></script>
+</head>
+<body>
+    <!-- ── Applique le thème AVANT le premier rendu (anti-flash) ──────
+         Script inline, non-déferré, placé en tout premier enfant de
+         <body> : le nœud <body> existe dès que le parseur atteint cette
+         balise, donc document.body est déjà disponible ici, avant même
+         que le reste du contenu ne soit analysé/peint. app.js (chargé
+         en <head> avec defer) s'exécute lui bien plus tard — trop tard
+         pour éviter le flash — il ne s'occupe donc plus que du bouton
+         de bascule et du reste de la logique. ── -->
+    <script>
+        document.body.classList.toggle('dark', localStorage.getItem('theme') === 'dark');
+    </script>
+
+    {% if user.is_authenticated %}
+        <div class="container">
+            {% block sidebar %}
+                {% include 'core/app/sidebar.html' %}
+            {% endblock %}
+
+            <div class="container-sub">
+                <header>
+                    <div class="breadcrumbs">
+                        <button class="class_btn_header btn_panel" aria-label="Masquer la sidebar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+                        </button>
+
+                        <div class="breadcrumbs_text">
+                            <span>App</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            {% block page_name %}
+                                <span class="page_name">Tableau de bord</span>
+                            {% endblock %}
+                        </div>
+                    </div>
+
+                    <div class="user_menu">
+                        <div class="user_menu_icons" style="position:relative;">
+                            <button class="class_btn_header notification_icon" aria-label="Notifications" style="position:relative;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+                                <span id="notifBadge" style="display:none;position:absolute;top:2px;right:2px;min-width:16px;height:16px;padding:0 4px;background:#dc2626;color:#fff;font-size:.65rem;font-weight:700;border-radius:999px;align-items:center;justify-content:center;line-height:1;"></span>
+                            </button>
+
+                            <div id="notifDropdown" style="display:none;">
+                                <div class="notif-head">
+                                    <span>Notifications</span>
+                                    <button type="button" id="notifToutLire">Tout marquer lu</button>
+                                </div>
+                                <div id="notifList"></div>
+                            </div>
+
+                            <button class="class_btn_header" id="i_need_help_btn" title="Besoin d'aide" aria-label="Aide">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                            </button>
+
+                            <!-- Bouton dark mode — ciblé par .moonBtn dans app.js -->
+                            <button class="class_btn_header moonBtn" aria-label="Changer le thème">
+                                <svg id="app-moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+                                <svg id="app-sun-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                            </button>
+                        </div>
+
+                        <a class="user-profile-link" href="{% url 'account:parametres_profil' %}" style="text-transform:capitalize;">
+                            <div class="profil_avatar">
+                                {% if user.profile_picture %}
+                                    <img src="{{ user.profile_picture.url }}" alt="Photo de {{ user.first_name }}">
+                                {% elif user.first_name and user.last_name %}
+                                    <span>{{ user.first_name|slice:":1" }}{{ user.last_name|slice:":1" }}</span>
+                                {% else %}
+                                    <span>{{ user.username|upper|slice:":2" }}</span>
+                                {% endif %}
+                            </div>
+
+                            <div class="user-infos">
+                                {% if user.first_name and user.last_name %}
+                                    <span class="user-name">{{ user.first_name }} {{ user.last_name }}</span>
+                                {% else %}
+                                    <span class="user-name">{{ user.username }}</span>
+                                {% endif %}
+                                <span class="user-role">{{ user.role }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </header>
+
+                {% block main %}
+                    <main>
+                        {% include 'core/app/dashboard_content.html' %}
+                    </main>
+                {% endblock %}
+
+                <div id="toastContainer">
+                    {% for message in messages %}
+                        <div class="toast {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+
+                <!-- Modal évaluation global : le JS (modal-eval.js, chargé plus bas)
+                     est déjà "global", mais le HTML du modal ne l'était pas — on
+                     l'inclut ici une bonne fois pour toutes pour qu'il soit
+                     disponible sur toute page qui appelle openEvalModal(). -->
+                {% include 'evaluations/modal_evaluation.html' %}
+
+                <!-- Modal "Besoin d'aide" global : ouvert par #i_need_help_btn
+                     ci-dessus, JS dans modal-help.js (chargé plus bas). -->
+                {% include 'support/help_modal.html' %}
+            </div>
+        </div>
+
+    {% else %}
+        <a href="{% url 'account:log_in' %}">Connexion</a>
+    {% endif %}
+
+    <!-- ── JS global (toasts + dark mode + sidebar) ─────────────────
+        app.js est déjà chargé en <head> pour le thème.
+        On le recharge PAS ici — DOMContentLoaded s'en charge.
+    ─────────────────────────────────────────────────────────────── -->
+
+    <!-- Clé publique VAPID (nécessaire pour l'abonnement Web Push côté JS) -->
+    <script>window.VAPID_PUBLIC_KEY = "{{ VAPID_PUBLIC_KEY|default:'' }}";</script>
+    <script src="{% static 'js/app/notifications.js' %}"></script>
+
+    <!-- Modal évaluation global (disponible sur toutes les pages) -->
+    <script src="{% static 'js/app/modal-eval.js' %}"></script>
+
+    <!-- Modal "Besoin d'aide" global (disponible sur toutes les pages) -->
+    <script src="{% static 'js/app/modal-help.js' %}"></script>
+
+    {% block js %}{% endblock %}
+</body>
+</html>

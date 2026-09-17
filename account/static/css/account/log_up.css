@@ -1,0 +1,351 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    /* background-color: #f7f0f1; */
+}
+
+.main_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    width: 90%;
+    padding: 60px 0;
+}
+
+/* Je donne une taille aux 3 block principaux */
+.create_your_account_block, .choice_role_block, .logup_section{
+    width: 675px;
+}
+
+/* create_your_account_block */
+.create_your_account_block{
+    text-align: center;
+}
+
+.create_your_account_block h1{
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.create_your_account_block p{
+    color: #555;
+}
+
+
+/* Le block de choix de rôle */
+.choice_role_block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.choice_role_block section{
+    flex: 1;
+    padding: 12px 20px 18px 20px;
+    border-radius: 12px;
+    border: 2px solid #dee1e8;
+    background-color: #fff;
+    cursor: pointer;
+    /* font-size: 0.8em; */
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.choice_role_block section:hover{
+    /* border-color: #0b6ba5; */
+    border-color: #ccc;
+}
+
+.choice_role_block section svg{
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+}
+
+/* Le block qui contient le role sélectionné que je vais géré avec le javascript */
+.choice_role_block .is_clicked, .choice_role_block .is_clicked:hover{
+    border: 2px solid #000;
+}
+
+.choice_role_block .is_clicked svg{
+    color:#f0a645;
+}
+
+
+.choice_role_block p{
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.choice_role_block small{
+    color: #555;
+    font-size: 0.75em;
+}
+
+/* La section de connexion */
+
+.logup_section{
+    padding: 44px;
+    border-radius: 20px;
+    border: 1px solid #dee1e8;
+    background-color: white;
+}
+
+
+
+/*  */
+
+
+
+#section-formateur, #section-institution{
+    padding-top: 30px;
+}
+
+/* --- Style des Inputs (Ta classe container-input) --- */
+.container-input {
+    display: flex;
+    /* align-items: center; */
+    background-color: #f8fafc;
+    background-color: #f9f9f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 5px;
+    gap: 10px;
+    transition: border-color 0.2s;
+}
+
+.container-input:focus-within {
+    border-color: #000000;
+    background-color: #ffffff;
+}
+
+/* Pour que les inputs de Django prennent toute la place dans le container */
+.container-input input, 
+.container-input textarea, 
+.container-input select {
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    width: 100%;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.container-input svg {
+    color: #94a3b8;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.toggle-password{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.toggle-password .icon-eye-off{
+    display: none;
+}
+
+.toggle-password.is-visible .icon-eye{
+    display: none;
+}
+
+.toggle-password.is-visible .icon-eye-off{
+    display: block;
+}
+
+body.dark .toggle-password{
+    color: #8f9cae;
+}
+
+/* --- Mise en page globale --- */
+.en_tete{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: space-between; */
+}
+
+.en_tete strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+.en_tete .line{
+    height: 1px;
+    width: 430px;
+    border: solid 1px #94a3b8;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 15px;
+    display: block;
+}
+
+small {
+    display: block;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+
+/* La section du checkbox */
+#section_cgu{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-direction: row-reverse;
+    padding: 30px 0;
+}
+
+#section_cgu label{
+    margin: 0;
+}
+
+
+/* Bouton de soumission */
+/* button.btn_login {
+    width: 100%;
+    background-color: #0f172a;
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button.btn_login:hover {
+    background-color: #1e293b;
+} */
+
+.btn_login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #091123;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: opacity .2s ease, filter .2s ease;
+}
+
+.btn_login:disabled{
+    opacity: .45;
+    filter: blur(.5px) grayscale(.3);
+    cursor: not-allowed;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   DARK MODE
+══════════════════════════════════════════════════════════════════ */
+
+body.dark main {
+    background-color: #0b0e14;
+}
+
+body.dark .create_your_account_block h1 {
+    color: #f9fafb;
+}
+
+body.dark .create_your_account_block p {
+    color: #8f9cae;
+}
+
+body.dark .choice_role_block section {
+    background-color: #131a26;
+    border-color: #242f41;
+}
+
+body.dark .choice_role_block section:hover {
+    border-color: #334155;
+}
+
+body.dark .choice_role_block .is_clicked,
+body.dark .choice_role_block .is_clicked:hover {
+    border-color: #f9fafb;
+}
+
+body.dark .choice_role_block p {
+    color: #f9fafb;
+}
+
+body.dark .choice_role_block small {
+    color: #8f9cae;
+}
+
+body.dark .logup_section {
+    background-color: #131a26;
+    border-color: #242f41;
+}
+
+body.dark .container-input {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+body.dark .container-input:focus-within {
+    border-color: #f9fafb;
+    background-color: #1e293b;
+}
+
+body.dark .container-input input,
+body.dark .container-input textarea,
+body.dark .container-input select {
+    color: #f1f5f9;
+}
+
+body.dark .container-input svg {
+    color: #8f9cae;
+}
+
+body.dark .en_tete strong {
+    color: #8f9cae;
+}
+
+body.dark .en_tete .line {
+    border-color: #334155;
+}
+
+body.dark label {
+    color: #f1f5f9;
+}
+
+body.dark small {
+    color: #8f9cae;
+}
+
+body.dark .btn_login {
+    background-color: #4a6ab6;
+}

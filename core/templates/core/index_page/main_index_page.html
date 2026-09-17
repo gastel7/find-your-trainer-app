@@ -1,0 +1,328 @@
+{% load static %}
+<main>
+    <!-- section hero -->
+    <section class="section_hero_container">
+        <div class="hero-container">
+            <!-- SECTION HERO -->
+            <section class="hero-main">
+                <div class="hero-content">
+                    <div class="badge">✨ Nouvelle plateforme edtech française</div>
+
+                    <h1 class="hero-title">
+                        Le formateur parfait,<br>
+                        <span class="gradient-text">au bon moment.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Connectez-vous à une communauté de formateurs qualifiés ou faites découvrir votre expertise aux
+                        institutions qui comptent.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="#" class="btn-dark">Trouver un formateur <span>→</span></a>
+                        <a href="#" class="btn-orange">Je suis formateur</a>
+                    </div>
+
+                    <div class="hero-social">
+                        <div class="avatar-stack">
+                            <span class="av av1">AL</span>
+                            <span class="av av2">KR</span>
+                            <span class="av av3">SM</span>
+                            <span class="av av4">JF</span>
+                        </div>
+                        <p><strong>1200+</strong> formateurs certifiés</p>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-card">
+                        <img src="{% static 'images/hero_image.png' %}" alt="">
+
+                        <!-- Illustration abstraite (SVG ou Image) -->
+                        <div class="abstract-shape"></div>
+                        <!-- Badge de notation flottant -->
+                        <div class="rating-badge">
+                            <span class="star">⭐</span>
+
+                            <div class="rating-info">
+                                <strong>4.9 / 5</strong>
+                                <span>sur 3 400 avis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION BARRE DE RECHERCHE -->
+            <!-- <section class="search-section">
+                <div class="search-bar">
+                    <div class="search-input">
+                        <span class="icon">🔍</span>
+                        <input type="text" placeholder="Compétence ou mot-clé (ex: React, data...)">
+                    </div>
+                    <div class="search-input divider">
+                        <span class="label">VILLE</span>
+                        <input type="text" placeholder="Paris, Lyon, Remote...">
+                    </div>
+                    <button class="btn-search">Rechercher <span>→</span></button>
+                </div>
+            </section> -->
+        </div>
+    </section>
+
+
+    <!-- Section why_choose_us : pourquoi nous choisir -->
+    <section class="why_choose_us">
+        <div class="why_choose_us_content">
+            <div class="why_choose_us_text">pourquoi nous choisir ?</div>
+            <h2 class="why_choose_us_title">Une plateforme pensée pour la qualité, pas la quantité.</h2>
+
+
+            <div class="why_choose_us_cards_container">
+                <section class="why_choose_us_cards">
+                    <div class="card_icon" style="background-color: #dee1e8;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#8c9cfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-users h-6 w-6" aria-hidden="true">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+
+
+                    <div class="card_text">
+                        <h3>Profils vérifiés</h3>
+                        <p>Chaque formateur passe par un processus de validation : parcours, références et entretien.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="why_choose_us_cards">
+                    <div class="card_icon" style="background-color:#f0a6462e;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#f0a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-briefcase h-6 w-6" aria-hidden="true">
+                            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                        </svg>
+                    </div>
+
+                    <div class="card_text">
+                        <h3>Missions ciblées</h3>
+                        <p>Les institutions publient des offres précises. Les formateurs postulent en un clic.</p>
+                    </div>
+                </section>
+
+                <section class="why_choose_us_cards">
+                    <div class="card_icon" style="background-color: #be6db72e;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#be6db7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-message-square h-6 w-6" aria-hidden="true">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+
+                    <div class="card_text">
+                        <h3>Messagerie intégrée</h3>
+                        <p>Échangez en direct, planifiez, signez — sans jamais quitter la plateforme.</p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Section two_paths : Deux parcours -->
+    <section class="two_paths">
+        <div class="two_paths_content">
+            <div class="two_paths_cards_container">
+                <div class="two_paths_card formateur">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-graduation-cap h-10 w-10 mb-6 opacity-80" aria-hidden="true">
+                            <path
+                                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                            </path>
+                            <path d="M22 10v6"></path>
+                            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                        </svg>
+                    </div>
+                    <h3>Je suis un formateur</h3>
+
+                    <p>Publiez votre profil, répondez aux offres et développez votre activité en toute autonomie.</p>
+
+                    <a href="{% url 'account:log_up' %}">
+                        Rejoindre
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill=" oklch(0.15 0.025 265)">
+                            <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="two_paths_card institution">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-shield-check h-10 w-10 mb-6 opacity-80" aria-hidden="true">
+                            <path
+                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                            </path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3>Je suis une institution</h3>
+
+                    <p>Trouvez des formateurs experts, publiez vos besoins et recrutez en quelques jours.</p>
+                    <a href="{% url 'account:log_up' %}">
+                        Publier une offre
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill=" oklch(0.15 0.025 265)">
+                            <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="download-section">
+        <div class="download-card">
+            <div class="mesh-bg" aria-hidden="true"></div>
+            <div class="content">
+                <div class="text-col">
+                    <div class="badge">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                        <span>Application desktop</span>
+                    </div>
+
+                    <h2 class="title">
+                        Disponible sur <span class="gradient-text">votre navigateur.</span>
+                    </h2>
+
+                    <p class="description">
+                        Installez <span class="gradient-text" style="font-weight: bolder;">Find Your trainer App</span> en un clic depuis votre navigateur : accès direct depuis votre
+                        bureau, mises à jour automatiques et navigation fluide, sans téléchargement d'application.
+                    </p>
+
+                    <ul class="features">
+                        <li>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                                </svg></span>
+                            <span>Notifications en temps réel</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg></span>
+                            <span>Messagerie intégrée</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                </svg></span>
+                            <span>Candidatures en un clic</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg></span>
+                            <span>Connexion sécurisée</span>
+                        </li>
+                    </ul>
+
+                    <div class="cta">
+                        <div class="cta__content">
+                            <div class="os-badge">
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <span class="os-label">Disponible sur</span>
+                                    <span class="os-name">Windows · macOS · Linux</span>
+                                </div>
+                                <span class="os-divider" aria-hidden="true"></span>
+
+                                <span class="os-icons">
+                                    <!-- Windows -->
+                                    <svg class="os-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="Windows">
+                                        <path
+                                            d="M3 5.5l7-.8v6.8H3V5.5zm8-1l9-1.2v8H11V4.5zM3 12.5h7v6.8l-7-.9V12.5zm8-.5h9v7.8l-9-1.2V12z" />
+                                    </svg>
+                                    <!-- macOS -->
+                                    <svg class="os-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="macOS">
+                                        <path
+                                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                                    </svg>
+                                    <!-- Linux Tux -->
+                                    <svg class="os-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="Linux">
+                                        <path
+                                            d="M12 2c-2.2 0-3.5 2-3.5 4.3 0 1.2.3 2.3.9 3.2-1.9 1.6-3.4 4.2-3.4 6.7 0 1.7.6 3 1.7 3.9-.4.5-.7 1-.7 1.5 0 .9.8 1.4 1.9 1.4.9 0 1.6-.3 2.2-.8.3.1.6.1.9.1s.6 0 .9-.1c.6.5 1.3.8 2.2.8 1.1 0 1.9-.5 1.9-1.4 0-.5-.3-1-.7-1.5 1.1-.9 1.7-2.2 1.7-3.9 0-2.5-1.5-5.1-3.4-6.7.6-.9.9-2 .9-3.2C15.5 4 14.2 2 12 2zm-1.3 3.4c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9zm2.6 0c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9zM12 8.5c.6 0 1.1.4 1.1.9 0 .3-.2.5-.5.7l-.6.4-.6-.4c-.3-.2-.5-.4-.5-.7 0-.5.5-.9 1.1-.9z" />
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <button type="button" class="btn_install js-install-app">
+                                Télécharger l'application
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                    width="20px" fill="currentColor">
+                                    <path
+                                        d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <p class="cta-note">Raccourci bureau via le navigateur · Mise à jour automatique · Sans installation complexe</p>
+                    </div>
+                </div>
+
+                <div class="visual-col">
+                    <div class="glow" aria-hidden="true"></div>
+                    <div class="browser-mockup">
+                        <div class="browser-chrome">
+                            <div class="browser-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="browser-url">findyourtrainer.wasmer.app</div>
+                        </div>
+                        <div class="browser-body">
+                            <div class="app-header">
+                                <div class="app-logo">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                                    </svg>
+                                </div>
+                                <span>Find Your Trainer App</span>
+                            </div>
+                            <div class="card-mission">
+                                <div class="card-label">Nouvelle mission</div>
+                                <div class="card-title">Formation React avancé — 3 jours</div>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stats-label">Cette semaine</div>
+                                <div class="stats-value">4 candidatures</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

@@ -1,0 +1,200 @@
+{% load humanize %}
+
+<section class="page-head">
+    <div>
+        <div class="eyebrow">Mon espace</div>
+        <h1>
+            Bonjour
+            {% if user.first_name %}
+                <span style="text-transform:capitalize;">{{ user.first_name }}</span>
+            {% else %}
+                <span style="text-transform:capitalize;">{{ user.username }}</span>
+            {% endif %}
+            👋
+        </h1>
+        <p class="subtitle">Voici un aperçu de l'activité de votre institution.</p>
+    </div>
+</section>
+
+<section class="view">
+
+    <!-- ── Stats ──────────────────────────────────────────────────── -->
+    <div class="stats-grid">
+ 
+        <!-- Offres publiées -->
+        <article class="stat-card">
+            <div class="stat-top">
+                <div class="stat-icon" style="--c:#6366f1">
+                    <!-- Lucide: file-text -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="1.75"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                {% if nb_offres %}
+                    <span class="chip">{{ nb_offres }} publiée{{ nb_offres|pluralize }}</span>
+                {% endif %}
+            </div>
+            <div class="stat-value">{{ nb_offres }}</div>
+            <div class="stat-label">Offres publiées</div>
+        </article>
+ 
+        <!-- Candidatures reçues -->
+        <article class="stat-card">
+            <div class="stat-top">
+                <div class="stat-icon" style="--c:#f59e0b">
+                    <!-- Lucide: users -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="1.75"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                {% if nb_candidatures_recues %}
+                    <span class="chip">{{ nb_candidatures_recues }} reçue{{ nb_candidatures_recues|pluralize }}</span>
+                {% endif %}
+            </div>
+            <div class="stat-value">{{ nb_candidatures_recues }}</div>
+            <div class="stat-label">Candidatures reçues</div>
+        </article>
+ 
+        <!-- Missions actives -->
+        <article class="stat-card">
+            <div class="stat-top">
+                <div class="stat-icon" style="--c:#16a34a">
+                    <!-- Lucide: circle-check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="1.75"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </div>
+                {% if nb_missions_actives %}
+                    <span class="chip">En cours</span>
+                {% endif %}
+            </div>
+            <div class="stat-value">{{ nb_missions_actives }}</div>
+            <div class="stat-label">Missions actives</div>
+        </article>
+ 
+        <!-- Messages non lus -->
+        <article class="stat-card">
+            <div class="stat-top">
+                <div class="stat-icon" style="--c:#ec4899">
+                    <!-- Lucide: message-circle -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="1.75"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                {% if messages_non_lus %}
+                    <span class="chip">{{ messages_non_lus }} nouveau{{ messages_non_lus|pluralize }}</span>
+                {% endif %}
+            </div>
+            <div class="stat-value">{{ messages_non_lus }}</div>
+            <div class="stat-label">Messages non lus</div>
+        </article>
+ 
+    </div>
+ 
+    <!-- ── Grille principale ─────────────────────────────────────── -->
+    <div class="grid-3">
+
+        <!-- Offres actives (large) -->
+        <article class="card span-2">
+            <div class="card-head">
+                <h2>Mes offres actives</h2>
+                <a href="{% url 'offre:ajouter_offre' %}" class="btn-dark">+ Nouvelle offre</a>
+            </div>
+
+            {% if offres %}
+            <ul class="row-list">
+                {% for offre in offres %}
+                <li class="row offer">
+                    <div class="row-main">
+                        <div class="row-title">{{ offre.titre }}</div>
+                        <div class="row-sub">
+                            {{ offre.candidatures.count }} candidature{{ offre.candidatures.count|pluralize }} reçue{{ offre.candidatures.count|pluralize }}
+                            {% if offre.date_cloture %}
+                                · Clôture le {{ offre.date_cloture|date:"d/m/Y" }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <span class="pill {% if offre.statut == 'publiee' %}pill-active{% endif %}">
+                        {{ offre.get_statut_display }}
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="empty-state">
+                Aucune offre publiée.
+                <a href="{% url 'offre:ajouter_offre' %}">Créer une offre →</a>
+            </p>
+            {% endif %}
+        </article>
+
+        <!-- Messagerie -->
+        <article class="card">
+            <div class="card-head">
+                <h2>Messagerie</h2>
+                <a href="{% url 'chat:chat_accueil' %}" class="ghost-link">Ouvrir</a>
+            </div>
+
+            {% if conversations %}
+            <ul class="msg-list">
+                {% for msg in conversations %}
+                <li class="msg">
+                    <div class="avatar" style="--c:#f59e0b">
+                        {% if msg.expediteur_id.username %}
+                            {{ msg.expediteur_id.username|slice:":2"|upper }}
+                        {% else %}                            
+                            {{ msg.expediteur_id.first_name|slice:":1"|upper }}{{ msg.expediteur_id.last_name|slice:":1"|upper }}
+                        {% endif%}
+                    </div>
+                    <div class="msg-body">
+                        <div class="msg-top">
+                            <span class="msg-name">
+                                {% if not msg.expediteur_id.first_name or not msg.expediteur_id.last_name %}
+                                    {{ msg.expediteur_id.username}}
+                                {% else %}  
+                                    {{ msg.expediteur_id.first_name }} {{ msg.expediteur_id.last_name }}
+                                {% endif%}
+                            </span>
+                            <span class="msg-time">{{ msg.date_envoi|timesince }}</span>
+                        </div>
+                        <div class="msg-text">{{ msg.contenu|truncatechars:50 }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="empty-state">Aucun message reçu.</p>
+            {% endif %}
+        </article>
+
+    </div>
+
+    <!-- ── CTA large ──────────────────────────────────────────────── -->
+    <article class="card hero-card wide">
+        <div class="halo halo-accent"></div>
+        <div class="hero-wide">
+            <div>
+                <h3>Besoin d'un formateur rapidement ?</h3>
+                <p>Publiez une nouvelle offre et recevez vos premières candidatures sous 24h.</p>
+            </div>
+            <a href="{% url 'offre:ajouter_offre' %}" class="btn-accent">Publier une offre</a>
+        </div>
+    </article>
+
+</section>

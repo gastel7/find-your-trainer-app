@@ -1,0 +1,158 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %}Messagerie{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/chat/chat.css' %}?v={% now 'U' %}">
+{% endblock%}
+
+{% block page_name %}
+    <span class="page_name">Messagerie</span>
+{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="app-container">
+            <!-- BARRE LATÉRALE : LISTE DES DISCUSSIONS -->
+            <div class="chat-sidebar">
+                <div class="chat-sidebar-header">
+                    <div class="header-top">
+                        <h2>Messagerie</h2>
+                        <button id="toggle-contacts-btn" class="action-btn" title="Nouvelle discussion">＋</button>
+                    </div>
+                    <div class="search-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search h-4 w-4 text-muted-foreground" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                        <input type="text" id="search-contact" placeholder="Rechercher un contact...">
+                    </div>
+                </div>
+
+                <!-- 1. DISCUSSIONS RÉCENTES -->
+                <div class="conversation-list" id="recent-chats-list">
+                    <p class="list-title">Discussions récentes</p>
+                    {% for contact in contacts_recents %}
+                        <a href="{% url 'chat:chat_room' contact.id %}" class="conversation-item {% if destinataire.id == contact.id %}active{% endif %}">
+                            <div class="avatar">{{ contact.username|slice:":2"|upper }}</div>
+                            <div class="conversation-info">
+                                <div class="user-meta">
+                                    <span class="username">{{ contact.username }}</span>
+                                    <span class="unread-badge {% if contact.non_lus_count == 0 %}hidden{% endif %}">
+                                        {{ contact.non_lus_count }}
+                                    </span>
+                                </div>
+                                <p class="preview-text">Cliquez pour discuter</p>
+                            </div>
+                        </a>
+                    {% empty %}
+                        <p class="empty-message">Aucune discussion récente.</p>
+                    {% endfor %}
+                </div>
+
+                <!-- 2. AUTRES UTILISATEURS -->
+                <div class="conversation-list hidden" id="all-users-list">
+                    <p class="list-title">Démarrer une nouvelle discussion</p>
+                    {% for contact in autres_utilisateurs %}
+                        <a href="{% url 'chat:chat_room' contact.id %}" class="conversation-item {% if destinataire.id == contact.id %}active{% endif %}">
+                            <div class="avatar new-user">{{ contact.username|slice:":2"|upper }}</div>
+                            <div class="conversation-info">
+                                <div class="user-meta">
+                                    <span class="username">{{ contact.username }}</span>
+                                </div>
+                                <p class="preview-text">Nouveau contact</p>
+                            </div>
+                        </a>
+                    {% empty %}
+                        <p class="empty-message">Aucun autre utilisateur disponible.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- ZONE DE CHAT PRINCIPALE -->
+            <div class="chat-container">
+                {% if destinataire %}
+                    <!-- HEADER CHAT -->
+                    <div class="chat-header">
+                        <div class="header-user">
+                            <div class="avatar">{{ destinataire.username|slice:":2"|upper }}</div>
+                            <div class="header-info">
+                                <h3>{{ destinataire.username }}</h3>
+                                <span>En ligne</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ZONE DES MESSAGES -->
+                    <div id="messages">
+                        {% for message in chat_messages %}
+                            <div class="message-wrapper {% if message.expediteur_id_id == request.user.id or message.expediteur.id == request.user.id %}sent{% else %}received{% endif %}" id="msg-{{ message.id }}">
+                                <div class="message-bubble {% if message.is_delete %}deleted-bubble{% endif %}">
+                                    {% if message.is_delete %}
+                                        <p class="deleted-text"><i>Ce message a été supprimé</i></p>
+                                    {% else %}
+                                        <!-- FICHIER JOINT -->
+                                        {% if message.fichier_joint %}
+                                            {% if message.file_type == 'image' %}
+                                                <img src="{{ message.fichier_joint.url }}" class="chat-image" alt="Image jointe">
+                                            {% elif message.file_type == 'audio' %}
+                                                <audio controls class="chat-audio">
+                                                    <source src="{{ message.fichier_joint.url }}" type="audio/mpeg">
+                                                </audio>
+                                            {% else %}
+                                                <div class="chat-document">
+                                                    <span class="doc-icon">📄</span>
+                                                    <a href="{{ message.fichier_joint.url }}" target="_blank" download>Télécharger le document</a>
+                                                </div>
+                                            {% endif %}
+                                        {% endif %}
+
+                                        <!-- CONTENU TEXTE -->
+                                        {% if message.contenu %}
+                                            <p>{{ message.contenu }}</p>
+                                        {% endif %}
+                                        
+                                        {% if message.expediteur_id_id == request.user.id or message.expediteur.id == request.user.id %}
+                                            <button class="delete-msg-btn" data-id="{{ message.id }}" title="Supprimer">×</button>
+                                        {% endif %}
+                                    {% endif %}
+                                    
+                                    <span class="message-time">
+                                        {{ message.date_envoi|date:"H:i" }}
+                                        {% if message.expediteur_id_id == request.user.id or message.expediteur.id == request.user.id and not message.is_delete %}
+                                            {% if message.is_read %} ✓✓ {% else %} ✓ {% endif %}
+                                        {% endif %}
+                                    </span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- FORMULAIRE D'ENVOI MULTIMÉDIA -->
+                    <form class="input-area" id="chat-form" enctype="multipart/form-data">
+                        <label for="file-input" class="icon-btn" title="Ajouter un fichier">📎</label>
+                        <input type="file" id="file-input" style="display: none;" accept="image/*,application/pdf,.doc,.docx,.xls,.xlsx,.txt">
+
+                        <input type="text" id="message-input" placeholder="Écrire un message..." autocomplete="off">
+                        
+                        <button type="button" id="voice-btn" class="icon-btn" title="Enregistrer un vocal">🎙️</button>
+                        <button type="submit" id="send-btn">Envoyer</button>
+                    </form>
+                {% else %}
+                    <div class="empty-chat-state">
+                        <p>Sélectionnez un contact pour démarrer la discussion</p>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <!-- VARIABLES JS -->
+    <script>
+        const userId = "{{ destinataire.id|default:'' }}";
+        const currentUserId = "{{ request.user.id }}";
+    </script>
+    <script src="{% static 'js/chat.js' %}?v={% now 'U' %}"></script>
+
+{% endblock %}

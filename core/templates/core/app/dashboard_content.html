@@ -1,0 +1,7 @@
+{% if role_actif == 'formateur' %}
+    {% include 'core/app/dashboard_formateur.html' %}
+{% elif role_actif == 'institution' %}
+    {% include 'core/app/dashboard_institution.html' %}
+{% else %}
+    {% include 'core/app/dashboard_admin.html' %}
+{% endif %}

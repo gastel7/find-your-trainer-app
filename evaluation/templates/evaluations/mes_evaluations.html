@@ -1,0 +1,129 @@
+{% extends "core/app/dashboard.html" %}
+{% load static %}
+
+{% block page_name %}<span class="page_name">Mes évaluations</span>{% endblock %}
+
+{% block main %}
+<main style="padding-bottom: 50px;">
+
+    <section class="page-head">
+        <div>
+            <div class="eyebrow">Évaluations</div>
+            <h1>Mes évaluations données</h1>
+            <p class="subtitle">Les avis que vous avez laissés.</p>
+        </div>
+    </section>
+
+    <section class="view">
+        <div class="card">
+            <div class="card-head">
+                <h2>Évaluations données</h2>
+                <span class="chip">{{ evaluations|length }} au total</span>
+            </div>
+
+            {% if evaluations %}
+            <ul class="eval-list">
+                {% for eval in evaluations %}
+                <li class="eval-item">
+                    <div class="eval-item-head">
+                        <div class="avatar" style="--c:#f59e0b">
+                            {{ eval.cible.first_name|slice:":1"|upper }}{{ eval.cible.last_name|slice:":1"|upper }}
+                        </div>
+                        <div class="eval-item-meta">
+                            <span class="eval-item-name">
+                                {% if eval.cible.first_name %}
+                                    {{ eval.cible.first_name }} {{ eval.cible.last_name }}
+                                {% else %}
+                                    {{ eval.cible.username }}
+                                {% endif %}
+                            </span>
+                            <span class="eval-item-date">{{ eval.date_evaluation|date:"d/m/Y" }}</span>
+                        </div>
+                        <div class="eval-item-stars">
+                            {% for i in "12345" %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                     {% if forloop.counter <= eval.note_evaluation %}
+                                         fill="#f59e0b" stroke="#f59e0b"
+                                     {% else %}
+                                         fill="none" stroke="#d1d5db"
+                                     {% endif %}
+                                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Modifier (rouvre le modal) -->
+                        <button
+                            class="ghost-link"
+                            onclick="openEvalModal(
+                                '{{ eval.type_evaluation }}',
+                                '{% if eval.offre %}{{ eval.offre.id }}{% else %}{{ eval.formation.id }}{% endif %}',
+                                '{% if eval.cible.first_name %}{{ eval.cible.first_name }} {{ eval.cible.last_name }}{% else %}{{ eval.cible.username }}{% endif %}',
+                                0, 0,
+                                '{{ eval.commentaire|escapejs }}',
+                                '{{ eval.note_evaluation }}'
+                            )">
+                            Modifier
+                        </button>
+                    </div>
+
+                    {% if eval.commentaire %}
+                    <p class="eval-item-comment">{{ eval.commentaire }}</p>
+                    {% endif %}
+
+                    <div class="eval-item-footer">
+                        <span class="pill {% if eval.type_evaluation == 'candidature' %}pill-active{% endif %}">
+                            {{ eval.get_type_evaluation_display }}
+                        </span>
+                        {% if eval.offre %}
+                            <span class="eval-item-ref">{{ eval.offre.titre }}</span>
+                        {% elif eval.formation %}
+                            <span class="eval-item-ref">{{ eval.formation.titre }}</span>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="empty-state">Vous n'avez encore évalué personne.</p>
+            {% endif %}
+        </div>
+    </section>
+
+</main>
+
+
+
+<style>
+.eval-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.eval-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border, #f0f0f0);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.eval-item:last-child { border-bottom: none; }
+.eval-item-head { display: flex; align-items: center; gap: 10px; }
+.eval-item-meta { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.eval-item-name { font-size: .9rem; font-weight: 600; color: var(--text-primary,#111); }
+.eval-item-date { font-size: .75rem; color: var(--text-muted,#6b7280); }
+.eval-item-stars { display: flex; gap: 2px; }
+.eval-item-comment {
+    font-size: .875rem;
+    color: var(--text-secondary, #374151);
+    line-height: 1.55;
+    margin: 0;
+    padding-left: 44px;
+}
+.eval-item-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 44px;
+}
+.eval-item-ref { font-size: .75rem; color: var(--text-muted,#6b7280); }
+</style>
+
+{% endblock %}

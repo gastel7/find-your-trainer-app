@@ -1,0 +1,141 @@
+<!-- ============================================================
+     MODAL GLOBAL ÉVALUATION
+     Le JS est dans core/static/js/app/modal-eval.js
+     (chargé automatiquement par dashboard.html)
+
+     Usage candidature :
+       <button onclick="openEvalModal('candidature', '{{ candidature.id }}',
+         '{{ cible.first_name }} {{ cible.last_name }}',
+         {{ eval_note }}, {{ eval_count }},
+         '{{ eval_commentaire|escapejs }}', {{ eval_note_existante }})">
+         Évaluer
+       </button>
+
+     Usage formation → formateur principal :
+       openEvalModal('formation', '{{ formation.id }}', nom, note, count)
+
+     Usage formation → co-intervenant :
+       <button data-formation-id="..." data-cible-id="..."
+               data-cible-nom="..." data-note="..." data-count="..."
+               onclick="openEvalCible(this)">
+
+     Usage formation → participant :
+       <button data-formation-id="..." data-participant-id="..."
+               data-cible-nom="..." data-note="..." data-count="..."
+               onclick="openEvalParticipant(this)">
+============================================================ -->
+
+<div id="evalModal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="evalModalTitle">
+    <div class="modal-box">
+
+        <!-- Header -->
+        <div class="modal-head">
+            <div>
+                <p class="modal-eyebrow" id="evalModalType">Évaluation</p>
+                <h2 class="modal-title" id="evalModalTitle">Évaluer</h2>
+            </div>
+            <button class="modal-close" onclick="closeEvalModal()" aria-label="Fermer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Note globale de la cible -->
+        <div class="eval-cible-stats">
+            <div class="eval-stars-display" id="evalCibleStars">★★★★★</div>
+            <div class="eval-cible-meta">
+                <span id="evalCibleNote" class="eval-cible-note">—</span>
+                <span class="eval-cible-sep">/5</span>
+                <span id="evalCibleCount" class="eval-cible-count">0 avis</span>
+            </div>
+        </div>
+
+        <!-- Formulaire -->
+        <form id="evalForm" method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label class="form-label">Votre note</label>
+                <div class="star-picker" id="starPicker">
+                    {% for i in "12345" %}
+                    <button type="button" class="star-btn" data-value="{{ forloop.counter }}" aria-label="{{ forloop.counter }} étoile(s)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="1.5"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </button>
+                    {% endfor %}
+                </div>
+                <input type="hidden" name="note" id="evalNoteInput" required>
+                <p class="eval-note-label" id="evalNoteLabel">Sélectionnez une note</p>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="evalCommentaire">
+                    Commentaire <span class="optional">(optionnel)</span>
+                </label>
+                <textarea id="evalCommentaire" name="commentaire" rows="4" class="form-textarea" placeholder="Partagez votre expérience…"></textarea>
+            </div>
+
+            <p id="evalError" style="display:none; color:#dc2626; font-size:.82rem; margin-top:8px;"></p>
+
+
+            <div class="modal-footer" style="margin-top: 15px;">
+                <button type="button" class="btn-ghost" onclick="closeEvalModal()">Annuler</button>
+                <button type="submit" class="btn-accent" id="evalSubmitBtn" disabled>
+                    Enregistrer l'évaluation
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<style>
+/* Tout est volontairement scopé sous #evalModal : ce fichier est inclus
+   GLOBALEMENT (dashboard.html), donc si on utilisait des classes
+   génériques nues (.modal-overlay, .form-group, .modal-footer...), elles
+   entraient en collision avec les règles .modal-overlay des AUTRES pages
+   (offre.css, list_formation.css...) qui utilisent une logique inverse
+   (caché par défaut, affiché via .show/.active) — c'était la cause
+   exacte du bug : sur les pages avec leur propre .modal-overlay, cette
+   règle-ci gagnait (chargée plus tard, dans le <body>) et rendait CES
+   modales visibles en permanence ; sur d'autres pages, l'inverse
+   pouvait se produire et #evalModal restait invisible. */
+#evalModal              { position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px; }
+#evalModal.hidden        { display:none; }
+#evalModal .modal-box              { background:var(--bg-card,#fff);border-radius:20px;width:100%;max-width:480px;padding:28px;box-shadow:0 24px 64px rgba(0,0,0,.15);display:flex;flex-direction:column;gap:20px; }
+#evalModal .modal-head             { display:flex;align-items:flex-start;justify-content:space-between;gap:12px; }
+#evalModal .modal-eyebrow          { font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6366f1;margin:0 0 4px; }
+#evalModal .modal-title            { font-size:1.2rem;font-weight:700;margin:0;color:var(--text-primary,#111); }
+#evalModal .modal-close            { background:none;border:none;cursor:pointer;padding:4px;color:var(--text-muted,#6b7280);border-radius:8px;display:flex;align-items:center;transition:background .15s; }
+#evalModal .modal-close:hover      { background:var(--bg-hover,#f3f4f6); }
+#evalModal .eval-cible-stats       { background:var(--bg-subtle,#f9fafb);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px; }
+#evalModal .eval-stars-display     { font-size:1.1rem;color:#f59e0b;letter-spacing:2px; }
+#evalModal .eval-cible-meta        { display:flex;align-items:baseline;gap:4px; }
+#evalModal .eval-cible-note        { font-size:1.4rem;font-weight:700;color:var(--text-primary,#111); }
+#evalModal .eval-cible-sep         { font-size:.85rem;color:var(--text-muted,#6b7280); }
+#evalModal .eval-cible-count       { font-size:.8rem;color:var(--text-muted,#6b7280);margin-left:6px; }
+#evalModal .form-group             { display:flex;flex-direction:column;gap:8px; }
+#evalModal .form-label             { font-size:.85rem;font-weight:600;color:var(--text-primary,#111); }
+#evalModal .optional               { font-weight:400;color:var(--text-muted,#6b7280); }
+#evalModal .star-picker            { display:flex;gap:6px; }
+#evalModal .star-btn               { background:none;border:none;cursor:pointer;padding:2px;color:#d1d5db;transition:color .15s,transform .1s; }
+#evalModal .star-btn:hover,
+#evalModal .star-btn.active        { color:#f59e0b; }
+#evalModal .star-btn.active svg    { fill:#f59e0b; }
+#evalModal .star-btn:hover         { transform:scale(1.15); }
+#evalModal .eval-note-label        { font-size:.78rem;color:var(--text-muted,#6b7280);margin:0;min-height:18px; }
+#evalModal .form-textarea          { border:1.5px solid var(--border,#e5e7eb);border-radius:10px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:vertical;background:var(--bg-input,#fff);color:var(--text-primary,#111);transition:border-color .2s;outline:none; }
+#evalModal .form-textarea:focus    { border-color:#6366f1; }
+#evalModal .modal-footer           { display:flex;justify-content:flex-end;gap:10px;padding-top:4px; }
+#evalModal .btn-ghost               { background:none;border:1.5px solid var(--border,#e5e7eb);border-radius:10px;padding:9px 18px;font-size:.875rem;font-weight:600;cursor:pointer;color:var(--text-primary,#111);transition:background .15s; }
+#evalModal .btn-ghost:hover         { background:var(--bg-hover,#f3f4f6); }
+#evalModal .btn-accent              { background:#6366f1;color:#fff;border:none;border-radius:10px;padding:9px 18px;font-size:.875rem;font-weight:600;cursor:pointer;transition:opacity .15s; }
+#evalModal .btn-accent:disabled     { opacity:.45;cursor:not-allowed; }
+#evalModal .btn-accent:not(:disabled):hover { opacity:.88; }
+</style>

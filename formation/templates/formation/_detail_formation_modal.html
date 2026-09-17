@@ -1,0 +1,350 @@
+{% load static %}
+
+{# Classe de couleur header selon catégorie (calculée inline, pas de {% with %}) #}
+
+<!-- ── En-tête coloré ────────────────────────────────────────── -->
+<div class="modal-formation-header
+    {% if formation.categorie == 'developpement' %}dev-header
+    {% elif formation.categorie == 'data_ia' %}data-header
+    {% elif formation.categorie == 'design' %}design-header
+    {% elif formation.categorie == 'cybersecurite' %}cyber-header
+    {% elif formation.categorie == 'management' %}management-header
+    {% elif formation.categorie == 'cloud' %}cloud-header
+    {% else %}autres-header
+    {% endif %}">
+
+    <div class="modal-header-badges">
+        <span class="niveau-badge">{{ formation.get_niveau_display }}</span>
+        <span class="categorie-label">{{ formation.get_categorie_display|upper }}</span>
+    </div>
+
+    {% if formation.est_terminee %}
+        <span class="badge-terminee">Terminée</span>
+    {% endif %}
+
+    <h2 class="modal-formation-title" id="detailModalTitle">{{ formation.titre }}</h2>
+
+    <p class="modal-formation-prix">{{ formation.prix|floatformat:0 }} €</p>
+</div>
+
+<!-- ── Corps ─────────────────────────────────────────────────── -->
+<div class="modal-formation-body">
+    <!-- Description -->
+    <section class="modal-section" aria-label="Description">
+        <p class="modal-description">{{ formation.description }}</p>
+    </section>
+
+    <!-- Infos pratiques -->
+    <section class="modal-section modal-infos" aria-label="Informations pratiques">
+
+        {% if formation.duree %}
+            <div class="info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                </svg>
+                <span><strong>Durée :</strong> {{ formation.duree }}</span>
+            </div>
+        {% endif %}
+
+        {% if formation.adresse %}
+            <div class="info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span><strong>Lieu :</strong> {{ formation.adresse }}</span>
+            </div>
+        {% endif %}
+
+        {% if formation.date_debut %}
+            <div class="info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                
+                <span>
+                    <strong>Dates :</strong>
+                    Du {{ formation.date_debut|date:"d/m/Y" }}
+                    {% if formation.date_cloture %}au {{ formation.date_cloture|date:"d/m/Y" }}{% endif %}
+                </span>
+            </div>
+        {% endif %}
+
+    </section>
+
+    <!-- Formateur + co-intervenants -->
+    <section class="modal-section modal-intervenants" aria-label="Intervenants">
+        <div class="intervenant-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            
+            <div>
+                <span class="label-role">Formateur principal</span>
+                <strong>
+                    {{ formation.formateur.user.first_name }}
+                    {{ formation.formateur.user.last_name }}
+                </strong>
+                {% if formation.formateur.titre_professionnel %}
+                    <span class="titre-pro">— {{ formation.formateur.titre_professionnel }}</span>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if formation.co_intervenants.exists %}
+            <div class="intervenant-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                
+                <div>
+                    <span class="label-role">Co-intervenants</span>
+                    <span>
+                        {% for co in formation.co_intervenants.all %}
+                            {{ co.user.first_name }} {{ co.user.last_name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+
+    <!-- Compteur de places -->
+    <section class="modal-section modal-places" aria-label="Places disponibles">
+        <div class="places-header">
+            <span>Places disponibles</span>
+            <strong>
+                {{ formation.nb_inscrits }} / {{ formation.nb_places_max }}
+            </strong>
+        </div>
+
+        <div class="places-bar"
+             role="progressbar"
+             data-percent="{% widthratio formation.nb_inscrits formation.nb_places_max 100 %}"
+             aria-valuenow="{{ formation.nb_inscrits }}"
+             aria-valuemin="0"
+             aria-valuemax="{{ formation.nb_places_max }}">
+            <div class="places-fill {% if formation.est_complet %}places-full{% endif %}"></div>
+        </div>
+
+        {% if formation.est_complet %}
+            <p class="places-status complet">Complet — plus aucune place disponible</p>
+        {% else %}
+            <p class="places-status dispo">
+                {{ formation.places_restantes }} place{% if formation.places_restantes > 1 %}s{% endif %} restante{% if formation.places_restantes > 1 %}s{% endif %}
+            </p>
+        {% endif %}
+
+    </section>
+
+    <!-- Support de formation (PDF) — réservé aux inscrits confirmés -->
+    {% if inscription and inscription.statut == 'confirmee' and formation.support_pdf %}
+        <section class="modal-section modal-support" aria-label="Support de formation">
+            <a href="{% url 'formation:telecharger_support' formation.id %}" class="btn-telecharger-support">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                Télécharger le support de formation (PDF)
+            </a>
+        </section>
+    {% endif %}
+
+    <!-- Zone d'action (inscription / désinscription) -->
+    <section class="modal-section modal-action" aria-label="Inscription">
+        {% if est_auteur or est_co_intervenant or request.user.role == 'admin' %}
+            <p class="action-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                {% if est_auteur %}Vous êtes l'auteur de cette formation.{% elif est_co_intervenant %}Vous intervenez sur cette formation.{% else %}Vous gérez cette formation en tant qu'administrateur.{% endif %}
+            </p>
+
+            {% if not formation.est_terminee %}
+                <form method="post" action="{% url 'formation:marquer_formation_terminee' formation.id %}" class="ajax-form">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-marquer-terminee">
+                        Marquer la formation comme terminée
+                    </button>
+                </form>
+            {% else %}
+                <p class="action-info">Cette formation est terminée.</p>
+            {% endif %}
+
+        {% elif inscription and inscription.statut == 'confirmee' %}
+            <p class="action-inscrit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Vous êtes inscrit(e) à cette formation.
+            </p>
+            <form method="post" action="{% url 'formation:desinscription_formation' formation.id %}" class="ajax-form">
+                {% csrf_token %}
+                <button type="submit" class="btn-desinscrire">Se désinscrire</button>
+            </form>
+
+        {% elif peut_s_inscrire %}
+            <form method="post" action="{% url 'formation:inscription_formation' formation.id %}" class="ajax-form">
+                {% csrf_token %}
+                <button type="submit" class="btn-inscrire">S'inscrire à cette formation</button>
+            </form>
+
+        {% else %}
+            <p class="action-info action-fermee">Inscriptions fermées.</p>
+        {% endif %}
+
+    </section>
+
+    <!-- Liste des participants (visible formateur, co-intervenant, admin) -->
+    {% if participants is not None %}
+        <section class="modal-section modal-participants" aria-label="Participants inscrits">
+
+            <h3 class="modal-section-title">
+                Participants inscrits
+                <span class="participants-count">{{ participants|length }}</span>
+            </h3>
+
+            {% if participants %}
+                <ul class="participants-list">
+                    {% for ins in participants %}
+                    <li class="participant-item">
+                        <span class="participant-avatar" aria-hidden="true">
+                            {{ ins.participant.first_name|first|upper }}{{ ins.participant.last_name|first|upper }}
+                        </span>
+                        <div class="participant-info">
+                            <strong>{{ ins.participant.first_name }} {{ ins.participant.last_name }}</strong>
+                            <time datetime="{{ ins.date_inscription|date:'Y-m-d' }}" class="participant-date">
+                                Inscrit le {{ ins.date_inscription|date:"d/m/Y" }}
+                            </time>
+                        </div>
+
+                        {% if formation.est_terminee %}
+                            <a href="{% url 'formation:generer_attestation' ins.id %}" class="btn-attestation"
+                            title="Générer l'attestation de {{ ins.participant.first_name }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" x2="12" y1="15" y2="3"/>
+                                </svg>
+                                Attestation
+                            </a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="empty-participants">Aucun participant inscrit pour l'instant.</p>
+            {% endif %}
+        </section>
+    {% endif %}
+
+
+    {% if formation.est_terminee %}
+
+        <!-- {# ══════════════════════════════════════════════════════════════
+        CAS 1 : Participant inscrit → évalue le formateur + co-intervenants
+        ══════════════════════════════════════════════════════════════ #} -->
+        {% if inscription and inscription.statut == 'confirmee' %}
+            <section class="modal-section" aria-label="Évaluations">
+                <h3 class="modal-section-title">Évaluer les intervenants</h3>
+
+                <ul class="eval-intervenants-list">
+
+                    {# Formateur principal #}
+                    {% with f=formation.formateur %}
+                    <li class="eval-intervenant-item">
+                        <div class="eval-intervenant-avatar" style="--c:#6366f1">
+                            {{ f.user.first_name|slice:":1"|upper }}{{ f.user.last_name|slice:":1"|upper }}
+                        </div>
+                        <div class="eval-intervenant-info">
+                            <span class="eval-intervenant-nom">
+                                {{ f.user.first_name }} {{ f.user.last_name }}
+                            </span>
+                            <span class="eval-intervenant-role">Formateur principal</span>
+                        </div>
+                        <button
+                            class="btn-eval-small"
+                            onclick="openEvalModal(
+                                'formation',
+                                '{{ formation.id }}',
+                                '{{ f.user.first_name|escapejs }} {{ f.user.last_name|escapejs }}',
+                                '{{ f.user.note_globale }}',
+                                '{{ f.user.evaluations_recues.count }}',
+                                '',
+                                0
+                            )">
+                            Évaluer
+                        </button>
+                    </li>
+                    {% endwith %}
+
+                    {# Co-intervenants #}
+                    {% for co in formation.co_intervenants.all %}
+                    <li class="eval-intervenant-item">
+                        <div class="eval-intervenant-avatar" style="--c:#14b8a6">
+                            {{ co.user.first_name|slice:":1"|upper }}{{ co.user.last_name|slice:":1"|upper }}
+                        </div>
+                        <div class="eval-intervenant-info">
+                            <span class="eval-intervenant-nom">
+                                {{ co.user.first_name }} {{ co.user.last_name }}
+                            </span>
+                            <span class="eval-intervenant-role">Co-intervenant</span>
+                        </div>
+                        <button
+                            class="btn-eval-small"
+                            onclick="openEvalModal(
+                                'formation',
+                                '{{ formation.id }}',
+                                '{{ co.user.first_name|escapejs }} {{ co.user.last_name|escapejs }}',
+                                '{{ co.user.note_globale }}',
+                                '{{ co.user.evaluations_recues.count }}',
+                                '',
+                                0
+                            )">
+                            Évaluer
+                        </button>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </section>
+        {% endif %}
+
+
+        <!-- {# ══════════════════════════════════════════════════════════════
+        CAS 2 : Formateur / co-intervenant / admin → évalue les participants
+        ══════════════════════════════════════════════════════════════ #} -->
+
+        {% if est_auteur or est_co_intervenant or request.user.role == 'admin' %}
+
+            {% if participants %}
+            <section class="modal-section" aria-label="Évaluer les participants">
+                <h3 class="modal-section-title">Évaluer les participants</h3>
+
+                <ul class="eval-intervenants-list">
+                    {% for ins in participants %}
+                    <li class="eval-intervenant-item">
+                        <div class="eval-intervenant-avatar" style="--c:#f59e0b">
+                            {{ ins.participant.first_name|slice:":1"|upper }}{{ ins.participant.last_name|slice:":1"|upper }}
+                        </div>
+                        <div class="eval-intervenant-info">
+                            <span class="eval-intervenant-nom">
+                                {{ ins.participant.first_name }} {{ ins.participant.last_name }}
+                            </span>
+                            <span class="eval-intervenant-role">Participant</span>
+                        </div>
+                        {# URL avec ?participant=<id> pour que la vue sache qui évaluer #}
+                        <button
+                            class="btn-eval-small"
+                            onclick="openEvalModal(
+                                'formation',
+                                '{{ formation.id }}?participant={{ ins.participant.id }}',
+                                '{{ ins.participant.first_name|escapejs }} {{ ins.participant.last_name|escapejs }}',
+                                '{{ ins.participant.note_globale }}',
+                                '{{ ins.participant.evaluations_recues.count }}',
+                                '',
+                                0
+                            )">
+                            Évaluer
+                        </button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+</div>

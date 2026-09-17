@@ -1,0 +1,18 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %}Formateurs{% endblock %}
+
+{% block page_name %}
+    <span class="page_name">Formateurs</span>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/account/formateurs.css' %}">
+{% endblock %}
+
+{% block main %}
+    <main class="page">
+        {% include 'account/app/shared/formateurs_content.html' %}
+    </main>
+{% endblock %}

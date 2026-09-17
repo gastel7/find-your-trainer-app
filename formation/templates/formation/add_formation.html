@@ -1,0 +1,824 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %} Nouvelle Formation {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/offre/offre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/offre/edit-offre.css' %}">
+
+    <style>
+        #title_and_competences, #adresse_and_formateur{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #competences_field, #co_intervenants_field{
+            margin-top: 4px;
+            margin-bottom: 30px;
+        }
+
+        #co_intervenants_field{
+            margin-bottom: 50px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block page_name %}
+    <span class="page_name" style="display: flex; align-items: center;">
+        Formation
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             class="lucide lucide-chevron-right h-3.5 w-3.5 shrink-0"
+             aria-hidden="true">
+            <path d="m9 18 6-6-6-6"></path>
+        </svg>
+
+        Nouvelle Formation
+    </span>
+{% endblock %}
+
+{% block main %}
+    <div class="page">
+        <div class="offre-container">
+            <div class="offre-container-sub">
+
+                <!-- HEADER -->
+                <div class="top-bar">
+                    <div class="top-bar-title">
+                       {% block top_bar_texte %} 
+                            <h1>Ajouter une Formation</h1> 
+                        
+                            <p class="subtitle">
+                                Créer des formations qui pousseront les responsables des intitutions à visiter votre profil
+                            </p>
+                        {% endblock %}
+
+                        
+                    </div>
+                </div>
+
+                <div class="offre-card">
+                        <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- Le titre et la catégorie -->
+                        <section class="form_content" id="title_and_competences">
+                            <!-- Le titre -->
+                            <p>
+                                <label for="">Titre</label>
+
+                                {{ form.titre }}
+                            </p>
+
+                            <!-- La catégorie -->
+                            <p>
+                                <label for="">Catégorie</label>
+
+                                {{ form.categorie }}
+                            </p>
+                        </section>
+
+                        <!-- Les compétences (pleine largeur) -->
+                        <section class="form_content_sub" id="competences_field">
+                            <label>Compétences</label>
+
+                            <div class="competence-wrapper">
+                                <div id="selected-competences" class="selected-tags">
+                                    {% if form.instance.pk %}
+                                        {% for competence in form.instance.competences.all %}
+                                            <span class="tag" data-id="{{ competence.id }}" data-name="{{ competence.nom }}">
+                                                {{ competence.nom }}
+                                                <button type="button" class="remove-tag">×</button>
+
+                                                <input type="hidden" name="competences"value="{{ competence.id }}">
+                                            </span>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+                                <input type="text" id="competence-search" class="form-control" placeholder="Ex : HTML, React, Laravel...">
+
+                                <div id="competence-dropdown"
+                                    class="competence-dropdown">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="form_content" id="adresse_and_formateur">
+                              <!-- Addresse -->
+                            <p>
+                                <label for="">Adresse</label>
+
+                                {{ form.adresse }}
+                            </p>
+
+                            <!-- Le formateur -->
+                            {% if request.user.role == 'admin' %}
+                                <div>
+                                    <label for="">Formateur</label>
+
+                                    <div class="competence-wrapper" id="formateur-principal-wrapper">
+                                        <input type="hidden"
+                                               id="formateur-principal-id"
+                                               name="formateur"
+                                               value="{% if form.instance.formateur %}{{ form.instance.formateur.pk }}{% endif %}">
+
+                                        <input type="text"
+                                               id="formateur-principal-search"
+                                               class="form-control"
+                                               placeholder="Rechercher le formateur principal..."
+                                               autocomplete="off"
+                                               value="{% if form.instance.formateur %}{{ form.instance.formateur.user.first_name }} {{ form.instance.formateur.user.last_name }}{% endif %}">
+
+                                        <div id="formateur-principal-dropdown" class="competence-dropdown"></div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </section>
+
+                        <!-- Les co-intervenants (pleine largeur) -->
+                        <section class="form_content_sub" id="co_intervenants_field">
+                            <label>Co-intervenants</label>
+
+                            <div class="competence-wrapper">
+                                <!-- tags -->
+                                <div id="selected-formateurs" class="selected-tags">
+                                    {% if form.instance.pk %}
+                                        {% for formateur in form.instance.co_intervenants.all %}
+                                            <span
+                                                class="tag"
+                                                data-id="{{ formateur.pk }}">
+
+                                                {{ formateur.user.first_name }}
+                                                {{ formateur.user.last_name }}
+
+                                                <button
+                                                    class="remove-formateur"
+                                                    type="button">
+                                                    ×
+                                                </button>
+
+                                                <input
+                                                    type="hidden"
+                                                    name="co_intervenants"
+                                                    value="{{ formateur.pk }}">
+                                            </span>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+                                <!-- recherche -->
+                                <input type="text" id="formateur-search" class="form-control" placeholder="Rechercher un intervenant...">
+                                <small class="helper-text">Maximum 5 intervenants</small>
+
+                                <!-- dropdown -->
+                                <div id="formateur-dropdown" class="competence-dropdown"></div>
+                            </div>
+                        </section>
+
+                        <!-- Description et niveau et prix -->
+                        <section class="form_content">
+                            <!-- Description -->
+                            <p>
+                                <label for="">Description</label>
+
+                                {{ form.description }}
+                            </p>
+
+                            
+                            <div>
+                                <!-- Le prix -->
+                                <p>
+                                    <label>Prix</label>
+                                    {{ form.prix }}
+                                </p>
+
+
+                                <!-- Le prix -->
+                                <p>
+                                    <label>Nombre de place (Max)</label>
+                                    {{ form.nb_places_max }}
+                                </p>
+                            </div>
+                        </section>
+
+                        <section class="form_content">
+                            <!-- Le niveau -->
+                            <p>
+                                <label for="">Niveau</label>
+                                {{ form.niveau }}
+                            </p>
+
+                            <!--  -->
+                            <p>
+                                <label for="">Support du cours (en pdf)</label>
+
+                                {{ form.support_pdf }}
+                            </p>
+                        </section>
+
+                        <!-- Dates -->
+                        <section class="form_content">
+                            <!-- Date début -->
+                            <p>
+                                <label for="">Date début</label>
+
+                                {{ form.date_debut }}
+                            </p>
+
+                            <!-- Date clôture -->
+                            <p>
+                                <label for="">Date clôture</label>
+
+                                {{ form.date_cloture }}
+                            </p>
+                        </section>
+
+                        <section class="btn_container">
+                            {% if form.errors %}
+                                <div style="background:#ffebee;padding:15px;margin-bottom:20px;border:1px solid red;">
+                                    {{ form.errors }}
+                                </div>
+                            {% endif %}
+
+                            <button class="btn-submit" type="submit">Enregistrer</button>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+<script>
+document.addEventListener(
+    'DOMContentLoaded',
+    function(){
+
+        /*
+        ======================================
+        COMPÉTENCES
+        ======================================
+        */
+
+        const competenceInput =
+            document.getElementById(
+                'competence-search'
+            );
+
+        const competenceDropdown =
+            document.getElementById(
+                'competence-dropdown'
+            );
+
+        const selectedCompetences =
+            document.getElementById(
+                'selected-competences'
+            );
+
+        if(competenceInput){
+
+            competenceInput.addEventListener(
+                'input',
+                async function(){
+
+                    const query =
+                        competenceInput
+                        .value
+                        .trim();
+
+                    if(
+                        query.length < 1
+                    ){
+
+                        competenceDropdown.style.display =
+                            'none';
+
+                        return;
+                    }
+
+                    const response =
+                        await fetch(
+                            `/search-competence/?q=${query}`
+                        );
+
+                    const data =
+                        await response.json();
+
+                    competenceDropdown.innerHTML =
+                        '';
+
+                    data.forEach(
+                        function(item){
+
+                            const exists =
+                                selectedCompetences.querySelector(
+                                    `[data-id="${item.id}"]`
+                                );
+
+                            if(exists){
+                                return;
+                            }
+
+                            const div =
+                                document.createElement(
+                                    'div'
+                                );
+
+                            div.classList.add(
+                                'dropdown-item'
+                            );
+
+                            div.textContent =
+                                item.nom;
+
+                            div.addEventListener(
+                                'click',
+                                function(){
+
+                                    addCompetenceTag(
+                                        item.id,
+                                        item.nom
+                                    );
+
+                                    competenceInput.value =
+                                        '';
+
+                                    competenceDropdown.style.display =
+                                        'none';
+                                }
+                            );
+
+                            competenceDropdown.appendChild(
+                                div
+                            );
+                        }
+                    );
+
+                    /*
+                    Nouvelle compétence
+                    */
+
+                    const createDiv =
+                        document.createElement(
+                            'div'
+                        );
+
+                    createDiv.classList.add(
+                        'dropdown-item'
+                    );
+
+                    createDiv.innerHTML =
+                        `Créer "${query}"`;
+
+                    createDiv.addEventListener(
+                        'click',
+                        function(){
+
+                            addCompetenceTag(
+                                'new_' + query,
+                                query
+                            );
+
+                            competenceInput.value =
+                                '';
+
+                            competenceDropdown.style.display =
+                                'none';
+                        }
+                    );
+
+                    competenceDropdown.appendChild(
+                        createDiv
+                    );
+
+                    competenceDropdown.style.display =
+                        'block';
+                }
+            );
+        }
+
+        function addCompetenceTag(
+            id,
+            name
+        ){
+
+            const tags =
+                selectedCompetences.querySelectorAll(
+                    '.tag'
+                );
+
+            if(
+                tags.length >= 5
+            ){
+
+                alert(
+                    'Maximum 5 compétences.'
+                );
+
+                return;
+            }
+
+            const exists =
+                selectedCompetences.querySelector(
+                    `[data-id="${id}"]`
+                );
+
+            if(exists){
+                return;
+            }
+
+            const span =
+                document.createElement(
+                    'span'
+                );
+
+            span.className =
+                'tag';
+
+            span.setAttribute(
+                'data-id',
+                id
+            );
+
+            span.setAttribute(
+                'data-name',
+                name
+            );
+
+            span.innerHTML =
+            `
+                ${name}
+
+                <button
+                    type="button"
+                    class="remove-tag">
+                    ×
+                </button>
+
+                <input
+                    type="hidden"
+                    name="competences"
+                    value="${id}">
+            `;
+
+            span.querySelector(
+                '.remove-tag'
+            ).addEventListener(
+                'click',
+                function(){
+
+                    span.remove();
+                }
+            );
+
+            selectedCompetences.appendChild(
+                span
+            );
+        }
+
+        document.querySelectorAll(
+            '.remove-tag'
+        ).forEach(
+            function(btn){
+
+                btn.addEventListener(
+                    'click',
+                    function(){
+
+                        btn.parentElement.remove();
+                    }
+                );
+            }
+        );
+
+
+        /*
+        ======================================
+        FORMATEURS
+        ======================================
+        */
+
+        const formateurInput =
+            document.getElementById(
+                'formateur-search'
+            );
+
+        const formateurDropdown =
+            document.getElementById(
+                'formateur-dropdown'
+            );
+
+        const selectedFormateurs =
+            document.getElementById(
+                'selected-formateurs'
+            );
+
+        if(formateurInput){
+
+            formateurInput.addEventListener(
+                'input',
+                async function(){
+
+                    const query =
+                        formateurInput
+                        .value
+                        .trim();
+
+                    if(
+                        query.length < 1
+                    ){
+
+                        formateurDropdown.style.display =
+                            'none';
+
+                        return;
+                    }
+
+                    const response =
+                        await fetch(
+                            `/search-formateur/?q=${query}`
+                        );
+
+                    const data =
+                        await response.json();
+
+                    formateurDropdown.innerHTML =
+                        '';
+
+                    data.forEach(
+                        function(item){
+
+                            const exists =
+                                selectedFormateurs.querySelector(
+                                    `[data-id="${item.id}"]`
+                                );
+
+                            if(exists){
+                                return;
+                            }
+
+                            const div =
+                                document.createElement(
+                                    'div'
+                                );
+
+                            div.classList.add(
+                                'dropdown-item'
+                            );
+
+                            div.textContent =
+                                item.nom;
+
+                            div.addEventListener(
+                                'click',
+                                function(){
+
+                                    addFormateurTag(
+                                        item.id,
+                                        item.nom
+                                    );
+
+                                    formateurInput.value =
+                                        '';
+
+                                    formateurDropdown.style.display =
+                                        'none';
+                                }
+                            );
+
+                            formateurDropdown.appendChild(
+                                div
+                            );
+                        }
+                    );
+
+                    if(formateurDropdown.innerHTML=== ''){
+                        const emptyDiv = document.createElement('div');
+                        emptyDiv.classList.add('dropdown-item', 'dropdown-empty');
+
+                        emptyDiv.textContent = 'Aucun formateur trouvé';
+
+                        formateurDropdown.appendChild(emptyDiv);
+                    }
+
+                    formateurDropdown.style.display = 'block';
+                }
+            );
+        }
+
+        function addFormateurTag(
+            id,
+            name
+        ){
+
+            const tags =
+                selectedFormateurs.querySelectorAll(
+                    '.tag'
+                );
+
+            if(
+                tags.length >= 5
+            ){
+
+                alert(
+                    'Maximum 5 intervenants.'
+                );
+
+                return;
+            }
+
+            const exists =
+                selectedFormateurs.querySelector(
+                    `[data-id="${id}"]`
+                );
+
+            if(exists){
+                return;
+            }
+
+            const span =
+                document.createElement(
+                    'span'
+                );
+
+            span.className =
+                'tag';
+
+            span.setAttribute(
+                'data-id',
+                id
+            );
+
+            span.innerHTML =
+            `
+                ${name}
+
+                <button
+                    type="button"
+                    class="remove-formateur">
+                    ×
+                </button>
+
+                <input
+                    type="hidden"
+                    name="co_intervenants"
+                    value="${id}">
+            `;
+
+            span.querySelector(
+                '.remove-formateur'
+            ).addEventListener(
+                'click',
+                function(){
+
+                    span.remove();
+                }
+            );
+
+            selectedFormateurs.appendChild(
+                span
+            );
+        }
+
+        document.querySelectorAll(
+            '.remove-formateur'
+        ).forEach(
+            function(btn){
+
+                btn.addEventListener(
+                    'click',
+                    function(){
+
+                        btn.parentElement.remove();
+                    }
+                );
+            }
+        );
+
+
+        /*
+        ======================================
+        FORMATEUR PRINCIPAL (sélection unique)
+        ======================================
+        Même principe que la recherche des co-intervenants juste
+        au-dessus, mais une seule valeur : le clic sur un résultat
+        remplit le champ texte + un input hidden "formateur" au lieu
+        d'ajouter un tag.
+        */
+
+        const formateurPrincipalInput = document.getElementById('formateur-principal-search');
+        const formateurPrincipalDropdown = document.getElementById('formateur-principal-dropdown');
+        const formateurPrincipalHidden = document.getElementById('formateur-principal-id');
+
+        if (formateurPrincipalInput) {
+
+            formateurPrincipalInput.addEventListener('input', async function () {
+                const query = formateurPrincipalInput.value.trim();
+
+                // Le champ texte ne correspond plus forcément à une
+                // sélection valide tant qu'on n'a pas recliqué sur un
+                // résultat : on vide la valeur réellement envoyée au
+                // formulaire pour éviter d'envoyer un ancien id.
+                formateurPrincipalHidden.value = '';
+
+                if (query.length < 1) {
+                    formateurPrincipalDropdown.style.display = 'none';
+                    return;
+                }
+
+                const response = await fetch(`/search-formateur/?q=${query}`);
+                const data = await response.json();
+                formateurPrincipalDropdown.innerHTML = '';
+
+                data.forEach(function (item) {
+                    const div = document.createElement('div');
+                    div.classList.add('dropdown-item');
+                    div.textContent = item.nom;
+
+                    div.addEventListener('click', function () {
+                        formateurPrincipalInput.value = item.nom;
+                        formateurPrincipalHidden.value = item.id;
+                        formateurPrincipalDropdown.style.display = 'none';
+                    });
+
+                    formateurPrincipalDropdown.appendChild(div);
+                });
+
+                if (formateurPrincipalDropdown.innerHTML === '') {
+                    const emptyDiv = document.createElement('div');
+                    emptyDiv.classList.add('dropdown-item', 'dropdown-empty');
+                    emptyDiv.textContent = 'Aucun formateur trouvé';
+                    formateurPrincipalDropdown.appendChild(emptyDiv);
+                }
+
+                formateurPrincipalDropdown.style.display = 'block';
+            });
+        }
+
+
+        /*
+        ======================================
+        FERMETURE DROPDOWN
+        ======================================
+        */
+
+        document.addEventListener(
+            'click',
+            function(e){
+
+                if(
+                    competenceDropdown
+                    &&
+                    !competenceDropdown.contains(
+                        e.target
+                    )
+                    &&
+                    e.target !== competenceInput
+                ){
+
+                    competenceDropdown.style.display =
+                        'none';
+                }
+
+                if(
+                    formateurPrincipalDropdown
+                    &&
+                    !formateurPrincipalDropdown.contains(e.target)
+                    &&
+                    e.target !== formateurPrincipalInput
+                ){
+                    formateurPrincipalDropdown.style.display = 'none';
+                }
+
+                if(
+                    formateurDropdown
+                    &&
+                    !formateurDropdown.contains(
+                        e.target
+                    )
+                    &&
+                    e.target !== formateurInput
+                ){
+
+                    formateurDropdown.style.display =
+                        'none';
+                }
+            }
+        );
+    }
+);
+</script>
+{% endblock %}

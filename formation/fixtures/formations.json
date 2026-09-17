@@ -1,0 +1,4740 @@
+[
+  {
+    "model": "formation.formation",
+    "pk": 1,
+    "fields": {
+      "formateur": 112,
+      "co_intervenants": [],
+      "titre": "Devenir un manager efficace",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion de projet. Une occasion de monter en compétences dans le domaine management, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "60000.00",
+      "competences": [
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-01",
+      "date_cloture": "2027-02-01",
+      "date_creation": "2027-01-17T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 2,
+    "fields": {
+      "formateur": 5,
+      "co_intervenants": [],
+      "titre": "Les bases de la gestion des ressources humaines",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion des ressources humaines. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "25000.00",
+      "competences": [
+        62
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-31",
+      "date_cloture": "2027-01-19",
+      "date_creation": "2026-12-07T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 3,
+    "fields": {
+      "formateur": 51,
+      "co_intervenants": [
+        149
+      ],
+      "titre": "Sécuriser son infrastructure informatique",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Administration Linux. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "90000.00",
+      "competences": [
+        20
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-11",
+      "date_cloture": "2026-10-15",
+      "date_creation": "2026-09-26T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 4,
+    "fields": {
+      "formateur": 60,
+      "co_intervenants": [],
+      "titre": "Créer une identité visuelle percutante",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Adobe Photoshop, UI/UX Design. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "35000.00",
+      "competences": [
+        17,
+        15
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-16",
+      "date_cloture": "2026-12-20",
+      "date_creation": "2026-11-24T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 5,
+    "fields": {
+      "formateur": 6,
+      "co_intervenants": [
+        146
+      ],
+      "titre": "Comptabilité générale pour non-comptables",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Analyse financière. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "60000.00",
+      "competences": [
+        43
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-17",
+      "date_cloture": "2026-12-31",
+      "date_creation": "2026-11-27T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": true
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 6,
+    "fields": {
+      "formateur": 35,
+      "co_intervenants": [],
+      "titre": "Gestion de projet : méthodes et outils",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion d'équipe, Gestion de projet, Leadership. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "60000.00",
+      "competences": [
+        41,
+        39,
+        40
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-10",
+      "date_cloture": "2026-11-14",
+      "date_creation": "2026-10-11T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 7,
+    "fields": {
+      "formateur": 130,
+      "co_intervenants": [
+        76,
+        60
+      ],
+      "titre": "Créer une identité visuelle percutante",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Adobe Photoshop. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "120000.00",
+      "competences": [
+        17
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-08",
+      "date_cloture": "2026-11-12",
+      "date_creation": "2026-09-28T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 8,
+    "fields": {
+      "formateur": 34,
+      "co_intervenants": [],
+      "titre": "Optimiser sa productivité bureautique",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : PowerPoint. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "75000.00",
+      "competences": [
+        47
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-16",
+      "date_cloture": "2026-12-25",
+      "date_creation": "2026-11-22T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 9,
+    "fields": {
+      "formateur": 18,
+      "co_intervenants": [
+        102
+      ],
+      "titre": "Maîtriser Excel Avancé, PowerPoint au quotidien",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Excel Avancé, PowerPoint. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "45000.00",
+      "competences": [
+        45,
+        47
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-01",
+      "date_cloture": "2026-10-10",
+      "date_creation": "2026-08-28T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 10,
+    "fields": {
+      "formateur": 33,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du développement web",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Django. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "75000.00",
+      "competences": [
+        7
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-04",
+      "date_cloture": "2027-01-08",
+      "date_creation": "2026-12-15T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 11,
+    "fields": {
+      "formateur": 123,
+      "co_intervenants": [
+        35
+      ],
+      "titre": "Gestion de projet : méthodes et outils",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion d'équipe, Gestion de projet. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "35000.00",
+      "competences": [
+        41,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-04",
+      "date_cloture": "2026-11-23",
+      "date_creation": "2026-10-16T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 12,
+    "fields": {
+      "formateur": 130,
+      "co_intervenants": [
+        52,
+        150
+      ],
+      "titre": "Créer une identité visuelle percutante",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : UI/UX Design. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "25000.00",
+      "competences": [
+        15
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-15",
+      "date_cloture": "2026-11-19",
+      "date_creation": "2026-11-02T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 13,
+    "fields": {
+      "formateur": 124,
+      "co_intervenants": [],
+      "titre": "Réussir sa stratégie de marketing digital",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : SEO. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "150000.00",
+      "competences": [
+        32
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-01",
+      "date_cloture": "2027-01-20",
+      "date_creation": "2026-12-09T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 14,
+    "fields": {
+      "formateur": 127,
+      "co_intervenants": [
+        7
+      ],
+      "titre": "Communiquer efficacement en entreprise",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Rédaction Web, Copywriting, Prise de parole en public. Une occasion de monter en compétences dans le domaine communication, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "90000.00",
+      "competences": [
+        36,
+        37,
+        38
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-15",
+      "date_cloture": "2026-10-29",
+      "date_creation": "2026-09-20T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 15,
+    "fields": {
+      "formateur": 106,
+      "co_intervenants": [],
+      "titre": "Comptabilité générale pour non-comptables",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion budgétaire. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "25000.00",
+      "competences": [
+        44
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-12",
+      "date_cloture": "2026-11-12",
+      "date_creation": "2026-10-29T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 16,
+    "fields": {
+      "formateur": 141,
+      "co_intervenants": [],
+      "titre": "Créer des applications web modernes (HTML)",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : HTML. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Loubomo",
+      "prix": "150000.00",
+      "competences": [
+        11
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-16",
+      "date_cloture": "2026-11-30",
+      "date_creation": "2026-10-07T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 17,
+    "fields": {
+      "formateur": 25,
+      "co_intervenants": [],
+      "titre": "Créer des applications web modernes (JavaScript)",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : JavaScript. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "120000.00",
+      "competences": [
+        2
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-10",
+      "date_cloture": "2026-10-10",
+      "date_creation": "2026-09-27T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 18,
+    "fields": {
+      "formateur": 59,
+      "co_intervenants": [],
+      "titre": "Introduction à la cybersécurité",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Cybersécurité. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "150000.00",
+      "competences": [
+        21
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-11",
+      "date_cloture": "2027-01-15",
+      "date_creation": "2026-12-17T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 19,
+    "fields": {
+      "formateur": 10,
+      "co_intervenants": [],
+      "titre": "Maîtriser Excel Avancé, PowerPoint, Microsoft Word au quotidien",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Excel Avancé, PowerPoint, Microsoft Word. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "60000.00",
+      "competences": [
+        45,
+        47,
+        46
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-08",
+      "date_cloture": "2026-11-22",
+      "date_creation": "2026-10-04T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 20,
+    "fields": {
+      "formateur": 22,
+      "co_intervenants": [
+        6
+      ],
+      "titre": "Maîtriser Analyse financière",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Analyse financière. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "150000.00",
+      "competences": [
+        43
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-17",
+      "date_cloture": "2027-02-05",
+      "date_creation": "2026-12-29T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": true
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 21,
+    "fields": {
+      "formateur": 105,
+      "co_intervenants": [],
+      "titre": "Les bases de la gestion des ressources humaines",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion des ressources humaines, Recrutement, Droit du travail. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "150000.00",
+      "competences": [
+        62,
+        63,
+        65
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-25",
+      "date_cloture": "2026-11-13",
+      "date_creation": "2026-10-12T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 22,
+    "fields": {
+      "formateur": 11,
+      "co_intervenants": [],
+      "titre": "Piloter un projet de A à Z",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion d'équipe. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "60000.00",
+      "competences": [
+        41
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-25",
+      "date_cloture": "2026-09-27",
+      "date_creation": "2026-09-10T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 23,
+    "fields": {
+      "formateur": 105,
+      "co_intervenants": [
+        5
+      ],
+      "titre": "Recruter et fidéliser ses talents",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Recrutement, Droit du travail, Gestion des ressources humaines. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "90000.00",
+      "competences": [
+        63,
+        65,
+        62
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-30",
+      "date_cloture": "2026-12-01",
+      "date_creation": "2026-10-22T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 24,
+    "fields": {
+      "formateur": 74,
+      "co_intervenants": [
+        136
+      ],
+      "titre": "Communiquer en plusieurs langues",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Français, Espagnol, Anglais. Une occasion de monter en compétences dans le domaine langues, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Oyo",
+      "prix": "75000.00",
+      "competences": [
+        48,
+        50,
+        49
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-16",
+      "date_cloture": "2026-11-16",
+      "date_creation": "2026-10-14T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 25,
+    "fields": {
+      "formateur": 121,
+      "co_intervenants": [
+        101
+      ],
+      "titre": "Les fondamentaux du développement web",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Django, CSS, HTML. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Oyo",
+      "prix": "35000.00",
+      "competences": [
+        7,
+        12,
+        11
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-24",
+      "date_cloture": "2026-10-24",
+      "date_creation": "2026-09-27T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 26,
+    "fields": {
+      "formateur": 59,
+      "co_intervenants": [
+        129
+      ],
+      "titre": "Sécuriser son infrastructure informatique",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Administration Linux, Réseaux Cisco, Cybersécurité. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        20,
+        19,
+        21
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-26",
+      "date_cloture": "2026-09-30",
+      "date_creation": "2026-09-16T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 27,
+    "fields": {
+      "formateur": 34,
+      "co_intervenants": [],
+      "titre": "Maîtriser Microsoft Word, PowerPoint, Excel Avancé au quotidien",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Microsoft Word, PowerPoint, Excel Avancé. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "35000.00",
+      "competences": [
+        46,
+        47,
+        45
+      ],
+      "is_published": false,
+      "date_debut": "2026-09-24",
+      "date_cloture": "2026-10-13",
+      "date_creation": "2026-08-22T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 28,
+    "fields": {
+      "formateur": 19,
+      "co_intervenants": [
+        143,
+        35
+      ],
+      "titre": "Les fondamentaux de la gestion de projet",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion de projet. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "90000.00",
+      "competences": [
+        39
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-17",
+      "date_cloture": "2026-11-19",
+      "date_creation": "2026-11-01T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 29,
+    "fields": {
+      "formateur": 110,
+      "co_intervenants": [
+        52,
+        76
+      ],
+      "titre": "Design graphique avec Adobe Illustrator",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Adobe Illustrator. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "45000.00",
+      "competences": [
+        18
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-29",
+      "date_cloture": "2027-01-02",
+      "date_creation": "2026-12-04T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 30,
+    "fields": {
+      "formateur": 142,
+      "co_intervenants": [],
+      "titre": "Bureautique professionnelle : Excel Avancé, PowerPoint",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Excel Avancé, PowerPoint. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Oyo",
+      "prix": "90000.00",
+      "competences": [
+        45,
+        47
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-11",
+      "date_cloture": "2026-11-13",
+      "date_creation": "2026-10-31T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 31,
+    "fields": {
+      "formateur": 67,
+      "co_intervenants": [
+        59
+      ],
+      "titre": "Sécuriser son infrastructure informatique",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Cybersécurité, Réseaux Cisco. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "120000.00",
+      "competences": [
+        21,
+        19
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-08",
+      "date_cloture": "2026-12-27",
+      "date_creation": "2026-11-27T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 32,
+    "fields": {
+      "formateur": 105,
+      "co_intervenants": [
+        13,
+        21
+      ],
+      "titre": "Recruter et fidéliser ses talents",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion des ressources humaines. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "120000.00",
+      "competences": [
+        62
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-04",
+      "date_cloture": "2027-01-08",
+      "date_creation": "2026-11-23T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 33,
+    "fields": {
+      "formateur": 6,
+      "co_intervenants": [],
+      "titre": "Maîtriser Comptabilité, Gestion budgétaire",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Comptabilité, Gestion budgétaire. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "120000.00",
+      "competences": [
+        42,
+        44
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-04",
+      "date_cloture": "2026-12-08",
+      "date_creation": "2026-11-17T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 34,
+    "fields": {
+      "formateur": 54,
+      "co_intervenants": [],
+      "titre": "Devenir un manager efficace",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion de projet, Gestion d'équipe. Une occasion de monter en compétences dans le domaine management, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "120000.00",
+      "competences": [
+        39,
+        41
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-03",
+      "date_cloture": "2026-11-04",
+      "date_creation": "2026-09-28T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 35,
+    "fields": {
+      "formateur": 64,
+      "co_intervenants": [],
+      "titre": "Concevoir une formation efficace",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Ingénierie pédagogique. Une occasion de monter en compétences dans le domaine pédagogie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "25000.00",
+      "competences": [
+        52
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-06",
+      "date_cloture": "2026-12-15",
+      "date_creation": "2026-10-28T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": true
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 36,
+    "fields": {
+      "formateur": 117,
+      "co_intervenants": [],
+      "titre": "Initiation à la diététique",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Nutrition. Une occasion de monter en compétences dans le domaine nutrition, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "35000.00",
+      "competences": [
+        84
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-08",
+      "date_cloture": "2026-10-12",
+      "date_creation": "2026-09-13T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 37,
+    "fields": {
+      "formateur": 29,
+      "co_intervenants": [],
+      "titre": "Les bases de la gestion des ressources humaines",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion des ressources humaines. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "60000.00",
+      "competences": [
+        62
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-09",
+      "date_cloture": "2027-01-09",
+      "date_creation": "2026-12-04T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 38,
+    "fields": {
+      "formateur": 104,
+      "co_intervenants": [
+        124,
+        28
+      ],
+      "titre": "Réussir sa stratégie de marketing digital",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Google Ads, SEO, Publicité Facebook. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "45000.00",
+      "competences": [
+        35,
+        32,
+        34
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-01",
+      "date_cloture": "2027-01-01",
+      "date_creation": "2026-12-08T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 39,
+    "fields": {
+      "formateur": 7,
+      "co_intervenants": [],
+      "titre": "Rédaction web et prise de parole",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Rédaction Web. Une occasion de monter en compétences dans le domaine communication, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Pointe-Noire",
+      "prix": "45000.00",
+      "competences": [
+        36
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-05",
+      "date_cloture": "2026-12-24",
+      "date_creation": "2026-10-28T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 40,
+    "fields": {
+      "formateur": 123,
+      "co_intervenants": [],
+      "titre": "Piloter un projet de A à Z",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion d'équipe, Leadership. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "150000.00",
+      "competences": [
+        41,
+        40
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-24",
+      "date_cloture": "2026-11-26",
+      "date_creation": "2026-10-12T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 41,
+    "fields": {
+      "formateur": 31,
+      "co_intervenants": [
+        147
+      ],
+      "titre": "Techniques de communication professionnelle",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Rédaction Web, Copywriting. Une occasion de monter en compétences dans le domaine communication, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "75000.00",
+      "competences": [
+        36,
+        37
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-05",
+      "date_cloture": "2026-10-24",
+      "date_creation": "2026-09-17T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 42,
+    "fields": {
+      "formateur": 20,
+      "co_intervenants": [],
+      "titre": "Marketing digital : Marketing Digital",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Marketing Digital. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "120000.00",
+      "competences": [
+        31
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-30",
+      "date_cloture": "2026-10-09",
+      "date_creation": "2026-09-07T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 43,
+    "fields": {
+      "formateur": 65,
+      "co_intervenants": [],
+      "titre": "Piloter la qualité par la donnée",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Analyse de données. Une occasion de monter en compétences dans le domaine qualité, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        69
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-31",
+      "date_cloture": "2027-01-09",
+      "date_creation": "2026-11-17T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 44,
+    "fields": {
+      "formateur": 85,
+      "co_intervenants": [],
+      "titre": "Analyse de données pour la prise de décision",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Data Science. Une occasion de monter en compétences dans le domaine data et analyse, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "75000.00",
+      "competences": [
+        72
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-10",
+      "date_cloture": "2026-12-19",
+      "date_creation": "2026-11-05T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 45,
+    "fields": {
+      "formateur": 138,
+      "co_intervenants": [
+        118
+      ],
+      "titre": "Prendre la parole avec assurance",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Développement personnel. Une occasion de monter en compétences dans le domaine développement personnel, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        100
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-11",
+      "date_cloture": "2027-01-12",
+      "date_creation": "2026-12-21T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 46,
+    "fields": {
+      "formateur": 28,
+      "co_intervenants": [
+        12
+      ],
+      "titre": "Marketing digital : Publicité Facebook, SEO",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Publicité Facebook, SEO. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "120000.00",
+      "competences": [
+        34,
+        32
+      ],
+      "is_published": false,
+      "date_debut": "2026-09-19",
+      "date_cloture": "2026-10-03",
+      "date_creation": "2026-08-06T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 47,
+    "fields": {
+      "formateur": 114,
+      "co_intervenants": [],
+      "titre": "Ingénierie pédagogique pour formateurs",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Pédagogie. Une occasion de monter en compétences dans le domaine pédagogie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Oyo",
+      "prix": "60000.00",
+      "competences": [
+        51
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-17",
+      "date_cloture": "2026-10-19",
+      "date_creation": "2026-09-07T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 48,
+    "fields": {
+      "formateur": 103,
+      "co_intervenants": [
+        19
+      ],
+      "titre": "Les fondamentaux de la gestion de projet",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion d'équipe, Leadership. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "45000.00",
+      "competences": [
+        41,
+        40
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-26",
+      "date_cloture": "2026-10-26",
+      "date_creation": "2026-09-27T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 49,
+    "fields": {
+      "formateur": 104,
+      "co_intervenants": [],
+      "titre": "Réussir sa stratégie de marketing digital",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Google Ads, Publicité Facebook. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "35000.00",
+      "competences": [
+        35,
+        34
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-11",
+      "date_cloture": "2026-10-13",
+      "date_creation": "2026-09-12T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 50,
+    "fields": {
+      "formateur": 107,
+      "co_intervenants": [],
+      "titre": "Communiquer efficacement en entreprise",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Rédaction Web, Copywriting, Prise de parole en public. Une occasion de monter en compétences dans le domaine communication, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Oyo",
+      "prix": "90000.00",
+      "competences": [
+        36,
+        37,
+        38
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-18",
+      "date_cloture": "2026-09-22",
+      "date_creation": "2026-08-13T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 51,
+    "fields": {
+      "formateur": 14,
+      "co_intervenants": [],
+      "titre": "Comptabilité et gestion financière",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion budgétaire, Analyse financière. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "45000.00",
+      "competences": [
+        44,
+        43
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-23",
+      "date_cloture": "2026-12-12",
+      "date_creation": "2026-10-10T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 52,
+    "fields": {
+      "formateur": 75,
+      "co_intervenants": [
+        149
+      ],
+      "titre": "Introduction à la cybersécurité",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Administration Linux, Réseaux Cisco, Cybersécurité. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "35000.00",
+      "competences": [
+        20,
+        19,
+        21
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-11",
+      "date_cloture": "2027-01-13",
+      "date_creation": "2026-12-08T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 53,
+    "fields": {
+      "formateur": 57,
+      "co_intervenants": [],
+      "titre": "Piloter la qualité par la donnée",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion de projet, Analyse de données. Une occasion de monter en compétences dans le domaine qualité, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "90000.00",
+      "competences": [
+        39,
+        69
+      ],
+      "is_published": false,
+      "date_debut": "2026-09-17",
+      "date_cloture": "2026-09-21",
+      "date_creation": "2026-08-05T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 54,
+    "fields": {
+      "formateur": 11,
+      "co_intervenants": [
+        123
+      ],
+      "titre": "Gestion de projet : méthodes et outils",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Leadership, Gestion d'équipe, Gestion de projet. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "150000.00",
+      "competences": [
+        40,
+        41,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-19",
+      "date_cloture": "2026-10-03",
+      "date_creation": "2026-09-04T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 55,
+    "fields": {
+      "formateur": 32,
+      "co_intervenants": [],
+      "titre": "Entrepreneuriat : les clés du succès",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Leadership, Gestion de projet, Entrepreneuriat. Une occasion de monter en compétences dans le domaine entrepreneuriat, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "90000.00",
+      "competences": [
+        40,
+        39,
+        58
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-08",
+      "date_cloture": "2026-12-27",
+      "date_creation": "2026-11-06T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 56,
+    "fields": {
+      "formateur": 35,
+      "co_intervenants": [
+        19
+      ],
+      "titre": "Gestion de projet : méthodes et outils",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion de projet, Gestion d'équipe. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "60000.00",
+      "competences": [
+        39,
+        41
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-01",
+      "date_cloture": "2026-11-20",
+      "date_creation": "2026-10-10T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 57,
+    "fields": {
+      "formateur": 123,
+      "co_intervenants": [
+        3
+      ],
+      "titre": "Piloter un projet de A à Z",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion d'équipe, Leadership, Gestion de projet. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "75000.00",
+      "competences": [
+        41,
+        40,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-18",
+      "date_cloture": "2026-09-22",
+      "date_creation": "2026-08-05T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 58,
+    "fields": {
+      "formateur": 101,
+      "co_intervenants": [
+        17
+      ],
+      "titre": "Développement Web avec HTML, CSS, JavaScript",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : HTML, CSS, JavaScript. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "25000.00",
+      "competences": [
+        11,
+        12,
+        2
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-05",
+      "date_cloture": "2027-01-19",
+      "date_creation": "2026-12-05T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 59,
+    "fields": {
+      "formateur": 141,
+      "co_intervenants": [],
+      "titre": "Créer des applications web modernes (Django)",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Django. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Loubomo",
+      "prix": "150000.00",
+      "competences": [
+        7
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-23",
+      "date_cloture": "2026-10-23",
+      "date_creation": "2026-10-04T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 60,
+    "fields": {
+      "formateur": 54,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du management",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Leadership. Une occasion de monter en compétences dans le domaine management, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "120000.00",
+      "competences": [
+        40
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-26",
+      "date_cloture": "2027-01-28",
+      "date_creation": "2026-12-23T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 61,
+    "fields": {
+      "formateur": 1,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du développement web",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Django, JavaScript. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "120000.00",
+      "competences": [
+        7,
+        2
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-12",
+      "date_cloture": "2027-02-26",
+      "date_creation": "2027-01-05T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 62,
+    "fields": {
+      "formateur": 2,
+      "co_intervenants": [],
+      "titre": "Maîtriser PowerPoint au quotidien",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : PowerPoint. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "35000.00",
+      "competences": [
+        47
+      ],
+      "is_published": false,
+      "date_debut": "2026-09-17",
+      "date_cloture": "2026-10-01",
+      "date_creation": "2026-08-07T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 63,
+    "fields": {
+      "formateur": 3,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la gestion de projet",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion de projet, Leadership. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "90000.00",
+      "competences": [
+        39,
+        40
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-04",
+      "date_cloture": "2026-10-23",
+      "date_creation": "2026-09-03T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 64,
+    "fields": {
+      "formateur": 4,
+      "co_intervenants": [],
+      "titre": "Réussir sa stratégie de marketing digital",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Publicité Facebook, SEO, Google Ads. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "75000.00",
+      "competences": [
+        34,
+        32,
+        35
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-17",
+      "date_cloture": "2026-12-21",
+      "date_creation": "2026-11-08T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 65,
+    "fields": {
+      "formateur": 8,
+      "co_intervenants": [],
+      "titre": "Entrepreneuriat : les clés du succès",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion de projet. Une occasion de monter en compétences dans le domaine entrepreneuriat, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "150000.00",
+      "competences": [
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-25",
+      "date_cloture": "2027-01-08",
+      "date_creation": "2026-11-12T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 66,
+    "fields": {
+      "formateur": 9,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du développement web",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : JavaScript, CSS. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        2,
+        12
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-27",
+      "date_cloture": "2026-09-28",
+      "date_creation": "2026-08-15T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 67,
+    "fields": {
+      "formateur": 12,
+      "co_intervenants": [],
+      "titre": "Marketing digital : Google Ads",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Google Ads. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "45000.00",
+      "competences": [
+        35
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-09",
+      "date_cloture": "2027-01-09",
+      "date_creation": "2026-11-30T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 68,
+    "fields": {
+      "formateur": 13,
+      "co_intervenants": [],
+      "titre": "Recruter et fidéliser ses talents",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Recrutement, Droit du travail, Gestion des ressources humaines. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Pointe-Noire",
+      "prix": "150000.00",
+      "competences": [
+        63,
+        65,
+        62
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-22",
+      "date_cloture": "2026-11-26",
+      "date_creation": "2026-11-12T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 69,
+    "fields": {
+      "formateur": 15,
+      "co_intervenants": [],
+      "titre": "Communiquer efficacement en entreprise",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Prise de parole en public. Une occasion de monter en compétences dans le domaine communication, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "150000.00",
+      "competences": [
+        38
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-05",
+      "date_cloture": "2026-11-09",
+      "date_creation": "2026-10-10T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 70,
+    "fields": {
+      "formateur": 16,
+      "co_intervenants": [],
+      "titre": "De l'idée au business plan",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion de projet, Leadership. Une occasion de monter en compétences dans le domaine entrepreneuriat, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "25000.00",
+      "competences": [
+        39,
+        40
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-05",
+      "date_cloture": "2027-01-05",
+      "date_creation": "2026-11-24T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 71,
+    "fields": {
+      "formateur": 17,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du développement web",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : HTML, JavaScript. Une occasion de monter en compétences dans le domaine développement web, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "150000.00",
+      "competences": [
+        11,
+        2
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-18",
+      "date_cloture": "2027-01-01",
+      "date_creation": "2026-12-02T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 72,
+    "fields": {
+      "formateur": 21,
+      "co_intervenants": [],
+      "titre": "Les bases de la gestion des ressources humaines",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Recrutement, Gestion des ressources humaines, Droit du travail. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "35000.00",
+      "competences": [
+        63,
+        62,
+        65
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-06",
+      "date_cloture": "2026-10-25",
+      "date_creation": "2026-09-14T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 73,
+    "fields": {
+      "formateur": 23,
+      "co_intervenants": [],
+      "titre": "Techniques de communication professionnelle",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Prise de parole en public. Une occasion de monter en compétences dans le domaine communication, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "75000.00",
+      "competences": [
+        38
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-24",
+      "date_cloture": "2026-10-28",
+      "date_creation": "2026-10-14T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 74,
+    "fields": {
+      "formateur": 24,
+      "co_intervenants": [],
+      "titre": "Entrepreneuriat : les clés du succès",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Leadership, Gestion de projet, Entrepreneuriat. Une occasion de monter en compétences dans le domaine entrepreneuriat, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Loubomo",
+      "prix": "60000.00",
+      "competences": [
+        40,
+        39,
+        58
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-28",
+      "date_cloture": "2026-12-17",
+      "date_creation": "2026-11-13T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 75,
+    "fields": {
+      "formateur": 26,
+      "co_intervenants": [],
+      "titre": "Optimiser sa productivité bureautique",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Excel Avancé, PowerPoint, Microsoft Word. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "120000.00",
+      "competences": [
+        45,
+        47,
+        46
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-04",
+      "date_cloture": "2026-11-23",
+      "date_creation": "2026-10-01T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 76,
+    "fields": {
+      "formateur": 27,
+      "co_intervenants": [],
+      "titre": "Piloter un projet de A à Z",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Leadership. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        40
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-21",
+      "date_cloture": "2026-09-21",
+      "date_creation": "2026-08-10T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 77,
+    "fields": {
+      "formateur": 30,
+      "co_intervenants": [],
+      "titre": "Maîtriser Gestion budgétaire, Analyse financière",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion budgétaire, Analyse financière. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Loubomo",
+      "prix": "90000.00",
+      "competences": [
+        44,
+        43
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-08",
+      "date_cloture": "2027-02-22",
+      "date_creation": "2027-01-19T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 78,
+    "fields": {
+      "formateur": 52,
+      "co_intervenants": [],
+      "titre": "Créer une identité visuelle percutante",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Adobe Illustrator, Figma, UI/UX Design. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "60000.00",
+      "competences": [
+        18,
+        16,
+        15
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-26",
+      "date_cloture": "2027-01-14",
+      "date_creation": "2026-12-14T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 79,
+    "fields": {
+      "formateur": 53,
+      "co_intervenants": [],
+      "titre": "Data & Business Intelligence : Power BI, Analyse de données, Tableau",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Power BI, Analyse de données, Tableau. Une occasion de monter en compétences dans le domaine data et analyse, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "60000.00",
+      "competences": [
+        70,
+        69,
+        71
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-18",
+      "date_cloture": "2026-10-18",
+      "date_creation": "2026-09-05T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 80,
+    "fields": {
+      "formateur": 55,
+      "co_intervenants": [],
+      "titre": "Réseaux informatiques : Réseaux Cisco, Maintenance informatique, Administration Linux",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Réseaux Cisco, Maintenance informatique, Administration Linux. Une occasion de monter en compétences dans le domaine réseaux informatiques, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "75000.00",
+      "competences": [
+        19,
+        57,
+        20
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-22",
+      "date_cloture": "2026-12-22",
+      "date_creation": "2026-11-23T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 81,
+    "fields": {
+      "formateur": 56,
+      "co_intervenants": [],
+      "titre": "Concevoir une formation efficace",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Pédagogie, Ingénierie pédagogique. Une occasion de monter en compétences dans le domaine pédagogie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Oyo",
+      "prix": "150000.00",
+      "competences": [
+        51,
+        52
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-07",
+      "date_cloture": "2026-12-08",
+      "date_creation": "2026-10-25T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 82,
+    "fields": {
+      "formateur": 58,
+      "co_intervenants": [],
+      "titre": "Anglais professionnel",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Français, Anglais. Une occasion de monter en compétences dans le domaine langues, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "60000.00",
+      "competences": [
+        48,
+        49
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-09",
+      "date_cloture": "2027-01-09",
+      "date_creation": "2026-12-09T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 83,
+    "fields": {
+      "formateur": 61,
+      "co_intervenants": [],
+      "titre": "Analyse de données pour la prise de décision",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Power BI, Analyse de données, Data Science. Une occasion de monter en compétences dans le domaine data et analyse, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "90000.00",
+      "competences": [
+        70,
+        69,
+        72
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-09",
+      "date_cloture": "2026-11-28",
+      "date_creation": "2026-10-23T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 84,
+    "fields": {
+      "formateur": 62,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du management",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion d'équipe, Leadership, Gestion de projet. Une occasion de monter en compétences dans le domaine management, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Oyo",
+      "prix": "75000.00",
+      "competences": [
+        41,
+        40,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-21",
+      "date_cloture": "2026-11-21",
+      "date_creation": "2026-11-05T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 85,
+    "fields": {
+      "formateur": 63,
+      "co_intervenants": [],
+      "titre": "Les bases des réseaux Cisco et Linux",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Réseaux Cisco. Une occasion de monter en compétences dans le domaine réseaux informatiques, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "25000.00",
+      "competences": [
+        19
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-12",
+      "date_cloture": "2026-10-13",
+      "date_creation": "2026-08-31T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 86,
+    "fields": {
+      "formateur": 66,
+      "co_intervenants": [],
+      "titre": "Se perfectionner en langues étrangères",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Espagnol, Français. Une occasion de monter en compétences dans le domaine langues, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "90000.00",
+      "competences": [
+        50,
+        48
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-18",
+      "date_cloture": "2026-09-18",
+      "date_creation": "2026-08-13T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 87,
+    "fields": {
+      "formateur": 68,
+      "co_intervenants": [],
+      "titre": "Design graphique avec Adobe Photoshop, Figma",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Adobe Photoshop, Figma. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "intermediaire",
+      "adresse": "Oyo",
+      "prix": "60000.00",
+      "competences": [
+        17,
+        16
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-05",
+      "date_cloture": "2027-02-05",
+      "date_creation": "2027-01-04T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 88,
+    "fields": {
+      "formateur": 69,
+      "co_intervenants": [],
+      "titre": "Data & Business Intelligence : Analyse de données, Power BI",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Analyse de données, Power BI. Une occasion de monter en compétences dans le domaine data et analyse, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "60000.00",
+      "competences": [
+        69,
+        70
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-19",
+      "date_cloture": "2026-12-19",
+      "date_creation": "2026-11-07T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 89,
+    "fields": {
+      "formateur": 70,
+      "co_intervenants": [],
+      "titre": "Devenir un manager efficace",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion d'équipe, Gestion de projet. Une occasion de monter en compétences dans le domaine management, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "25000.00",
+      "competences": [
+        41,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-26",
+      "date_cloture": "2026-11-26",
+      "date_creation": "2026-10-26T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 90,
+    "fields": {
+      "formateur": 71,
+      "co_intervenants": [],
+      "titre": "Réseaux informatiques : Réseaux Cisco, Administration Linux, Maintenance informatique",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Réseaux Cisco, Administration Linux, Maintenance informatique. Une occasion de monter en compétences dans le domaine réseaux informatiques, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        19,
+        20,
+        57
+      ],
+      "is_published": false,
+      "date_debut": "2027-02-05",
+      "date_cloture": "2027-02-07",
+      "date_creation": "2027-01-23T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 91,
+    "fields": {
+      "formateur": 72,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la pédagogie",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Pédagogie. Une occasion de monter en compétences dans le domaine pédagogie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "35000.00",
+      "competences": [
+        51
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-14",
+      "date_cloture": "2027-01-02",
+      "date_creation": "2026-11-15T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 92,
+    "fields": {
+      "formateur": 73,
+      "co_intervenants": [],
+      "titre": "Piloter la qualité par la donnée",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion de projet, Analyse de données. Une occasion de monter en compétences dans le domaine qualité, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "120000.00",
+      "competences": [
+        39,
+        69
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-10",
+      "date_cloture": "2026-11-19",
+      "date_creation": "2026-10-23T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 93,
+    "fields": {
+      "formateur": 76,
+      "co_intervenants": [],
+      "titre": "Créer une identité visuelle percutante",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Adobe Photoshop, UI/UX Design, Adobe Illustrator. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "45000.00",
+      "competences": [
+        17,
+        15,
+        18
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-31",
+      "date_cloture": "2027-02-04",
+      "date_creation": "2026-12-22T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 94,
+    "fields": {
+      "formateur": 77,
+      "co_intervenants": [],
+      "titre": "Exploiter ses données avec Tableau, Analyse de données",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Tableau, Analyse de données. Une occasion de monter en compétences dans le domaine data et analyse, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "35000.00",
+      "competences": [
+        71,
+        69
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-21",
+      "date_cloture": "2026-12-10",
+      "date_creation": "2026-10-21T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 95,
+    "fields": {
+      "formateur": 78,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du management",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion de projet, Gestion d'équipe, Leadership. Une occasion de monter en compétences dans le domaine management, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "25000.00",
+      "competences": [
+        39,
+        41,
+        40
+      ],
+      "is_published": false,
+      "date_debut": "2026-09-29",
+      "date_cloture": "2026-10-13",
+      "date_creation": "2026-09-05T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 96,
+    "fields": {
+      "formateur": 79,
+      "co_intervenants": [],
+      "titre": "Administration réseau et systèmes",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Réseaux Cisco, Administration Linux, Maintenance informatique. Une occasion de monter en compétences dans le domaine réseaux informatiques, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "75000.00",
+      "competences": [
+        19,
+        20,
+        57
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-15",
+      "date_cloture": "2026-12-19",
+      "date_creation": "2026-11-06T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 97,
+    "fields": {
+      "formateur": 80,
+      "co_intervenants": [],
+      "titre": "Ingénierie pédagogique pour formateurs",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Ingénierie pédagogique, Pédagogie. Une occasion de monter en compétences dans le domaine pédagogie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Oyo",
+      "prix": "45000.00",
+      "competences": [
+        52,
+        51
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-16",
+      "date_cloture": "2026-09-30",
+      "date_creation": "2026-08-15T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 98,
+    "fields": {
+      "formateur": 81,
+      "co_intervenants": [],
+      "titre": "Démarche qualité en entreprise",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion de projet, Analyse de données. Une occasion de monter en compétences dans le domaine qualité, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Pointe-Noire",
+      "prix": "75000.00",
+      "competences": [
+        39,
+        69
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-20",
+      "date_cloture": "2026-10-24",
+      "date_creation": "2026-10-04T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 99,
+    "fields": {
+      "formateur": 82,
+      "co_intervenants": [],
+      "titre": "Se perfectionner en langues étrangères",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Français, Anglais, Espagnol. Une occasion de monter en compétences dans le domaine langues, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "120000.00",
+      "competences": [
+        48,
+        49,
+        50
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-25",
+      "date_cloture": "2026-11-13",
+      "date_creation": "2026-09-13T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 100,
+    "fields": {
+      "formateur": 83,
+      "co_intervenants": [],
+      "titre": "Cybersécurité : Cybersécurité",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Cybersécurité. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "120000.00",
+      "competences": [
+        21
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-25",
+      "date_cloture": "2026-09-29",
+      "date_creation": "2026-09-03T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 101,
+    "fields": {
+      "formateur": 84,
+      "co_intervenants": [],
+      "titre": "Créer une identité visuelle percutante",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : UI/UX Design, Figma. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "90000.00",
+      "competences": [
+        15,
+        16
+      ],
+      "is_published": false,
+      "date_debut": "2026-09-17",
+      "date_cloture": "2026-09-19",
+      "date_creation": "2026-08-08T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 102,
+    "fields": {
+      "formateur": 102,
+      "co_intervenants": [],
+      "titre": "Optimiser sa productivité bureautique",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : PowerPoint, Excel Avancé. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "25000.00",
+      "competences": [
+        47,
+        45
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-26",
+      "date_cloture": "2026-10-27",
+      "date_creation": "2026-10-15T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 103,
+    "fields": {
+      "formateur": 108,
+      "co_intervenants": [],
+      "titre": "Se lancer dans l'entrepreneuriat",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Leadership, Entrepreneuriat, Gestion de projet. Une occasion de monter en compétences dans le domaine entrepreneuriat, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "90000.00",
+      "competences": [
+        40,
+        58,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-17",
+      "date_cloture": "2026-11-18",
+      "date_creation": "2026-10-30T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 104,
+    "fields": {
+      "formateur": 109,
+      "co_intervenants": [],
+      "titre": "Cybersécurité : Réseaux Cisco, Cybersécurité",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Réseaux Cisco, Cybersécurité. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "35000.00",
+      "competences": [
+        19,
+        21
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-15",
+      "date_cloture": "2026-10-19",
+      "date_creation": "2026-09-13T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 105,
+    "fields": {
+      "formateur": 111,
+      "co_intervenants": [],
+      "titre": "Exploiter ses données avec Analyse de données, Tableau",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Analyse de données, Tableau. Une occasion de monter en compétences dans le domaine data et analyse, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "60000.00",
+      "competences": [
+        69,
+        71
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-11",
+      "date_cloture": "2027-02-25",
+      "date_creation": "2027-01-10T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 106,
+    "fields": {
+      "formateur": 113,
+      "co_intervenants": [],
+      "titre": "Réseaux informatiques : Réseaux Cisco",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Réseaux Cisco. Une occasion de monter en compétences dans le domaine réseaux informatiques, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "debutant",
+      "adresse": "Loubomo",
+      "prix": "75000.00",
+      "competences": [
+        19
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-28",
+      "date_cloture": "2026-10-30",
+      "date_creation": "2026-09-28T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 107,
+    "fields": {
+      "formateur": 115,
+      "co_intervenants": [],
+      "titre": "Piloter la qualité par la donnée",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Analyse de données, Gestion de projet. Une occasion de monter en compétences dans le domaine qualité, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "90000.00",
+      "competences": [
+        69,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-10",
+      "date_cloture": "2026-11-24",
+      "date_creation": "2026-10-09T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 108,
+    "fields": {
+      "formateur": 116,
+      "co_intervenants": [],
+      "titre": "Anglais professionnel",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Espagnol, Anglais. Une occasion de monter en compétences dans le domaine langues, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "45000.00",
+      "competences": [
+        50,
+        49
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-03",
+      "date_cloture": "2027-01-04",
+      "date_creation": "2026-12-07T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 109,
+    "fields": {
+      "formateur": 118,
+      "co_intervenants": [],
+      "titre": "Prendre la parole avec assurance",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Développement personnel. Une occasion de monter en compétences dans le domaine développement personnel, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "150000.00",
+      "competences": [
+        100
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-13",
+      "date_cloture": "2026-11-17",
+      "date_creation": "2026-10-13T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 110,
+    "fields": {
+      "formateur": 119,
+      "co_intervenants": [],
+      "titre": "Créer ses propres vêtements",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Couture. Une occasion de monter en compétences dans le domaine couture et stylisme, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "150000.00",
+      "competences": [
+        88
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-02",
+      "date_cloture": "2027-02-02",
+      "date_creation": "2027-01-02T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 111,
+    "fields": {
+      "formateur": 120,
+      "co_intervenants": [],
+      "titre": "Devenir maquilleuse professionnelle",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Coiffure, Maquillage professionnel. Une occasion de monter en compétences dans le domaine maquillage professionnel, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "150000.00",
+      "competences": [
+        85,
+        86
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-25",
+      "date_cloture": "2027-02-13",
+      "date_creation": "2027-01-02T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 112,
+    "fields": {
+      "formateur": 122,
+      "co_intervenants": [],
+      "titre": "Maîtriser PowerPoint, Microsoft Word au quotidien",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : PowerPoint, Microsoft Word. Une occasion de monter en compétences dans le domaine bureautique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "120000.00",
+      "competences": [
+        47,
+        46
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-05",
+      "date_cloture": "2027-02-09",
+      "date_creation": "2027-01-10T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 113,
+    "fields": {
+      "formateur": 125,
+      "co_intervenants": [],
+      "titre": "RH : Droit du travail, Recrutement",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Droit du travail, Recrutement. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "150000.00",
+      "competences": [
+        65,
+        63
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-15",
+      "date_cloture": "2026-10-17",
+      "date_creation": "2026-09-18T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 114,
+    "fields": {
+      "formateur": 126,
+      "co_intervenants": [],
+      "titre": "Maîtriser Comptabilité",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Comptabilité. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "75000.00",
+      "competences": [
+        42
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-04",
+      "date_cloture": "2027-02-04",
+      "date_creation": "2027-01-13T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 115,
+    "fields": {
+      "formateur": 128,
+      "co_intervenants": [],
+      "titre": "Se lancer dans l'entrepreneuriat",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Entrepreneuriat. Une occasion de monter en compétences dans le domaine entrepreneuriat, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Oyo",
+      "prix": "90000.00",
+      "competences": [
+        58
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-28",
+      "date_cloture": "2026-10-30",
+      "date_creation": "2026-09-29T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 116,
+    "fields": {
+      "formateur": 129,
+      "co_intervenants": [],
+      "titre": "Introduction à la cybersécurité",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Réseaux Cisco, Cybersécurité, Administration Linux. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "75000.00",
+      "competences": [
+        19,
+        21,
+        20
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-24",
+      "date_cloture": "2027-02-12",
+      "date_creation": "2026-12-31T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 117,
+    "fields": {
+      "formateur": 131,
+      "co_intervenants": [],
+      "titre": "Data & Business Intelligence : Tableau, Power BI, Data Science",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Tableau, Power BI, Data Science. Une occasion de monter en compétences dans le domaine data et analyse, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "150000.00",
+      "competences": [
+        71,
+        70,
+        72
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-18",
+      "date_cloture": "2026-11-22",
+      "date_creation": "2026-11-06T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 118,
+    "fields": {
+      "formateur": 132,
+      "co_intervenants": [],
+      "titre": "Devenir un manager efficace",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Leadership, Gestion de projet. Une occasion de monter en compétences dans le domaine management, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "90000.00",
+      "competences": [
+        40,
+        39
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-04",
+      "date_cloture": "2026-11-18",
+      "date_creation": "2026-10-02T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 119,
+    "fields": {
+      "formateur": 133,
+      "co_intervenants": [],
+      "titre": "Administration réseau et systèmes",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Maintenance informatique, Administration Linux, Réseaux Cisco. Une occasion de monter en compétences dans le domaine réseaux informatiques, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "25000.00",
+      "competences": [
+        57,
+        20,
+        19
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-29",
+      "date_cloture": "2027-02-17",
+      "date_creation": "2026-12-31T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 120,
+    "fields": {
+      "formateur": 134,
+      "co_intervenants": [],
+      "titre": "Concevoir une formation efficace",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Ingénierie pédagogique. Une occasion de monter en compétences dans le domaine pédagogie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Loubomo",
+      "prix": "90000.00",
+      "competences": [
+        52
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-04",
+      "date_cloture": "2026-10-05",
+      "date_creation": "2026-08-20T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 121,
+    "fields": {
+      "formateur": 135,
+      "co_intervenants": [],
+      "titre": "Gestion de la qualité et amélioration continue",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Analyse de données, Gestion de projet. Une occasion de monter en compétences dans le domaine qualité, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Oyo",
+      "prix": "60000.00",
+      "competences": [
+        69,
+        39
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-02",
+      "date_cloture": "2027-01-04",
+      "date_creation": "2026-11-21T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 122,
+    "fields": {
+      "formateur": 136,
+      "co_intervenants": [],
+      "titre": "Anglais professionnel",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Espagnol. Une occasion de monter en compétences dans le domaine langues, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Pointe-Noire",
+      "prix": "75000.00",
+      "competences": [
+        50
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-07",
+      "date_cloture": "2026-12-26",
+      "date_creation": "2026-11-04T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 123,
+    "fields": {
+      "formateur": 137,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la nutrition",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Nutrition. Une occasion de monter en compétences dans le domaine nutrition, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "45000.00",
+      "competences": [
+        84
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-23",
+      "date_cloture": "2026-09-23",
+      "date_creation": "2026-08-27T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 124,
+    "fields": {
+      "formateur": 139,
+      "co_intervenants": [],
+      "titre": "Créer ses propres vêtements",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Stylisme. Une occasion de monter en compétences dans le domaine couture et stylisme, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "90000.00",
+      "competences": [
+        87
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-28",
+      "date_cloture": "2026-09-29",
+      "date_creation": "2026-09-07T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 125,
+    "fields": {
+      "formateur": 140,
+      "co_intervenants": [],
+      "titre": "Devenir maquilleuse professionnelle",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Coiffure. Une occasion de monter en compétences dans le domaine maquillage professionnel, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "150000.00",
+      "competences": [
+        85
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-10",
+      "date_cloture": "2026-11-14",
+      "date_creation": "2026-09-29T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 126,
+    "fields": {
+      "formateur": 143,
+      "co_intervenants": [],
+      "titre": "Piloter un projet de A à Z",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion de projet, Leadership, Gestion d'équipe. Une occasion de monter en compétences dans le domaine gestion de projet, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "90000.00",
+      "competences": [
+        39,
+        40,
+        41
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-13",
+      "date_cloture": "2027-01-13",
+      "date_creation": "2027-01-03T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 127,
+    "fields": {
+      "formateur": 144,
+      "co_intervenants": [],
+      "titre": "Booster sa visibilité en ligne",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Publicité Facebook. Une occasion de monter en compétences dans le domaine marketing digital, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "75000.00",
+      "competences": [
+        34
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-21",
+      "date_cloture": "2027-01-22",
+      "date_creation": "2026-12-30T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 128,
+    "fields": {
+      "formateur": 145,
+      "co_intervenants": [],
+      "titre": "Les bases de la gestion des ressources humaines",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Droit du travail, Recrutement. Une occasion de monter en compétences dans le domaine ressources humaines, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "45000.00",
+      "competences": [
+        65,
+        63
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-08",
+      "date_cloture": "2026-11-22",
+      "date_creation": "2026-10-06T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 129,
+    "fields": {
+      "formateur": 146,
+      "co_intervenants": [],
+      "titre": "Maîtriser Analyse financière, Gestion budgétaire, Comptabilité",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Analyse financière, Gestion budgétaire, Comptabilité. Une occasion de monter en compétences dans le domaine comptabilité, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "60000.00",
+      "competences": [
+        43,
+        44,
+        42
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-05",
+      "date_cloture": "2027-02-19",
+      "date_creation": "2026-12-27T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 130,
+    "fields": {
+      "formateur": 147,
+      "co_intervenants": [],
+      "titre": "Techniques de communication professionnelle",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Prise de parole en public. Une occasion de monter en compétences dans le domaine communication, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "35000.00",
+      "competences": [
+        38
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-14",
+      "date_cloture": "2026-10-15",
+      "date_creation": "2026-09-23T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 131,
+    "fields": {
+      "formateur": 148,
+      "co_intervenants": [],
+      "titre": "Se lancer dans l'entrepreneuriat",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion de projet, Entrepreneuriat, Leadership. Une occasion de monter en compétences dans le domaine entrepreneuriat, avec une approche pratique et orientée résultats.",
+      "categorie": "management",
+      "niveau": "debutant",
+      "adresse": "Loubomo",
+      "prix": "45000.00",
+      "competences": [
+        39,
+        58,
+        40
+      ],
+      "is_published": false,
+      "date_debut": "2026-11-27",
+      "date_cloture": "2026-12-01",
+      "date_creation": "2026-10-25T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 132,
+    "fields": {
+      "formateur": 149,
+      "co_intervenants": [],
+      "titre": "Cybersécurité : Réseaux Cisco",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Réseaux Cisco. Une occasion de monter en compétences dans le domaine cybersécurité, avec une approche pratique et orientée résultats.",
+      "categorie": "cybersecurite",
+      "niveau": "intermediaire",
+      "adresse": "Oyo",
+      "prix": "150000.00",
+      "competences": [
+        19
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-20",
+      "date_cloture": "2026-11-03",
+      "date_creation": "2026-10-04T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 133,
+    "fields": {
+      "formateur": 150,
+      "co_intervenants": [],
+      "titre": "Créer une identité visuelle percutante",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Adobe Illustrator, Figma, UI/UX Design. Une occasion de monter en compétences dans le domaine design graphique, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "25000.00",
+      "competences": [
+        18,
+        16,
+        15
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-19",
+      "date_cloture": "2026-11-23",
+      "date_creation": "2026-11-04T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 134,
+    "fields": {
+      "formateur": 151,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la logistique",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Gestion logistique, Transit et douane. Une occasion de monter en compétences dans le domaine transit et logistique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "75000.00",
+      "competences": [
+        91,
+        92
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-02",
+      "date_cloture": "2026-10-02",
+      "date_creation": "2026-08-20T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 135,
+    "fields": {
+      "formateur": 152,
+      "co_intervenants": [],
+      "titre": "Optimiser sa chaîne d'approvisionnement",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Transit et douane, Gestion logistique, Gestion des stocks. Une occasion de monter en compétences dans le domaine transit et logistique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "150000.00",
+      "competences": [
+        92,
+        91,
+        93
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-19",
+      "date_cloture": "2026-10-23",
+      "date_creation": "2026-10-08T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 136,
+    "fields": {
+      "formateur": 153,
+      "co_intervenants": [],
+      "titre": "Optimiser sa chaîne d'approvisionnement",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Transit et douane, Gestion des stocks. Une occasion de monter en compétences dans le domaine transit et logistique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "75000.00",
+      "competences": [
+        92,
+        93
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-26",
+      "date_cloture": "2027-01-26",
+      "date_creation": "2027-01-09T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 137,
+    "fields": {
+      "formateur": 154,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la logistique",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion des stocks, Transit et douane. Une occasion de monter en compétences dans le domaine transit et logistique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "150000.00",
+      "competences": [
+        93,
+        92
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-16",
+      "date_cloture": "2026-11-30",
+      "date_creation": "2026-10-12T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 138,
+    "fields": {
+      "formateur": 155,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la logistique",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Gestion logistique, Gestion des stocks, Transit et douane. Une occasion de monter en compétences dans le domaine transit et logistique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "60000.00",
+      "competences": [
+        91,
+        93,
+        92
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-14",
+      "date_cloture": "2026-10-16",
+      "date_creation": "2026-09-04T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 139,
+    "fields": {
+      "formateur": 156,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la logistique",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Gestion logistique, Transit et douane. Une occasion de monter en compétences dans le domaine transit et logistique, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "60000.00",
+      "competences": [
+        91,
+        92
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-12",
+      "date_cloture": "2027-01-31",
+      "date_creation": "2026-12-25T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 140,
+    "fields": {
+      "formateur": 157,
+      "co_intervenants": [],
+      "titre": "Deep Learning et Computer Vision : les bases",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Computer Vision. Une occasion de monter en compétences dans le domaine intelligence artificielle, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Oyo",
+      "prix": "75000.00",
+      "competences": [
+        75
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-14",
+      "date_cloture": "2026-12-14",
+      "date_creation": "2026-11-01T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 141,
+    "fields": {
+      "formateur": 158,
+      "co_intervenants": [],
+      "titre": "Introduction au Machine Learning et à l'IA",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Python, Deep Learning, Computer Vision. Une occasion de monter en compétences dans le domaine intelligence artificielle, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "35000.00",
+      "competences": [
+        1,
+        73,
+        75
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-13",
+      "date_cloture": "2026-10-22",
+      "date_creation": "2026-09-27T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 142,
+    "fields": {
+      "formateur": 159,
+      "co_intervenants": [],
+      "titre": "Intelligence Artificielle appliquée",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Python, Intelligence Artificielle. Une occasion de monter en compétences dans le domaine intelligence artificielle, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Oyo",
+      "prix": "25000.00",
+      "competences": [
+        1,
+        30
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-27",
+      "date_cloture": "2027-01-28",
+      "date_creation": "2026-12-31T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 143,
+    "fields": {
+      "formateur": 160,
+      "co_intervenants": [],
+      "titre": "Intelligence Artificielle appliquée",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Deep Learning. Une occasion de monter en compétences dans le domaine intelligence artificielle, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "25000.00",
+      "competences": [
+        73
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-14",
+      "date_cloture": "2026-11-02",
+      "date_creation": "2026-09-06T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 144,
+    "fields": {
+      "formateur": 161,
+      "co_intervenants": [],
+      "titre": "Deep Learning et Computer Vision : les bases",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Python, Deep Learning, Traitement du langage naturel. Une occasion de monter en compétences dans le domaine intelligence artificielle, avec une approche pratique et orientée résultats.",
+      "categorie": "data_ia",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        1,
+        73,
+        74
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-27",
+      "date_cloture": "2026-10-11",
+      "date_creation": "2026-08-30T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 145,
+    "fields": {
+      "formateur": 162,
+      "co_intervenants": [],
+      "titre": "Installation électrique et énergie solaire",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Installation électrique. Une occasion de monter en compétences dans le domaine électricité et énergie solaire, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "75000.00",
+      "competences": [
+        96
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-13",
+      "date_cloture": "2027-01-13",
+      "date_creation": "2026-12-18T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 146,
+    "fields": {
+      "formateur": 163,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de l'électricité bâtiment",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Installation électrique, Électricité bâtiment, Énergie solaire. Une occasion de monter en compétences dans le domaine électricité et énergie solaire, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        96,
+        56,
+        95
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-24",
+      "date_cloture": "2027-01-12",
+      "date_creation": "2026-11-15T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 147,
+    "fields": {
+      "formateur": 164,
+      "co_intervenants": [],
+      "titre": "Installation électrique et énergie solaire",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Électricité bâtiment. Une occasion de monter en compétences dans le domaine électricité et énergie solaire, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Loubomo",
+      "prix": "120000.00",
+      "competences": [
+        56
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-30",
+      "date_cloture": "2026-11-13",
+      "date_creation": "2026-10-10T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 148,
+    "fields": {
+      "formateur": 165,
+      "co_intervenants": [],
+      "titre": "Installation électrique et énergie solaire",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Installation électrique. Une occasion de monter en compétences dans le domaine électricité et énergie solaire, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "90000.00",
+      "competences": [
+        96
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-12",
+      "date_cloture": "2027-01-13",
+      "date_creation": "2026-12-28T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 149,
+    "fields": {
+      "formateur": 166,
+      "co_intervenants": [],
+      "titre": "Plomberie moderne et sanitaire",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Plomberie, Installation électrique. Une occasion de monter en compétences dans le domaine plomberie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "150000.00",
+      "competences": [
+        97,
+        96
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-29",
+      "date_cloture": "2026-11-02",
+      "date_creation": "2026-09-18T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 150,
+    "fields": {
+      "formateur": 167,
+      "co_intervenants": [],
+      "titre": "Plomberie moderne et sanitaire",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Plomberie. Une occasion de monter en compétences dans le domaine plomberie, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "120000.00",
+      "competences": [
+        97
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-31",
+      "date_cloture": "2027-01-14",
+      "date_creation": "2026-11-30T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 151,
+    "fields": {
+      "formateur": 168,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la maintenance d'équipements",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Maintenance industrielle, Électricité bâtiment. Une occasion de monter en compétences dans le domaine maintenance industrielle, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "60000.00",
+      "competences": [
+        94,
+        56
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-01",
+      "date_cloture": "2026-12-03",
+      "date_creation": "2026-11-10T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 152,
+    "fields": {
+      "formateur": 169,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la maintenance d'équipements",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Électricité bâtiment, Maintenance industrielle, Installation électrique. Une occasion de monter en compétences dans le domaine maintenance industrielle, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "45000.00",
+      "competences": [
+        56,
+        94,
+        96
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-16",
+      "date_cloture": "2026-11-16",
+      "date_creation": "2026-10-07T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 153,
+    "fields": {
+      "formateur": 170,
+      "co_intervenants": [],
+      "titre": "Cloud Computing avec AWS",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : AWS, Kubernetes, Docker. Une occasion de monter en compétences dans le domaine cloud et devops, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "debutant",
+      "adresse": "Loubomo",
+      "prix": "45000.00",
+      "competences": [
+        24,
+        23,
+        22
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-22",
+      "date_cloture": "2026-10-26",
+      "date_creation": "2026-09-16T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 154,
+    "fields": {
+      "formateur": 171,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du Cloud et du DevOps",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Kubernetes. Une occasion de monter en compétences dans le domaine cloud et devops, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "75000.00",
+      "competences": [
+        23
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-06",
+      "date_cloture": "2027-01-06",
+      "date_creation": "2026-12-20T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 155,
+    "fields": {
+      "formateur": 172,
+      "co_intervenants": [],
+      "titre": "DevOps : Docker & Kubernetes",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Kubernetes. Une occasion de monter en compétences dans le domaine cloud et devops, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "35000.00",
+      "competences": [
+        23
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-06",
+      "date_cloture": "2027-01-20",
+      "date_creation": "2026-12-08T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 156,
+    "fields": {
+      "formateur": 173,
+      "co_intervenants": [],
+      "titre": "DevOps : Docker & Kubernetes",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : AWS, Kubernetes. Une occasion de monter en compétences dans le domaine cloud et devops, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "75000.00",
+      "competences": [
+        24,
+        23
+      ],
+      "is_published": false,
+      "date_debut": "2027-02-02",
+      "date_cloture": "2027-02-02",
+      "date_creation": "2027-01-22T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 157,
+    "fields": {
+      "formateur": 174,
+      "co_intervenants": [],
+      "titre": "DevOps : Docker & Kubernetes",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : AWS. Une occasion de monter en compétences dans le domaine cloud et devops, avec une approche pratique et orientée résultats.",
+      "categorie": "cloud",
+      "niveau": "debutant",
+      "adresse": "Pointe-Noire",
+      "prix": "120000.00",
+      "competences": [
+        24
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-27",
+      "date_cloture": "2026-10-31",
+      "date_creation": "2026-10-11T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 158,
+    "fields": {
+      "formateur": 175,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la vente",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Vente, Service client. Une occasion de monter en compétences dans le domaine vente et négociation, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Brazzaville",
+      "prix": "120000.00",
+      "competences": [
+        59,
+        60
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-31",
+      "date_cloture": "2027-02-04",
+      "date_creation": "2026-12-18T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 159,
+    "fields": {
+      "formateur": 176,
+      "co_intervenants": [],
+      "titre": "Techniques de vente et de négociation",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Service client, Négociation commerciale, Vente. Une occasion de monter en compétences dans le domaine vente et négociation, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "45000.00",
+      "competences": [
+        60,
+        61,
+        59
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-30",
+      "date_cloture": "2026-12-02",
+      "date_creation": "2026-11-10T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 160,
+    "fields": {
+      "formateur": 177,
+      "co_intervenants": [],
+      "titre": "Réussir sa négociation commerciale",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Négociation commerciale, Vente, Service client. Une occasion de monter en compétences dans le domaine vente et négociation, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Loubomo",
+      "prix": "150000.00",
+      "competences": [
+        61,
+        59,
+        60
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-24",
+      "date_cloture": "2026-09-28",
+      "date_creation": "2026-08-13T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 161,
+    "fields": {
+      "formateur": 178,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la vente",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Service client, Négociation commerciale, Vente. Une occasion de monter en compétences dans le domaine vente et négociation, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Nkayi",
+      "prix": "75000.00",
+      "competences": [
+        60,
+        61,
+        59
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-13",
+      "date_cloture": "2027-01-01",
+      "date_creation": "2026-11-11T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 162,
+    "fields": {
+      "formateur": 179,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux de la vente",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Vente, Négociation commerciale, Service client. Une occasion de monter en compétences dans le domaine vente et négociation, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "120000.00",
+      "competences": [
+        59,
+        61,
+        60
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-16",
+      "date_cloture": "2026-11-20",
+      "date_creation": "2026-10-02T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 163,
+    "fields": {
+      "formateur": 180,
+      "co_intervenants": [],
+      "titre": "Développement web avec PHP",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Bootstrap, PHP. Une occasion de monter en compétences dans le domaine développement php, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "60000.00",
+      "competences": [
+        14,
+        4
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-14",
+      "date_cloture": "2027-01-23",
+      "date_creation": "2026-12-25T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 164,
+    "fields": {
+      "formateur": 181,
+      "co_intervenants": [],
+      "titre": "Créer un site dynamique avec PHP",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : PHP, Bootstrap, MySQL. Une occasion de monter en compétences dans le domaine développement php, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "35000.00",
+      "competences": [
+        4,
+        14,
+        26
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-16",
+      "date_cloture": "2026-10-25",
+      "date_creation": "2026-09-07T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 165,
+    "fields": {
+      "formateur": 182,
+      "co_intervenants": [],
+      "titre": "PHP et bases de données MySQL",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : MySQL, PHP. Une occasion de monter en compétences dans le domaine développement php, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "avance",
+      "adresse": "Ouesso",
+      "prix": "60000.00",
+      "competences": [
+        26,
+        4
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-09",
+      "date_cloture": "2026-10-09",
+      "date_creation": "2026-09-25T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 166,
+    "fields": {
+      "formateur": 183,
+      "co_intervenants": [],
+      "titre": "Développement web avec PHP",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : PHP, Bootstrap, MySQL. Une occasion de monter en compétences dans le domaine développement php, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "35000.00",
+      "competences": [
+        4,
+        14,
+        26
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-17",
+      "date_cloture": "2027-02-05",
+      "date_creation": "2026-12-17T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 167,
+    "fields": {
+      "formateur": 184,
+      "co_intervenants": [],
+      "titre": "Développement web avec PHP",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : PHP. Une occasion de monter en compétences dans le domaine développement php, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "avance",
+      "adresse": "Brazzaville",
+      "prix": "90000.00",
+      "competences": [
+        4
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-10",
+      "date_cloture": "2026-10-24",
+      "date_creation": "2026-08-26T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 168,
+    "fields": {
+      "formateur": 185,
+      "co_intervenants": [],
+      "titre": "Techniques d'agriculture moderne",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Élevage. Une occasion de monter en compétences dans le domaine agriculture moderne, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Oyo",
+      "prix": "150000.00",
+      "competences": [
+        89
+      ],
+      "is_published": false,
+      "date_debut": "2027-01-06",
+      "date_cloture": "2027-01-06",
+      "date_creation": "2026-11-26T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 169,
+    "fields": {
+      "formateur": 186,
+      "co_intervenants": [],
+      "titre": "Techniques d'agriculture moderne",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Agriculture moderne, Élevage. Une occasion de monter en compétences dans le domaine agriculture moderne, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Oyo",
+      "prix": "25000.00",
+      "competences": [
+        90,
+        89
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-19",
+      "date_cloture": "2026-11-19",
+      "date_creation": "2026-10-06T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 170,
+    "fields": {
+      "formateur": 187,
+      "co_intervenants": [],
+      "titre": "Techniques d'agriculture moderne",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Agriculture moderne. Une occasion de monter en compétences dans le domaine agriculture moderne, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Oyo",
+      "prix": "90000.00",
+      "competences": [
+        90
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-02",
+      "date_cloture": "2026-12-03",
+      "date_creation": "2026-11-06T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 171,
+    "fields": {
+      "formateur": 188,
+      "co_intervenants": [],
+      "titre": "Élevage et agriculture durable",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Élevage. Une occasion de monter en compétences dans le domaine agriculture moderne, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "35000.00",
+      "competences": [
+        89
+      ],
+      "is_published": false,
+      "date_debut": "2027-02-09",
+      "date_cloture": "2027-02-09",
+      "date_creation": "2027-01-14T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 172,
+    "fields": {
+      "formateur": 189,
+      "co_intervenants": [],
+      "titre": "Gestion hôtelière et accueil touristique",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Service client, Tourisme. Une occasion de monter en compétences dans le domaine hôtellerie et tourisme, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Brazzaville",
+      "prix": "45000.00",
+      "competences": [
+        60,
+        99
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-04",
+      "date_cloture": "2027-02-04",
+      "date_creation": "2027-01-09T09:00:00Z",
+      "nb_places_max": 30,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 173,
+    "fields": {
+      "formateur": 190,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du tourisme et de l'hôtellerie",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Tourisme, Service client. Une occasion de monter en compétences dans le domaine hôtellerie et tourisme, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "60000.00",
+      "competences": [
+        99,
+        60
+      ],
+      "is_published": false,
+      "date_debut": "2026-10-26",
+      "date_cloture": "2026-11-09",
+      "date_creation": "2026-09-24T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 174,
+    "fields": {
+      "formateur": 191,
+      "co_intervenants": [],
+      "titre": "Gestion hôtelière et accueil touristique",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Tourisme, Service client. Une occasion de monter en compétences dans le domaine hôtellerie et tourisme, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Oyo",
+      "prix": "60000.00",
+      "competences": [
+        99,
+        60
+      ],
+      "is_published": false,
+      "date_debut": "2026-12-05",
+      "date_cloture": "2026-12-09",
+      "date_creation": "2026-11-18T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 175,
+    "fields": {
+      "formateur": 192,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du tourisme et de l'hôtellerie",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Tourisme, Service client. Une occasion de monter en compétences dans le domaine hôtellerie et tourisme, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Loubomo",
+      "prix": "120000.00",
+      "competences": [
+        99,
+        60
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-03",
+      "date_cloture": "2027-01-07",
+      "date_creation": "2026-11-26T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 176,
+    "fields": {
+      "formateur": 193,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du tourisme et de l'hôtellerie",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Service client, Tourisme. Une occasion de monter en compétences dans le domaine hôtellerie et tourisme, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        60,
+        99
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-18",
+      "date_cloture": "2026-11-22",
+      "date_creation": "2026-10-09T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 177,
+    "fields": {
+      "formateur": 194,
+      "co_intervenants": [],
+      "titre": "Animation 3D avec Blender",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Animation 3D, Blender. Une occasion de monter en compétences dans le domaine animation 3d, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "25000.00",
+      "competences": [
+        80,
+        81
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-28",
+      "date_cloture": "2026-10-17",
+      "date_creation": "2026-09-11T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 178,
+    "fields": {
+      "formateur": 195,
+      "co_intervenants": [],
+      "titre": "Motion Design et effets visuels",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Animation 3D, Blender. Une occasion de monter en compétences dans le domaine animation 3d, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "intermediaire",
+      "adresse": "Ouesso",
+      "prix": "75000.00",
+      "competences": [
+        80,
+        81
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-04",
+      "date_cloture": "2026-10-04",
+      "date_creation": "2026-09-10T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 179,
+    "fields": {
+      "formateur": 196,
+      "co_intervenants": [],
+      "titre": "Motion Design et effets visuels",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Blender. Une occasion de monter en compétences dans le domaine animation 3d, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "debutant",
+      "adresse": "Loubomo",
+      "prix": "150000.00",
+      "competences": [
+        81
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-25",
+      "date_cloture": "2027-02-13",
+      "date_creation": "2027-01-12T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 180,
+    "fields": {
+      "formateur": 197,
+      "co_intervenants": [],
+      "titre": "Motion Design et effets visuels",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Motion Design. Une occasion de monter en compétences dans le domaine animation 3d, avec une approche pratique et orientée résultats.",
+      "categorie": "design",
+      "niveau": "intermediaire",
+      "adresse": "Pointe-Noire",
+      "prix": "60000.00",
+      "competences": [
+        79
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-11",
+      "date_cloture": "2026-10-11",
+      "date_creation": "2026-09-27T09:00:00Z",
+      "nb_places_max": 10,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 181,
+    "fields": {
+      "formateur": 198,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du développement .NET",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : C++, C#. Une occasion de monter en compétences dans le domaine programmation c++/c#, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "avance",
+      "adresse": "Dolisie",
+      "prix": "25000.00",
+      "competences": [
+        5,
+        6
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-04",
+      "date_cloture": "2027-02-08",
+      "date_creation": "2026-12-28T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 182,
+    "fields": {
+      "formateur": 199,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du développement .NET",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : C#. Une occasion de monter en compétences dans le domaine programmation c++/c#, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "45000.00",
+      "competences": [
+        6
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-27",
+      "date_cloture": "2026-11-15",
+      "date_creation": "2026-09-22T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 183,
+    "fields": {
+      "formateur": 200,
+      "co_intervenants": [],
+      "titre": "Les fondamentaux du développement .NET",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : C++. Une occasion de monter en compétences dans le domaine programmation c++/c#, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "avance",
+      "adresse": "Nkayi",
+      "prix": "120000.00",
+      "competences": [
+        5
+      ],
+      "is_published": true,
+      "date_debut": "2026-09-15",
+      "date_cloture": "2026-09-16",
+      "date_creation": "2026-08-18T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 184,
+    "fields": {
+      "formateur": 201,
+      "co_intervenants": [],
+      "titre": "Programmation C++ et C#",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : C#. Une occasion de monter en compétences dans le domaine programmation c++/c#, avec une approche pratique et orientée résultats.",
+      "categorie": "developpement",
+      "niveau": "debutant",
+      "adresse": "Ouesso",
+      "prix": "75000.00",
+      "competences": [
+        6
+      ],
+      "is_published": true,
+      "date_debut": "2026-11-06",
+      "date_cloture": "2026-11-07",
+      "date_creation": "2026-10-07T09:00:00Z",
+      "nb_places_max": 40,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 185,
+    "fields": {
+      "formateur": 202,
+      "co_intervenants": [],
+      "titre": "Cuisine professionnelle et pâtisserie",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Cuisine professionnelle, Pâtisserie. Une occasion de monter en compétences dans le domaine cuisine professionnelle, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Nkayi",
+      "prix": "150000.00",
+      "competences": [
+        82,
+        83
+      ],
+      "is_published": true,
+      "date_debut": "2026-10-04",
+      "date_cloture": "2026-10-13",
+      "date_creation": "2026-09-24T09:00:00Z",
+      "nb_places_max": 25,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 186,
+    "fields": {
+      "formateur": 203,
+      "co_intervenants": [],
+      "titre": "Cuisine professionnelle et pâtisserie",
+      "description": "Formation de niveau intermediaire animée par un formateur expérimenté, couvrant : Pâtisserie. Une occasion de monter en compétences dans le domaine cuisine professionnelle, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "intermediaire",
+      "adresse": "Dolisie",
+      "prix": "60000.00",
+      "competences": [
+        83
+      ],
+      "is_published": true,
+      "date_debut": "2027-01-30",
+      "date_cloture": "2027-02-03",
+      "date_creation": "2026-12-16T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 187,
+    "fields": {
+      "formateur": 204,
+      "co_intervenants": [],
+      "titre": "Les bases de la cuisine de restaurant",
+      "description": "Formation de niveau debutant animée par un formateur expérimenté, couvrant : Cuisine professionnelle. Une occasion de monter en compétences dans le domaine cuisine professionnelle, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "debutant",
+      "adresse": "Dolisie",
+      "prix": "90000.00",
+      "competences": [
+        82
+      ],
+      "is_published": true,
+      "date_debut": "2027-02-03",
+      "date_cloture": "2027-02-05",
+      "date_creation": "2027-01-08T09:00:00Z",
+      "nb_places_max": 15,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  },
+  {
+    "model": "formation.formation",
+    "pk": 188,
+    "fields": {
+      "formateur": 205,
+      "co_intervenants": [],
+      "titre": "Les bases de la cuisine de restaurant",
+      "description": "Formation de niveau avance animée par un formateur expérimenté, couvrant : Pâtisserie. Une occasion de monter en compétences dans le domaine cuisine professionnelle, avec une approche pratique et orientée résultats.",
+      "categorie": "autres",
+      "niveau": "avance",
+      "adresse": "Pointe-Noire",
+      "prix": "150000.00",
+      "competences": [
+        83
+      ],
+      "is_published": true,
+      "date_debut": "2026-12-16",
+      "date_cloture": "2026-12-17",
+      "date_creation": "2026-11-06T09:00:00Z",
+      "nb_places_max": 20,
+      "support_pdf": null,
+      "terminee_manuelle": false
+    }
+  }
+]

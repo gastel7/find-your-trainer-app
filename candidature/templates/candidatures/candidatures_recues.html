@@ -1,0 +1,335 @@
+{% extends "core/app/dashboard.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/candidatures/candidatures.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app/sidebar.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/app/modal-decision.css' %}">
+{% endblock%}
+
+{% block js %}
+    <script src="{% static 'js/candidatures/candidatures.js' %}" defer></script>
+    <script src="{% static 'js/candidatures/export.js' %}" defer></script>
+{% endblock %}
+
+{% block page_name %}
+    <span class="page_name" style="display: flex; align-items: center;">
+        Offres
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-3.5 w-3.5 shrink-0" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        
+        Candidatures reçues
+    </span>
+{% endblock %}
+
+{% block main %}
+ <main class="page_container">
+    <!-- HEADER -->
+    <section class="page-header">
+        <div>
+            <!-- Si, l'utilisateur a pour rôle institution -->
+            <h1>Candidatures reçues</h1>
+            <p>Consultez et gérez les candidatures envoyées à vos offres.</p>
+
+            <!-- Si, l'utilisateur a pour rôle admin -->
+            <!-- 
+                <h1>Candidatures reçues par l'institution : {{ request.user.institution.nom_organisation }}</h1>
+                <p>Consultez et gérez les candidatures envoyées reçues par l'institution {{ request.user.institution.nom_organisation }}</p> 
+            -->
+            
+
+            <!-- Si, l'utilisateur a pour rôle formateur et admin-->
+            <!-- 
+                <h1>Mes candidatures</h1>
+                <p> Suivez l'état de toutes vos candidatures.</p> 
+            -->
+
+            <!-- Si, l'utilisateur a pour rôle admin -->
+            <!-- 
+                <h1>Toutes les candidatures</h1>
+                <p>Consultez et gérez toutes les candidatures auxquelles le formateur {{ request.user.formateur.nom }} a postulé</p>
+            -->
+        </div>
+
+        {% if request.user.role == "admin" %}
+            <div class="export-dropdown">
+                <button type="button" class="btn-export">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-336 288-528l51-51 105 105v-342h72v342l105-105 51 51-192 192ZM263.72-192Q234-192 213-213.15T192-264v-72h72v72h432v-72h72v72q0 29.7-21.16 50.85Q725.68-192 695.96-192H263.72Z"/></svg>
+                    Exporter
+                </button>
+                <div class="export-dropdown-menu">
+                    <a class="js-export" data-format="csv" href="{% url 'candidature:exporter_candidatures_csv' %}?statut={{ current_filter }}&q={{ q }}&date_candidature={{ date_candidature }}&date_reponse={{ date_reponse }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                        Exporter en CSV
+                    </a>
+                    <a class="js-export" data-format="pdf" href="{% url 'candidature:exporter_candidatures_pdf' %}?statut={{ current_filter }}&q={{ q }}&date_candidature={{ date_candidature }}&date_reponse={{ date_reponse }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                        Exporter en PDF
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+
+     <!-- Recherche : entreprise ou titre de l'offre, + dates -->
+    <section class="search_section">
+        <form method="GET" class="candidature-search-form">
+            {% if current_filter %}<input type="hidden" name="statut" value="{{ current_filter }}">{% endif %}
+
+            <div class="search-input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" name="q" value="{{ q }}" placeholder="Entreprise ou titre de l'offre...">
+            </div>
+
+            <div class="date-input-wrapper" title="Date de candidature">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+                <input type="date" name="date_candidature" value="{{ date_candidature }}">
+            </div>
+
+            <div class="date-input-wrapper" title="Date de réponse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/><path d="m9 16 2 2 4-4"/></svg>
+                <input type="date" name="date_reponse" value="{{ date_reponse }}">
+            </div>
+
+            <button type="submit" class="btn-search-candidatures">Rechercher</button>
+
+            {% if q or date_candidature or date_reponse %}
+                <a href="?{% if current_filter %}statut={{ current_filter }}{% endif %}" class="btn-clear-search" title="Réinitialiser la recherche">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </a>
+            {% endif %}
+        </form>
+    </section>
+
+    <!-- FILTRES -->
+    <section class="candidature-filters">
+        <a class="filter-btn {% if not current_filter %}active{% endif %}" href="?q={{ q }}&date_candidature={{ date_candidature }}&date_reponse={{ date_reponse }}">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffffff"><path d="M144-528v-288h288v288H144Zm0 384v-288h288v288H144Zm384-384v-288h288v288H528Zm0 384v-288h288v288H528ZM216-600h144v-144H216v144Zm384 0h144v-144H600v144Zm0 384h144v-144H600v144Zm-384 0h144v-144H216v144Zm384-384Zm0 240Zm-240 0Zm0-240Z"/></svg>
+            Toutes ({{ total_candidatures }})
+        </a>
+
+        <a class="filter-btn  {% if current_filter == 'en_attente' %}active{% endif %}" href="?statut=en_attente&q={{ q }}&date_candidature={{ date_candidature }}&date_reponse={{ date_reponse }}">
+            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#FFA500"><path d="M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120Zm273-407q47-47 47-113v-120H320v120q0 66 47 113t113 47q66 0 113-47ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z"/></svg>
+            en attente ({{ en_attente_count }})
+        </a>
+
+        <a class="filter-btn {% if current_filter == 'acceptee' %}active{% endif %}" href="?statut=acceptee&q={{ q }}&date_candidature={{ date_candidature }}&date_reponse={{ date_reponse }}">
+            <svg xmlns="http://www.w3.org/2000/svg" height="19px" viewBox="0 -960 960 960" width="19px" fill="#58cc02"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            Acceptées ({{ acceptees_count }})
+        </a>
+
+        <!-- Candidatures refusées -->
+        <a class="filter-btn {% if current_filter == 'refusee' %}active{% endif %}" href="?statut=refusee&q={{ q }}&date_candidature={{ date_candidature }}&date_reponse={{ date_reponse }}">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ff0000"><path d="m339-288 141-141 141 141 51-51-141-141 141-141-51-51-141 141-141-141-51 51 141 141-141 141 51 51ZM480-96q-79 0-149-30t-122.5-82.5Q156-261 126-331T96-480q0-80 30-149.5t82.5-122Q261-804 331-834t149-30q80 0 149.5 30t122 82.5Q804-699 834-629.5T864-480q0 79-30 149t-82.5 122.5Q699-156 629.5-126T480-96Zm0-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z"/></svg>
+            Refusées ({{ refusees_count }})
+        </a>
+
+        <!-- candidatures retirés -->
+        <a class="filter-btn {% if current_filter == 'retiree' %}active{% endif %}" href="?statut=retiree&q={{ q }}&date_candidature={{ date_candidature }}&date_reponse={{ date_reponse }}">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#808080"><path d="M288-444h384v-72H288v72ZM480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z"/></svg>
+            Retirées ({{ retirees_count }})
+        </a>
+    </section>
+
+
+    <!-- Section content -->
+    <section class="candidatures-grid">
+        {% for candidature in candidatures %}
+            <article class="candidature-card {{ candidature.statut }}" data-id="{{ candidature.id }}">
+                 <!-- HEADER CARD -->
+                <div class="card-header">
+                    <div>
+                        <section>
+                            <!-- 
+                                Ici, on affiche le titre du formateur, 
+                                mais, je me suis rendu que dans le modèle, 
+                                il n'y en a pas 
+
+                                Donc, prévois une valeur pour ça, et, pour les formateurs
+                                qui n'ont aura pas, on va rajouter, et, je vais remplir ça 
+                                dans l'interface admin de django
+                            -->
+                            {% if request.user.role == "institution" or request.user.role == "admin" %}
+                                <h3>    {{ candidature.formateur.titre_professionnel|default:"Formateur" }}</h3>
+                            {% endif %}
+                                
+
+                            <!-- {% if request.user.role == "formateur" or request.user.role == "admin" %}
+                                <h3>ONI Mercatique</h3>
+                            {% endif %} -->
+
+                            <p class="card-subtitle">Offre : {{ candidature.offre.titre }}</p>
+                        </section>
+                    </div>
+
+                    <span class="status-badge {{ candidature.statut }}">
+                        {{ candidature.get_statut_display }}
+                    </span>
+                </div>
+
+                <div class="card-infos">
+                    <section style="text-transform: capitalize;" class="user-profile-link" href="">
+                        <!-- 
+                            Ici, dans card user-profile-link au lieu de mettre les infos de 
+                            l'utilisateur connecté, il faut mettre les infos du formateur 
+                            qui a postulé à cette offre à savoir :
+                                - Le prénom
+                                - Le nom
+                                - Ou le nom d'utilisateur (si, les deux champs précédents sont vides)
+                                La photo
+                        -->
+                        {% with candidat=candidature.formateur.user %}
+                            <div class="profil_avatar">
+                                {% if candidat.profile_picture %}
+                                    <img src="{{ candidat.profile_picture.url }}" alt="{{ candidat.first_name }}">
+                                {% else %}
+
+                                    {% if candidat.first_name and candidat.last_name %}
+                                        <span>
+                                            {{ candidat.first_name|slice:":1" }}
+                                            {{ candidat.last_name|slice:":1" }}
+                                        </span>
+                                    {% else %}
+                                        <span>
+                                            {{ candidat.username|slice:":2"|upper }}
+                                        </span>
+                                    {% endif %}
+
+                                {% endif %}
+                            </div>
+
+                            <div class="user-infos">
+                                {% if candidat.first_name and candidat.last_name %}
+                                    <span class="user-name">
+                                        {{ candidat.first_name }}
+                                        {{ candidat.last_name }}
+                                    </span>
+                                {% else %}
+                                    <span class="user-name">
+                                        {{ candidat.username }}
+                                    </span>
+                                {% endif %}
+
+                                <span class="user-role" style="display: flex; align-items: flex-end; gap: 2px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#000"><path d="M531-501q21-21 21-51t-21-51q-21-21-51-21t-51 21q-21 21-21 51t21 51q21 21 51 21t51-21Zm-51 310q119-107 179.5-197T720-549q0-105-68.5-174T480-792q-103 0-171.5 69T240-549q0 71 60.5 161T480-191Zm0 95Q323-227 245.5-339.5T168-549q0-134 89-224.5T480-864q133 0 222.5 90.5T792-549q0 97-77 209T480-96Zm0-456Z"/></svg>
+                                    {{ candidature.formateur.localisation_formateur }}
+                                </span>
+                            </div>
+                        {% endwith %}
+                    </section>
+
+                    <p style="margin: 12px; color: #6b7280; font-size: 0.92em; font-weight: 700; display: flex; align-items: flex-end; gap: 6px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000"><path d="M508-267.77q-28-27.78-28-68Q480-376 507.77-404q27.78-28 68-28Q616-432 644-404.23q28 27.78 28 68Q672-296 644.23-268q-27.78 28-68 28Q536-240 508-267.77ZM216-96q-29.7 0-50.85-21.5Q144-139 144-168v-528q0-29 21.15-50.5T216-768h72v-96h72v96h240v-96h72v96h72q29.7 0 50.85 21.5Q816-725 816-696v528q0 29-21.15 50.5T744-96H216Zm0-72h528v-360H216v360Zm0-432h528v-96H216v96Zm0 0v-96 96Z"/></svg>
+                        
+                        {% if candidature.date_traitement %}
+                            Répondu le {{ candidature.date_traitement|date:"j F Y" }}
+                        {% else %}
+                            Candidature reçue le {{ candidature.date_candidature|date:"j F Y" }}
+                        {% endif %}
+                        
+                    </p>
+
+                    <!-- COMMENTAIRE DECISION -->
+                    {% if candidature.commentaire_decision %}
+                        <div class="decision-box">
+                            {{ candidature.commentaire_decision }}
+                        </div>
+                    {% else %}
+                        <!-- MESSAGE -->
+                        <div class="message-box">
+                            {{ candidature.message|default:"Aucun message." }}
+                        </div>
+                    {% endif %}
+
+                    {% if candidature.cv %}
+                        <p>
+                            <a class="cv-link" href="{{ candidature.cv.url }}" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="17px" viewBox="0 -960 960 960" width="17px" fill="#2563eb"><path d="M318-120q-82 0-140-58t-58-140q0-40 15-76t43-64l134-133 56 56-134 134q-17 17-25.5 38.5T200-318q0 49 34.5 83.5T318-200q23 0 45-8.5t39-25.5l133-134 57 57-134 133q-28 28-64 43t-76 15Zm79-220-57-57 223-223 57 57-223 223Zm251-28-56-57 134-133q17-17 25-38t8-44q0-50-34-85t-84-35q-23 0-44.5 8.5T558-726L425-592l-57-56 134-134q28-28 64-43t76-15q82 0 139.5 58T839-641q0 39-14.5 75T782-502L648-368Z"/></svg>
+                                Voir le CV
+                            </a>
+                        </p>
+                    {% endif %}
+                </div>
+
+                <!-- Card buttons -->
+                <section class="card_buttons">
+                    {% if candidature.statut != "en_attente" %}
+                        {% with candidat=candidature.formateur.user %}
+                        <button
+                            class="btn-evaluation"
+                            onclick="openEvalModal(
+                                'candidature',
+                                '{{ candidature.id }}',
+                                '{% if candidat.first_name %}{{ candidat.first_name }} {{ candidat.last_name }}{% else %}{{ candidat.username }}{% endif %}',
+                                '{{ candidature.eval_note }}',
+                                '{{ candidature.eval_count }}',
+                                '{{ candidature.eval_commentaire|escapejs }}',
+                                '{{ candidature.eval_note_existante }}'
+                            )">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000"><path d="m314-698 110-142q10.81-14.45 25.69-21.23 14.87-6.77 31.09-6.77t30.72 7q14.5 7 25.5 21l110 142 168 55q23 8 36 26.7 13 18.69 13 41.3 0 10.72-3.03 21.45-3.04 10.72-9.97 20.55L743-382l4 162q0 31-21 52.5T675.82-146q-1.82 0-18.82-3l-177-49-177.05 49.04Q298-147 293.5-146.5q-4.5.5-9.03.5-28.99 0-50.73-21.5T213-220l4-162-108-151q-7-10-10-20t-3-21.03q0-22.97 13.18-41.99Q122.36-635.04 146-643l168-55Zm42 62-188 62 120.9 171.04L285-218l195-55 196 54-5-185 121-171-189-61-123-158-124 158Zm124 130Z"/></svg>
+                            {% if candidature.eval_note_existante %}Modifier l'évaluation{% else %}Évaluer{% endif %}
+                        </button>
+                        {% endwith %}
+                    {% else %}
+                        <button class="btn-refuse" data-id="{{ candidature.id }}" data-action="refuser">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#dc2626"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                            Refuser
+                        </button>
+
+                        <button class="btn-accept" data-id="{{ candidature.id }}" data-action="accepter">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                            Accepter
+                        </button>
+
+                    {% endif %}
+                </section>
+            </article>
+
+        {% empty %}
+
+
+        {% endfor %}
+    </section>
+
+    {% include 'core/partials/pagination.html' %}
+</main>
+
+
+
+
+<!-- ================================================= -->
+<!-- MODAL DECISION -->
+<!-- ================================================= -->
+
+<div class="modal-overlay" id="decisionModal">
+    <div class="custom-modal">
+        <div class="modal-header">
+            <h2 id="decisionTitle"></h2>
+
+            <button class="close-modal" data-close>×</button>
+        </div>
+
+
+        <div class="modal-body">
+            <p id="decisionQuestion"></p>
+
+            <form method="POST" id="decisionForm">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>Commentaire</label>
+                    <textarea name="commentaire_decision" rows="5" class="form-control" placeholder="Expliquez votre décision..."></textarea>
+                </div>
+
+                <div class="warning-box">⚠ Cette action est irréversible.</div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" data-close>Annuler</button>
+
+                    <button type="submit" id="decisionConfirmButton">Confirmer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

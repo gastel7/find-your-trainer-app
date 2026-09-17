@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    Liste des Institutions
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index_page/header_index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index_page/footer_index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index_page/public_vars.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index_page/pagination.css' %}">
+    <link rel="stylesheet" href="{% static 'css/account/institutions.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="page" style="padding-top: 60px; padding-bottom: 100px;">
+    {% include 'account/app/shared/institutions_content.html' %}
+</main>
+{% endblock %}

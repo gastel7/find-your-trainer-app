@@ -1,0 +1,75 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index_page/header_index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index_page/footer_index.css' %}">
+
+{% endblock %}
+
+
+{% block title %} Annuaire des formateurs {% endblock %}
+
+{% block content %}
+<main>
+    <div class="main_content">
+        <div class="header-annuaire">
+            <p>Annuaire</p>
+            <h1>Nos formateurs experts</h1>
+            <p class="subtitle">{{ total_count }} formateur{{ total_count|pluralize }} disponible{{ total_count|pluralize }}.</p>
+        </div>
+
+        <!-- Formulaire de filtrage -->
+        <form method="get" action="" class="filter-bar">
+            <div class="search-wrapper">
+                <input type="text" name="q" value="{{ search_query }}" placeholder="Une compétence, un nom (ex: React, Design...)">
+            </div>
+
+            <select name="ville" class="filter-select" onchange="this.form.submit()">
+                <option value="">Partout en France</option>
+                <option value="Paris" {% if selected_city == "Paris" %}selected{% endif %}>Paris</option>
+                <option value="Lyon" {% if selected_city == "Lyon" %}selected{% endif %}>Lyon</option>
+                <option value="Remote" {% if selected_city == "Remote" %}selected{% endif %}>À distance</option>
+            </select>
+        </form>
+
+        <!-- Grille des formateurs -->
+        <div class="formateurs-grid">
+            {% for formateur in formateurs %}
+            <div class="formateur-card">
+                <div>
+                    <div class="card-top">
+                        <!-- Photo ou Initiales -->
+                        {% if formateur.photo %}
+                            <img src="{{ formateur.photo.url }}" class="avatar-img">
+                        {% else %}
+                            <div class="avatar-placeholder">{{ formateur.user.username|slice:":2"|upper }}</div>
+                        {% endif %}
+                        
+                        <div class="card-info">
+                            <h3>{{ formateur.username|title }}</h3>
+                            <div class="localisation-tag">📍 {{ formateur.localisation_formateur|default:"France" }}</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Affichage des compétences (badges) -->
+                    <div class="skills-container">
+                        <p class="card-description">{{ formateur.biographie|truncatewords:20 }}</p>
+                    </div>
+                </div>
+                
+                <div class="card-footer">
+                    <!-- Affichage du tarif -->
+                    <span class="price-tag"><strong>{{ formateur.tarif_journalier|default:"--" }}€</strong> / jour</span>
+                    <a href="" class="btn-link">Voir le profil →</a>
+                </div>
+            </div>
+            {% empty %}
+            <div class="no-results-backend">
+                Aucun formateur ne correspond à vos filtres actuels.
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}

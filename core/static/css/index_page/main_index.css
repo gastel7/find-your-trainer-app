@@ -1,0 +1,435 @@
+:root {
+    --dark-blue: #0f172a;
+    --orange: #fba94b;
+    --gray-text: #64748b;
+    --bg-light: #fdfbff; /* Fond légèrement rosé/bleuté comme sur l'image */
+    --dark-blue: #020617; /* Un noir bleuté plus profond pour le début du dégradé */
+    --vibrant-purple: #6d28d9; /* Le violet de ta maquette */
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+.section_hero_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background: linear-gradient(135deg, oklch(32% .12 268) 0%, oklch(42% .14 285) 55%, oklch(55% .13 310) 100%); */
+
+
+    background: radial-gradient(at 20% 10%, oklch(85% .08 280/.4) 0, transparent 50%), radial-gradient(at 80% 20%, oklch(82% .12 70/.35) 0, transparent 50%), radial-gradient(at 60% 90%, oklch(75% .1 250/.3) 0, transparent 50%);
+}
+
+.hero-container {
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    width: 90%;
+    padding: 60px 20px;
+}
+
+/* --- HERO SECTION --- */
+.hero-main {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.hero-content { flex: 1; }
+
+.badge-new {
+    /* Avant : fond clair codé en dur (#f1f5f9) + texte hérité de
+       var(--text-primary). En mode sombre, le texte devient clair alors
+       que ce fond restait clair aussi → texte invisible sur fond clair.
+       On utilise les variables pour que le badge s'adapte au thème. */
+    background: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--dark-blue);
+    margin-bottom: 24px;
+    /* background: linear-gradient(to right, var(--dark-blue) 30%, var(--vibrant-purple) 90%); */
+    -webkit-background-clip: text;
+    display: block;
+}
+
+
+
+
+
+.gradient-text {
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.hero-btns { display: flex; gap: 15px; margin-bottom: 40px; }
+
+.btn-dark {
+    background: var(--dark-blue);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-orange {
+    background: oklch(78% .14 70);
+    color: black;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Avatar Stack */
+.hero-social { display: flex; align-items: center; gap: 15px; }
+.avatar-stack { display: flex; }
+.av {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; color: white;
+    border: 2px solid white; margin-left: -8px;
+}
+.av1 { background: #818cf8; margin-left: 0; }
+.av2 { background: #fbbf24; }
+.av3 { background: #f472b6; }
+.av4 { background: #3b82f6; }
+
+/* --- VISUAL CARD --- */
+.hero-visual { flex: 1; position: relative; }
+.visual-card {
+    background: white;
+    height: 400px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    /* overflow: hidden; */
+    position: relative;
+    /* Ici tu mettrais ton image de courbe bleue */
+    background: linear-gradient(135deg, #fff 50%, #818cf8 100%);
+}
+
+.visual-card img{
+    border-radius: 4%;
+    width: 100%; 
+    height: 100%;
+}
+
+.star{
+    border-radius: 32%;
+    background-color:  rgba(240, 166, 69, 20%);
+    padding: 8px;
+}
+
+.rating-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 2;
+    animation: 6s ease-in-out infinite float;
+}
+
+
+@keyframes float {
+    0%, 100%{ 
+        transform: translateY(0); 
+    }
+
+    50%{
+
+        transform: translateY(-12px);
+    }
+}
+
+.rating-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.89em;
+    gap: 3px;
+}
+
+/* La carte de notation ("4.9/5") a un fond blanc fixe (visual-card),
+   donc son texte doit rester fixe aussi, pas suivre le thème. */
+.rating-info{
+    color: #1a1a1a;
+}
+
+.rating-info span{
+    color: grey;
+    font-size: 0.90em;
+}
+
+
+/* --- SEARCH BAR --- */
+.search-bar{
+    background: white;
+    padding: 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.search-input {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 10px;
+}
+
+.search-input.divider { border-left: 1px solid #f1f5f9; }
+
+.search-input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.search-input .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+}
+
+.btn-search {
+    background: var(--dark-blue);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+
+/* La section "Pourquoi nous ?" */
+.why_choose_us{
+    /* Couleur demandée, mode clair uniquement */
+    background-color: #fdf9fa;
+    padding: 5% 0;
+}
+
+.two_paths{
+    background-color: var(--bg-subtle);
+    padding: 5% 0;
+}
+
+body.dark .why_choose_us{
+    /* En mode sombre on garde l'adaptation au thème plutôt que le fdf9fa,
+       qui ne serait pas lisible sur fond sombre */
+    background-color: var(--bg-subtle);
+}
+
+.why_choose_us_content, .two_paths_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.why_choose_us_text{
+    font-family: monospace;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 20px 0 5px 0;
+}
+
+/* Le titre de la section "Pourquoi nous ?" */
+.why_choose_us_title{
+    font-size: 49px;
+    font-weight: 700;
+    margin: 5px 0 40px 0;
+    text-wrap: balance;
+    color: var(--text-primary);
+}
+
+/* Les cartes de la section "Pourquoi nous ?" */
+.why_choose_us_cards_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    /* flex-wrap: wrap; */
+}
+
+
+.why_choose_us_cards{
+    display: flex;
+    flex-direction: column;
+    /* width: 30%; */
+    height: 240px;
+    padding: 32px;
+    gap: 50px;
+    border-radius: 10px;
+    background-color: white;
+    /* Bordure remise comme avant (rgb(222,225,232) = #dee1e8) en mode
+       clair ; body.dark ci-dessous fait suivre le thème sombre. */
+    border: 1px solid #dee1e8;
+}
+
+body.dark .why_choose_us_cards{
+    background-color: var(--bg-card);
+    border-color: var(--border);
+}
+
+.why_choose_us_cards .card_icon{
+    width: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.why_choose_us_cards .card_text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.why_choose_us_cards .card_text h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.why_choose_us_cards .card_text p{
+    font-size: 16px;
+    color: var(--text-muted);
+}
+    
+/* La section "Deux parcours" */
+.two_paths{
+    padding-bottom: 10%;
+}
+
+
+
+.two_paths_cards_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    /* flex-wrap: wrap; */
+}
+
+.two_paths_card{
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 30px;
+    border-radius: 30px;
+    /* base neutre avant que .formateur / .institution n'appliquent leur
+       propre dégradé — alignée sur var(--bg-card)/var(--border) au cas
+       où une des deux cartes perdrait son dégradé. */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+}
+
+/* La card : formateur */
+.formateur{
+    background: linear-gradient(135deg, oklch(0.32 0.12 268) 0%, oklch(0.42 0.14 285) 55%, oklch(0.55 0.13 310) 100%);
+    color: oklch(0.985 0.005 90);
+}
+
+/* La card : institution */
+.institution{
+    background:
+    radial-gradient(
+        circle at top right,
+        oklch(0.78 0.14 70 / 0.3) 0%,
+        oklch(0.78 0.14 70 / 0.3) 18%,
+        transparent 40%
+    ),
+    linear-gradient(
+        135deg,
+        #020b2d 0%,
+        #020817 45%,
+        #000814 100%
+    );
+
+
+
+    color: oklch(0.985 0.005 90);
+}
+
+.two_paths_card div{
+    width: max-content;
+    /* padding: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.two_paths_card h3{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.two_paths_card p{
+    font-size: 1.1em;
+}
+
+.two_paths_card a{
+    font-size: 16px;
+    background-color: oklch(0.985 0.005 90);
+    color: oklch(0.15 0.025 265);
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+}
+
+.institution a{
+    background-color:oklch(78% .14 70);
+    /* color: oklch(0.15 0.025 265); */
+}

@@ -1,0 +1,181 @@
+/* ═══════════════════════════════════════════════════════════════════
+   header.css — Remplace core/static/css/app/header.css
+   Utilise les variables CSS de theme.css (light & dark automatiques)
+═══════════════════════════════════════════════════════════════════ */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 255px;
+    width: calc(100% - 255px);
+    height: 56px;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 999;
+    transition: background-color .2s, border-color .2s, left .25s ease, width .25s ease;
+}
+
+/* Quand la sidebar est réduite (.sidebar--collapsed posée sur
+   .container-sub par app.js), le header — pourtant "position: fixed"
+   donc indépendant du flux/marge de son parent — doit lui aussi
+   glisser pour suivre la nouvelle largeur de la sidebar (72px). */
+.container-sub.sidebar--collapsed header {
+    left: 72px;
+    width: calc(100% - 72px);
+}
+
+/* ── Breadcrumbs ─────────────────────────────────────────────────── */
+.breadcrumbs,
+.breadcrumbs_text {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs { gap: 15px; }
+
+.breadcrumbs_text {
+    gap: 2.5px;
+    color: var(--text-muted);
+}
+
+.breadcrumbs_text span {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+.breadcrumbs_text span.page_name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.breadcrumbs_text a.page_name_link {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.breadcrumbs_text a.page_name_link:hover {
+    color: var(--text-primary);
+}
+
+.breadcrumbs_text svg {
+    width: 17px;
+    height: 17px;
+    stroke: var(--text-muted);
+}
+
+/* ── Boutons header ──────────────────────────────────────────────── */
+.class_btn_header {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    color: var(--text-primary);
+    transition: background .15s;
+}
+
+.class_btn_header:hover {
+    background: var(--bg-hover);
+}
+
+.class_btn_header svg {
+    width: 17px;
+    height: 17px;
+    stroke: var(--text-primary);
+    display: block;
+}
+
+/* ── Menu utilisateur ────────────────────────────────────────────── */
+.user_menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    align-items: center;
+    height: 100%;
+}
+
+.user-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* ── Avatar ──────────────────────────────────────────────────────── */
+.profil_avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #939aff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.profil_avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ── Infos utilisateur ───────────────────────────────────────────── */
+.user-infos {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 15px;
+}
+
+.user-role {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* ── Icônes header ───────────────────────────────────────────────── */
+.user_menu_icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user_menu_icons svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ── Notification dot ────────────────────────────────────────────── */
+.notification_icon { position: relative; }
+
+.notification_icon div {
+    height: 6px;
+    width: 6px;
+    background-color: #f0a645;
+    border-radius: 50%;
+    position: absolute;
+    top: -1px;
+    right: -2px;
+}

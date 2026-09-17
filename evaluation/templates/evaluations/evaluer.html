@@ -1,0 +1,129 @@
+{% extends "core/app/dashboard.html" %}
+{% load static %}
+
+{% block page_name %} <span class="page_name">
+Évaluation </span>
+{% endblock %}
+
+{% block main %}
+
+<div class="page_container">
+
+
+<div class="page-header">
+    <h1>
+        Évaluer un utilisateur
+    </h1>
+
+    <p>
+        Partagez votre expérience.
+    </p>
+</div>
+
+<div class="card">
+
+    <h2>
+        Utilisateur évalué :
+        {% if cible.first_name %}
+            {{ cible.first_name }}
+            {{ cible.last_name }}
+        {% else %}
+            {{ cible.username }}
+        {% endif %}
+    </h2>
+
+    {% if type_evaluation == 'candidature' %}
+
+        <div class="info-box">
+
+            <h3>
+                Candidature
+            </h3>
+
+            <p>
+                Offre :
+                {{ candidature.offre.titre }}
+            </p>
+
+            <p>
+                Statut :
+                {{ candidature.get_statut_display }}
+            </p>
+
+        </div>
+
+    {% endif %}
+
+    {% if type_evaluation == 'formation' %}
+
+        <div class="info-box">
+
+            <h3>
+                Formation
+            </h3>
+
+            <p>
+                {{ formation.titre }}
+            </p>
+
+        </div>
+
+    {% endif %}
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="form-group">
+
+            <label>
+                Note
+            </label>
+
+            <select
+                name="note"
+                required
+            >
+
+                <option value="">
+                    Choisir une note
+                </option>
+
+                <option value="1">1 ★</option>
+                <option value="2">2 ★★</option>
+                <option value="3">3 ★★★</option>
+                <option value="4">4 ★★★★</option>
+                <option value="5">5 ★★★★★</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>
+                Commentaire
+            </label>
+
+            <textarea
+                name="commentaire"
+                rows="6"
+            >{% if evaluation_existante %}{{ evaluation_existante.commentaire }}{% endif %}</textarea>
+
+        </div>
+
+        <button
+            type="submit"
+            class="btn-primary"
+        >
+            Enregistrer l'évaluation
+        </button>
+
+    </form>
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,418 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Formations{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/offre/offre.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/formation/list_formation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/formation/detail_modal.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/app/sidebar.css' %}">
+{% endblock %}
+
+
+{% block page_name %}
+    <span class="page_name">Formations</span>
+{% endblock %}
+
+{% block main %}
+<main class="page">
+
+    <!-- ══════════════════════════════════════
+         EN-TÊTE DE PAGE
+    ══════════════════════════════════════ -->
+    <div class="top-bar">
+        <div class="top-bar-title">
+            <span>Formations</span>
+            <h1>Toutes les formations</h1>
+            <p class="subtitle">Gérez les formations publiées sur la plateforme.</p>
+        </div>
+
+        <div class="header-actions">
+            {% if request.user.role == 'formateur' or request.user.role == 'admin' %}
+                <a class="btn-add" href="{% url 'formation:publier_formation' %}">+ Ajouter une formation</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         BARRE FILTRES + RECHERCHE
+    ══════════════════════════════════════ -->
+    <section class="toolbar" aria-label="Filtres et recherche">
+
+        <nav class="filters" aria-label="Filtrer par catégorie">
+            <a class="filter {% if not categorie %}active{% endif %}" href="{% url 'formation:formations_list' %}">Tous</a>
+            <a class="filter {% if categorie == 'developpement' %}active{% endif %}"  href="?categorie=developpement">Développement</a>
+            <a class="filter {% if categorie == 'data_ia' %}active{% endif %}"        href="?categorie=data_ia">Data & IA</a>
+            <a class="filter {% if categorie == 'design' %}active{% endif %}"         href="?categorie=design">Design</a>
+            <a class="filter {% if categorie == 'cybersecurite' %}active{% endif %}"  href="?categorie=cybersecurite">Cybersécurité</a>
+            <a class="filter {% if categorie == 'management' %}active{% endif %}"     href="?categorie=management">Management</a>
+            <a class="filter {% if categorie == 'cloud' %}active{% endif %}"          href="?categorie=cloud">Cloud</a>
+            <a class="filter {% if categorie == 'autres' %}active{% endif %}"         href="?categorie=autres">Autres</a>
+        </nav>
+
+        <form method="GET" action="" class="search-form" role="search">
+            {% if categorie %}
+                <input type="hidden" name="categorie" value="{{ categorie }}">
+            {% endif %}
+
+            <div class="search-input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     class="search-icon" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.34-4.34"/>
+                </svg>
+
+                <input
+                    type="search"
+                    name="q"
+                    placeholder="Rechercher par mot-clé..."
+                    value="{{ query|default:'' }}"
+                    aria-label="Rechercher une formation">
+
+                {% if query %}
+                    <a href="{% url 'formation:formations_list' %}{% if categorie %}?categorie={{ categorie }}{% endif %}"
+                       class="reset-search-btn" title="Effacer la recherche" aria-label="Effacer">×</a>
+                {% endif %}
+            </div>
+        </form>
+
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         GRILLE DES FORMATIONS
+    ══════════════════════════════════════ -->
+    <section class="formations-grid" aria-label="Liste des formations">
+        {% if formations %}
+            {% for formation in formations %}
+
+            <article class="formation-card" data-formation-id="{{ formation.pk }}">
+
+                <!-- Header coloré -->
+                <div class="formation-header
+                    {% if formation.categorie == 'developpement' %}dev-header
+                    {% elif formation.categorie == 'data_ia' %}data-header
+                    {% elif formation.categorie == 'design' %}design-header
+                    {% elif formation.categorie == 'cybersecurite' %}cyber-header
+                    {% elif formation.categorie == 'management' %}management-header
+                    {% elif formation.categorie == 'cloud' %}cloud-header
+                    {% else %}autres-header
+                    {% endif %}">
+                    <span class="niveau-badge">{{ formation.get_niveau_display }}</span>
+                    <span class="categorie-label">{{ formation.get_categorie_display|upper }}</span>
+                </div>
+
+                <!-- Corps -->
+                <div class="formation-body">
+                    <h3 class="formation-title">{{ formation.titre }}</h3>
+
+                    <p class="formation-description">
+                        {{ formation.description|truncatechars:120 }}
+                    </p>
+
+                    <dl class="formation-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Présentation</span>
+                            
+                            <p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <span>{{ formation.formateur.user.first_name }} {{ formation.formateur.user.last_name }}</span>
+                            
+                                et 
+                                
+                                <span>
+                                    {{ formation.co_intervenants.count }} co-intervenant{% if formation.co_intervenants.count > 1 %}s{% endif %}
+                                </span>
+                            </p>
+                        </div>
+
+                        {% if formation.duree %}
+                            <div class="meta-item">
+                                <span class="meta-label">Durée </span>
+
+
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 6v6l4 2"/>
+                                    </svg>
+                                    <span>{{ formation.duree }}</span>
+                                </p>
+                            </div>
+                        {% endif %}
+                    </dl>
+                </div>
+
+                <!-- Pied de carte -->
+                <footer class="formation-footer">
+                    <span class="formation-price">{{ formation.prix|floatformat:0 }} €</span>
+
+                    <div class="formation-actions">
+                        <!-- ✅ BOUTON DÉCOUVRIR (tout le monde) -->
+                        <a style="background-color: #1D2D44;" class="btn-decouvrir open-detail-modal" type="button" data-formation-id="{{ formation.pk }}" aria-label="Voir les détails de {{ formation.titre }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M444-288h72v-240h-72v240Zm61.5-322.29q10.5-10.29 10.5-25.5t-10.29-25.71q-10.29-10.5-25.5-10.5t-25.71 10.29q-10.5 10.29-10.5 25.5t10.29 25.71q10.29 10.5 25.5 10.5t25.71-10.29ZM480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z"/></svg>
+                        </a>
+                        {% if formation.est_terminee %}
+                            <button
+                                type="button"
+                                style="background-color: #1D2D44;"
+                                class="btn-evaluation"
+                                onclick="openEvalModal(
+                                    'formation',
+                                    '{{ formation.pk }}',
+                                    '{% if formation.formateur.user.first_name %}{{ formation.formateur.user.first_name }} {{ formation.formateur.user.last_name }}{% else %}{{ formation.formateur.user.username }}{% endif %}',
+                                    '{{ formation.eval_note }}',
+                                    '{{ formation.eval_count }}',
+                                    '{{ formation.eval_commentaire|escapejs }}',
+                                    '{{ formation.eval_note_existante }}'
+                                )"
+                                aria-label="Évaluer le formateur de {{ formation.titre }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="m314-698 110-142q10.81-14.45 25.69-21.23 14.87-6.77 31.09-6.77t30.72 7q14.5 7 25.5 21l110 142 168 55q23 8 36 26.7 13 18.69 13 41.3 0 10.72-3.03 21.45-3.04 10.72-9.97 20.55L743-382l4 162q0 31-21 52.5T675.82-146q-1.82 0-18.82-3l-177-49-177.05 49.04Q298-147 293.5-146.5q-4.5.5-9.03.5-28.99 0-50.73-21.5T213-220l4-162-108-151q-7-10-10-20t-3-21.03q0-22.97 13.18-41.99Q122.36-635.04 146-643l168-55Zm42 62-188 62 120.9 171.04L285-218l195-55 196 54-5-185 121-171-189-61-123-158-124 158Zm124 130Z"/></svg>
+                            </button>
+                        {% endif %}
+
+                        <!-- ✏️ Édition / Suppression (formateur propriétaire ou admin) -->
+                        {% if request.user.role == 'admin' or formation.formateur.user == request.user %}
+                            <a class="btn-edit"
+                               href="{% url 'formation:edit_formation' formation.pk %}"
+                               aria-label="Modifier {{ formation.titre }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor" aria-hidden="true">
+                                    <path d="M576-96v-113l210-209q7.26-7.41 16.13-10.71Q811-432 819.76-432q9.55 0 18.31 3.5Q846.83-425 854-418l44 45q6.59 7.26 10.29 16.13Q912-348 912-339.24t-3.29 17.92q-3.3 9.15-10.71 16.32L689-96H576Zm288-243-45-45 45 45ZM624-144h45l115-115-22-23-22-22-116 115v45ZM264-96q-30 0-51-21.15T192-168v-624q0-29.7 21.15-50.85Q234.3-864 264-864h312l192 192v152h-72v-104H528v-168H264v624h240v72H264Zm252-384Zm246 198-22-22 44 45-22-23Z"/>
+                                </svg>
+                            </a>
+
+                            <button
+                                class="btn-delete open-delete-modal"
+                                type="button"
+                                data-delete-url="{% url 'formation:supprimer_formation' formation.pk %}"
+                                data-formation-title="{{ formation.titre }}"
+                                data-formateur-name="{{ formation.formateur.user.first_name }} {{ formation.formateur.user.last_name }}"
+                                aria-label="Supprimer {{ formation.titre }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor" aria-hidden="true">
+                                    <path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z"/>
+                                </svg>
+                            </button>
+                        {% endif %}
+
+                    </div>
+                </footer>
+
+            </article>
+
+            {% endfor %}
+
+        {% else %}
+            <p class="empty-state">Aucune formation ne correspond à votre recherche.</p>
+        {% endif %}
+    </section>
+
+    {% include 'core/partials/pagination.html' %}
+
+</main>
+
+
+<!-- ══════════════════════════════════════════════════════════════════
+     MODALE — DÉTAIL FORMATION (contenu chargé en AJAX)
+══════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+    <div class="custom-modal detail-modal">
+
+        <button class="close-modal" id="closeDetailModal" data-close aria-label="Fermer">×</button>
+
+        <!-- Contenu injecté dynamiquement -->
+        <div id="detailModalBody">
+            <div class="modal-loader" aria-live="polite">
+                <span class="loader-spinner" aria-hidden="true"></span>
+                Chargement…
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════
+     MODALE — SUPPRESSION FORMATION
+══════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="deleteModal" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+    <div class="custom-modal delete-modal">
+
+        <div class="modal-header">
+            <h2 id="deleteModalTitle">Supprimer une formation</h2>
+            <button class="close-modal" data-close aria-label="Fermer">×</button>
+        </div>
+
+        <div class="modal-body">
+            <p>Voulez-vous vraiment supprimer : <strong id="formationDeleteName"></strong> ?</p>
+            <p>Créée par <span class="modal-company" id="modalFormateur"></span></p>
+
+            <form method="POST" id="deleteForm">
+                {% csrf_token %}
+                <div class="delete-actions">
+                    <button type="button" class="btn-cancel" data-close>Annuler</button>
+                    <button type="submit" class="btn-confirm-delete">Supprimer</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // ══════════════════════════════════
+    // MODALE DÉTAIL FORMATION
+    // ══════════════════════════════════
+    const detailModal     = document.getElementById('detailModal');
+    const detailModalBody = document.getElementById('detailModalBody');
+    const closeDetailBtn  = document.getElementById('closeDetailModal');
+
+    function openDetailModal(formationId) {
+        // Réinitialise le contenu avec le loader
+        detailModalBody.innerHTML = `
+            <div class="modal-loader">
+                <span class="loader-spinner"></span> Chargement…
+            </div>`;
+
+        detailModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Chargement AJAX du contenu partiel
+        fetch(`/formation/${formationId}/`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Erreur réseau');
+            return response.text();
+        })
+        .then(html => {
+            detailModalBody.innerHTML = html;
+
+            // Applique la largeur de la barre de places (évite le style inline templaté)
+            const placesBar = detailModalBody.querySelector('.places-bar');
+            if (placesBar) {
+                const fill = placesBar.querySelector('.places-fill');
+                const percent = placesBar.dataset.percent || 0;
+                if (fill) fill.style.width = percent + '%';
+            }
+        })
+        .catch(() => {
+            detailModalBody.innerHTML = `
+                <p class="modal-error">
+                    Impossible de charger les détails. Veuillez réessayer.
+                </p>`;
+        });
+    }
+
+    function closeDetailModal() {
+        detailModal.classList.remove('active');
+        document.body.style.overflow = '';
+        // Petit délai pour laisser la transition se terminer
+        setTimeout(() => { detailModalBody.innerHTML = ''; }, 300);
+    }
+
+    // Ouverture via les boutons "Découvrir"
+    document.querySelectorAll('.open-detail-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            openDetailModal(this.dataset.formationId);
+        });
+    });
+
+    // Fermeture
+    closeDetailBtn.addEventListener('click', closeDetailModal);
+
+    detailModal.addEventListener('click', function (e) {
+        if (e.target === detailModal) closeDetailModal();
+    });
+
+    // ── Interception des formulaires inscription / désinscription ──
+    // Empêche la navigation classique : on reste dans la modale et on
+    // rafraîchit son contenu après l'action.
+    detailModalBody.addEventListener('submit', function (e) {
+        const form = e.target.closest('.ajax-form');
+        if (!form) return;
+
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            body: new FormData(form)
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Erreur réseau');
+            return response.text();
+        })
+        .then(html => {
+            detailModalBody.innerHTML = html;
+            const placesBar = detailModalBody.querySelector('.places-bar');
+            if (placesBar) {
+                const fill = placesBar.querySelector('.places-fill');
+                const percent = placesBar.dataset.percent || 0;
+                if (fill) fill.style.width = percent + '%';
+            }
+        })
+        .catch(() => {
+            if (submitBtn) submitBtn.disabled = false;
+            detailModalBody.insertAdjacentHTML(
+                'afterbegin',
+                '<p class="modal-error">Une erreur est survenue, veuillez réessayer.</p>'
+            );
+        });
+    });
+
+    // Touche Échap
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            if (detailModal.classList.contains('active')) closeDetailModal();
+            if (deleteModal.classList.contains('active')) deleteModal.classList.remove('active');
+        }
+    });
+
+
+    // ══════════════════════════════════
+    // MODALE SUPPRESSION FORMATION
+    // ══════════════════════════════════
+    const deleteModal    = document.getElementById('deleteModal');
+    const deleteForm     = document.getElementById('deleteForm');
+    const formationName  = document.getElementById('formationDeleteName');
+    const modalFormateur = document.getElementById('modalFormateur');
+
+    document.querySelectorAll('.open-delete-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            deleteForm.action          = this.dataset.deleteUrl;
+            formationName.textContent  = ' ' + this.dataset.formationTitle;
+            modalFormateur.textContent = this.dataset.formateurName;
+            deleteModal.classList.add('active');
+        });
+    });
+
+    document.querySelectorAll('[data-close]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            deleteModal.classList.remove('active');
+            detailModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    deleteModal.addEventListener('click', function (e) {
+        if (e.target === deleteModal) deleteModal.classList.remove('active');
+    });
+
+});
+</script>
+{% endblock %}

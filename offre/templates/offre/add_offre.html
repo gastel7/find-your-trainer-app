@@ -1,0 +1,427 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+
+{% block title %} Nouvelle offre {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/offre/offre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/offre/edit-offre.css' %}">
+{% endblock %}
+
+{% block page_name %}
+    <span class="page_name" style="display: flex; align-items: center;">
+        Offres
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-3.5 w-3.5 shrink-0" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+
+        Nouvelle offre
+    </span>
+{% endblock %}
+
+{% block main %}
+    <div class="page">
+        <div class="offre-container">
+            <div class="offre-container-sub">
+
+                <!-- HEADER -->
+                <div class="top-bar">
+                    <div class="top-bar-title">
+                        <h1>Ajouter une offre</h1>
+
+                        <p class="subtitle">
+                            Créer des offres afin d'attirer les profils
+                            que vous voulez.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="offre-card">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <!-- Le titre, le type d'offre, et le statut -->
+                        <section class="form_content" id="title_and_competences">
+                            <!-- Le titre -->
+                            <p>
+                                <label for="">Titre</label>
+
+                                {{ form.titre }}
+                            </p>
+
+                            <!-- Le type d'offre -->
+                            <p>
+                                <label for="">Type d'offre</label>
+
+                                {{ form.type_offre }}
+                            </p>
+                        </section>
+
+                        <!-- Localisation et budget -->
+                        <section class="form_content">
+                            <!-- Localisation -->
+                            <p>
+                                <label for="">Localisation</label>
+
+                                {{ form.localisation }}
+                            </p>
+
+                            <!-- Budget -->
+                            <p>
+                                <label for="">Budget</label>
+
+                                {{ form.budget }}
+                            </p>
+                        </section>
+
+                        <!-- Description, statut et nombre max de candidats -->
+                        <section class="form_content">
+                            <!-- Description -->
+                            <p>
+                                <label for="">Description</label>
+
+                                {{ form.description }}
+                            </p>
+
+                            
+                            <div>
+                                <!-- Le statut -->
+                                <p>
+                                    <label for="">Statut</label>
+
+                                    {{ form.statut }}
+                                </p>
+
+                                <!-- Le nombre max de candidats -->
+                                <p>
+                                    <label for="">Nombre max de candidats</label>
+
+                                    {{ form.nb_max_de_candidatures }}
+                                </p>
+                            </div>
+                        </section>
+
+
+                        <!-- Les compétences -->
+                        <section class="form_content_sub" style="margin-bottom: 20px;">
+                            <label>Compétences</label>
+
+                            <div class="competence-wrapper">
+                                <!-- Tags sélectionnés -->
+                                <div id="selected-competences" class="selected-tags">
+                                    {% if form.instance.pk %}
+                                        {% for competence in form.instance.competences.all %}
+                                            <span class="tag" data-id="{{ competence.id }}" data-name="{{ competence.nom }}">
+                                                {{ competence.nom }}
+                                                <button type="button" class="remove-tag">×</button>
+
+                                                <input type="hidden" name="competences"value="{{ competence.id }}">
+                                            </span>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+                                <!-- Input recherche -->
+                                <input type="text" id="competence-search" class="form-control" placeholder="Ex : HTML, React, Laravel...">
+
+                                <!-- Dropdown -->
+                                <div id="competence-dropdown"
+                                    class="competence-dropdown">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section style="margin-bottom: 20px;">
+                            <!-- Institution (admin uniquement) -->
+                            {% if request.user.role == 'admin' %}
+                                <div>
+                                    <label for="">Institution</label>
+
+                                    <div class="competence-wrapper" id="institution-wrapper">
+                                        <input type="hidden"
+                                               id="institution-id"
+                                               name="institution"
+                                               value="{% if form.instance.institution_id %}{{ form.instance.institution_id.pk }}{% endif %}">
+
+                                        <input type="text"
+                                               id="institution-search"
+                                               class="form-control"
+                                               placeholder="Rechercher une institution..."
+                                               autocomplete="off"
+                                               value="{% if form.instance.institution_id %}{{ form.instance.institution_id.nom_organisation }}{% endif %}">
+
+                                        <div id="institution-dropdown" class="competence-dropdown"></div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </section>
+
+                        <!-- Dates -->
+                        <section class="form_content">
+                            <!-- Date début -->
+                            <p>
+                                <label for="">Date début</label>
+
+                                {{ form.date_debut }}
+                            </p>
+
+                            <!-- Date clôture -->
+                            <p>
+                                <label for="">Date clôture</label>
+
+                                {{ form.date_cloture }}
+                            </p>
+                        </section>
+
+                        
+
+                        <section class="btn_container">
+                            <button class="btn-submit" type="submit">Publier l’offre</button>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const input = document.getElementById('competence-search');
+    const dropdown = document.getElementById('competence-dropdown');
+    const selectedContainer = document.getElementById('selected-competences');
+
+    input.addEventListener('input', async function () {
+
+        const query = input.value.trim();
+
+        if(query.length < 1){
+            dropdown.style.display = 'none';
+            return;
+        }
+
+        const response = await fetch(
+            `/search-competence/?q=${query}`
+        );
+
+        const data = await response.json();
+
+        dropdown.innerHTML = '';
+
+        data.forEach(item => {
+
+            const alreadySelected =
+                selectedContainer.querySelector(
+                    `[data-id="${item.id}"]`
+                );
+
+            if(alreadySelected) return;
+
+            const div = document.createElement('div');
+
+            div.classList.add('dropdown-item');
+            div.textContent = item.nom;
+
+            div.addEventListener('click', function(){
+
+                addTag(item.id, item.nom);
+
+                dropdown.style.display='none';
+                input.value='';
+
+            });
+
+            dropdown.appendChild(div);
+        });
+
+        // créer nouvelle compétence
+        if(query.length > 0){
+
+            const createDiv =
+                document.createElement('div');
+
+            createDiv.classList.add(
+                'dropdown-item'
+            );
+
+            createDiv.innerHTML =
+                `Créer "${query}"`;
+
+            createDiv.addEventListener(
+                'click',
+                function(){
+
+                    addTag(
+                        'new_' + query,
+                        query
+                    );
+
+                    input.value='';
+                    dropdown.style.display='none';
+                }
+            );
+
+            dropdown.appendChild(createDiv);
+        }
+
+        dropdown.style.display='block';
+    });
+
+    function addTag(id, name){
+
+    const tags =
+        selectedContainer.querySelectorAll('.tag');
+
+    // limite à 5
+    if(tags.length >= 5){
+        alert(
+            'Maximum 5 compétences autorisées.'
+        );
+        return;
+    }
+
+    const exists =
+        selectedContainer.querySelector(
+            `[data-name="${name}"]`
+        );
+
+    if(exists) return;
+
+    const span =
+        document.createElement('span');
+
+    span.className='tag';
+
+    span.setAttribute(
+        'data-id',
+        id
+    );
+
+    span.setAttribute(
+        'data-name',
+        name
+    );
+
+    span.innerHTML = `
+        ${name}
+        <button
+            type="button"
+            class="remove-tag">
+            ×
+        </button>
+
+        <input
+            type="hidden"
+            name="competences"
+            value="${id}">
+    `;
+
+    span.querySelector(
+        '.remove-tag'
+    ).addEventListener(
+        'click',
+        function(){
+            span.remove();
+        }
+    );
+
+    selectedContainer.appendChild(
+        span
+    );
+}
+
+
+    document.querySelectorAll(
+        '.remove-tag'
+    ).forEach(btn => {
+
+        btn.addEventListener(
+            'click',
+            function(){
+                btn.parentElement.remove();
+            }
+        );
+    });
+
+    /*
+    ======================================
+    INSTITUTION (sélection unique, admin)
+    ======================================
+    Même principe que la recherche de compétences, mais une seule
+    valeur : le clic sur un résultat remplit le champ texte + un
+    input hidden "institution" au lieu d'ajouter un tag.
+    */
+
+    const institutionInput = document.getElementById('institution-search');
+    const institutionDropdown = document.getElementById('institution-dropdown');
+    const institutionHidden = document.getElementById('institution-id');
+
+    if (institutionInput) {
+
+        institutionInput.addEventListener('input', async function () {
+            const query = institutionInput.value.trim();
+
+            // Tant qu'on n'a pas recliqué sur un résultat, la valeur
+            // affichée ne correspond plus forcément à un id valide.
+            institutionHidden.value = '';
+
+            if (query.length < 1) {
+                institutionDropdown.style.display = 'none';
+                return;
+            }
+
+            const response = await fetch(`/search-institution/?q=${query}`);
+            const data = await response.json();
+            institutionDropdown.innerHTML = '';
+
+            data.forEach(function (item) {
+                const div = document.createElement('div');
+                div.classList.add('dropdown-item');
+                div.textContent = item.nom;
+
+                div.addEventListener('click', function () {
+                    institutionInput.value = item.nom;
+                    institutionHidden.value = item.id;
+                    institutionDropdown.style.display = 'none';
+                });
+
+                institutionDropdown.appendChild(div);
+            });
+
+            if (institutionDropdown.innerHTML === '') {
+                const emptyDiv = document.createElement('div');
+                emptyDiv.classList.add('dropdown-item', 'dropdown-empty');
+                emptyDiv.textContent = 'Aucune institution trouvée';
+                institutionDropdown.appendChild(emptyDiv);
+            }
+
+            institutionDropdown.style.display = 'block';
+        });
+    }
+
+    document.addEventListener(
+        'click',
+        function(e){
+
+            if(
+                !dropdown.contains(e.target)
+                &&
+                e.target !== input
+            ){
+                dropdown.style.display='none';
+            }
+
+            if(
+                institutionDropdown
+                &&
+                !institutionDropdown.contains(e.target)
+                &&
+                e.target !== institutionInput
+            ){
+                institutionDropdown.style.display = 'none';
+            }
+        }
+    );
+});
+</script>
+{% endblock %}

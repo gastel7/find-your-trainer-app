@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find Your Trainer est une plateforme de mise en relation entre formateurs et institutions, facilitant la recherche de formations adaptées aux besoins des utilisateurs.">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="formation, formateur, institution, éducation, apprentissage, compétences, développement professionnel, marketplace, edtech">   
+    <title>{% block title %}Find Your Trainer{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'images/image.png' %}">
+
+    <link rel="manifest" href="{% static 'manifest.json' %}">   
+    <meta name="theme-color" content="#091123">
+
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/index_page/header_index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index_page/main_index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index_page/footer_index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index_page/download_app.css' %}">
+    {% endblock %}
+
+    <!-- Toujours chargé, même si une page enfant remplace  "block css"
+         sans {{ block.super }} (c'est le cas de log_in.html/log_up.html) -->
+    <link rel="stylesheet" href="{% static 'css/index_page/toast.css' %}">
+
+</head>
+<body>
+    <!-- Applique le thème AVANT le premier rendu (anti-flash), même
+         technique que dashboard.html, même clé localStorage : la
+         préférence est donc partagée entre ces pages publiques et
+         l'application une fois connecté. -->
+    <script>
+        document.body.classList.toggle('dark', localStorage.getItem('theme') === 'dark');
+    </script>
+
+    <!-- Toasts (messages Django) : conteneur global, en dehors des blocks
+         pour être garanti présent sur toute page qui étend base.html -->
+    <div id="toastContainer">
+        {% for message in messages %}
+            <div class="toast {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- le header -->
+    {% include 'core/index_page/header_index_page.html' %}
+
+
+    <!-- Le main -->
+    {% block content %}   
+        {% include 'core/index_page/main_index_page.html' %}
+    {% endblock %}
+
+    
+    <!-- Le footer -->
+    {% include 'core/index_page/footer_index_page.html' %}
+
+
+    <script>
+        document.querySelectorAll('.toast').forEach(function (toast) {
+            setTimeout(function () {
+                toast.classList.add('hide');
+                setTimeout(function () { toast.remove(); }, 300);
+            }, 4000);
+        });
+
+        // Bascule thème clair/sombre (boutons lune/soleil du header)
+        function setSiteTheme(mode) {
+            var isDark = mode === 'dark';
+            document.body.classList.toggle('dark', isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            syncThemeIcons();
+        }
+
+        function syncThemeIcons() {
+            var isDark = document.body.classList.contains('dark');
+            var moonBtn = document.getElementById('theme-toggle-moon');
+            var sunBtn = document.getElementById('theme-toggle-sun');
+            if (moonBtn) moonBtn.style.display = isDark ? 'none' : '';
+            if (sunBtn) sunBtn.style.display = isDark ? '' : 'none';
+        }
+
+        syncThemeIcons();
+    </script>
+
+    {% block js %}{% endblock %}
+    <script src="{% static 'js/pwa_install.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+{% extends 'core/app/dashboard.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+    {% if mes_offres %}
+        Mes offres
+    {% else %}
+        Toutes les offres
+    {% endif %}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/offre/offre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/offre/edit-offre.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app/sidebar.css' %}">
+     
+{% endblock%}
+
+{% block page_name %}
+    <span class="page_name">Offres</span>
+{% endblock %}
+
+
+{% block main %}
+    <main class="page">
+        <!-- HEADER -->
+        <div class="top-bar">
+            <div class="top-bar-title">
+                <span>Missions</span>
+
+                <h1>{% if mes_offres %}Mes offres{% else %}Toutes les offres{% endif %}</h1>
+
+                <p class="subtitle">Des missions vérifiées, publiées par les institutions partenaires.</p>
+            </div>
+
+            <div class="header-actions">
+                <!-- Si l'utilisateur a pour rôle instituion -->
+                {% if request.user.role == 'institution' %}
+                    {% if mes_offres %}
+                        <a href="{% url 'offre:offres_list' %}" class="btn-secondary">Toutes les offres</a>
+
+                    {% else %}
+                        <a href="{% url 'offre:offres_list' %}?mes_offres=1" class="btn-secondary">Mes offres</a>
+                    {% endif %}
+                        <a href="{% url 'offre:ajouter_offre' %}" class="btn-add">+ Ajouter une offre</a>
+                {% endif %}
+
+
+                <!-- Si, l'utilisateur a pour rôle admin -->
+                {% if request.user.role == 'admin' %}
+                    <a href="{% url 'offre:ajouter_offre' %}" class="btn-add">+ Ajouter une offre</a>
+                {% endif %}
+            </div>
+
+        </div>
+
+
+        <!-- Filtres et recherche -->
+        <div class="toolbar">
+            <!-- Filtres -->
+            <div class="filters">
+                <a class="filter {% if not type_filtre or type_filtre == 'tous' %}active{% endif %}" href="?type=tous{% if mes_offres == '1' %}&mes_offres=1{% endif %}">Tous</a>
+                <a class="filter {% if type_filtre == 'intra' %}active{% endif %}" href="?type=intra{% if mes_offres == '1' %}&mes_offres=1{% endif %}">Intra</a>
+                <a class="filter {% if type_filtre == 'inter' %}active{% endif %}" href="?type=inter{% if mes_offres == '1' %}&mes_offres=1{% endif %}">Inter</a>
+                <a class="filter {% if type_filtre == 'mission_longue' %}active{% endif %}" href="?type=mission_longue{% if mes_offres == '1' %}&mes_offres=1{% endif %}">Mission longue</a>
+            </div>
+
+
+            <!-- Recherche  -->
+            <form method="GET" action="" class="search-form">
+                <!-- On conserve les filtres actuels dans des champs cachés pour ne pas les perdre lors de la recherche -->
+                {% if type_filtre %}<input type="hidden" name="type" value="{{ type_filtre }}">{% endif %}
+                {% if mes_offres %}<input type="hidden" name="mes_offres" value="{{ mes_offres }}">{% endif %}
+                
+                <div class="search-input-wrapper">
+                    <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.34-4.34"></path></svg>
+                    <input type="text" name="q" placeholder="Rechercher par mot-clé..." value="{{ query|default:'' }}">
+                
+                    <!-- Le bouton X s'affiche uniquement si une recherche 'query' existe -->
+                    {% if query %}
+                        <a href="?{% if type_filtre %}type={{ type_filtre }}{% endif %}{% if mes_offres %}&mes_offres={{ mes_offres }}{% endif %}" class="reset-search-btn" title="Effacer la recherche">
+                            ×
+                        </a>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+
+
+        <!-- Listes des offres -->
+        <div class="offres-grid">
+            {% for offre in offres %}
+                <div class="offre-card">
+                    <!-- TOP -->
+                    <div class="card-content">
+                        <div class="container_block_infos">
+                            <section class="institution-icon"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 h-5 w-5 text-secondary-foreground" aria-hidden="true"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+                            </section>
+
+                            <section class="card-infos">
+                                <section class="title-infos">
+                                    <div>
+                                        <h2>{{ offre.titre }}</h2>
+                                        <p class="institution"> {{ offre.institution_id.nom_organisation }}</p>
+                                    </div>
+
+                                    <!-- BADGE TYPE -->
+                                    <span class="mission-badge">{{ offre.get_type_offre_display }}</span>
+                                </section>
+
+                                <!-- La section Infos -->
+                                <section class="infos">
+                                    <!-- Le lieu où se déroulera la formation -->
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-3.5 w-3.5" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        <span>{{ offre.localisation }}</span>
+                                    </p>
+
+
+                                    <!-- La durée de la formation qui sera calculé par la date de début, et, la date de fin -->
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-3.5 w-3.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                        <span>Durée : {{ offre.duree }}</span>
+                                    </p>
+
+
+                                    <!-- Le budget (ou salaire) prévue pour la formation -->
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote h-3.5 w-3.5" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg>
+                                        <span>{{ offre.budget }} €</span>
+                                    </p>
+
+                                    <!-- Le temps écoulé depuis la publication -->
+                                    <p>
+                                        {% if offre.temps_ecoule == "0 minute" %}
+                                            <span class="skill-badge">À l'instant</span>
+                                        {% else %}
+                                            <span>• il y a {{ offre.temps_ecoule }}</span>
+                                        {% endif %} 
+                                    </p>
+                                </section>
+
+                                <!-- COMPÉTENCES -->
+                                <section class="skills">
+                                    {% for competence in offre.competences.all %}
+                                        <span class="skill-badge">{{ competence.nom }}</span>
+                                    {% endfor %}
+                                </section>
+
+                                <section>
+                                    {{ offre.candidatures.count }} 
+                                    candidature
+                                    <!-- {{ offre.candidatures.count|pluralize }}  -->
+                                    sur 
+                                    {{ offre.nb_max_de_candidatures }} attendues pour cette offre.
+                                </section> 
+                            </section>
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="card-actions">
+                            <a class="read_description open-description" href="#" title="Lire la description" data-title="{{ offre.titre }}" data-company="{{ offre.institution_id.nom_organisation }}" data-description="{{ offre.description }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+                                
+                            </a>
+
+                            <!-- Actions uniquement pour le propriétaire et l'administrateur -->
+                            {% if request.user.role == 'admin' or request.user.role == 'institution' and offre.institution_id.user == request.user %}
+                                <a class="btn-edit" href="{% url 'offre:edit_offre' offre.id %}" title="Modifier l'offre">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M576-96v-113l210-209q7.26-7.41 16.13-10.71Q811-432 819.76-432q9.55 0 18.31 3.5Q846.83-425 854-418l44 45q6.59 7.26 10.29 16.13Q912-348 912-339.24t-3.29 17.92q-3.3 9.15-10.71 16.32L689-96H576Zm288-243-45-45 45 45ZM624-144h45l115-115-22-23-22-22-116 115v45ZM264-96q-30 0-51-21.15T192-168v-624q0-29.7 21.15-50.85Q234.3-864 264-864h312l192 192v152h-72v-104H528v-168H264v624h240v72H264Zm252-384Zm246 198-22-22 44 45-22-23Z"/></svg>
+                                </a>
+
+                                <a class="btn-delete open-delete-modal" href="#" title="Supprimer l'offre" data-delete-url="{% url 'offre:supprimer_offre' offre.id %}" data-title="{{ offre.titre }}"  data-company="{{ offre.institution_id.nom_organisation }}">                        
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z"/></svg>
+                                </a> 
+                                
+                                <a title="Postuler à cet offre" class="btn-postuler open-candidature-modal" data-offre-id="{{ offre.id }}" data-offre-title="{{ offre.titre }}" data-candidate-url="{% url 'candidature:postuler_offre' offre.id %}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="m439-240 221-221-54-54-167 167-81-82-55 54 136 136ZM263.72-96Q234-96 213-117.15T192-168v-624q0-29.7 21.15-50.85Q234.3-864 264-864h312l192 192v504q0 29.7-21.16 50.85Q725.68-96 695.96-96H263.72ZM528-624v-168H264v624h432v-456H528ZM264-792v189-189 624-624Z"/></svg>
+                                </a>
+                            {% else %}
+                                {% if offre.candidatures.count >= offre.nb_max_de_candidatures %}
+                                    <a id="padlock" title="Candidatures clôturées" type="button" class="btn-disabled" onclick="alert('Le nombre maximum de candidatures a été atteint.')"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="m439-240 221-221-54-54-167 167-81-82-55 54 136 136ZM263.72-96Q234-96 213-117.15T192-168v-624q0-29.7 21.15-50.85Q234.3-864 264-864h312l192 192v504q0 29.7-21.16 50.85Q725.68-96 695.96-96H263.72ZM528-624v-168H264v624h432v-456H528ZM264-792v189-189 624-624Z"/></svg>
+                                    </a>
+
+                                {% else %}
+                                    <a title="Postuler à cet offre" class="btn-postuler open-candidature-modal" data-offre-id="{{ offre.id }}" data-offre-title="{{ offre.titre }}" data-candidate-url="{% url 'candidature:postuler_offre' offre.id %}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="m439-240 221-221-54-54-167 167-81-82-55 54 136 136ZM263.72-96Q234-96 213-117.15T192-168v-624q0-29.7 21.15-50.85Q234.3-864 264-864h312l192 192v504q0 29.7-21.16 50.85Q725.68-96 695.96-96H263.72ZM528-624v-168H264v624h432v-456H528ZM264-792v189-189 624-624Z"/></svg>
+                                    </a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                        <!-- DESCRIPTION -->
+                        <!-- <p class="description">{{ offre.description|truncatewords:25 }} </p> -->
+
+                </div>
+            {% empty %}
+                <p>
+                    Aucune offre disponible.
+                </p>
+            {% endfor %}
+        </div>
+
+        {% include 'core/partials/pagination.html' %}
+    </main>
+
+
+
+    <!-- ========================= -->
+    <!-- MODAL DESCRIPTION -->
+    <!-- ========================= -->
+
+    <div class="modal-overlay" id="descriptionModal">
+        <div class="custom-modal">
+            <div class="modal-header">
+                <h2 id="modalOfferTitle"></h2>
+
+                <button class="close-modal" data-close>×</button>
+            </div>
+
+            <p class="modal-company" id="modalCompany"></p>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- MODAL SUPPRESSION -->
+    <!-- ========================= -->
+
+    <div class="modal-overlay" id="deleteModal">
+        <div class="custom-modal delete-modal">
+            <div class="modal-header">
+                <h2>Supprimer une offre</h2>
+
+                <button class="close-modal" data-close>×</button>
+            </div>
+
+            <div class="modal-body">
+                <p>Voulez-vous vraiment supprimer : <strong id="offerDeleteName">{{ offre.titre }}</strong> ?
+                </p>
+                <p> Créée par : <span class="modal-company" id="deleteCompany"></span></p>
+
+                <form method="POST" id="deleteForm">
+                    {% csrf_token %}
+                    <div class="delete-actions">
+                        <button type="button" class="btn-cancel" data-close>Annuler</button>
+                        <button type="submit" class="btn-confirm-delete">Supprimer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- MODAL CANDIDATURE -->
+    <!-- ========================= -->
+    <div class="modal-overlay" id="candidatureModal">
+        <div class="custom-modal">
+            <div class="modal-header">
+                <h2>Candidater à une offre</h2>
+
+                <button class="close-modal" data-close>×</button>
+            </div>
+
+            <div class="modal-body">
+                <p>Vous allez candidater pour : <strong id="offreTitle"></strong></p>
+
+                <p class="candidature-stats"><span id="offreCandidatures"></span></p>
+
+                <form method="POST" enctype="multipart/form-data" id="candidatureForm">
+                    {% csrf_token %}
+
+                    {% if request.user.role == 'admin' %}
+                        <div class="form-group">
+                            <label>Rechercher un formateur</label>
+
+                            <div class="competence-wrapper">
+                                <div id="selected-candidat" class="selected-tags"></div>
+
+                                <input type="text" id="candidat-search" class="form-control" placeholder="Rechercher un formateur...">
+
+                                    <input
+                                        type="hidden"
+                                        name="formateur"
+                                        id="selected-formateur-id"
+                                    >
+
+                                <div
+                                    id="candidat-dropdown"
+                                    class="competence-dropdown">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    {% endif %}
+
+                    <div class="form-group">
+                        <label>Message de motivation (Pourquoi voulez-vous postuler à cet offre)</label>
+                        <textarea name="message" rows="5" class="form-control" placeholder="Présentez votre profil..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CV (optionnel)</label>
+                        <input class="form-control" type="file" name="cv">
+                    </div>
+
+                    <div class="delete-actions">
+                        <button class="btn-cancel" type="button" data-close>Annuler</button>
+                        <button class="btn-submit" type="submit">Envoyer ma candidature</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock%}
+
+
+{% block js%}
+    <script>
+        // =====================
+        // SÉCURITÉ : jamais de modal ouverte à l'arrivée sur la page
+        // =====================
+        // 'pageshow' se déclenche à la fois au chargement normal ET quand
+        // la page est restaurée depuis le bfcache du navigateur (bouton
+        // précédent/suivant) — un cas où le DOM (et donc une classe
+        // 'active'/'show' laissée par une session précédente) peut être
+        // restauré tel quel, donnant l'impression qu'une modale s'ouvre
+        // "toute seule" et refuse de se fermer.
+        window.addEventListener('pageshow', function () {
+            document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+                overlay.classList.remove('show', 'active');
+            });
+            document.body.style.overflow = '';
+        });
+
+        // =====================
+        // DESCRIPTION MODAL
+        // =====================
+
+        const descriptionButtons = document.querySelectorAll('.open-description');
+        const descriptionModal = document.getElementById('descriptionModal');
+        const modalTitle = document.getElementById('modalOfferTitle');
+        const modalCompany = document.getElementById('modalCompany');
+        const modalDescription = document.getElementById('modalDescription');
+
+
+        descriptionButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                descriptionModal.classList.add('show');
+                if (modalTitle)       modalTitle.textContent = this.dataset.title;
+                if (modalCompany)     modalCompany.textContent = this.dataset.company;
+                if (modalDescription) modalDescription.textContent = this.dataset.description;
+            });
+        });
+
+
+        // =====================
+        // DELETE MODAL
+        // =====================
+
+        const deleteButtons = document.querySelectorAll('.open-delete-modal');
+        const deleteModal = document.getElementById('deleteModal');
+        const deleteForm = document.getElementById('deleteForm');
+        const offerDeleteName = document.getElementById('offerDeleteName');
+        const deleteCompany = document.getElementById('deleteCompany');
+
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                deleteModal.classList.add('show');
+                if (deleteForm)      deleteForm.action = this.dataset.deleteUrl;
+                if (offerDeleteName) offerDeleteName.textContent = this.dataset.title;
+                if (deleteCompany)   deleteCompany.textContent = this.dataset.company;
+            });
+        });
+
+        // =====================
+        // CANDIDATURE MODAL
+        // =====================
+
+        const candidatureButtons = document.querySelectorAll('.open-candidature-modal');
+        const candidatureModal = document.getElementById('candidatureModal');
+        const candidatureForm = document.getElementById('candidatureForm');
+        const candidatureTitle = document.getElementById('offreTitle');
+
+        candidatureButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                candidatureModal.classList.add('active');
+
+                // Récupération via les bons noms camelCase calqués sur votre HTML
+                if (candidatureForm) candidatureForm.action = this.dataset.candidateUrl;
+
+                // Si vous voulez aussi afficher le titre de l'offre dans la modale
+                if (candidatureTitle) {
+                    candidatureTitle.textContent = this.dataset.offreTitle;
+                }
+            });
+        });
+
+
+        // =====================
+        // CLOSE MODALS
+        // =====================
+        // Délégation sur document (plutôt que d'attacher un listener à
+        // chaque bouton trouvé au chargement) : plus robuste, et chaque
+        // modale est fermée indépendamment des autres — si l'une des
+        // trois références est introuvable pour une raison quelconque,
+        // ça n'empêche plus la fermeture des deux autres.
+
+        function closeAllModals() {
+            if (descriptionModal) descriptionModal.classList.remove('show');
+            if (deleteModal)      deleteModal.classList.remove('show');
+            if (candidatureModal) candidatureModal.classList.remove('active');
+        }
+
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('[data-close]')) {
+                closeAllModals();
+            }
+        });
+
+
+        // Fermer si clique hors modal
+
+        document.addEventListener('click', function (e) {
+            if (e.target === descriptionModal) descriptionModal.classList.remove('show');
+            if (e.target === deleteModal)      deleteModal.classList.remove('show');
+            if (e.target === candidatureModal) candidatureModal.classList.remove('active');
+        });
+
+        // Touche Échap : ferme aussi, en filet de sécurité supplémentaire
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeAllModals();
+        });
+    </script>
+
+
+
+    <script>
+        // =====================
+        // RECHERCHE FORMATEUR
+        // =====================
+
+       
+    const candidatSearch =
+    document.getElementById(
+        'candidat-search'
+    );
+
+const candidatDropdown =
+    document.getElementById(
+        'candidat-dropdown'
+    );
+
+const selectedFormateurId =
+    document.getElementById(
+        'selected-formateur-id'
+    );
+
+if(candidatSearch){
+
+    candidatSearch.addEventListener(
+        'input',
+        async function(){
+
+            const query =
+                this.value.trim();
+
+            if(query.length < 2){
+
+                candidatDropdown.style.display =
+                    'none';
+
+                return;
+            }
+
+            const response =
+                await fetch(
+                    `/search-formateur/?q=${query}`
+                );
+
+            const data =
+                await response.json();
+
+            candidatDropdown.innerHTML =
+                '';
+
+            if(data.length === 0){
+
+                candidatDropdown.innerHTML =
+                    '<div class="dropdown-item">Aucun formateur trouvé</div>';
+
+                candidatDropdown.style.display =
+                    'block';
+
+                return;
+            }
+
+            data.forEach(function(item){
+
+                const div =
+                    document.createElement(
+                        'div'
+                    );
+
+                div.classList.add(
+                    'dropdown-item'
+                );
+
+                div.textContent =
+                    item.nom;
+
+                div.addEventListener(
+                    'click',
+                    function(){
+
+                        candidatSearch.value =
+                            item.nom;
+
+                        selectedFormateurId.value =
+                            item.id;
+
+                        candidatDropdown.style.display =
+                            'none';
+                    }
+                );
+
+                candidatDropdown.appendChild(
+                    div
+                );
+            });
+
+            candidatDropdown.style.display =
+                'block';
+        }
+    );
+}       
+    </script>
+{% endblock%}

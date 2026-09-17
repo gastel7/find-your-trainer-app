@@ -1,0 +1,77 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index_page/header_index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index_page/footer_index.css' %}">
+
+{% endblock %}
+
+{% block title %} Liste des Institutions {% endblock %}
+
+{% block content %}
+    <main>
+        <div class="main_content">
+            <div class="header-annuaire">
+                <p>Annuaire</p>
+                <h1>Les institutions de la plateforme</h1>
+                <p class="subtitle">{{ total_count }} structure{{ total_count|pluralize }} trouvée{{ total_count|pluralize }}.</p>
+            </div>
+
+            <!-- Formulaire de filtrage Backend (Méthode GET) -->
+            <form method="get" action="" class="filter-bar">
+                <div class="search-wrapper">
+                    <!-- Conserve le mot-clé saisi après rechargement -->
+                    <input type="text" name="q" value="{{ search_query }}" placeholder="Rechercher une institution, une description...">
+                </div>
+
+                <!-- Soumet automatiquement le formulaire au changement de sélection -->
+                <select name="ville" class="filter-select" onchange="this.form.submit()">
+                    <option value="">Toutes villes</option>
+                    <option value="Paris" {% if selected_city == "Paris" %}selected{% endif %}>Paris</option>
+                    <option value="Lyon" {% if selected_city == "Lyon" %}selected{% endif %}>Lyon</option>
+                    <option value="Marseille" {% if selected_city == "Marseille" %}selected{% endif %}>Marseille</option>
+                </select>
+                
+                <!-- Bouton de secours pour déclencher la recherche textuelle -->
+                <button type="submit" style="display: none;">Rechercher</button>
+            </form>
+
+            <!-- Grille des cartes issues du backend -->
+            <div class="institutions-grid">
+                {% for inst in institutions %}
+                <div class="institution-card">
+                    <div>
+                        <div class="card-top">
+                            <div class="avatar-placeholder">{{ inst.nom_organisation|slice:":2"|upper }}</div>
+                            <div class="card-info">
+                                <h3>
+                                    {{ inst.nom_organisation }}
+                                    {% if inst.is_verified %}
+                                    <span class="badge-verified" title="Vérifié">✔</span>
+                                    {% endif %}
+                                </h3>
+                                <div class="localisation-tag">📍 {{ inst.localisation|default:"Non renseignée" }}</div>
+                            </div>
+                        </div>
+                        <p class="card-description">{{ inst.description|default:"Aucune description disponible pour le moment." }}</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <span>Structure active</span>
+                        {% if inst.site_web %}
+                        <a href="{{ inst.site_web }}" target="_blank" class="btn-link">Voir le site →</a>
+                        {% else %}
+                        <span style="color: var(--text-secondary)">Pas de site web</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <!-- Géré directement par Django si la liste retournée est vide -->
+                <div class="no-results-backend">
+                    Aucune institution ne correspond à vos critères de recherche.
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

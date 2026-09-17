@@ -1,0 +1,311 @@
+{% extends "core/app/dashboard.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/candidatures/candidatures_recues.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app/sidebar.css' %}">
+    
+{% endblock%}
+
+{% block main %}
+<div class="page-container">
+    <!-- HEADER -->
+    <div class="page-header">
+        <div>
+            {% if mode == "recues" %}
+                <h1>Candidatures reçues</h1>
+
+                <p>Consultez et gérez les candidatures envoyées à vos offres.</p>
+            {% elif mode == "mes" %}
+                <h1>Mes candidatures</h1>
+
+                <p> Suivez l'état de toutes vos candidatures.</p>
+            {% endif %}
+        </div>
+
+        {% if request.user.role == "admin" %}
+            <button class="btn-export">Exporter</button>
+        {% endif %}
+    </div>
+
+    <!-- FILTRES -->
+    <div class="candidature-filters">
+        <button class="filter-btn active">Toutes</button>
+        <button class="filter-btn">En attente</button>
+        <button class="filter-btn">Acceptées</button>
+        <button class="filter-btn">Refusées</button>
+        <button class="filter-btn">Retirées</button>
+    </div>
+
+
+    <!-- GRID -->
+    <div class="candidatures-grid">
+        {% for candidature in candidatures %}
+
+        <article class="candidature-card {{ candidature.statut }}">
+            <!-- HEADER CARD -->
+            <div class="card-header">
+                <div>
+                    {% if mode == "recues" %}
+                        <h3>{{ candidature.formateur }}</h3>
+
+                    {% else %}
+                        <h3>{{ candidature.offre.titre }}</h3>
+                    {% endif %}
+
+                    <p class="card-subtitle">
+                        {% if mode == "recues" %}
+                            Offre : {{ candidature.offre.titre }}
+                        {% else %}
+                            Institution : {{ candidature.offre.institution_id }}
+                        {% endif %}
+                    </p>
+                </div>
+
+                <span class="status-badge {{ candidature.statut }}">
+                    {{ candidature.get_statut_display }}
+                </span>
+            </div>
+
+            <!-- INFOS -->
+
+            <div class="card-infos">
+
+                <div class="info-line">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <span>
+
+                        {{ candidature.date_candidature|date:"d M Y" }}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="message-box">
+                {{ candidature.message|default:"Aucun message." }}
+            </div>
+
+            <!-- COMMENTAIRE DECISION -->
+            {% if candidature.commentaire_decision %}
+                <div class="decision-box">
+
+                    {{ candidature.commentaire_decision }}
+
+                </div>
+            {% endif %}
+
+            <!-- FOOTER -->
+
+            <div class="card-footer">
+
+                <div class="left-actions">
+
+                    {% if candidature.cv %}
+
+                        <a
+                            href="{{ candidature.cv.url }}"
+                            target="_blank"
+                            class="cv-link">
+
+                            Voir CV
+
+                        </a>
+
+                    {% endif %}
+
+                </div>
+
+                <div class="right-actions">
+
+                    <!-- RECUES -->
+
+                    {% if mode == "recues" %}
+
+                        {% if candidature.statut == "en_attente" %}
+
+                            <button
+                                class="btn-refuse open-decision-modal"
+                                data-action="refuser"
+                                data-url="{% url 'core:refuser_candidature' candidature.id %}">
+
+                                Refuser
+
+                            </button>
+
+                            <button
+                                class="btn-accept open-decision-modal"
+                                data-action="accepter"
+                                data-url="{% url 'core:accepter_candidature' candidature.id %}">
+
+                                Accepter
+
+                            </button>
+
+                        {% endif %}
+
+                        {% if candidature.statut == "acceptee" %}
+
+                            <button
+                                class="btn-evaluation">
+
+                                Évaluer
+
+                            </button>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    <!-- MES CANDIDATURES -->
+
+                    {% if mode == "mes" %}
+
+                        {% if candidature.statut == "en_attente" %}
+
+                            <button
+                                class="btn-retire open-decision-modal"
+                                data-action="retirer"
+                                data-url="{% url 'core:retirer_candidature' candidature.id %}">
+
+                                Retirer
+
+                            </button>
+
+                        {% endif %}
+
+                        {% if candidature.statut == "acceptee" %}
+
+                            <button
+                                class="btn-evaluation">
+
+                                Évaluer
+
+                            </button>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+            <div class="empty-state">
+
+                <h3>
+                    Aucune candidature trouvée
+                </h3>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- MODAL DECISION -->
+<!-- ================================================= -->
+
+<div
+    class="modal-overlay"
+    id="decisionModal">
+
+    <div class="custom-modal">
+
+        <div class="modal-header">
+
+            <h2
+                id="decisionTitle">
+
+            </h2>
+
+            <button
+                class="close-modal"
+                data-close>
+
+                ×
+
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <p
+                id="decisionQuestion">
+
+            </p>
+
+            <form
+                method="POST"
+                id="decisionForm">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+
+                    <label>
+
+                        Commentaire
+
+                    </label>
+
+                    <textarea
+                        name="commentaire_decision"
+                        rows="5"
+                        class="form-control"
+                        placeholder="Expliquez votre décision...">
+
+                    </textarea>
+
+                </div>
+
+                <div class="warning-box">
+
+                    ⚠ Cette action est irréversible.
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn-cancel"
+                        data-close>
+
+                        Annuler
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="decisionConfirmButton">
+
+                        Confirmer
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

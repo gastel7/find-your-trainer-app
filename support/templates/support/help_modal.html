@@ -1,0 +1,99 @@
+<!-- ============================================================
+     MODAL GLOBAL "BESOIN D'AIDE" (création de ticket GestSup)
+     Le JS est dans core/static/js/app/modal-help.js
+     (chargé automatiquement par dashboard.html)
+
+     Déclenché par le bouton #i_need_help_btn du header — le JS
+     s'occupe lui-même d'ouvrir/fermer le modal, pas besoin d'onclick
+     inline ici.
+============================================================ -->
+
+<div id="helpModal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle">
+    <div class="modal-box">
+
+        <!-- Header -->
+        <div class="modal-head">
+            <div>
+                <p class="modal-eyebrow">Support</p>
+                <h2 class="modal-title" id="helpModalTitle">Besoin d'aide ?</h2>
+            </div>
+            <button type="button" class="modal-close" onclick="closeHelpModal()" aria-label="Fermer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <p class="help-intro">
+            Décris ton problème, on te répond dès que possible.
+        </p>
+
+        <!-- Formulaire -->
+        <form id="helpForm" method="POST" action="{% url 'support:creer_demande_aide' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label class="form-label" for="helpTitre">Objet</label>
+                <input type="text" id="helpTitre" name="titre" class="form-input"
+                       placeholder="Résume ton problème en quelques mots" maxlength="200" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="helpDescription">Description</label>
+                <textarea id="helpDescription" name="description" rows="5" class="form-textarea"
+                          placeholder="Explique en détail ce qui se passe…" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="helpEmail">Ton email</label>
+                <input type="email" id="helpEmail" name="email" class="form-input"
+                       value="{{ user.email|default:'' }}"
+                       placeholder="pour te recontacter" required>
+            </div>
+
+            <p id="helpError" style="display:none; color:#dc2626; font-size:.82rem; margin-top:4px;"></p>
+
+            <div class="modal-footer" style="margin-top: 15px;">
+                <button type="button" class="btn-ghost" onclick="closeHelpModal()">Annuler</button>
+                <button type="submit" class="btn-accent" id="helpSubmitBtn">
+                    Envoyer la demande
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<style>
+/* Scopé sous #helpModal, exactement comme #evalModal : ce fichier est
+   inclus GLOBALEMENT (dashboard.html), donc pas de classes génériques
+   nues (.modal-overlay, .form-group...) qui entreraient en collision
+   avec offre.css / list_formation.css / candidatures_recues.css. 
+*/
+
+
+#helpModal              { position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px; }
+#helpModal.hidden        { display:none; }
+#helpModal .modal-box              { background:var(--bg-card,#fff);border-radius:20px;width:100%;max-width:480px;padding:28px;box-shadow:0 24px 64px rgba(0,0,0,.15);display:flex;flex-direction:column;gap:16px; }
+#helpModal .modal-head             { display:flex;align-items:flex-start;justify-content:space-between;gap:12px; }
+#helpModal .modal-eyebrow          { font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6366f1;margin:0 0 4px; }
+#helpModal .modal-title            { font-size:1.2rem;font-weight:700;margin:0;color:var(--text-primary,#111); }
+#helpModal .modal-close            { background:none;border:none;cursor:pointer;padding:4px;color:var(--text-muted,#6b7280);border-radius:8px;display:flex;align-items:center;transition:background .15s; }
+#helpModal .modal-close:hover      { background:var(--bg-hover,#f3f4f6); }
+#helpModal .help-intro             { font-size:.85rem;color:var(--text-muted,#6b7280);margin:0; }
+#helpModal .form-group             { display:flex;flex-direction:column;gap:8px;margin-bottom:14px; }
+#helpModal .form-label             { font-size:.85rem;font-weight:600;color:var(--text-primary,#111); }
+#helpModal .form-input,
+#helpModal .form-textarea          { border:1.5px solid var(--border,#e5e7eb);border-radius:10px;padding:10px 14px;font-size:.9rem;font-family:inherit;background:var(--bg-input,#fff);color:var(--text-primary,#111);transition:border-color .2s;outline:none; }
+#helpModal .form-textarea           { resize:vertical; }
+#helpModal .form-input:focus,
+#helpModal .form-textarea:focus    { border-color:#6366f1; }
+#helpModal .modal-footer           { display:flex;justify-content:flex-end;gap:10px;padding-top:4px; }
+#helpModal .btn-ghost               { background:none;border:1.5px solid var(--border,#e5e7eb);border-radius:10px;padding:9px 18px;font-size:.875rem;font-weight:600;cursor:pointer;color:var(--text-primary,#111);transition:background .15s; }
+#helpModal .btn-ghost:hover         { background:var(--bg-hover,#f3f4f6); }
+#helpModal .btn-accent              { background:#6366f1;color:#fff;border:none;border-radius:10px;padding:9px 18px;font-size:.875rem;font-weight:600;cursor:pointer;transition:opacity .15s; }
+#helpModal .btn-accent:disabled     { opacity:.6;cursor:not-allowed; }
+#helpModal .btn-accent:not(:disabled):hover { opacity:.88; }
+</style>
