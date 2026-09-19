@@ -1,0 +1,34 @@
+/* ═══════════════════════════════════════════════════════════════════
+   public-vars.css
+   Sous-ensemble des variables de theme.css (app), pour les pages
+   PUBLIQUES (not_login_user) qui réutilisent des composants pensés
+   pour l'app (ex : institutions.css) mais ne chargent pas theme.css en
+   entier — theme.css contient aussi des règles sur des sélecteurs
+   comme "header" ou ".sidebar_container" qui entreraient en conflit
+   avec header_index.css/footer_index.css sur ces pages.
+   Uniquement des custom properties ici : aucun risque de collision.
+═══════════════════════════════════════════════════════════════════ */
+
+:root {
+    --bg-card    : #ffffff;
+    --bg-subtle  : #f3f4f6;
+    --bg-input   : #ffffff;
+
+    --text-primary   : #1a1a1a;
+    --text-secondary : #374151;
+    --text-muted     : #6b7280;
+
+    --border     : #dee1e8;
+}
+
+body.dark {
+    --bg-card    : #1f2235;
+    --bg-subtle  : #262940;
+    --bg-input   : #1f2235;
+
+    --text-primary   : #f7f6f0;
+    --text-secondary : #c5c9e0;
+    --text-muted     : #8a8fa8;
+
+    --border     : rgba(255,255,255,0.10);
+}

@@ -31,7 +31,10 @@ def notifier_utilisateur(user, titre, message='', url=''):
 
 
 def _envoyer_push(user, titre, message, url):
-    if not settings.VAPID_PRIVATE_KEY_PATH:
+    # En prod : contenu direct de la clé (pas de fichier .pem disponible sur Wasmer).
+    # En local : chemin vers le fichier .pem, comme avant.
+    vapid_key = settings.VAPID_PRIVATE_KEY or settings.VAPID_PRIVATE_KEY_PATH
+    if not vapid_key:
         # Push pas configuré (clés VAPID absentes) : on ne fait que l'in-app.
         return
 
@@ -53,7 +56,7 @@ def _envoyer_push(user, titre, message, url):
             webpush(
                 subscription_info=sub.to_subscription_info(),
                 data=payload,
-                vapid_private_key=settings.VAPID_PRIVATE_KEY_PATH,
+                vapid_private_key=vapid_key,
                 vapid_claims={"sub": f"mailto:{settings.VAPID_CLAIMS_EMAIL}"},
             )
         except WebPushException as exc:
@@ -63,3 +66,7 @@ def _envoyer_push(user, titre, message, url):
                 sub.delete()
             else:
                 logger.warning("Échec envoi push à %s : %s", user, exc)
+        except Exception as exc:
+            # Toute autre erreur (clé VAPID introuvable, réseau, etc.) : jamais bloquant,
+            # l'in-app est déjà enregistrée, on log juste pour pouvoir enquêter plus tard.
+            logger.warning("Erreur inattendue en envoyant le push à %s : %s", user, exc)
